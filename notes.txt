@@ -1,0 +1,3 @@
+New approaches
+	Iteratively go through error types and determine if chatGPT can find the instances of these problems
+	Just give ChatGPT the html and see if it can find violations
