@@ -1,13 +1,19 @@
 # WCGA 2.2: https://www.w3.org/TR/WCAG22/
 
+import os
 import json
 from gpt import GptChat
 
-from typing import List
+from typing import List, Tuple
 
-html_file = "project1.html"
-with open(html_file, 'r', encoding='utf-8') as f:
-	html = f.read()
+if not os.path.exists('config.json'):
+	raise Exception("Could not find config.json")
+with open('config.json', 'r', encoding='utf-8') as f:
+	config = json.load(f)
+
+if not 'openai_api_key' in config:
+	raise Exception('Could not find key: openai_api_key in config')
+api_key = config['openai_api_key']
 
 class WCGAError:
 	guideline: str
@@ -36,7 +42,7 @@ class Promblem:
 
 	def __init__(self, html: str, line: int, guideline: str, wcga_errors: List[WCGAError]):
 		self.line = line
-		self.problem = html.split('\n')[line - 1]
+		self.problem = html.split('\n')[line - 1].strip()
 		self.wcga_error = None
 		for err in wcga_errors:
 			if err.guideline == guideline:
@@ -49,33 +55,60 @@ with open('wcga_errors.json', 'r', encoding='utf-8') as f:
 	for item in json.load(f):
 		wcga_errors.append(WCGAError(item))
 
-found_error_lines = [
-	(98, "1.1.1"),
-	(122, "4.1.1"),
-	(6, "2.4.2"),
-	(140, "1.3.1.1"),
-	(134, "1.3.1.2")
-]
+def fix_page(html: str, found_error_lines: List[Tuple[int, str]]):
+	found_problems = [Promblem(html, line, rule, wcga_errors) for line, rule in found_error_lines]
 
-found_problems = [Promblem(html, line, rule, wcga_errors) for line, rule in found_error_lines]
+	def fix_problem(problem: Promblem):
+		chat = GptChat("sys_prompt.txt", api_key)
+		chat.add_message("user", f"Here is the html for the page:\n{html}")
+		chat.add_message("assistant", "Ok")
+		chat.add_message("user", f"This is the type of problem: {problem.wcga_error.success_criteria}\n\nHere is the offending line: {problem.problem}")
+		chat.add_message("assistant", "Ok")
+		chat.add_message("user", f"Here is an example of the error: {problem.wcga_error.error_example}\n\nAnd here is an example of that error fixed: {problem.wcga_error.fixed_example}")
+		chat.add_message("assistant", "Ok")
+		return chat.send("Fix the problem")
 
-def fix_problem(problem: Promblem):
-	chat = GptChat("sys_prompt.txt")
-	chat.add_message("user", f"Here is the html for the page:\n{html}")
-	chat.add_message("assistant", "Ok")
-	chat.add_message("user", f"This is the type of problem: {problem.wcga_error.success_criteria}\n\nHere is the offending line: {problem.problem}")
-	chat.add_message("assistant", "Ok")
-	chat.add_message("user", f"Here is an example of the error: {problem.wcga_error.error_example}\n\nAnd here is an example of that error fixed: {problem.wcga_error.fixed_example}")
-	chat.add_message("assistant", "Ok")
-	return chat.send("Fix the problem")
+	fixes = []
+	for problem in found_problems:
+		fixes.append({
+			"line": problem.line,
+			"problem": problem.problem,
+			"fix": fix_problem(problem)
+		})
+	return fixes
 
-fixes = []
-for problem in found_problems:
-	fixes.append({
-		"line": problem.line,
-		"fix": fix_problem(problem)
-	})
+def fix_page_one():
+	html_file = "project1.html"
+	with open(html_file, 'r', encoding='utf-8') as f:
+		html = f.read()
 
-output_file = ""
-with open(output_file, 'w', encoding='utf-8') as f:
-	json.dump(fixes, f, indent=4)
+	fixes = fix_page(html, [
+		(98, "1.1.1"),
+		(122, "4.1.1"),
+		(6, "2.4.2"),
+		(140, "1.3.1.1"),
+		(134, "1.3.1.2")
+	])
+
+	output_file = "output1.json"
+	with open(output_file, 'w', encoding='utf-8') as f:
+		json.dump(fixes, f, indent=4)
+
+def fix_page_two():
+	html_file = "project2.html"
+	with open(html_file, 'r', encoding='utf-8') as f:
+		html = f.read()
+
+	fixes = fix_page(html, [
+		(49, "1.1.1"),
+		(63, "1.4.2"),
+		(36, "1.3.1.3"),
+		(61, "1.4.4.2"),
+		(52, "1.4.4.1")
+	])
+
+	output_file = "output2.json"
+	with open(output_file, 'w', encoding='utf-8') as f:
+		json.dump(fixes, f, indent=4)
+
+fix_page_two()

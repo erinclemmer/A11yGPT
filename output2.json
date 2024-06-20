@@ -1,0 +1,27 @@
+[
+    {
+        "line": 49,
+        "problem": "<img src=\"book-cover.jpg\" />",
+        "fix": "<img src=\"book-cover.jpg\" alt=\"Book Cover Image\" />"
+    },
+    {
+        "line": 63,
+        "problem": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fix": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" /> \n\nFixed:\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">"
+    },
+    {
+        "line": 36,
+        "problem": "<select id=\"filter\">",
+        "fix": "<label for=\"filter\">Filter</label>\n<select id=\"filter\">\n  <option value=\"genre\">Genre</option>\n  <option value=\"author\">Author</option>\n  <!-- Add more filter options -->\n</select>"
+    },
+    {
+        "line": 61,
+        "problem": "<h2><b>Discover Our Bookstore</b></h2>",
+        "fix": "<h2>Discover Our Bookstore</h2>"
+    },
+    {
+        "line": 52,
+        "problem": "<font size=\"5\">Description of the book...</font>",
+        "fix": "<p>Description of the book...</p>"
+    }
+]

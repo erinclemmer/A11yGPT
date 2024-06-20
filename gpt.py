@@ -1,9 +1,10 @@
 import os
-from typing import List
-from enum import Enum
+import json
 import time
+import datetime
+from typing import List
 
-import openai
+from openai import OpenAI
 import tiktoken
 
 class Message:
@@ -67,11 +68,13 @@ class GptChat:
     messages: List[Message]
     conversations: List[Conversation]
 
-    def __init__(self, system_prompt_file: str) -> None:
+    def __init__(self, system_prompt_file: str, api_key: str) -> None:
         if not os.path.exists(system_prompt_file):
             raise Exception(f"Could not find sys prompt file at {system_prompt_file}")
         with open(system_prompt_file, 'r', encoding='utf-8') as f:
             self.system_prompt = f.read()
+        
+        self.openai_client = OpenAI(api_key=api_key)
         self.encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
         self.system_prompt_tokens = len(self.encoding.encode(self.system_prompt))
         self.messages = []
@@ -86,16 +89,19 @@ class GptChat:
         for completion in self.conversations:
             text += json.dumps(completion.to_object()) + '\n'
         today = datetime.date.today().strftime("%Y-%m-%d")
-        save_file(f'../completions/{file_name}_{today}.json', text)
+        if not os.path.exists('completions'):
+            os.mkdir('completions')
+        with open(f'completions/{file_name}_{today}.jsonl', 'w', encoding='utf-8') as f:
+            f.write(text)
 
-    def add_message(self, message: str, role: str):
+    def add_message(self, role: str, message: str):
         self.messages.append(Message(role, message))
 
     def reset_chat(self):
         if len(self.messages) > 1:
             self.conversations.append(Conversation(self.messages))
         self.messages = [ ]
-        self.add_message(self.system_prompt, "system")
+        self.add_message("system", self.system_prompt)
 
     def get_message_tokens(self) -> int:
         message_tokens = 0
@@ -121,7 +127,7 @@ class GptChat:
         }
 
         try:
-            res = openai.ChatCompletion.create(**defaultConfig)
+            res = self.openai_client.chat.completions.create(**defaultConfig)
         except:
             print('Error when sending chat, retrying in one minute')
             time.sleep(60)
