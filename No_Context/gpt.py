@@ -30,6 +30,16 @@ class Conversation:
             })
         return messages
 
+class GptEmbeddings:
+    def __init__(self, api_key: str):
+        self.openai_client = OpenAI(api_key=api_key)
+
+    def get_embedding(self, text: str):
+        return self.openai_client.embeddings.create(
+            input=text,
+            model="text-embedding-3-large"
+        ).data[0].embedding
+
 class GptChat:
     messages: List[Message]
     conversations: List[Conversation]
@@ -89,7 +99,7 @@ class GptChat:
             "model": 'gpt-3.5-turbo',
             "max_tokens": max_tokens,
             "messages": Conversation(self.messages).to_object(),
-            "temperature": 0.5
+            "temperature": 1
         }
 
         try:

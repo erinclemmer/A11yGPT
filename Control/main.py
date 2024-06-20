@@ -5,15 +5,9 @@ import json
 from gpt import GptChat
 
 from typing import List, Tuple
+from lib import get_api_key
 
-if not os.path.exists('config.json'):
-	raise Exception("Could not find config.json")
-with open('config.json', 'r', encoding='utf-8') as f:
-	config = json.load(f)
-
-if not 'openai_api_key' in config:
-	raise Exception('Could not find key: openai_api_key in config')
-api_key = config['openai_api_key']
+api_key = get_api_key()
 
 class WCGAError:
 	guideline: str
