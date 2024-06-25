@@ -86,6 +86,7 @@ while retries < 5:
 	if closest > SIM_THRESHOLD:
 		retries += 1
 		continue
+	retries = 0
 	fixes.append(fix)
 	print(f'Added new fix, total {len(fixes)} fixes found\n\n')
 

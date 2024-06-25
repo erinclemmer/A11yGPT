@@ -1,0 +1,119 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "img element missing alt attribute",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "img element missing alt attribute",
+                "offending_line": "<img src=\"book-cover.jpg\" />",
+                "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1.1",
+        "success_criteria": "input element, type of \"file\", missing an associated label.",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element with type 'file' missing an associated label",
+                "offending_line": "<input type='file' id='avatar' />",
+                "fixed_line": "<label for='avatar'>Select a file:</label> <input type='file' id='avatar' />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1.2",
+        "success_criteria": "input element, type of \"checkbox\", missing an associated label",
+        "error_example": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+        "fixed_example": "<label for=\"vehicle2\">I have a car</label><br>\n<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element with type of 'checkbox' is missing an associated label",
+                "offending_line": "<input type='checkbox' id='filter' />",
+                "fixed_line": "<input type='checkbox' id='filter' /><label for='filter'>Filter by:</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4.1",
+        "success_criteria": "font used.",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Font tag used",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: large;\">Description of the book...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4.2",
+        "success_criteria": "b (bold) element used",
+        "error_example": "<h2><b>Discover Our Bookstore</b></h2>",
+        "fixed_example": "<h2>Discover Our Bookstore</h2>",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <b> element for bold instead of semantic <strong> element",
+                "offending_line": "<b>Discover Our Bookstore</b>",
+                "fixed_line": "<strong>Discover Our Bookstore</strong>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore - Accessibility Friendly Bookstore</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "In content implemented using markup languages, elements have complete start and end tags.",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Incomplete Start and End Tags",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: large;\">Description of the book...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element avoids automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element avoids automatically playing audio",
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1.3",
+        "success_criteria": "select element missing an associated label",
+        "error_example": "<select id=\"filter\">\n<option value=\"genre\">Genre</option>\n<option value=\"author\">Author</option>\n<!-- Add more filter options -->\n</select>",
+        "fixed_example": "<label for=\"filter\">Filter</label>\n<select id=\"filter\">\n<option value=\"genre\">Genre</option>\n<option value=\"author\">Author</option>\n<!-- Add more filter options -->\n</select>",
+        "error_fixes": [
+            {
+                "problem_type": "Select element missing an associated label",
+                "offending_line": "<select id=\"filter\">",
+                "fixed_line": "<label for=\"filter\">Filter by:</label>\n<select id=\"filter\">"
+            }
+        ]
+    }
+]
