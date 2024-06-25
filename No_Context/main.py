@@ -8,7 +8,7 @@ from lib import get_api_key, get_cosine_similarity
 
 SIM_THRESHOLD = .8
 
-html_file = 'project1.html'
+html_file = 'project2.html'
 with open(html_file, 'r', encoding='utf-8') as f:
 	html = f.read()
 

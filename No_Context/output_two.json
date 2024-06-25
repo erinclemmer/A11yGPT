@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "images_without_alt_attribute",
+        "offending_line": "<img src=\"book-cover.jpg\" />",
+        "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+    },
+    {
+        "problem_type": "font_element_used",
+        "offending_line": "<font size=\"5\">Description of the book...</font>",
+        "fixed_line": "<p style=\"font-size: large;\">Description of the book...</p>"
+    }
+]
