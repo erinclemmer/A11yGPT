@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Gaming Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav {
+            background: #444;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        section {
+            padding: 20px;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .hero-section {
+            background: url('background.jpg') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .video-section {
+            text-align: center;
+        }
+
+        .game-description {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .input-field {
+            padding: 10px;
+            margin: 10px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Your Gaming Website</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#games">Games</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section class="hero-section">
+        <h2>Welcome to the Gaming World!</h2>
+        <p>Discover the latest and greatest games.</p>
+        <a href="#games" class="button">Explore Games</a>
+    </section>
+
+    <section id="games" class="video-section">
+        <h2>Featured Games</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/your-game-video-id" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </section>
+
+    <section id="about" class="game-description">
+        <h2>About Us</h2>
+        <p>Your gaming website is dedicated to bringing you the latest news, reviews, and updates from the gaming
+            world. Explore our collection of games and stay informed.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="input-field">
+
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" class="input-field">
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" class="input-field"></textarea>
+
+            <input type="submit" value="Submit" class="button">
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2023 Your Gaming Website. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

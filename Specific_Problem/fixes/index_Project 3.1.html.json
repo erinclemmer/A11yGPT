@@ -1,0 +1,153 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "img element missing alt attribute",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "img element missing alt attribute",
+                "offending_line": "background-image: url('background-image.jpg'); /* Add your background image URL here */",
+                "fixed_line": "background-image: url('background-image.jpg'); /* Add your background image URL here */\nbackground-image: none;\n"
+            },
+            {
+                "problem_type": "img element missing alt attribute",
+                "offending_line": "    <header>",
+                "fixed_line": "<header>\n        <h1>Grocery Store</h1>\n    </header>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1.1",
+        "success_criteria": "input element, type of \"file\", missing an associated label.",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element with type 'file' missing associated label",
+                "offending_line": "<input type='file' id='background-image' accept='image/*'>",
+                "fixed_line": "<label for='background-image'>Select background image:</label> <input type='file' id='background-image' accept='image/*'>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1.2",
+        "success_criteria": "input element, type of \"checkbox\", missing an associated label",
+        "error_example": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+        "fixed_example": "<label for=\"vehicle2\">I have a car</label><br>\n<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+        "error_fixes": [
+            {
+                "problem_type": "Missing label for checkbox",
+                "offending_line": "<input type=\"checkbox\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"terms\"><label for=\"terms\">I agree to the terms and conditions</label>"
+            },
+            {
+                "problem_type": "Missing associated label for checkbox input element",
+                "offending_line": "<input type='checkbox' id='checkbox1'>",
+                "fixed_line": "<input type='checkbox' id='checkbox1'><label for='checkbox1'>Checkbox 1</label>"
+            },
+            {
+                "problem_type": "Missing associated label for checkbox",
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<td><label for=\"checkbox1\">Add to Cart</label><button id=\"checkbox1\" aria-label=\"Add to Cart\">Add to Cart</button></td>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4.1",
+        "success_criteria": "font used.",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Font used",
+                "offending_line": "font-family: Arial, sans-serif;",
+                "fixed_line": "font-family: Arial, sans-serif; /* Add fallback fonts */"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4.2",
+        "success_criteria": "b (bold) element used",
+        "error_example": "<h2><b>Discover Our Bookstore</b></h2>",
+        "fixed_example": "<h2>Discover Our Bookstore</h2>",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title>Grocery Store</title>",
+                "fixed_line": "<title>Grocery Store - Online Grocery Shopping</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "In content implemented using markup languages, elements have complete start and end tags.",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Incomplete Start/End Tag",
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button>Add to Cart</button></button>"
+            },
+            {
+                "problem_type": "Elements not having complete end tags",
+                "offending_line": "<table>",
+                "fixed_line": "<table></table>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element avoids automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element avoids automatically playing audio",
+                "offending_line": "",
+                "fixed_line": ""
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1.3",
+        "success_criteria": "select element missing an associated label",
+        "error_example": "<select id=\"filter\">\n<option value=\"genre\">Genre</option>\n<option value=\"author\">Author</option>\n<!-- Add more filter options -->\n</select>",
+        "fixed_example": "<label for=\"filter\">Filter</label>\n<select id=\"filter\">\n<option value=\"genre\">Genre</option>\n<option value=\"author\">Author</option>\n<!-- Add more filter options -->\n</select>",
+        "error_fixes": [
+            {
+                "problem_type": "select element missing an associated label",
+                "offending_line": "<select>",
+                "fixed_line": "<label for=\"grocery-selection\">Select a Grocery:</label><select id=\"grocery-selection\">"
+            },
+            {
+                "problem_type": "select element missing an associated label",
+                "offending_line": "<table>",
+                "fixed_line": "<table aria-label='Available Groceries'>"
+            },
+            {
+                "problem_type": "select element missing an associated label",
+                "offending_line": "<th>Action</th>",
+                "fixed_line": "<th>Action</th>"
+            },
+            {
+                "problem_type": "Select element missing an associated label",
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<td><label for='add-to-cart'>Add to Cart</label><button id='add-to-cart'>Add to Cart</button></td>"
+            },
+            {
+                "problem_type": "select element missing an associated label",
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<label for=\"home-link\">Home</label><a id=\"home-link\" href=\"#\">Home</a>"
+            }
+        ]
+    }
+]

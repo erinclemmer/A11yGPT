@@ -8,18 +8,12 @@ from lib import get_api_key, get_cosine_similarity
 
 SIM_THRESHOLD = .8
 
-html_file = 'project2.html'
-with open(html_file, 'r', encoding='utf-8') as f:
-	html = f.read()
-
 if not os.path.exists('sys_prompt.txt'):
 	raise Exception('Could not find sys_prompt.txt')
 
 api_key = get_api_key()
 chat = GptChat('sys_prompt.txt', api_key)
 embed = GptEmbeddings(api_key)
-fixes = []
-retries = 0
 
 class GptFix:
 	problem_type: str
@@ -64,31 +58,41 @@ def find_closest_embedding(fix: GptFix, existing_fixes: List[GptFix]):
 			closest = sim
 	return closest
 
-while retries < 5:
-	try:
-		chat.reset_chat()
-		res = json.loads(chat.send(f'Here is the html for the website:\n{html}'))
-	except BaseException as e:
-		print(e)
-		sleep(1)
-		continue
-	try:
-		embedding = embed.get_embedding(json.dumps(res))
-		fix = GptFix(res, embedding)
-		print(fix.to_string())
-	except BaseException as e:
-		print(e)
-		sleep(1)
-		continue
-
-	closest = find_closest_embedding(fix, fixes)
-	print(f'Closest sim {closest}')
-	if closest > SIM_THRESHOLD:
-		retries += 1
-		continue
+def get_fixes_for_file(file_name: str):
+	print(f'Getting fixes for {file_name}')
+	with open('../other_projects/html/' + file_name, 'r', encoding='utf-8') as f:
+		html = f.read()
+	fixes = []
 	retries = 0
-	fixes.append(fix)
-	print(f'Added new fix, total {len(fixes)} fixes found\n\n')
+	while retries < 5:
+		try:
+			chat.reset_chat()
+			res = json.loads(chat.send(f'Here is the html for the website:\n{html}'))
+		except BaseException as e:
+			print(e)
+			sleep(1)
+			continue
+		try:
+			embedding = embed.get_embedding(json.dumps(res))
+			fix = GptFix(res, embedding)
+			print(fix.to_string())
+		except BaseException as e:
+			print(e)
+			sleep(1)
+			continue
 
-with open('output.json', 'w', encoding='utf-8') as f:
-	json.dump([f.o for f in fixes], f, indent=4)
+		closest = find_closest_embedding(fix, fixes)
+		print(f'Closest sim {closest}')
+		if closest > SIM_THRESHOLD:
+			retries += 1
+			continue
+		retries = 0
+		fixes.append(fix)
+		print(f'Added new fix, total {len(fixes)} fixes found\n\n')
+
+	with open(f'fixes/{file_name}.json', 'w', encoding='utf-8') as f:
+		json.dump([f.o for f in fixes], f, indent=4)
+	print(f'Wrote {len(fixes)} for {file_name}')
+
+for file in os.listdir('../other_projects/html'):
+	get_fixes_for_file(file)

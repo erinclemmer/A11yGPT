@@ -8,10 +8,6 @@ from lib import get_api_key, get_cosine_similarity, get_wcga_errors, WCGAError, 
 
 SIM_THRESHOLD = .85
 
-html_file = 'project1.html'
-with open(html_file, 'r', encoding='utf-8') as f:
-	html = f.read()
-
 if not os.path.exists('sys_prompt.txt'):
 	raise Exception('Could not find sys_prompt.txt')
 
@@ -28,7 +24,7 @@ def find_closest_embedding(fix: GptFix, existing_fixes: List[GptFix]):
 			closest = sim
 	return closest
 
-def get_fix(wcga_error: WCGAError):
+def get_fix(html: str, wcga_error: WCGAError):
 	chat.reset_chat()
 	chat.add_message("user", f"Here is the html for the page:\n{html}")
 	chat.add_message("assistant", "Ok")
@@ -37,12 +33,12 @@ def get_fix(wcga_error: WCGAError):
 	# return json.loads(chat.send(f"Here is an example of the error: {wcga_error.error_example}\n\nAnd here is an example of that error fixed: {wcga_error.fixed_example}"))
 	return json.loads(chat.send(f"Find the problem"))
 
-def get_fixes_for_error(wcga_error) -> List[GptFix]:
+def get_fixes_for_error(html: str, wcga_error: WCGAError) -> List[GptFix]:
 	fixes = []
 	retries = 0
 	while retries < 5:
 		try:
-			res = get_fix(wcga_error)
+			res = get_fix(html, wcga_error)
 			if res['problem_type'] == 'NONE':
 				retries += 1
 				continue
@@ -69,14 +65,20 @@ def get_fixes_for_error(wcga_error) -> List[GptFix]:
 		print(f'Added new fix, total {len(fixes)} fixes found\n\n')
 	return fixes
 
-fixes = []
-for wcga_error in get_wcga_errors():
-	error_fixes = []
-	for fix in get_fixes_for_error(wcga_error):
-		error_fixes.append(fix.o)
-	o = wcga_error.o
-	o['error_fixes'] = error_fixes
-	fixes.append(o)
+def find_fixes_for_file(file_name: str):
+	with open('../other_projects/html/' + file_name, 'r', encoding='utf-8') as f:
+		html = f.read()
+	fixes = []
+	for wcga_error in get_wcga_errors():
+		error_fixes = []
+		for fix in get_fixes_for_error(html, wcga_error):
+			error_fixes.append(fix.o)
+		o = wcga_error.o
+		o['error_fixes'] = error_fixes
+		fixes.append(o)
 
-with open('output.json', 'w', encoding='utf-8') as f:
-	json.dump(fixes, f, indent=4)
+	with open(f'fixes/{file_name}.json', 'w', encoding='utf-8') as f:
+		json.dump(fixes, f, indent=4)
+
+for file in os.listdir('../other_projects/html'):
+	find_fixes_for_file(file)

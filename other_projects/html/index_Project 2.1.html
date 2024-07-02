@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Bookstore</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<!-- Navigation Bar -->
+<nav>
+  <ul>
+    <li><a href="#home">Home</a></li>
+    <li><a href="#books">Books</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- Header with Background Image -->
+<header style="background-image: url('header-image.jpg');">
+  <h1>Welcome to our Bookstore</h1>
+  <p>Explore a vast collection of books.</p>
+</header>
+
+<!-- Search Bar and Filters -->
+<section id="filters">
+  <label for="search">Search:</label>
+  <input type="text" id="search" placeholder="Search..." aria-label="Search">
+
+     </section>
+
+  <!-- Filter options here -->
+  <select>
+    <option value="genre">Genre</option>
+    <option value="author">Author</option>
+    <!-- Add more filter options -->
+  </select>
+  <button>Apply Filters</button>
+</section>
+
+<!-- Book Display Section -->
+<section id="books">
+  <!-- Display books dynamically from database -->
+  <!-- Example book -->
+  <div class="book">
+    <img src="book-cover.jpg" alt="Book Cover">
+    <h2>Book Title</h2>
+    <p>Author: Author Name</p>
+    <p>Description of the book...</p>
+    <button>Read More</button>
+  </div>
+  <!-- Add more books dynamically -->
+</section>
+
+<!-- Video about the Bookstore -->
+<section id="video">
+  <h2>Discover Our Bookstore</h2>
+  <video controls>
+    <source src="bookstore-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<!-- Contact Form -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <form action="submit.php" method="POST">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" placeholder="Your Name">
+    <label for="email">Your Email:</label>
+    <input type="email" id="email" name="email" placeholder="Your Email">
+    <label for="message">Your Message:</label>
+    <textarea id="message" name="message" placeholder="Your Message"></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2023 Bookstore. All rights reserved.</p>
+</footer>
+
+<!-- JavaScript for interactivity -->
+<script src="scripts.js"></script>
+</body>
+
+</html>

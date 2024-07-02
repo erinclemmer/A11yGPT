@@ -1,0 +1,17 @@
+[
+    {
+        "problem_type": "Alt text missing for Images and Iframes",
+        "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-game-video-id\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>",
+        "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-game-video-id\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen aria-label=\"Featured Game Video\"></iframe>"
+    },
+    {
+        "problem_type": "missing alt attribute for images",
+        "offending_line": "<img src='background.jpg'>",
+        "fixed_line": "<img src='background.jpg' alt='background image'>"
+    },
+    {
+        "problem_type": "color_contrast",
+        "offending_line": "<nav>",
+        "fixed_line": "<nav style=\"background: #444; color: #fff;\">"
+    }
+]

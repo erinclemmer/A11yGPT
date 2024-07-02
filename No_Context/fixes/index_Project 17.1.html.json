@@ -1,0 +1,22 @@
+[
+    {
+        "problem_type": "color_contrast",
+        "offending_line": "color: #fff;",
+        "fixed_line": "color: #fff; background-color: #555;"
+    },
+    {
+        "problem_type": "Alt Text Missing",
+        "offending_line": "<img class='icon' src='icon.png'>",
+        "fixed_line": "<img class='icon' src='icon.png' alt='Icon'>"
+    },
+    {
+        "problem_type": "missing alt attribute for images",
+        "offending_line": "background-image: url('background.jpg');",
+        "fixed_line": "background-image: url('background.jpg');"
+    },
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<button onclick=\"generateResume()\">Generate Resume</button>",
+        "fixed_line": "<button onclick=\"generateResume()\" aria-label=\"Generate Resume\">Generate Resume</button>"
+    }
+]

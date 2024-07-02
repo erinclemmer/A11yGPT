@@ -1,0 +1,7 @@
+[
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>",
+        "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen title=\"Embedded Video\"></iframe>"
+    }
+]

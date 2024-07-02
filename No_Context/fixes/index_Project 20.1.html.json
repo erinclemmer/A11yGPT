@@ -1,0 +1,17 @@
+[
+    {
+        "problem_type": "missing_alt_attribute",
+        "offending_line": "<source src=\"hospital-tour.mp4\" type=\"video/mp4\">",
+        "fixed_line": "<source src=\"hospital-tour.mp4\" type=\"video/mp4\" alt=\"Virtual tour of the hospital\">"
+    },
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<video controls>",
+        "fixed_line": "<video controls aria-label='Hospital Tour Video'>"
+    },
+    {
+        "problem_type": "missing alt attribute in image tag",
+        "offending_line": "background-image: url('hospital-banner.jpg');",
+        "fixed_line": "background-image: url('hospital-banner.jpg');"
+    }
+]
