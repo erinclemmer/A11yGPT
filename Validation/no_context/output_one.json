@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "image_missing_alt_attribute",
+        "offending_line": "<img src=\"logo.png\">",
+        "fixed_line": "<img src=\"logo.png\" alt=\"Logo\">"
+    },
+    {
+        "problem_type": "label_missing_text",
+        "offending_line": "<label for=\"vehicle1\"></label><br>",
+        "fixed_line": "<label for=\"vehicle1\">Bike</label><br>"
+    }
+]
