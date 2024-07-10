@@ -1,0 +1,17 @@
+[
+    {
+        "problem_type": "missing_alt_attribute",
+        "offending_line": "<img src=\"logo.png\">",
+        "fixed_line": "<img src=\"logo.png\" alt=\"Logo\">"
+    },
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<button>Learn More</button>",
+        "fixed_line": "<button aria-label='Learn More'>Learn More</button>"
+    },
+    {
+        "problem_type": "WCAG 2.1, Success Criterion 2.4.4 Link Purpose (In Context)",
+        "offending_line": "<a href=\"#home\">Home</a>",
+        "fixed_line": "<a href=\"#home\" aria-label=\"Navigate to Home section\">Home</a>"
+    }
+]

@@ -1,3 +1,4 @@
+import os
 import json
 from gpt import GptEmbeddings
 from lib import get_api_key, get_cosine_similarity
@@ -78,11 +79,11 @@ def get_wcga_errors(file_name: str):
             wcga_errors.append(WCGAError(item))
     return wcga_errors
 
-def get_violations(html: str, file_name: str, wcga_errors: List[WCGAError]) -> List[Promblem]:
-    with open(file_name, 'r', encoding='utf-8') as f:
+def get_violations(html: str, html_file: str, violations_file: str, wcga_errors: List[WCGAError]) -> List[Promblem]:
+    with open(violations_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     problems = []
-    for item in data:
+    for item in data[html_file]:
         problems.append(Promblem(html, item, wcga_errors))
     return problems
 
@@ -122,13 +123,12 @@ def get_no_context_fixes_for_problems(html_file: str, violations_file: str, fixe
         html = f.read()
 
     wcga_errors = get_wcga_errors(WCGA_ERROR_FILE)
-    problems = get_violations(html, violations_file, wcga_errors)
+    problems = get_violations(html, html_file, violations_file, wcga_errors)
     output = []
     for problem in problems:
         fixes = get_fixes(fixes_file)
         closest_fix = get_closest_fix_for_problem(problem, fixes)
         output.append({
-            "html_file": html_file,
             "guideline": problem.wcga_error.o,
             "problem": problem.o,
             "closest_fix": closest_fix.o
@@ -141,13 +141,12 @@ def get_specific_fixes_for_problems(html_file: str, violations_file: str, fixes_
         html = f.read()
 
     wcga_errors = get_wcga_errors(WCGA_ERROR_FILE)
-    problems = get_violations(html, violations_file, wcga_errors)
+    problems = get_violations(html, html_file, violations_file, wcga_errors)
     output = []
     for problem in problems:
         fixes = get_fixes_for_guideline(fixes_file, problem.wcga_error.guideline)
         closest_fix = get_closest_fix_for_problem(problem, fixes)
         output.append({
-            "html_file": html_file,
             "guideline": problem.wcga_error.o,
             "problem": problem.o,
             "closest_fix": closest_fix.o
@@ -156,14 +155,26 @@ def get_specific_fixes_for_problems(html_file: str, violations_file: str, fixes_
     return output
 
 OUTPUT_FILE = 'specific/output.json'
-VIOLATIONS_FILE = 'specific/violations.json'
-FIXES_FILE = 'specific/output_one.json'
-HTML_FILE = 'specific/project1.html'
+VIOLATIONS_FILE = 'violations.json'
+OUTPUT_SPECIFIC_FOLDER = 'output_specific'
+OUTPUT_NO_CTX_FOLDER = 'output_no_ctx'
 
-# output = get_no_context_fixes_for_problems(HTML_FILE, VIOLATIONS_FILE, FIXES_FILE)
-# with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-#     json.dump(output, f, indent=4)
+if not os.path.exists(OUTPUT_SPECIFIC_FOLDER):
+    os.mkdir(OUTPUT_SPECIFIC_FOLDER)
 
-output = get_specific_fixes_for_problems(HTML_FILE, VIOLATIONS_FILE, FIXES_FILE)
-with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
-    json.dump(output, f, indent=4)
+if not os.path.exists(OUTPUT_NO_CTX_FOLDER):
+    os.mkdir(OUTPUT_NO_CTX_FOLDER)
+
+for html_file in os.listdir('html'):
+    full_html_file = f'html/{html_file}'
+    specific_fixes_file = f'specific/fixes/{html_file}.json'
+    if os.path.exists(specific_fixes_file):
+        output_specific = get_specific_fixes_for_problems(full_html_file, VIOLATIONS_FILE, specific_fixes_file)
+        with open(f'{OUTPUT_SPECIFIC_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
+            json.dump(output_specific, f, indent=4)
+    
+    no_ctx_fixes_file = f'no_context/fixes/{html_file}.json'
+    if os.path.exists(no_ctx_fixes_file):
+        output_no_ctx = get_no_context_fixes_for_problems(full_html_file, VIOLATIONS_FILE, no_ctx_fixes_file)
+        with open(f'{OUTPUT_NO_CTX_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
+            json.dump(output_no_ctx, f, indent=4)

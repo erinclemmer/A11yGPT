@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<img src='background-image.jpg'>",
+        "fixed_line": "<img src='background-image.jpg' alt='Background image'>"
+    },
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<button>Add to Cart</button>",
+        "fixed_line": "<button aria-label='Add Apples to Cart'>Add to Cart</button>"
+    }
+]

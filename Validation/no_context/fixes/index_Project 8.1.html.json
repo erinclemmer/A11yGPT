@@ -1,0 +1,47 @@
+[
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<video controls>",
+        "fixed_line": "<video controls aria-label='Video Player'>"
+    },
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<img src='logo.png'>",
+        "fixed_line": "<img src='logo.png' alt='DELL Logo'>"
+    },
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "            Your browser does not support the video tag.",
+        "fixed_line": "            <img src=\"video/poster.jpg\" alt=\"Video Thumbnail\">"
+    },
+    {
+        "problem_type": "WCAG 2.4.4 - Link Purpose (In Context)",
+        "offending_line": "<a href=\"#home\">Home</a>",
+        "fixed_line": "<a href=\"#home\" aria-label=\"Navigate to Home Section\">Home</a>"
+    },
+    {
+        "problem_type": "ARIA role missing for navigation bar",
+        "offending_line": "<nav>",
+        "fixed_line": "<nav role=\"navigation\">"
+    },
+    {
+        "problem_type": "link_has_no_description",
+        "offending_line": "<a href=\"#home\">Home</a>",
+        "fixed_line": "<a href=\"#home\">Home<span class=\"sr-only\">Navigate to Home</span></a>"
+    },
+    {
+        "problem_type": "Alt text missing for video element",
+        "offending_line": "<video controls>",
+        "fixed_line": "<video controls aria-label='DELL Laptops video' alt='DELL Laptops video'>"
+    },
+    {
+        "problem_type": "Link with vague text",
+        "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+        "fixed_line": "<a href=\"#laptops\" class=\"btn\">View DELL Laptops</a>"
+    },
+    {
+        "problem_type": "Color Contrast",
+        "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+        "fixed_line": "<a href=\"#laptops\" class=\"btn\" style=\"color: #ffffff; background-color: #007bff; padding: 5px 10px; text-decoration: none;\">View Laptops</a>"
+    }
+]
