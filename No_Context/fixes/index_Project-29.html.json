@@ -1,0 +1,17 @@
+[
+    {
+        "problem_type": "missing_alt_attribute",
+        "offending_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken\">",
+        "fixed_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken Dish\">"
+    },
+    {
+        "problem_type": "accessibility",
+        "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+        "fixed_line": "<h1>Welcome to our Indian Cuisine Restaurant</h1>"
+    },
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"sort\"></label>",
+        "fixed_line": "<label for=\"sort\">Sort By:</label>"
+    }
+]

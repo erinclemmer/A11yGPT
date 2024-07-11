@@ -1,7 +1,0 @@
-[
-    {
-        "problem_type": "alt_text_missing",
-        "offending_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
-        "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1 - Image of Product 1\">"
-    }
-]

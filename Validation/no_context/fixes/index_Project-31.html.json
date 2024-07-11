@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+        "fixed_line": "<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required aria-label=\"Quantity\">"
+    },
+    {
+        "problem_type": "missing_label_text",
+        "offending_line": "<label for=\"event\"></label>",
+        "fixed_line": "<label for=\"event\">Select Event:</label>"
+    }
+]

@@ -1,0 +1,213 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" alt=\"Upload your file\">"
+            },
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I have a bike</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element should avoid automatically playing audio",
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onclick=\"showMessage()\">Click me</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <b>, <i>, or <font> tag",
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onclick=\"showMessage()\">Click me</button>"
+            },
+            {
+                "problem_type": "Font tag should not be used",
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n"
+            },
+            {
+                "problem_type": "Accessibility: <b>, <i> or <font> tag should not be used",
+                "offending_line": "<b> <i> or <font> tag used",
+                "fixed_line": "<strong> <em> tag should be used"
+            },
+            {
+                "problem_type": "Use of <b> tag",
+                "offending_line": "<b> tag should not be used",
+                "fixed_line": "Use CSS for styling instead"
+            },
+            {
+                "problem_type": "Font tags should not be used",
+                "offending_line": "<font face='Arial'>",
+                "fixed_line": "<span style='font-family: Arial;'>"
+            },
+            {
+                "problem_type": "Use of <font> tag",
+                "offending_line": "<font color='red'>",
+                "fixed_line": "<span style='color: red;'>"
+            },
+            {
+                "problem_type": "Use of <b>, <i>, or <font> tag",
+                "offending_line": "<label for=\"1\">1</label><br>",
+                "fixed_line": "<label for=\"fav_number_1\">1</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onmousedown=\"showMessage()\" onkeydown=\"showMessage()\">Click me</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "META refresh used",
+                "offending_line": "<meta http-equiv='refresh' content='5;url=page2.html'>",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=page2.html'>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Usage of <marquee> element",
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p role='alert' aria-live='assertive'><marquee> element should not be used.</marquee></p>"
+            },
+            {
+                "problem_type": "Avoid using <marquee> element",
+                "offending_line": "<marquee>Welcome to our ChatGPT-powered website!</marquee>",
+                "fixed_line": "<h1>Welcome to our ChatGPT-powered website!</h1>"
+            },
+            {
+                "problem_type": "Avoid using <marquee> element",
+                "offending_line": "<marquee>This text will scroll</marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>This text will scroll</div>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title>ChatGPT Website</title>",
+                "fixed_line": "<title>ChatGPT Website</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I have a vehicle</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Document language not identified",
+                "offending_line": "<html>",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "input element has more than one associated label",
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            },
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\"><label for=\"myfile\">Choose a file</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "element does not have complete start and end tags",
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"radio1\" name=\"fav_number\" value=\"1\"></input>"
+            },
+            {
+                "problem_type": "Element does not have complete start and end tags or id attribute is not unique",
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\" aria-labelledby=\"vehicle1-label\">\n            <label id=\"vehicle1-label\" for=\"vehicle1\"></label><br>"
+            }
+        ]
+    }
+]

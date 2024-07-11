@@ -117,6 +117,6 @@ class GptChat:
             self.send(message, max_tokens)
         msg = res.choices[0].message.content.strip()
         print(f"GPT API responded with {res.usage.completion_tokens} tokens")
-        self.add_message(msg, "assistant")
+        self.add_message("assistant", msg)
         self.total_tokens += res.usage.total_tokens
         return msg

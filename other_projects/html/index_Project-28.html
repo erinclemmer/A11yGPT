@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="eg">
+<head>
+  <meta charset="UTF-8">
+  <title>Restaurant Menu</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <!-- Navigation bar -->
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About Us</a></li>
+        <!-- More navigation links -->
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home">
+      <!-- Homepage content with background image, text, buttons, and maybe a video -->
+      <div class="hero">
+        <h1>Welcome to Our Restaurant</h1>
+        <font size="5"> Delicious food just for you!</font>
+        <a href="#menu" class="btn">View Menu</a>
+      </div>
+    </section>
+
+    <section id="menu">
+      <!-- Menu items with images, text descriptions, search filters, and sorting filters -->
+      <h2>Our Menu</h2>
+      <div class="search-filter">
+        <!-- Search field and filters -->
+        <label for="search">Search:</label>
+        <label for="search">Search:</label>
+        <input type="text" id="search" placeholder="Search...">
+        <!-- Sorting options -->
+        <select id="sort">
+          <option value="default">Default</option>
+          <option value="price">Price</option>
+          <!-- More sorting options -->
+        </select>
+      </div>
+      <div class="menu-items">
+        <!-- Individual menu item -->
+        <div class="menu-item" onmouseover="ExternalFunction()">
+          <img src="food1.jpg" alt="Food 1">
+          <h3>Food Item Name</h3>
+          <p>Description of the food item.</p>
+          <span class="price">$10.99</span>
+          <!-- Add to cart button -->
+          <button>Add to Cart</button>
+        </div>
+        <!-- More menu items -->
+      </div>
+    </section>
+
+    <!-- Other sections like About Us, Contact, etc. -->
+
+  </main>
+
+  <footer>
+    <!-- Footer content -->
+    <p>&copy; 2023 Restaurant Name. All rights reserved.</p>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>

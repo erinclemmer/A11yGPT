@@ -1,0 +1,22 @@
+[
+    {
+        "problem_type": "Accessability",
+        "offending_line": "<font size=\"5\"> View Menu</font>",
+        "fixed_line": "<a href=\"#\" class=\"button\"><span style=\"font-size: 20px;\"> View Menu</span></a>"
+    },
+    {
+        "problem_type": "img_alt_attribute_missing",
+        "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+        "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen title=\"Featured Video\"></iframe>"
+    },
+    {
+        "problem_type": "missing_alt_attribute",
+        "offending_line": "<input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>",
+        "fixed_line": "<input type=\"text\" id=\"address\" name=\"address\" required aria-label=\"Address\">"
+    },
+    {
+        "problem_type": "WCAG-1.1.1",
+        "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
+        "fixed_line": "<h2>Place Your Order</h2>"
+    }
+]

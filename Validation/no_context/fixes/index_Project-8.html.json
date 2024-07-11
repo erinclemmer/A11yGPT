@@ -1,0 +1,7 @@
+[
+    {
+        "problem_type": "empty_link_text",
+        "offending_line": "<li><a href=\"#home\"></a></li>",
+        "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+    }
+]

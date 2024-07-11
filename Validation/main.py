@@ -157,6 +157,7 @@ def get_specific_fixes_for_problems(html_file: str, violations_file: str, fixes_
 OUTPUT_FILE = 'specific/output.json'
 VIOLATIONS_FILE = 'violations.json'
 OUTPUT_SPECIFIC_FOLDER = 'output_specific'
+OUTPUT_COT_FOLDER = 'output_cot'
 OUTPUT_NO_CTX_FOLDER = 'output_no_ctx'
 
 if not os.path.exists(OUTPUT_SPECIFIC_FOLDER):
@@ -165,13 +166,19 @@ if not os.path.exists(OUTPUT_SPECIFIC_FOLDER):
 if not os.path.exists(OUTPUT_NO_CTX_FOLDER):
     os.mkdir(OUTPUT_NO_CTX_FOLDER)
 
-for html_file in os.listdir('html'):
-    full_html_file = f'html/{html_file}'
+for html_file in os.listdir('../other_projects/html'):
+    full_html_file = f'../other_projects/html/{html_file}'
     specific_fixes_file = f'specific/fixes/{html_file}.json'
     if os.path.exists(specific_fixes_file):
         output_specific = get_specific_fixes_for_problems(full_html_file, VIOLATIONS_FILE, specific_fixes_file)
         with open(f'{OUTPUT_SPECIFIC_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
             json.dump(output_specific, f, indent=4)
+
+    cot_fixes_file = f'cot/fixes/{html_file}.json'
+    if os.path.exists(cot_fixes_file):
+        output = get_specific_fixes_for_problems(full_html_file, VIOLATIONS_FILE, cot_fixes_file)
+        with open(f'{OUTPUT_COT_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=4)
     
     no_ctx_fixes_file = f'no_context/fixes/{html_file}.json'
     if os.path.exists(no_ctx_fixes_file):

@@ -1,7 +1,0 @@
-[
-    {
-        "problem_type": "missing_alt_attribute",
-        "offending_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">",
-        "fixed_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">"
-    }
-]

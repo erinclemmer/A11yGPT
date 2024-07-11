@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Rental Service</title>
+    <style>
+        body {
+            background-image: url('background-image.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        section {
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Car Rental Service</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Cars</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <section class="container">
+        <h2>Welcome to our Car Rental Service</h2>
+        <p>Explore our fleet of high-quality cars for your travel needs.</p>
+
+        <form>
+            <label for="pickupLocation">Pickup Location</label>
+            <input type="text" id="pickupLocation" name="pickupLocation" required>
+
+            <label for="dropOffLocation">Drop-off Location</label>
+            <input type="text" id="dropOffLocation" name="dropOffLocation" required>
+
+            <label for="carType"></label>
+            <select id="carType" name="carType">
+                <option value="sedan">Sedan</option>
+                <option value="suv">SUV</option>
+                <option value="convertible">Convertible</option>
+            </select>
+
+            <button type="submit" style="color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);">
+                Search Cars
+            </button>
+        </form>
+
+        <h3>Our Services</h3>
+        <ul>
+            <li>Wide range of cars to choose from</li>
+            <li>Flexible rental options</li>
+            <li>24/7 customer support</li>
+        </ul>
+
+        <h3>Featured Cars</h3>
+        <img src="car1.jpg" alt="Car 1">
+        <p>Description of Car 1.</p>
+
+        <img src="car2.jpg" alt="Car 2">
+        <p>Description of Car 2.</p>
+
+        <h3>Watch Our Video</h3>
+        <video width="640" height="360" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <h4>Form:</h4>
+        <form>
+            <label for="username">Username:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Password:</label><br>
+            <input type="password" id="pwd" name="pwd">      
+    
+            <input type="radio" id="1" name="fav_number" value="1">
+            <input type="radio" id="2" name="fav_number" value="2">
+            <label for="2">2</label><br>
+            <input type="radio" id="3" name="fav_number" value="3">
+            <label for="3">3</label>   
+    
+            <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+            <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+            <label for="vehicle2"></label><br>
+            <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+            <label for="vehicle3"> I have a boat</label>
+    
+            <label for="myfile">Submit file</label>
+            <input type="file" id="myfile" name="myfile">
+    
+            <button type="submit">Submit</button>
+        </form>
+        <h3>End of form</h3>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Car Rental Service. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

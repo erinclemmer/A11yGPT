@@ -1,0 +1,163 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
+                "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1 - ComfortFit T-Shirt\">",
+                "CoT": "To find the accessibility issue of missing `alt` attribute in the `img` tag, follow these steps:\n\n1. Look through all the `img` tags in the HTML code.\n2. Check if each `img` tag has an `alt` attribute.\n3. If any `img` tag is missing the `alt` attribute, note it as the accessibility issue."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element is missing an associated label",
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">",
+                "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">",
+                "CoT": "Let's go through the HTML step by step to identify any accessibility issues related to missing labels or empty labels for input elements or buttons:\n1. Start with the form elements:\n- The input element with id=\"name\" is missing a label. This can be improved for accessibility by adding a <label> element associated with the input field.\n- The input element with id=\"email\" is missing a corresponding label. This can be improved by adding a <label> element with \"for\" attribute pointing to the input field.\n- The textarea element with id=\"message\" is missing a label. This can also be improved by adding a <label> element associated with the textarea field.\n\nAfter reviewing the form elements, we have identified that the input elements and textarea in the form are missing associated label elements, which can negatively impact accessibility for users relying on assistive technologies."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element should avoid automatically playing audio",
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"video-container\" controls><source src=\"your_video.mp4\" type=\"video/mp4\">Your browser does not support the video tag.</video>",
+                "CoT": "To identify the issue related to automatically playing audio or video, we need to look for any `<video>` or `<audio>` elements in the HTML code that have autoplay attributes or any JavaScript functions that trigger the playing of audio or video without user interaction. \n\nLet's check the code for any `<video>` or `<audio>` elements with autoplay attributes first."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "<b>, <i> or <font> tag should not be used",
+                "offending_line": "",
+                "fixed_line": "",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Check if any of these tags are used for styling or emphasis purposes.\n3. If any of these tags are found, determine if they can be replaced with more semantic and accessible tags such as `<strong>`, `<em>`, or CSS styling.\n4. Update the code accordingly to improve accessibility."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event",
+                "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\" onkeydown=\"if(event.key === 'Enter') { addToCart('ComfortFitTShirt'); }\">Add to Cart</button>",
+                "CoT": "First, let's identify all the elements that have mouse events (`onmousedown`, `onmouseout`, `onclick`) in the HTML code:\n- The \"Add to Cart\" buttons for Product 1 and Product 2 have `onmousedown` and `onclick` events respectively.\n- The `onmouseout` event is on the `<section>` tag with id `video-container`.\n\nNext, we need to check if these mouse events have corresponding keyboard events (`onkeydown`) or if the functionality provided can be accessed using the keyboard alone.\n\nLet's start with the \"Add to Cart\" buttons:\n1. The \"Add to Cart\" buttons for Product 1 and Product 2 have functionality triggered by both mouse events (`onmousedown` and `onclick`). These buttons trigger the `addToCart()` function.\n2. The `onmousedown` event is not essential for functionality in this context, as the `onclick` event would suffice for triggering the `addToCart()` function. However, it would be more accessible if the functionality could also be triggered using the keyboard.\n\nFor keyboard accessibility, we could add `onkeydown` events to the \"Add to Cart\" buttons that allow users to trigger the same functionality using the keyboard.\n\nNow, let's move on to the `onmouseout` event on the `<section>` tag with id `video-container`:\n1. The `onmouseout` event on the `<section>` tag with id `video-container` triggers the `PauseVideo()` function. This event is not keyboard accessible since it relies on mouse movements.\n\nTo make this event accessible to keyboard users, we could consider adding an `onkeydown` event that provides a key or key combination to perform the same action as pausing the video.\n\nIn summary, the identified accessability issue is:\n- The use of `onmousedown` event without corresponding `onkeydown` event for keyboard accessibility on the \"Add to Cart\" buttons.\n- The `onmouseout` event without an alternative keyboard event for the video pausing functionality in the `<section>` tag with id `video-container`."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <marquee> element",
+                "offending_line": "<marquee>Your go-to destination for quality products.</marquee>",
+                "fixed_line": "<p>Your go-to destination for quality products.</p>",
+                "CoT": "To find the issue of using the `<marquee>` element, we need to carefully review the HTML code provided:\n\n1. Search through the entire HTML document for the `<marquee>` element. \n2. Check whether any part of the website content or functionality is dependent on the `<marquee>` element.\n3. Once located, identify an alternative method to achieve the same effect or remove the `<marquee>` element if it is not essential.\n\nLet's start by searching the entire HTML document for the `<marquee>` element."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Title element is empty",
+                "offending_line": "<title>Calvin Kelvin Products</title>",
+                "fixed_line": "<title>Calvin Kelvin Products - Quality Products</title>",
+                "CoT": "Sure, let's approach this step by step:\n\n1. Identify the title element in the HTML code.\n2. Check if the title element is empty or missing content.\n3. If the title element is empty, it violates accessibility standards as the title provides context for the webpage.\n\nLet's start by locating the title element in the HTML code."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "anchor element contains no text",
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link Text Here</a>",
+                "CoT": "Alright. To identify if an anchor element contains no text:\n1. Look for all anchor `<a>` elements in the HTML code.\n2. Check if any of the anchor elements do not contain any text between the opening and closing tags.\n3. If you find an anchor element without any text inside, then that would be the accessability issue.\n\nLet's start by looking for anchor elements and checking if they contain any text."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "document language not identified or incorrect",
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "To identify the issue of \"document language not identified or incorrect\", we need to ensure that the language of the document is properly identified in the HTML. We can do this by checking the <html> tag for the \"lang\" attribute.\n\nHere's a step-by-step guide to finding and fixing the issue:\n\n1. Look for the <html> tag in the provided HTML document.\n\n2. Check if the \"lang\" attribute is correctly set to a language code. In this case, it should be set to \"en\" for English.\n\n3. If the \"lang\" attribute is missing or set to an incorrect language code, update it to \"en\" to indicate that the document is in English.\n\n4. After updating the language attribute, save the changes to the HTML document.\n\n5. Run a validation tool such as the W3C Markup Validation Service to ensure that the document language is correctly identified.\n\nBy following these steps, you can ensure that the document language is properly identified in the HTML code."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<label for=\"email\">Email:</label>",
+                "fixed_line": " <label for=\"email\">Email:</label>",
+                "CoT": "Sure, to find the issue of an input element having more than one associated label, we need to:\n\n1. Identify all the input elements in the HTML.\n2. Check the associated label(s) for each input element.\n3. Note any input element that has more than one associated label.\n\nLet's start by identifying all the input elements in the HTML code provided. I will list them below:\n- Input element for \"name\" with id \"name\"\n- Input element for \"email\" with id \"email\"\n- Input element for \"message\" with id \"message\"\n\nNext, we will check the associated labels for each input element. The labels are associated with the input elements through the \"for\" attribute in the label tag.\n\nI will now check the associated label(s) for each input element:\n- Input element with id \"name\" is associated with no label\n- Input element with id \"email\" is associated with two labels with the \"for\" attribute pointing to \"email\"\n\nBased on the check, the input element for \"email\" has more than one associated label, which is an accessibility issue. The \"for\" attribute in a label should be unique and correspond to only one input element."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Element does not have complete start and end tags",
+                "offending_line": "<div id=\"video-container\">",
+                "fixed_line": "<div id=\"video-container\"></div>",
+                "CoT": "Step 1: Identify elements that do not have complete start and end tags.\nStep 2: Check if all elements have unique id attributes.\nStep 3: Confirm if there are any elements with duplicate id attributes.\nStep 4: Resolve the identified issues."
+            }
+        ]
+    }
+]

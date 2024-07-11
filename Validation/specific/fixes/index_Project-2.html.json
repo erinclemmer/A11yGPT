@@ -1,0 +1,196 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "Alt attribute is missing in img tag",
+                "offending_line": "<img src=\"book-cover.jpg\" />",
+                "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element or button is missing an associated label",
+                "offending_line": "<button>Apply Filters</button>",
+                "fixed_line": "<label for='filter'>Filter By:</label><button id='filter'>Apply Filters</button>"
+            },
+            {
+                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "offending_line": "<button>Read More</button>",
+                "fixed_line": "<button aria-label='Read More'>Read More</button>"
+            },
+            {
+                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<label for=\"description\">Description:</label><font size=\"5\" id=\"description\">Description of the book...</font>"
+            },
+            {
+                "problem_type": "Input element is missing an associated label",
+                "offending_line": "<input\n        type=\"text\"\n        id=\"search\"\n        placeholder=\"Search...\"\n        aria-label=\"Search\"\n      />",
+                "fixed_line": "<label for=\"search\">Search:</label>\n      <input\n        type=\"text\"\n        id=\"search\"\n        placeholder=\"Search...\"\n        aria-label=\"Search\"\n      />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element should avoid automatically playing audio",
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <font> tag",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: large;\">Description of the book...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: 1.25em;\">Description of the book...</p>"
+            },
+            {
+                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+                "offending_line": "<button>Apply Filters</button>",
+                "fixed_line": "<button onclick='applyFilters()' onkeydown='applyFilters()'>Apply Filters</button>"
+            },
+            {
+                "problem_type": "onmousedown event missing onkeydown event",
+                "offending_line": "<button>Read More</button>",
+                "fixed_line": "<button onmousedown='this.blur()' onkeydown='if(event.key === \"Enter\"){ this.click(); }'>Read More</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Meta refresh with a time-out used",
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=redirect.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=redirect.html\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <font> tag",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: 1.2em;\">Description of the book...</p>"
+            },
+            {
+                "problem_type": "Marquee Element Usage",
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "problem_type": "Do not use <marquee> element",
+                "offending_line": "<marquee>Discover Our Bookstore</marquee>",
+                "fixed_line": "<h2><b>Discover Our Bookstore</b></h2>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore - Online Bookstore</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\"><span aria-hidden=\"true\">Home</span><span class=\"sr-only\">Navigate to Home</span></a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Document language not identified or incorrect",
+                "offending_line": "<html lang=en>",
+                "fixed_line": "<html lang='en'>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": [
+                    "<label for=\"name\">Your Name:</label>",
+                    "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+                ]
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Element does not have a complete start and end tag",
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p><font size=\"5\">Description of the book...</font></p>"
+            }
+        ]
+    }
+]

@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "missing alt attribute",
+        "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+        "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Image of Food Item 1\">"
+    },
+    {
+        "problem_type": "font_element_used",
+        "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+        "fixed_line": "<p style=\"font-size: 1.5em;\">Delicious food just for you!</p>"
+    }
+]

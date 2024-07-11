@@ -1,0 +1,173 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "<img src=\"song1.jpg\" alt=\"Song 1\">",
+                "fixed_line": "<img src=\"song1.jpg\" alt=\"Song 1\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element or button is missing an associated label",
+                "offending_line": "<button class=\"play-btn\"></button>",
+                "fixed_line": "<button class=\"play-btn\">Play Song 1</button>"
+            },
+            {
+                "problem_type": "Input element is missing an associated label",
+                "offending_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+                "fixed_line": "<label for=\"playlist-name\">Playlist Name:</label>\n<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element should avoid automatically playing audio",
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <b> tag",
+                "offending_line": "<b>Artist Name</b>",
+                "fixed_line": "<strong>Artist Name</strong>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+                "offending_line": "<button class=\"play-btn\"></button>",
+                "fixed_line": "<button class=\"play-btn\" onmousedown=\"playMusic()\" onkeydown=\"playMusic()\"></button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Meta refresh with a time-out is used",
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=redirect.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=redirect.html\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <marquee> element",
+                "offending_line": "<marquee>Browse Music</marquee>",
+                "fixed_line": "<h3>Browse Music</h3>"
+            },
+            {
+                "problem_type": "Using <marquee> element",
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='error'>Using the <marquee> element is not recommended for accessibility. Please find an alternative method for creating moving text.</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title>Music Player</title>",
+                "fixed_line": "<title>Music Player - Enjoy Your Favorite Music</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<a href=\"#browse\" class=\"btn\">Browse Music</a>",
+                "fixed_line": "<a href=\"#browse\" class=\"btn\">Browse Music <span class=\"sr-only\">Link to Browse Music Section</span></a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Document language not identified or incorrect",
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+                "fixed_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" aria-labelledby=\"playlist-label\" required>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "element does not have complete start and end tags or id attribute is not unique",
+                "offending_line": "<button class=\"play-btn\"></button>",
+                "fixed_line": "<button class=\"play-btn\">Play</button>"
+            },
+            {
+                "problem_type": "Element does not have complete start and end tags",
+                "offending_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+                "fixed_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required />"
+            }
+        ]
+    }
+]

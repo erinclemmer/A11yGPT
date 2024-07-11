@@ -43,6 +43,6 @@ def unzip_and_collect_index(source_folder, destination_folder):
     print("All ZIP files have been processed.")
 
 # Example usage
-source_folder = 'Second Round'
+source_folder = 'Projects'
 destination_folder = 'html'
 unzip_and_collect_index(source_folder, destination_folder)

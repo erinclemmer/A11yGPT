@@ -1,0 +1,8 @@
+You will return the line that has a problem, say what the problem is, and generate html that will fix the problem.
+You will only return valid JSON according to this schema:
+{
+	"problem_type": "", // Short description
+	"offending_line": "", // one or more lines with the problem
+	"fixed_line": "" // Fixed line or lines
+}
+If no error is found write "NONE" in the problem type property.

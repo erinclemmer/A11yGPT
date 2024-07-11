@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Browse</a></li>
+            <li><a href="#">Playlists</a></li>
+            <li><a href="#">Favorites</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header Section with Background Image -->
+    <header class="header-bg">
+        <h1>Discover and Enjoy Your Favorite Music</h1>
+        <p>Listen to the latest tracks and create your own playlists</p>
+        <a href="#browse" class="btn">Browse Music</a>
+    </header>
+
+    <!-- Browse Music Section -->
+    <section id="browse">
+        <h3>Browse Music</h3>
+        <!-- Add music cards with images, artist names, and play buttons -->
+        <div class="music-card">
+            <img src="song1.jpg" alt="Song 1">
+            <h2>Song 1</h2>
+            <p><b>Artist Name</b></p>
+            <button class="play-btn"></button>
+        </div>
+
+        <!-- Add more music cards here -->
+
+    </section>
+
+    <!-- Video Section -->
+    <section id="video">
+        <h2>Watch Music Videos</h2>
+        <video autoplay>
+            <source src="music-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Create Playlist Section -->
+    <section id="create-playlist">
+        <h2>Create Your Playlist</h2>
+        <form>
+            <input type="text" id="playlist-name" name="playlist-name" required>
+
+            <label for="song-list">Song List:</label>
+            <textarea id="song-list" name="song-list" rows="4" required></textarea>
+
+            <button type="submit" class="btn">Create Playlist</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Music Player</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

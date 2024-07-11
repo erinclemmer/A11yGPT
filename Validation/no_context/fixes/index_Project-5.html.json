@@ -1,0 +1,7 @@
+[
+    {
+        "problem_type": "Alt text missing for images",
+        "offending_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
+        "fixed_line": "<img src=\"product1.jpg\" alt=\"ComfortFit T-Shirt\">"
+    }
+]

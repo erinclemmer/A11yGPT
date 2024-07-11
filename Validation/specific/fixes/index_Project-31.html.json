@@ -1,0 +1,173 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<input type=\"number\" alt=\"Quantity of Tickets\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "input element is missing an associated label",
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<label for=\"quantity\">Number of Tickets:</label>\n<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+            },
+            {
+                "problem_type": "input element or button is missing an associated label or its label is empty",
+                "offending_line": "<select id=\"event\" name=\"event\">",
+                "fixed_line": "<label for=\"event\">Event Type:</label>\n<select id=\"event\" name=\"event\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio autoplay",
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header>\n    <h1>Ticket Booking System</h1>\n  </header>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <font> tag",
+                "offending_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">",
+                "fixed_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\"><font>"
+            },
+            {
+                "problem_type": "Font tag used for styling",
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header><h1>Ticket Booking System</h1></header>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+                "offending_line": "<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "fixed_line": "<button type=\"button\" onclick=\"submitForm()\" onkeydown=\"if(event.key === 'Enter'){ submitForm(); }\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Meta refresh with a time-out is used.",
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=http://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=http://www.example.com\">"
+            },
+            {
+                "problem_type": "Meta refresh with a time-out is used",
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header>Ticket Booking System</header>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <marquee> element",
+                "offending_line": "    <marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header>Ticket Booking System</header>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Title element is empty",
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Ticket Booking System</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Document language not identified",
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "input element has more than one associated label",
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required aria-labelledby=\"quantity-label\">"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Element does not have complete start and end tags",
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Event:</label>"
+            }
+        ]
+    }
+]

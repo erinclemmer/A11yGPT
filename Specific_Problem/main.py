@@ -30,7 +30,6 @@ def get_fix(html: str, wcga_error: WCGAError):
 	chat.add_message("assistant", "Ok")
 	chat.add_message("user", f"This is the type of problem: {wcga_error.success_criteria}")
 	chat.add_message("assistant", "Ok")
-	# return json.loads(chat.send(f"Here is an example of the error: {wcga_error.error_example}\n\nAnd here is an example of that error fixed: {wcga_error.fixed_example}"))
 	return json.loads(chat.send(f"Find the problem"))
 
 def get_fixes_for_error(html: str, wcga_error: WCGAError) -> List[GptFix]:

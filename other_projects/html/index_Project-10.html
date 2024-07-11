@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Your Website</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            color: #333; /* Set default text color for better contrast */
+        }
+
+        h1 {
+            color: white;
+            background-color: #333; /* Updated background color for better contrast */
+            padding: 10px; /* Added padding for better visual appearance */
+        }
+
+        p {
+            color: #333; /* Set paragraph text color for better contrast */
+        }
+
+        button {
+            color: white;
+            background-color: #007BFF; /* Updated background color for better contrast */
+            padding: 8px 16px; /* Added padding for better visual appearance */
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker color on hover for better contrast */
+        }
+
+        /* Add any additional styles as needed */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services"></a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h1>Welcome to Your Website</h1>
+        <p>This is a simple and functional website template.</p>
+        <button onmousedown="playVideo()">Play Video</button>
+    </section>
+
+    <section id="about">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>Service 1</li>
+            <li>Service 2</li>
+            <li>Service 3</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </section>
+
+    <meta http-equiv="refresh" content="0">
+
+    <footer>
+        <p>&copy; 2023 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

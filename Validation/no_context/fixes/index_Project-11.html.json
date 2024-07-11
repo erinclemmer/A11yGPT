@@ -1,0 +1,7 @@
+[
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"anime-search\"></label>",
+        "fixed_line": "<label for=\"anime-search\">Search Anime:</label>"
+    }
+]

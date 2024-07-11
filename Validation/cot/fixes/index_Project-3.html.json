@@ -1,0 +1,163 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "No offending line provided. Please add an img tag without alt attribute.",
+                "fixed_line": "<img src='image.jpg' alt='Description of the image'>",
+                "CoT": "1. Look for `<img>` tags or `<iframe>` tags in the HTML code.\n2. Check if each `<img>` tag and `<iframe>` tag has an `alt` attribute.\n3. If any `<img>` tag or `<iframe>` tag is missing the `alt` attribute, flag it as an accessibility issue."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "First, let's identify all input elements and buttons on the page. We have the following:\n\n- input type=\"text\" (username)\n- input type=\"password\" (password)\n- input type=\"radio\" (choices 1, 2, 3)\n- input type=\"checkbox\" (vehicle options)\n- input type=\"file\" (file selection)\n- button type=\"submit\" (Submit button)\n- button (Add to Cart buttons)\n\nNext, let's look for any associated labels for these elements:\n- The input for username has a corresponding label with the text \"Username\"\n- The input for password is missing the actual label text\n- The radio buttons and checkboxes have labels associated with each option\n- The file input has a label \"Select a file\"\n- The Submit button does not have an associated label\n\nWe can see that one issue remains: The input for password is missing the actual label text. Having a label helps screen readers assist users in understanding the purpose of the input field. To fix this, we need to add the label text back into the code, like this:\n\n```html\n<label for=\"password\">Password:</label><br>\n<input type=\"password\" id=\"pwd\" name=\"pwd\">\n```"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element automatically plays audio with autoplay attribute",
+                "offending_line": "<input type='radio' id='1' name='fav_number' value='1'>",
+                "fixed_line": "<input type='radio' id='1' name='fav_number' value='1' autoplay='false'>",
+                "CoT": "1. Locate any audio or video elements in the HTML code.\n2. Check if they have the `autoplay` attribute set.\n3. If the `autoplay` attribute is present, remove it to prevent the audio or video from playing automatically."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Font formatting tag used",
+                "offending_line": "                    <td><b>Apples</b></td>",
+                "fixed_line": "                    <td><strong>Apples</strong></td>",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. If any of these tags are found, they should be replaced with appropriate semantic HTML elements or CSS styles.\n3. Make sure that any formatting or styling previously applied using these tags is preserved through CSS.\n4. Consider using `<strong>` for emphasizing text, `<em>` for italicized text, and CSS for custom font styles."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event",
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick='addToCart()' onkeydown='addToCart()'>Add to Cart</button>",
+                "CoT": "Step 1: Identify elements that have interactive behavior or require user input.\nStep 2: Check if these elements have event handlers attached to them.\nStep 3: Determine if these event handlers are only mouse-based (like onmousedown) and not keyboard accessible (like onkeydown)."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <marquee> element",
+                "offending_line": "<marquee> elements are used for scrolling text or images, but they are considered outdated and can be distracting or disorienting for some users, especially those with cognitive or visual impairments.",
+                "fixed_line": "<marquee> elements should be avoided in modern web development for accessibility reasons. Instead, consider using CSS animations or other modern techniques to achieve similar effects without causing accessibility issues.",
+                "CoT": "Sure, to find the issue of using the `<marquee>` element, we need to:\n\n1. Understand what the `<marquee>` element does.\n2. Identify if the `<marquee>` element is present in the provided HTML.\n3. Determine if its usage poses an accessibility issue based on the rule given."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Grocery Store</title>",
+                "CoT": "Sure! To find the issue with the empty title element, I will follow these steps:\n\n1. Locate the `<title></title>` element in the HTML.\n2. Check if the `<title>` element is empty.\n3. If the `<title>` element is empty, then it is the accessibility issue that needs to be fixed.\n\nLet me now go ahead and locate the `<title>` element in the provided HTML."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Text Here</a>",
+                "CoT": "Sure, I will follow these steps to find and fix the issue:\n1. Identify all anchor elements `<a>` in the HTML.\n2. Check if any of the anchor elements are empty or missing text content.\n3. Add appropriate text content to any anchor element that is missing text.\n4. Validate the changes to ensure each anchor element contains meaningful text content for accessibility."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "document language not identified or incorrect",
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "First, let's check if the document language is identified correctly.\n\nLook for the \"lang\" attribute in the opening <html> tag. It should specify the language of the document."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n<label for=\"1\">1</label><br>\n<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>",
+                "CoT": "To find input elements that have more than one associated label, we need to:\n1. Identify all the input elements in the form.\n2. Check if each input element has one or more associated `<label>` elements.\n3. If an input element has more than one associated `<label>` element, then that is the accessibility issue we need to address."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Element does not have complete start and end tags",
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "Let's start by ensuring that all elements have complete start and end tags. We will also check if each id attribute is unique. This will help improve the accessibility and functionality of the website. Let's begin by looking at the HTML code."
+            }
+        ]
+    }
+]

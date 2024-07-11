@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "missing label for password input field",
+        "offending_line": "<label for=\"password\"></label><br>",
+        "fixed_line": "<label for=\"password\">Password:</label><br>"
+    },
+    {
+        "problem_type": "image_alt_text",
+        "offending_line": "<img>",
+        "fixed_line": "<img src='background-image.jpg' alt='Background image'>"
+    }
+]

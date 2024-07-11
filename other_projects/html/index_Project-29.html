@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Indian Cuisine Restaurant</title>
+  <style>
+    /* CSS Styles */
+    /* Add your CSS styles for layout, design, and responsiveness here */
+  </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header with Background Image -->
+  <header>
+    <marquee>Welcome to our Indian Cuisine Restaurant</marquee>
+    <p>Enjoy authentic flavors of India</p>
+  </header>
+
+  <!-- Search Field -->
+  <form>
+    <label for="search">Search: </label>
+    <input type="text" id="search" placeholder="Search">
+  </form>
+
+  <!-- Sorting Filters -->
+  <label for="sort"></label>
+  <select id="sort">
+    <option value="price">Sort by Price</option>
+    <option value="name">Sort by Name</option>
+  </select>
+
+  <!-- Menu Items -->
+  <div class="menu">
+    <div class="item">
+      <img src="chicken_biryani.jpg" alt="Chicken Biryani">
+      <h2>Chicken Biryani</h2>
+      <p>Description of Chicken Biryani.</p>
+      <p><i>Price: $10</i></p>
+      <button>Add to Cart</button>
+    </div>
+    
+    <div class="item">
+      <img src="butter_chicken.jpg" alt="Butter Chicken">
+      <h2>Butter Chicken</h2>
+      <p>Description of Butter Chicken.</p>
+      <p>Price: $12</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="item">
+      <img src="butter_naan.jpg" alt="Butter Naan">
+      <h2>Butter Naan</h2>
+      <p>Description of Butter Naan.</p>
+      <p>Price: $3</p>
+      <button>Add to Cart</button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>Contact us at: example@email.com</p>
+    <p>Follow us on social media</p>
+    <!-- Add social media icons or links here -->
+    <form>
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password:</label><br>
+      <input type="password" id="pwd" name="pwd">      
+
+      <input type="radio" id="1" name="fav_number" value="1">
+      <label for="1">1</label><br>
+      <input type="radio" id="2" name="fav_number" value="2">
+      <label for="2">2</label><br>
+      <input type="radio" id="3" name="fav_number" value="3">
+      <label for="3">3</label>   
+
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+      <label for="vehicle2"> I have a car</label><br>
+      <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
+      <label for="vehicle3"> I have a boat</label>
+
+      <label for="myfile"></label>
+      <input type="file" id="myfile" name="myfile">
+
+      <button type="submit">Submit</button>
+  </form>
+  </footer>
+
+  <!-- JavaScript for interactivity -->
+  <script>
+    // Add JavaScript functionality here if needed
+  </script>
+</body>
+</html>
