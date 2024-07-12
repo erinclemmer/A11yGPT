@@ -7,9 +7,9 @@
         "error_fixes": [
             {
                 "problem_type": "alt attribute is missing in img tag",
-                "offending_line": "<img src='background.jpg'>",
-                "fixed_line": "<img src='background.jpg' alt='Background Image'>",
-                "CoT": "Let's start by searching for `<img>` or `<iframe>` tags in the HTML code since these are the elements that may require the `alt` attribute."
+                "offending_line": "<img src='logo.png' class='icon'>",
+                "fixed_line": "<img src='logo.png' class='icon' alt='Logo'>",
+                "CoT": "Let's first scan the HTML for any `<img>` tags to ensure they have the `alt` attribute. Let's look for any `<img>` tags."
             }
         ]
     },
@@ -20,10 +20,10 @@
         "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
         "error_fixes": [
             {
-                "problem_type": "input element or button is missing an associated label",
+                "problem_type": "Input element or button is missing an associated label",
                 "offending_line": "<label for=\"password\"></label><br>",
-                "fixed_line": "    <label for=\"password\">Password:</label><br>",
-                "CoT": "Step 1: Identify input elements and buttons that should have associated labels\nStep 2: Check if the labels for those input elements and buttons are properly defined\nStep 3: Ensure that the labels are not empty\nStep 4: Make sure that the labels are properly associated with the corresponding input elements and buttons"
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "1. Look for input elements and buttons in the HTML code.\n2. Check if each input element has a corresponding label using the \"for\" attribute that matches the input's \"id\" attribute.\n3. Verify that buttons have visible and meaningful text inside them, and if not, ensure they have an accessible name using the \"aria-label\" attribute.\n4. If there are input elements or buttons with an \"alt\" attribute, ensure that it is not used in place of a label, as the \"alt\" attribute is specifically for images and should not be used as a substitute for labeling interactive elements."
             }
         ]
     },
@@ -35,9 +35,9 @@
         "error_fixes": [
             {
                 "problem_type": "Audio or video element should avoid automatically playing audio",
-                "offending_line": "<audio autoplay src='background-music.mp3'></audio>",
-                "fixed_line": "<audio controls src='background-music.mp3'></audio>",
-                "CoT": "1. Look for any `<audio>` or `<video>` elements in the HTML code.\n2. Check if any of these elements have the `autoplay` attribute set.\n3. If there is an `autoplay` attribute present, consider whether the audio or video content automatically playing could be disruptive for some users.\n4. If the autoplay behavior could be disruptive, suggest removing the `autoplay` attribute or adding controls for users to play the media manually."
+                "offending_line": "<audio controls autoplay><source src='audio.mp3' type='audio/mpeg'></audio>",
+                "fixed_line": "<audio controls><source src='audio.mp3' type='audio/mpeg'></audio>",
+                "CoT": "Step 1: Look for audio or video elements in the HTML code.\nStep 2: Check if any of these elements have the `autoplay` attribute set.\nStep 3: If `autoplay` attribute is found, consider if it's necessary for accessibility or if it could potentially cause issues such as automatically playing audio."
             }
         ]
     },
@@ -48,10 +48,10 @@
         "fixed_example": "<p>Description of the book...</p>",
         "error_fixes": [
             {
-                "problem_type": "Use of <b> tag",
-                "offending_line": "<h1>Resume Maker</h1>",
-                "fixed_line": "<h1><strong>Resume Maker</strong></h1>",
-                "CoT": "Sure, let's start by looking through the HTML code provided and identifying any instances where the `<b>`, `<i>`, or `<font>` tags are used. We should replace these tags with appropriate semantic HTML elements or CSS styling to improve accessibility."
+                "problem_type": "Font tag used for styling",
+                "offending_line": "<font color='#333'>",
+                "fixed_line": "Consider using CSS for styling instead of the <font> tag.",
+                "CoT": "To find and fix the issue of using the `<b>`, `<i>`, or `<font>` tags, we need to follow these steps:\n\n1. Identify any `<b>`, `<i>`, or `<font>` tags in the HTML code.\n2. Replace them with semantic HTML elements or use CSS for styling.\n\nLet's go through the HTML code and identify any usage of `<b>`, `<i>`, or `<font>` tags."
             }
         ]
     },
@@ -62,10 +62,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "onmousedown event missing onkeydown event",
-                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
-                "fixed_line": "<a onmouseover=\"sample()\" onkeydown=\"sample()\" href=\"#\">Home</a>",
-                "CoT": "Step 1: Identify interactive elements that are missing keyboard accessibility, such as buttons or links that don't have keyboard event handlers.\nStep 2: Look for elements that have mouse-specific events like onmouseover, onmousedown, etc., but lack equivalent keyboard events like onkeydown, onkeypress, etc.\nStep 3: Check if there are any scripts used for interactions that are not keyboard accessible.\nStep 4: Ensure that all interactive elements can be accessed and activated using the keyboard alone."
+                "problem_type": "onkeydown event missing for onclick event on button",
+                "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "fixed_line": "<button onclick=\"generateResume()\" onkeydown=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "CoT": "1. Look for elements with event handlers: Check for elements with event handlers that are related to user interaction, such as onclick, onmouseover, etc. In this case, we have `onclick` event handler for the \"Generate Resume\" button and `onmouseover` event handler for one of the navigation links.\n\n2. Review the event handlers for keyboard accessibility: Check if the event handlers have an equivalent keyboard event for accessibility. In this case, we need to look for `onkeydown` event for the `onclick` and `onmouseover` event handlers found in the code.\n\n3. Ensure keyboard accessibility: Add appropriate keyboard event handlers (`onkeydown`) alongside the existing event handlers to ensure keyboard accessibility for users who navigate the website using a keyboard.\n\nLet's apply these steps to the given HTML code."
             }
         ]
     },
@@ -83,10 +83,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "marquee element used",
+                "problem_type": "Marquee element used",
                 "offending_line": "<marquee> element should not be used.",
-                "fixed_line": "<!-- <marquee> element is not accessible and should not be used. -->",
-                "CoT": "First, I will look through the HTML code to find any instances of the `<marquee>` element. I will search for any `<marquee>` tags or attributes in the code provided. Let me look for those."
+                "fixed_line": "NONE",
+                "CoT": "Let's start by reviewing the provided HTML code to identify any <marquee> elements being used. We will use a step-by-step approach to find and address the issue:\n\n1. Check the entire HTML code for any occurrence of the <marquee> tag.\n2. If any <marquee> tag is found, determine where it is used and how it affects accessibility.\n3. If a <marquee> tag is used, provide an alternative solution that does not rely on this outdated and inaccessible element."
             }
         ]
     },
@@ -97,10 +97,10 @@
         "fixed_example": "<title>Beauty Products Store</title>",
         "error_fixes": [
             {
-                "problem_type": "Empty Title Element",
+                "problem_type": "Empty title element",
                 "offending_line": "<title>Resume Maker</title>",
-                "fixed_line": "<title>Resume Maker - Your Online Resume Builder</title>",
-                "CoT": "Sure, let's go step by step to find the issues:\n\n1. Check the `title` element in the `head` section to see if it is empty or missing a descriptive title."
+                "fixed_line": "<title>Resume Maker - Create Your Resume</title>",
+                "CoT": "Sure, let's go through the steps to find the issue:\n\n1. Identify the `<title>` element in the HTML code.\n2. Check if the `<title>` element has any text content within it.\n3. If the `<title>` element is empty, then we have identified the accessibility issue related to the title element."
             }
         ]
     },
@@ -114,7 +114,7 @@
                 "problem_type": "Anchor element contains no text",
                 "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
                 "fixed_line": "<a onmouseover=\"sample()\" href=\"#\"><span>Home</span></a>",
-                "CoT": "Sure, let's go step by step to identify where the anchor element contains no text:\n\n1. Look for anchor elements in the HTML code - `<a></a>`\n2. Check if any of the anchor elements have no text content between the opening and closing tags\n3. Mark any anchor element that does not have any visible text content\n\nLet's start by looking for anchor elements in the HTML code."
+                "CoT": "First, I will look for anchor elements (<a>) in the HTML code. Then, I will check if any of these anchor elements do not have text content within them. If I find any anchor element without text content, I will identify it as an accessibility issue related to the anchor element containing no text."
             }
         ]
     },
@@ -125,10 +125,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "document language not identified or incorrect",
+                "problem_type": "Document language not identified or incorrect",
                 "offending_line": "<html lang=\"ex\">",
                 "fixed_line": "<html lang=\"en\">",
-                "CoT": "Step 1: Identify where the language of the document is specified in the HTML. \nStep 2: Verify if the language attribute is set correctly.\nStep 3: If the language attribute is not set or set incorrectly, update it to the correct value.\nStep 4: Test the updated HTML for correctness in identifying the document language."
+                "CoT": "To find the issue of \"document language not identified or incorrect\", we need to ensure that the HTML document specifies the correct language using the lang attribute in the <html> tag. This is important for screen readers and other assistive technologies to properly interpret the content language.\n\nLet's check the <html> tag in the provided HTML code:\n\n```html\n<html lang=\"ex\">\n```\n\nThe lang attribute is set to \"ex\" which is not a valid language code. The correct language code for English is \"en\".\n\nTo fix this issue, we need to change the lang attribute value to \"en\":\n\n```html\n<html lang=\"en\">\n```\n\nBy making this change, we are correctly identifying the language of the document as English, which will improve accessibility for users who rely on assistive technologies."
             }
         ]
     },
@@ -139,10 +139,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "input element has more than one associated label",
+                "problem_type": "Input element has more than one associated label",
                 "offending_line": "<label for=\"password\"></label><br>",
                 "fixed_line": "<label for=\"password\">Password:</label><br>",
-                "CoT": "1. Look for input elements in the HTML code.\n2. Check if each input element has associated label elements using the \"for\" attribute.\n3. If there are input elements with more than one associated label, then that is the accessibility issue we need to address."
+                "CoT": "Step 1: Identify all input elements in the HTML code.\nStep 2: Check if each input element has associated label elements.\nStep 3: Verify if any input element has more than one associated label.\nStep 4: Flag the input element that has more than one associated label as the accessibility issue."
             }
         ]
     },
@@ -153,10 +153,10 @@
         "fixed_example": "<li><a href=\"#\">Services</a></li>",
         "error_fixes": [
             {
-                "problem_type": "Element does not have a complete end tag",
+                "problem_type": "Incomplete start and end tag",
                 "offending_line": "<label for=\"password\"></label><br>",
                 "fixed_line": "<label for=\"password\">Password:</label><br>",
-                "CoT": "Step 1: Identify elements that do not have complete start and end tags:\n- Look for any elements that are not closed properly, like missing closing tags such as `<label for=\"password\"></label>`.\n  \nStep 2: Check for elements with non-unique id attributes:\n- Look for elements with the same id attribute value, like two elements with id=\"1\" as seen in the radio buttons `<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">`.\n\nStep 3: Make necessary corrections to fix the identified accessibility issues."
+                "CoT": "First, let's focus on the incomplete start and end tags in the HTML code. We need to ensure that each element has a complete start and end tag.\n\nLooking at the code, I can see that there is an issue with the `<label>` element for the password input field. It is missing the content that describes what the label is for. This can be confusing for screen reader users. Let's correct this by adding a description within the `<label>` tag.\n\nNext, let's check for unique id attributes. Each id attribute should be unique within the document.\n\nChecking the id attributes in the code, I can see that the radio buttons have ids \"1\", \"2\", and \"3\". Using numeric values as id attributes is not recommended and can cause confusion or potential conflicts. Let's update these ids to more descriptive and unique values.\n\nLet's proceed with fixing these issues."
             }
         ]
     }

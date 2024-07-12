@@ -8,8 +8,8 @@
             {
                 "problem_type": "alt attribute is missing in img tag",
                 "offending_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\">",
-                "fixed_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\" alt=\"Hospital Video\">",
-                "CoT": "First, we need to search for any `<iframe>` or `<img>` tags in the HTML code. Then, for each `<iframe>` or `<img>` tag found, we will check if it has the `alt` attribute. If the `alt` attribute is missing, we will make a note of that as an accessibility issue.\n\nLet's start by searching for `<iframe>` and `<img>` tags."
+                "fixed_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\" alt=\"Video of our hospital\">",
+                "CoT": "Sure, let's start by going through the HTML step by step to identify any `<img>` or `<iframe>` tags that are missing the `alt` attribute. We will check each of these tags and ensure they have an appropriate `alt` attribute for accessibility purposes. Let's begin."
             }
         ]
     },
@@ -20,10 +20,10 @@
         "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
         "error_fixes": [
             {
-                "problem_type": "input element or button is missing an associated label",
+                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
                 "offending_line": "<label for=\"name\"></label>",
                 "fixed_line": "<label for=\"name\">Name:</label>",
-                "CoT": "Step 1: Identify input elements and buttons on the webpage.\nStep 2: Check if each input element and button has an associated label.\nStep 3: Ensure that the labels are not empty or missing.\nStep 4: Check if the alt attribute is present and relevant for any input elements or buttons.\nStep 5: Highlight any input elements or buttons that do not meet the criteria specified in the accessibility rule."
+                "CoT": "Step 1: Identify all input elements and buttons on the page. \n\nStep 2: Check if each input element or button has an associated label. \n\nStep 3: Check if the label for each input element or button is empty. \n\nStep 4: Check if the input element or button has an alt attribute instead of a label. \n\nLet's start by following these steps."
             }
         ]
     },
@@ -35,9 +35,9 @@
         "error_fixes": [
             {
                 "problem_type": "Audio or video element automatically plays audio",
-                "offending_line": "<video width=\"400\" controls>\n  <source src=\"hospital_video.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>",
-                "fixed_line": "<video width=\"400\" controls autoplay muted>\n  <source src=\"hospital_video.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>",
-                "CoT": "To find the issue related to the audio or video element automatically playing audio, we need to check the video element in the code and ensure that it is not set to automatically play audio when the page loads. \n\n1. Look for the <video> element in the code:\n```html\n<video width=\"400\" controls>\n  <source src=\"hospital_video.mp4\" type=\"video/mp4\">\n  Your browser does not support the video tag.\n</video>\n```\n\n2. Check if the video element has an attribute that automatically plays the audio: The attribute to look for is `autoplay`.\n\n3. Determine if there is an issue: If the `autoplay` attribute is present in the <video> element, this means that the video will automatically play audio when the page loads.\n\nLet's verify if the video element has the `autoplay` attribute set."
+                "offending_line": "<video width=\"400\" controls>\n<source src=\"hospital_video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<video width=\"400\" controls muted>\n<source src=\"hospital_video.mp4\" type=\"video/mp4\">",
+                "CoT": "Step 1: Identify any `<audio>` or `<video>` elements on the webpage.  \nStep 2: Check if the audio or video elements have the `autoplay` attribute that automatically plays the audio or video content.  \nStep 3: If the autoplay attribute is present, consider modifying it to only play the content when the user explicitly chooses to play it."
             }
         ]
     },
@@ -48,10 +48,10 @@
         "fixed_example": "<p>Description of the book...</p>",
         "error_fixes": [
             {
-                "problem_type": "Usage of <b> tag for styling",
-                "offending_line": "<h4>About Us</h4>",
-                "fixed_line": "<h4 style='font-weight: bold;'>About Us</h4>",
-                "CoT": "1. Look through the entire HTML code provided.\n2. Identify any instances where the `<b>`, `<i>`, or `<font>` tags are used.\n3. Verify that these tags are not used for styling purposes.\n4. If any of these tags are used for styling, suggest an alternative method such as CSS for styling.\n5. Provide guidance on how to replace these tags with more appropriate accessibility-friendly methods."
+                "problem_type": "Using <marquee> tag for Header text",
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1>Hospital Management System</h1>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags in the HTML code. Look for any instances where these tags are used to style text.\n\nStep 2: Determine if the text styling done using <b>, <i>, or <font> tags can be replaced with CSS styles. Evaluate if the styling can be achieved using CSS properties like font-weight, font-style, or color.\n\nStep 3: Replace the <b>, <i>, or <font> tags with appropriate CSS styles either by adding classes to the elements or by directly styling them with CSS.\n\nStep 4: Test the updated HTML code to ensure that the text styling is maintained and the accessibility issue of using presentational tags like <b>, <i>, or <font> is resolved."
             }
         ]
     },
@@ -62,10 +62,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
-                "offending_line": "<marquee>Hospital Management System</marquee>",
-                "fixed_line": "<h1>Hospital Management System</h1>",
-                "CoT": "To find the issues of missing `onmousedown` event or script not being keyboard accessible, we need to follow these steps:\n\n1. Identify any interactive elements on the page such as buttons, links, or form elements.\n2. Check if these interactive elements have `onmousedown` events defined on them.\n3. Verify if the `onmousedown` event is essential for the interaction or functionality.\n4. Look for any elements that might rely solely on mouse input without an alternative keyboard accessible method.\n5. Ensure that keyboard users can access all interactive elements and perform the same actions as mouse users.\n\nLet's now go through the HTML code provided to identify any potential issues related to missing `onmousedown` events or lack of keyboard accessibility."
+                "problem_type": "onkeydown event missing on mousedown event",
+                "offending_line": "<video width=\"400\" controls>",
+                "fixed_line": "<video width=\"400\" controls onmousedown=\"this.focus()\" tabindex=\"0\">",
+                "CoT": "To find the issue related to the missing \"onmousedown\" event or \"onkeydown\" event for keyboard accessibility, we need to look for elements that require user interaction like forms, buttons, links, etc., and check if they have appropriate keyboard accessibility features.\n\n1. Start by checking the form elements in the HTML code: \n   - Look at the form fields (input, textarea, button) and see if they have event attributes like \"onmousedown\" or \"onkeydown\" to handle keyboard interactions.\n\n2. Check if there are any interactive elements without keyboard accessibility:\n   - Look for elements that trigger certain actions (like clicking, submitting a form) and ensure they have keyboard alternatives for users who do not use a mouse.\n\n3. Investigate if any JavaScript code is used to handle user interactions:\n   - Look for any JavaScript functions or event listeners that are attached to interactive elements. Check if these functions include keyboard event handling.\n\n4. Verify if the website follows accessibility standards:\n   - Use an accessibility tool (such as WAVE, Axe, or Lighthouse) to scan the website and identify accessibility issues related to keyboard accessibility.\n\nBy following these steps, we can pinpoint any elements or functions that lack proper keyboard accessibility handling on the website. Let's begin the review."
             }
         ]
     },
@@ -76,10 +76,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "Meta refresh with a time-out is used",
+                "problem_type": "Meta refresh with time-out used",
                 "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
-                "fixed_line": "",
-                "CoT": "Step 1: Identify the Issue\nThe issue is that a meta refresh with a time-out is used, which can create accessibility problems for users. \n\nStep 2: Evaluate the Impact\nMeta refresh can interfere with user interaction, such as keyboard navigation or screen reader usage. It can also disrupt users who may need more time to read content due to disabilities or other factors.\n\nStep 3: Suggest a Solution\nInstead of using meta refresh to automatically refresh the page, consider providing a manual option for users to refresh the content. This can be done by including a \"Refresh\" button or link that users can activate when they choose to update the page content.\n\nIn this case, the line `<meta http-equiv=\"refresh\" content=\"0\">` should be removed to improve accessibility and provide a better user experience."
+                "fixed_line": "<!-- Meta refresh removed to improve accessibility -->",
+                "CoT": "Step 1: Identify the issue - \nThe issue is with the use of the meta refresh tag with a time-out, as it can be disruptive and confusing for users who rely on screen readers or keyboard navigation. \n\nStep 2: Analyze the code - \nIn the provided code, there is a meta refresh tag with a content value of \"0\" which triggers an immediate refresh of the page. This can be problematic for users who might not have enough time to read or interact with the content before it refreshes abruptly.\n\nStep 3: Address the issue - \nTo fix this accessibility issue related to the meta refresh tag with a time-out, the meta tag should be removed or adjusted to provide users with enough time to read and interact with the content before any page refresh occurs. Removing the meta refresh tag is the preferable solution to ensure a better user experience for all visitors.\n\nSo, the accessibility issue in the given code is the use of the meta refresh tag with a time-out, and the recommended solution is to remove or adjust the meta refresh tag to improve accessibility for users."
             }
         ]
     },
@@ -90,10 +90,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "Use of <marquee> element",
+                "problem_type": "The <marquee> element should not be used.",
                 "offending_line": "<marquee>Hospital Management System</marquee>",
-                "fixed_line": "<header>Hospital Management System</header>",
-                "CoT": "1. Identify the <marquee> element in the HTML code provided.  \n2. Recognize that using the <marquee> element is an accessibility issue because it can be distracting and disorienting for some users, especially those with visual impairments.  \n3.  Recommend removing the <marquee> element and finding an alternative way to present the content (in this case, the heading \"Hospital Management System\")."
+                "fixed_line": "<h1>Hospital Management System</h1>",
+                "CoT": "Step 1: Identify the <marquee> element in the html code.\n\nStep 2: Understand why the <marquee> element should not be used for accessibility reasons.\n\nStep 3: Provide a solution or alternative to replace the <marquee> element."
             }
         ]
     },
@@ -105,9 +105,9 @@
         "error_fixes": [
             {
                 "problem_type": "Empty title element",
-                "offending_line": "<title></title>",
+                "offending_line": "<title>Hospital Management System</title>",
                 "fixed_line": "<title>Hospital Management System</title>",
-                "CoT": "To find and fix the issue related to the empty title element, we need to do the following:\n\n1. Identify the title element in the HTML code.\n2. Confirm whether the title element is indeed empty.\n3. Provide a meaningful and descriptive title for the website to improve accessibility.\n\nLet's start by examining the title element in the HTML code provided."
+                "CoT": "Step 1: Locate the `<title>` element in the HTML code.\nStep 2: Verify if the `<title>` element is empty or missing the appropriate text.\nStep 3: If the `<title>` element is empty or missing relevant text, then identify it as an accessibility issue related to an empty `<title>` element."
             }
         ]
     },
@@ -118,10 +118,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "Anchor element contains no text",
-                "offending_line": "<a href=\"#home\">Home</a>",
-                "fixed_line": "<a href=\"#home\">Home</a>",
-                "CoT": "Sure, I will go through the steps one by one to find the accessibility issue with the anchor element not containing any text:\n\n1. Identify anchor elements in the HTML code:\n   - In the `<nav>` section, there are several anchor elements used for navigation links.\n\n2. Verify if each anchor element has text content:\n   - Check each `<a>` tag within the `<nav>` section to see if it contains any text between the opening and closing tags.\n\n3. Detect if there are any anchor elements without text content:\n   - Look for any anchor elements that do not have any visible text content between the tags.\n\n4. Determine the impact of anchor elements without text content:\n   - Evaluate the importance of the navigation links and consider how users who rely on screen readers or have visual impairments may be affected by anchor elements without text.\n\nLet me review the HTML code to spot the anchor elements that do not contain any text content."
+                "problem_type": "anchor element contains no text",
+                "offending_line": "<label for=\"name\"></label>",
+                "fixed_line": "<label for=\"name\">Name:</label>",
+                "CoT": "Sure, let's go step by step in finding the issue of \"anchor element contains no text\":\n\n1. Identify all the anchor elements in the HTML.\n2. Check each anchor element to see if it contains any visible text or content.\n3. If an anchor element does not contain any visible text or content, then it violates the rule of \"anchor element contains no text.\"\n\nLet's start by identifying all the anchor elements in the HTML code provided. I will list them out for clarity:\n\n1. `<a href=\"#home\">Home</a>`\n2. `<a href=\"#services\">Services</a>`\n3. `<a href=\"#about\">About Us</a>`\n4. `<a href=\"#contact\">Contact</a>`\n\nNow, let's check each anchor element to see if it contains any visible text or content."
             }
         ]
     },
@@ -134,8 +134,8 @@
             {
                 "problem_type": "document language not identified or incorrect",
                 "offending_line": "<html lang=\"en\">",
-                "fixed_line": "<html lang=\"en-US\">",
-                "CoT": "First, I'll check if the document language is identified correctly by looking at the opening <html> tag and the lang attribute."
+                "fixed_line": "<html lang=\"en\" prefix=\"og: http://ogp.me/ns#\">",
+                "CoT": "To identify and fix the issue of \"document language not identified or incorrect,\" we should follow these steps:\n\n1. Locate the <html> tag in the HTML document.\n2. Check if the \"lang\" attribute is included within the <html> tag.\n3. Ensure that the value of the \"lang\" attribute is set to the appropriate language code (e.g., \"en\" for English).\n4. If the \"lang\" attribute is missing or incorrect, update it to reflect the correct language code."
             }
         ]
     },
@@ -149,7 +149,7 @@
                 "problem_type": "input element has more than one associated label",
                 "offending_line": "<label for=\"name\"></label>",
                 "fixed_line": "<label for=\"name\">Name:</label>",
-                "CoT": "Step 1: Identify all input elements in the form section.\n\nStep 2: Check the labels associated with each input element.\n\nStep 3: Ensure that each input element has only one associated label."
+                "CoT": "Step 1: Identify all the input elements on the page.\nStep 2: Check each input element and look for associated label elements.\nStep 3: Verify if any input element has more than one associated label element."
             }
         ]
     },
@@ -160,10 +160,10 @@
         "fixed_example": "<li><a href=\"#\">Services</a></li>",
         "error_fixes": [
             {
-                "problem_type": "element does not have complete start and end tags",
-                "offending_line": "<label for='name'></label>",
-                "fixed_line": "<label for='name'>Name:</label>",
-                "CoT": "Step 1: Check for incomplete start and end tags.\nStep 2: Check if id attributes are unique for each element."
+                "problem_type": "Element does not have complete start and end tags",
+                "offending_line": "<label for=\"name\"></label>",
+                "fixed_line": "<label for=\"name\">Name:</label>",
+                "CoT": "Sure, let's start by checking for elements that do not have complete start and end tags. We'll also make sure that all id attributes are unique."
             }
         ]
     }

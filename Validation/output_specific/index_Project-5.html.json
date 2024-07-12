@@ -1,0 +1,92 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 61,
+            "problem": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">"
+        },
+        "closest_fix": {
+            "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">",
+            "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 35,
+            "problem": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>"
+        },
+        "closest_fix": {
+            "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+            "fixed_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\" onkeydown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "4.1.1",
+            "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+            "error_example": "<li><a href=\"#\">Services</li>",
+            "fixed_example": "<li><a href=\"#\">Services</a></li>"
+        },
+        "problem": {
+            "guideline": "4.1.1",
+            "line": 51,
+            "problem": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">"
+        },
+        "closest_fix": {
+            "problem_type": "Element does not have complete start and end tags or id attribute is not unique",
+            "offending_line": "<div id=\"video-container\">",
+            "fixed_line": "<div>Video goes here</div>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.3.2",
+            "success_criteria": "input element has more than one associated label",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.3.2",
+            "line": 66,
+            "problem": "<label for=\"email\">Email:</label>"
+        },
+        "closest_fix": {
+            "problem_type": "Input element has more than one associated label",
+            "offending_line": "<label for=\"email\">Email:</label>",
+            "fixed_line": "<label for=\"email\">Email:</label>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 51,
+            "problem": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">"
+        },
+        "closest_fix": {
+            "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+            "fixed_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\" onkeydown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>"
+        }
+    }
+]

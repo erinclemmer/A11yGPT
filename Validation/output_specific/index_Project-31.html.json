@@ -1,0 +1,56 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 81,
+            "problem": "<marquee>Ticket Booking System</marquee>"
+        },
+        "closest_fix": {
+            "problem_type": "Use of <marquee> element",
+            "offending_line": "    <marquee>Ticket Booking System</marquee>",
+            "fixed_line": "<header>Ticket Booking System</header>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "error_example": "<title></title>",
+            "fixed_example": "<title>Beauty Products Store</title>"
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 3,
+            "problem": "<head>"
+        },
+        "closest_fix": {
+            "problem_type": "Title element is empty",
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Ticket Booking System</title>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 104,
+            "problem": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+        },
+        "closest_fix": {
+            "problem_type": "input element is missing an associated label",
+            "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+            "fixed_line": "<label for=\"quantity\">Number of Tickets:</label>\n<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+        }
+    }
+]

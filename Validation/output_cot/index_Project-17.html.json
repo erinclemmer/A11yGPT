@@ -1,0 +1,97 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 113,
+            "problem": "<select id=\"experience\">"
+        },
+        "closest_fix": {
+            "problem_type": "Input element or button is missing an associated label",
+            "offending_line": "<label for=\"password\"></label><br>",
+            "fixed_line": "<label for=\"password\">Password:</label><br>",
+            "CoT": "1. Look for input elements and buttons in the HTML code.\n2. Check if each input element has a corresponding label using the \"for\" attribute that matches the input's \"id\" attribute.\n3. Verify that buttons have visible and meaningful text inside them, and if not, ensure they have an accessible name using the \"aria-label\" attribute.\n4. If there are input elements or buttons with an \"alt\" attribute, ensure that it is not used in place of a label, as the \"alt\" attribute is specifically for images and should not be used as a substitute for labeling interactive elements."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 100,
+            "problem": "<a onmouseover=\"sample()\" href=\"#\">Home</a>"
+        },
+        "closest_fix": {
+            "problem_type": "onkeydown event missing for onclick event on button",
+            "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+            "fixed_line": "<button onclick=\"generateResume()\" onkeydown=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+            "CoT": "1. Look for elements with event handlers: Check for elements with event handlers that are related to user interaction, such as onclick, onmouseover, etc. In this case, we have `onclick` event handler for the \"Generate Resume\" button and `onmouseover` event handler for one of the navigation links.\n\n2. Review the event handlers for keyboard accessibility: Check if the event handlers have an equivalent keyboard event for accessibility. In this case, we need to look for `onkeydown` event for the `onclick` and `onmouseover` event handlers found in the code.\n\n3. Ensure keyboard accessibility: Add appropriate keyboard event handlers (`onkeydown`) alongside the existing event handlers to ensure keyboard accessibility for users who navigate the website using a keyboard.\n\nLet's apply these steps to the given HTML code."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html lang=\"ex\">"
+        },
+        "closest_fix": {
+            "problem_type": "Document language not identified or incorrect",
+            "offending_line": "<html lang=\"ex\">",
+            "fixed_line": "<html lang=\"en\">",
+            "CoT": "To find the issue of \"document language not identified or incorrect\", we need to ensure that the HTML document specifies the correct language using the lang attribute in the <html> tag. This is important for screen readers and other assistive technologies to properly interpret the content language.\n\nLet's check the <html> tag in the provided HTML code:\n\n```html\n<html lang=\"ex\">\n```\n\nThe lang attribute is set to \"ex\" which is not a valid language code. The correct language code for English is \"en\".\n\nTo fix this issue, we need to change the lang attribute value to \"en\":\n\n```html\n<html lang=\"en\">\n```\n\nBy making this change, we are correctly identifying the language of the document as English, which will improve accessibility for users who rely on assistive technologies."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 126,
+            "problem": "<label for=\"password\"></label><br>"
+        },
+        "closest_fix": {
+            "problem_type": "Input element or button is missing an associated label",
+            "offending_line": "<label for=\"password\"></label><br>",
+            "fixed_line": "<label for=\"password\">Password:</label><br>",
+            "CoT": "1. Look for input elements and buttons in the HTML code.\n2. Check if each input element has a corresponding label using the \"for\" attribute that matches the input's \"id\" attribute.\n3. Verify that buttons have visible and meaningful text inside them, and if not, ensure they have an accessible name using the \"aria-label\" attribute.\n4. If there are input elements or buttons with an \"alt\" attribute, ensure that it is not used in place of a label, as the \"alt\" attribute is specifically for images and should not be used as a substitute for labeling interactive elements."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 143,
+            "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "closest_fix": {
+            "problem_type": "Input element or button is missing an associated label",
+            "offending_line": "<label for=\"password\"></label><br>",
+            "fixed_line": "<label for=\"password\">Password:</label><br>",
+            "CoT": "1. Look for input elements and buttons in the HTML code.\n2. Check if each input element has a corresponding label using the \"for\" attribute that matches the input's \"id\" attribute.\n3. Verify that buttons have visible and meaningful text inside them, and if not, ensure they have an accessible name using the \"aria-label\" attribute.\n4. If there are input elements or buttons with an \"alt\" attribute, ensure that it is not used in place of a label, as the \"alt\" attribute is specifically for images and should not be used as a substitute for labeling interactive elements."
+        }
+    }
+]

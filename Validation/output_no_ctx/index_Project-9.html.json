@@ -1,0 +1,56 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 115,
+            "problem": "<label for=\"name\"></label>"
+        },
+        "closest_fix": {
+            "problem_type": "missing_label_text",
+            "offending_line": "<label for=\"name\"></label>",
+            "fixed_line": "<label for=\"name\">Name:</label>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 74,
+            "problem": "<marquee>Hospital Management System</marquee>"
+        },
+        "closest_fix": {
+            "problem_type": "accessibility",
+            "offending_line": "<marquee>Hospital Management System</marquee>",
+            "fixed_line": "<h1>Hospital Management System</h1>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 128,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "problem_type": "accessibility",
+            "offending_line": "<marquee>Hospital Management System</marquee>",
+            "fixed_line": "<h1>Hospital Management System</h1>"
+        }
+    }
+]

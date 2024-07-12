@@ -1,0 +1,97 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "error_example": "<img src=\"logo.png\">",
+            "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">"
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 49,
+            "problem": "<img src=\"book-cover.jpg\" />"
+        },
+        "closest_fix": {
+            "problem_type": "alt attribute is missing in img tag",
+            "offending_line": "<img src=\"book-cover.jpg\" />",
+            "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />",
+            "CoT": "Sure, let's approach this step by step to identify if there are any missing `alt` attributes in `<img>` tags in the provided HTML code.\n\n1. **Identify `<img>` tags**: Look for `<img>` tags in the HTML code.\n\n2. **Check for `alt` attribute**: Verify if each `<img>` tag has an `alt` attribute defined.\n\nLet's start by going through the HTML code and checking each `<img>` tag for the presence of the `alt` attribute."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.2",
+            "success_criteria": "Audio or video element should avoid automatically playing audio ",
+            "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+            "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+        },
+        "problem": {
+            "guideline": "1.4.2",
+            "line": 63,
+            "problem": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />"
+        },
+        "closest_fix": {
+            "problem_type": "Auto-play of video with audio",
+            "offending_line": "<video autoplay>",
+            "fixed_line": "<video autoplay muted>",
+            "CoT": "1. Identify any <video> elements on the page.\n2. Check if any of the <video> elements have the \"autoplay\" attribute.\n3. If an <video> element has the \"autoplay\" attribute, check if it also includes audio content.\n\nLet's go through the code step by step to identify if there are any <video> elements with autoplay that include audio content."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 36,
+            "problem": "<select id=\"filter\">"
+        },
+        "closest_fix": {
+            "problem_type": "Input element or button is missing an associated label",
+            "offending_line": "<button>Read More</button>",
+            "fixed_line": "<button aria-label='Read More'>Read More</button>",
+            "CoT": "Sure! Let's follow these steps to find the issues related to accessibility:\n\n1. Look for input elements and buttons throughout the HTML code.\n2. Check if each input element and button has an associated label.\n3. Ensure that if an input element or button has an associated label, the label is not empty.\n4. Verify that input elements do not have empty alt attributes since they are used for images to provide a description when not visible.\n\nLet's start by examining the HTML code based on these steps to find any issues related to accessibility."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "error_example": "<font size=\"5\">Description of the book...</font>",
+            "fixed_example": "<p>Description of the book...</p>"
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 61,
+            "problem": "<h2><b>Discover Our Bookstore</b></h2>"
+        },
+        "closest_fix": {
+            "problem_type": "Use of <font> tag",
+            "offending_line": "<font size=\"5\">Description of the book...</font>",
+            "fixed_line": "<p style=\"font-size: 1.25em;\">Description of the book...</p>",
+            "CoT": "To find and fix the issue where `<b>`, `<i>`, or `<font>` tags are used and should not be, we can follow these steps:\n\n1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Replace these tags with appropriate semantic HTML elements or CSS styling where necessary.\n3. Verify that the content and formatting still appear as intended after making the changes.\n4. Test the website to ensure that the accessibility of the content is not compromised by the changes.\n\nLet's go through the HTML code provided and identify any instances of `<b>`, `<i>`, or `<font>` tags."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "error_example": "<font size=\"5\">Description of the book...</font>",
+            "fixed_example": "<p>Description of the book...</p>"
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 52,
+            "problem": "<font size=\"5\">Description of the book...</font>"
+        },
+        "closest_fix": {
+            "problem_type": "Use of <font> tag",
+            "offending_line": "<font size=\"5\">Description of the book...</font>",
+            "fixed_line": "<p style=\"font-size: 1.25em;\">Description of the book...</p>",
+            "CoT": "To find and fix the issue where `<b>`, `<i>`, or `<font>` tags are used and should not be, we can follow these steps:\n\n1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Replace these tags with appropriate semantic HTML elements or CSS styling where necessary.\n3. Verify that the content and formatting still appear as intended after making the changes.\n4. Test the website to ensure that the accessibility of the content is not compromised by the changes.\n\nLet's go through the HTML code provided and identify any instances of `<b>`, `<i>`, or `<font>` tags."
+        }
+    }
+]

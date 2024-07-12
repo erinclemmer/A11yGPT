@@ -1,0 +1,156 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_example": "<img src=\"logo.png\">",
+        "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">",
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in img tag",
+                "offending_line": "<select id=\"event\" name=\"event\">",
+                "fixed_line": "<img src=\"\" alt=\"\" id=\"event\" name=\"event\">",
+                "CoT": "Step 1: Identify all `<img>` tags in the HTML code.\nStep 2: Check each `<img>` tag to see if they have an `alt` attribute.\nStep 3: If any `<img>` tag does not have an `alt` attribute, consider if it is necessary and provide a descriptive `alt` attribute if needed.\nStep 4: If there are no `<img>` tags without an `alt` attribute, move on to check `<iframe>` tags as they also require an `alt` attribute."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+        "error_fixes": [
+            {
+                "problem_type": "Input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "offending_line": "<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "fixed_line": "<button type=\"button\" onclick=\"submitForm()\" aria-label=\"Book Now\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "CoT": "First, let's identify all the input elements and buttons in the form. \n- We have an input element with type \"number\" for the number of tickets.\n- We have an input element with type \"text\" for the user's name.\n- We have a button with the text \"Book Now\".\n\nNext, we need to check if each input element and button has an associated label.\n- The input element for number of tickets has a label with the text \"Number of Tickets\".\n- The input element for the user's name doesn't have an associated label. Instead, the label is empty, but the placeholder text in the input field provides the necessary context.\n- The button for booking does not have an associated label.\n\nBased on the assessment, the input element for the user's name doesn't have a visible label, which could be an accessibility issue for users who rely on screen readers. Having a visible label or an associated label through the \"for\" attribute would help improve accessibility for these users."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+        "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+        "error_fixes": []
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_example": "<font size=\"5\">Description of the book...</font>",
+        "fixed_example": "<p>Description of the book...</p>",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <marquee> tag for the header",
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<h1>Ticket Booking System</h1>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags in the HTML code. \nStep 2: Determine if any of these tags are being used for styling purposes.\nStep 3: If any of these tags are used for styling, consider refactoring the code to use CSS instead for better accessibility.\nStep 4: Make necessary changes in the code to remove the <b>, <i>, or <font> tags."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event used without onkeydown event",
+                "offending_line": "<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "fixed_line": "<button type=\"button\" onclick=\"submitForm()\" onkeydown=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "CoT": "1. Identify interactive elements on the page that could potentially require keyboard interaction.\n2. Check if the interactive elements have appropriate keyboard event handlers like `onkeydown`.\n3. Look for any elements or scripts that rely solely on `onmousedown` event for interaction.\n4. Determine if there are any keyboard accessibility issues present.\n5. Provide recommendations to make the interactive elements keyboard accessible."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Use of <marquee> element",
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header>Ticket Booking System</header>",
+                "CoT": "First, we need to identify if the `<marquee>` element is being used in the HTML code. \nIf it is present, we need to replace it with a more accessible alternative."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_example": "<title></title>",
+        "fixed_example": "<title>Beauty Products Store</title>",
+        "error_fixes": [
+            {
+                "problem_type": "Title element is empty",
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Ticket Booking System</title>",
+                "CoT": "Sure! Let's identify the issue step by step:\n1. Look for the <title> element in the HTML.\n2. Check if the <title> element has any content within it.\n3. Confirm if the content within the <title> element is descriptive and meaningful for the webpage.\n4. If the <title> element is empty or does not provide relevant information, then there is an accessibility issue.\n\nLet's follow these steps to identify if the <title> element is empty or not providing meaningful information."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home</a>",
+                "CoT": "Alright, let's start by looking at the anchor elements in the navigation bar.\n\n1. Check each anchor element in the `<nav>` section.\n2. Verify if each anchor element has text content within the `<a>` tags.\n3. Ensure that the text inside the `<a>` tags is descriptive and meaningful for screen readers.\n\nLet's go through each anchor element in the code to see if they contain text."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "document language not identified or incorrect",
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "Step 1: Identify the language attribute in the \"html\" tag.\nStep 2: Ensure the language attribute value is correctly set to the language of the document."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_example": "",
+        "fixed_example": "",
+        "error_fixes": [
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required>",
+                "fixed_line": "<input type=\"text\" aria-labelledby=\"name-label\" id=\"name\" name=\"name\" required>",
+                "CoT": "1. Identify all input elements in the form.\n2. Check each input element to see how many labels are associated with it.\n3. If any input element has more than one label associated with it, then it violates the accessibility rule."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_example": "<li><a href=\"#\">Services</li>",
+        "fixed_example": "<li><a href=\"#\">Services</a></li>",
+        "error_fixes": [
+            {
+                "problem_type": "Element does not have complete start and end tags",
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Event:</label>",
+                "CoT": "To identify the issue of incomplete start and end tags or non-unique id attributes, we will:\n\n1. Check each element in the HTML for complete start and end tags.\n2. Ensure that each element with an id attribute has a unique id value.\n\nLet's start by going through the HTML and checking each element for these issues."
+            }
+        ]
+    }
+]

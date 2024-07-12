@@ -83,6 +83,8 @@ def get_violations(html: str, html_file: str, violations_file: str, wcga_errors:
     with open(violations_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
     problems = []
+    if not html_file in data:
+        raise Exception(f'Could not find {html_file} key in violations file')
     for item in data[html_file]:
         problems.append(Promblem(html, item, wcga_errors))
     return problems
@@ -118,12 +120,11 @@ def get_closest_fix_for_problem(problem: Promblem, fixes: List[GptFix]):
     return closest[1]
 
 WCGA_ERROR_FILE = 'wcga_errors.json'
-def get_no_context_fixes_for_problems(html_file: str, violations_file: str, fixes_file: str):
-    with open(html_file, 'r', encoding='utf-8') as f:
-        html = f.read()
-
+def get_no_context_fixes_for_problems(html: str, tml_file: str, violations_file: str, fixes_file: str):
     wcga_errors = get_wcga_errors(WCGA_ERROR_FILE)
     problems = get_violations(html, html_file, violations_file, wcga_errors)
+    if problems is None:
+        return []
     output = []
     for problem in problems:
         fixes = get_fixes(fixes_file)
@@ -136,12 +137,11 @@ def get_no_context_fixes_for_problems(html_file: str, violations_file: str, fixe
 
     return output
 
-def get_specific_fixes_for_problems(html_file: str, violations_file: str, fixes_file: str):
-    with open(html_file, 'r', encoding='utf-8') as f:
-        html = f.read()
-
+def get_specific_fixes_for_problems(html: str, html_file: str, violations_file: str, fixes_file: str):
     wcga_errors = get_wcga_errors(WCGA_ERROR_FILE)
     problems = get_violations(html, html_file, violations_file, wcga_errors)
+    if problems is None:
+        return []
     output = []
     for problem in problems:
         fixes = get_fixes_for_guideline(fixes_file, problem.wcga_error.guideline)
@@ -149,7 +149,7 @@ def get_specific_fixes_for_problems(html_file: str, violations_file: str, fixes_
         output.append({
             "guideline": problem.wcga_error.o,
             "problem": problem.o,
-            "closest_fix": closest_fix.o
+            "closest_fix": closest_fix.o if closest_fix is not None else None
         })
 
     return output
@@ -163,25 +163,33 @@ OUTPUT_NO_CTX_FOLDER = 'output_no_ctx'
 if not os.path.exists(OUTPUT_SPECIFIC_FOLDER):
     os.mkdir(OUTPUT_SPECIFIC_FOLDER)
 
+if not os.path.exists(OUTPUT_COT_FOLDER):
+    os.mkdir(OUTPUT_COT_FOLDER)
+
 if not os.path.exists(OUTPUT_NO_CTX_FOLDER):
     os.mkdir(OUTPUT_NO_CTX_FOLDER)
 
 for html_file in os.listdir('../other_projects/html'):
-    full_html_file = f'../other_projects/html/{html_file}'
+    with open(f'../other_projects/html/{html_file}', 'r', encoding='utf-8') as f:
+        html = f.read()
+    
     specific_fixes_file = f'specific/fixes/{html_file}.json'
-    if os.path.exists(specific_fixes_file):
-        output_specific = get_specific_fixes_for_problems(full_html_file, VIOLATIONS_FILE, specific_fixes_file)
-        with open(f'{OUTPUT_SPECIFIC_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
+    specific_output_file = f'{OUTPUT_SPECIFIC_FOLDER}/{html_file}.json'
+    if os.path.exists(specific_fixes_file) and not os.path.exists(specific_output_file):
+        output_specific = get_specific_fixes_for_problems(html, html_file, VIOLATIONS_FILE, specific_fixes_file)
+        with open(specific_output_file, 'w', encoding='utf-8') as f:
             json.dump(output_specific, f, indent=4)
 
     cot_fixes_file = f'cot/fixes/{html_file}.json'
-    if os.path.exists(cot_fixes_file):
-        output = get_specific_fixes_for_problems(full_html_file, VIOLATIONS_FILE, cot_fixes_file)
-        with open(f'{OUTPUT_COT_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
+    cot_output_file = f'{OUTPUT_COT_FOLDER}/{html_file}.json'
+    if os.path.exists(cot_fixes_file) and not os.path.exists(cot_output_file):
+        output = get_specific_fixes_for_problems(html, html_file, VIOLATIONS_FILE, cot_fixes_file)
+        with open(cot_output_file, 'w', encoding='utf-8') as f:
             json.dump(output, f, indent=4)
     
     no_ctx_fixes_file = f'no_context/fixes/{html_file}.json'
-    if os.path.exists(no_ctx_fixes_file):
-        output_no_ctx = get_no_context_fixes_for_problems(full_html_file, VIOLATIONS_FILE, no_ctx_fixes_file)
-        with open(f'{OUTPUT_NO_CTX_FOLDER}/{html_file}.json', 'w', encoding='utf-8') as f:
+    no_ctx_output_file = f'{OUTPUT_NO_CTX_FOLDER}/{html_file}.json'
+    if os.path.exists(no_ctx_fixes_file) and not os.path.exists(no_ctx_output_file):
+        output_no_ctx = get_no_context_fixes_for_problems(html, html_file, VIOLATIONS_FILE, no_ctx_fixes_file)
+        with open(no_ctx_output_file, 'w', encoding='utf-8') as f:
             json.dump(output_no_ctx, f, indent=4)

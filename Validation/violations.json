@@ -1,5 +1,5 @@
 {
-    "index_Project 1.1.html": [
+    "index_Project-1.html": [
         {
             "guideline": "1.1.1",
             "line": 98
@@ -25,7 +25,7 @@
             "line": 117
         }
     ],
-    "index_Project 2.1.html": [
+    "index_Project-2.html": [
         {
             "guideline": "1.1.1",
             "line": 49
@@ -47,7 +47,7 @@
             "line": 52
         }
     ],
-    "index_Project 3.1.html": [
+    "index_Project-3.html": [
         {
             "guideline": "2.4.4",
             "line": 91
@@ -65,7 +65,7 @@
             "line": 126
         }
     ],
-    "index_Project 4.1.html": [
+    "index_Project-4.html": [
         {
             "guideline": "2.1.1",
             "line": 25
@@ -83,7 +83,7 @@
             "line": 47
         }
     ],
-    "index_Project 5.1.html": [
+    "index_Project-5.html": [
         {
             "guideline": "1.3.1",
             "line": 61
@@ -185,10 +185,6 @@
         {
             "guideline": "2.2.1",
             "line": 86
-        },
-        {
-            "guideline": "",
-            "line": 54
         }
     ],
     "index_Project-11.html": [

@@ -52,8 +52,7 @@ def get_fixes_for_error(html: str, wcga_error: WCGAError) -> List[GptFix]:
 			sleep(1)
 			continue
 		try:
-			embedding = embed.get_embedding(json.dumps(res))
-			print(json.dumps(res))
+			embedding = embed.get_embedding(res['offending_line'])
 			fix = GptFix(res, embedding)
 			print(fix.to_string())
 		except BaseException as e:
@@ -83,6 +82,8 @@ def find_fixes_for_file(file_name: str):
 		o = wcga_error.o
 		o['error_fixes'] = error_fixes
 		fixes.append(o)
+	if not os.path.exists('fixes'):
+		os.mkdir('fixes')
 
 	with open(f'fixes/{file_name}.json', 'w', encoding='utf-8') as f:
 		json.dump(fixes, f, indent=4)

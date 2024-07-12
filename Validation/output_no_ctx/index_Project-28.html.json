@@ -1,0 +1,92 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 40,
+            "problem": "<select id=\"sort\">"
+        },
+        "closest_fix": {
+            "problem_type": "missing alt attribute",
+            "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+            "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Image of Food Item 1\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.3.2",
+            "success_criteria": "input element has more than one associated label",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.3.2",
+            "line": 37,
+            "problem": "<label for=\"search\">Search:</label>"
+        },
+        "closest_fix": {
+            "problem_type": "font_element_used",
+            "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+            "fixed_line": "<p style=\"font-size: 1.5em;\">Delicious food just for you!</p>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html lang=\"eg\">"
+        },
+        "closest_fix": {
+            "problem_type": "missing alt attribute",
+            "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+            "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Image of Food Item 1\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "error_example": "<font size=\"5\">Description of the book...</font>",
+            "fixed_example": "<p>Description of the book...</p>"
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 26,
+            "problem": "<font size=\"5\"> Delicious food just for you!</font>"
+        },
+        "closest_fix": {
+            "problem_type": "font_element_used",
+            "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+            "fixed_line": "<p style=\"font-size: 1.5em;\">Delicious food just for you!</p>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 48,
+            "problem": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">"
+        },
+        "closest_fix": {
+            "problem_type": "missing alt attribute",
+            "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+            "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Image of Food Item 1\">"
+        }
+    }
+]

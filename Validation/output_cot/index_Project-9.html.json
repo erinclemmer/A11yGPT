@@ -1,0 +1,59 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 115,
+            "problem": "<label for=\"name\"></label>"
+        },
+        "closest_fix": {
+            "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "offending_line": "<label for=\"name\"></label>",
+            "fixed_line": "<label for=\"name\">Name:</label>",
+            "CoT": "Step 1: Identify all input elements and buttons on the page. \n\nStep 2: Check if each input element or button has an associated label. \n\nStep 3: Check if the label for each input element or button is empty. \n\nStep 4: Check if the input element or button has an alt attribute instead of a label. \n\nLet's start by following these steps."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 74,
+            "problem": "<marquee>Hospital Management System</marquee>"
+        },
+        "closest_fix": {
+            "problem_type": "The <marquee> element should not be used.",
+            "offending_line": "<marquee>Hospital Management System</marquee>",
+            "fixed_line": "<h1>Hospital Management System</h1>",
+            "CoT": "Step 1: Identify the <marquee> element in the html code.\n\nStep 2: Understand why the <marquee> element should not be used for accessibility reasons.\n\nStep 3: Provide a solution or alternative to replace the <marquee> element."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 128,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "problem_type": "Meta refresh with time-out used",
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": "<!-- Meta refresh removed to improve accessibility -->",
+            "CoT": "Step 1: Identify the issue - \nThe issue is with the use of the meta refresh tag with a time-out, as it can be disruptive and confusing for users who rely on screen readers or keyboard navigation. \n\nStep 2: Analyze the code - \nIn the provided code, there is a meta refresh tag with a content value of \"0\" which triggers an immediate refresh of the page. This can be problematic for users who might not have enough time to read or interact with the content before it refreshes abruptly.\n\nStep 3: Address the issue - \nTo fix this accessibility issue related to the meta refresh tag with a time-out, the meta tag should be removed or adjusted to provide users with enough time to read and interact with the content before any page refresh occurs. Removing the meta refresh tag is the preferable solution to ensure a better user experience for all visitors.\n\nSo, the accessibility issue in the given code is the use of the meta refresh tag with a time-out, and the recommended solution is to remove or adjust the meta refresh tag to improve accessibility for users."
+        }
+    }
+]

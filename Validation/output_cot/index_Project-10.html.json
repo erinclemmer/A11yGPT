@@ -1,0 +1,78 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 56,
+            "problem": "<button onmousedown=\"playVideo()\">Play Video</button>"
+        },
+        "closest_fix": {
+            "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "offending_line": "<button onmousedown=\"playVideo()\">Play Video</button>",
+            "fixed_line": "<button onmousedown=\"playVideo()\" onkeydown=\"if(event.keyCode==13) {playVideo();}\">Play Video</button>",
+            "CoT": "For this type of issue where the `onmousedown` event is present but the `onkeydown` event or script is missing, we need to ensure that the functionality triggered by `onmousedown` is also accessible via keyboard interactions for users who rely on keyboard navigation. Here's how we can go about finding and fixing this issue step by step:\n\n1. Identify the element with the `onmousedown` event: Look for any elements that have the `onmousedown` attribute in the HTML. In this case, it's the button element:\n   ```html\n   <button onmousedown=\"playVideo()\">Play Video</button>\n   ```\n\n2. Determine the functionality triggered by the `onmousedown` event: In this case, the `playVideo()` function is triggered by clicking the button.\n\n3. Check if the functionality can be triggered using a keyboard event: Since the issue is with missing `onkeydown` event or script for keyboard accessibility, we need to add an `onkeydown` event to the button element that replicates the functionality of playing the video. This will allow users to activate the button using the keyboard as well.\n\n4. Add `onkeydown` event to the button: We can add an `onkeydown` event to the button that listens for the \"Enter\" key (key code 13) to trigger the `playVideo()` function:\n   ```html\n   <button onmousedown=\"playVideo()\" onkeydown=\"if(event.keyCode==13) {playVideo();}\">Play Video</button>\n   ```\n\n5. Test the accessibility: After adding the `onkeydown` event, test the website using only the keyboard to ensure that the functionality works as expected and the video can be played by pressing the \"Enter\" key on the button.\n\n6. Make necessary adjustments: If needed, you can further enhance the keyboard accessibility by adding focus styles, ARIA attributes, or other keyboard navigation enhancements based on best practices.\n\nBy following these steps, we can ensure that the website is more accessible by providing keyboard functionality for users who rely on it."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.4",
+            "success_criteria": "anchor element contains no text",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.4.4",
+            "line": 47,
+            "problem": "<li><a href=\"#services\"></a></li>"
+        },
+        "closest_fix": {
+            "problem_type": "anchor element contains no text",
+            "offending_line": "<li><a href=\"#services\"></a></li>",
+            "fixed_line": "<li><a href=\"#services\">Services</a></li>",
+            "CoT": "Sure! Let's analyze the code step by step to find the accessibility issue of anchor elements containing no text:\n\nStep 1: Identify anchor elements in the code:\nWe have four anchor elements in the code inside the `<nav>` element:\n```html\n<li><a href=\"#home\">Home</a></li>\n<li><a href=\"#about\">About</a></li>\n<li><a href=\"#services\"></a></li>\n<li><a href=\"#contact\">Contact</a></li>\n```\n\nStep 2: Check if anchor elements have text content:\n- The first, second, and fourth anchor elements have text content: \"Home\", \"About\", and \"Contact\" respectively.\n- The third anchor element does not have any text content between the opening and closing anchor tags.\n\nStep 3: Determine if an anchor element with no text content is a potential accessibility issue:\n- Anchor elements (links) without text content pose accessibility issues for users who rely on screen readers or keyboard navigation.\n- Screen readers will announce the presence of the link, but without any visible text, users may not understand the purpose of the link.\n\nStep 4: Propose a solution:\nTo address this accessibility issue, add meaningful text content to the anchor element that is currently empty:\n```html\n<li><a href=\"#services\">Services</a></li>\n```\n\nBy adding text content to the anchor element, such as \"Services\", we ensure that users of assistive technologies can understand the purpose of the link."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html>"
+        },
+        "closest_fix": {
+            "problem_type": "Document language not identified or incorrect",
+            "offending_line": "<html>",
+            "fixed_line": "<html lang=\"en\">",
+            "CoT": "1. Look for the language attribute in the opening <html> tag:\n```html\n<html lang=\"en\">\n```\n2. If the language attribute is missing or incorrect, add/modify it to reflect the correct language of the document.\n3. Update the <html> tag to include the language attribute with the appropriate language code (e.g., \"en\" for English)."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 86,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "problem_type": "Meta refresh with a time-out is used",
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": "<meta http-equiv=\"refresh\" content=\"0; url=index.html\">",
+            "CoT": "Sure! Here's how we can approach finding the issues with the \"meta refresh with a time-out\" being used:\n\n1. Identify where the meta refresh tag is in the HTML code.\n2. Determine if a time-out value is specified in the meta refresh tag.\n3. Assess whether the use of meta refresh with a time-out is necessary for the functionality of the website.\n4. Consider the impact of the meta refresh on users with disabilities, such as those using screen readers or assistive technologies.\n5. Verify if the meta refresh interferes with users' ability to navigate or interact with the content effectively.\n\nBy following these steps, we should be able to pinpoint any accessibility issues related to the use of meta refresh with a time-out. Let's examine the HTML code for the specified problem."
+        }
+    }
+]

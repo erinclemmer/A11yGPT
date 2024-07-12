@@ -9,7 +9,7 @@
                 "problem_type": "alt attribute is missing in iframe tag",
                 "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
                 "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen alt=\"Featured Video\"></iframe>",
-                "CoT": "1. Look for any `<iframe>` tags in the HTML.\n2. Check if there is an `alt` attribute present in the `<iframe>` tag.\n3. If the `alt` attribute is missing, then identify the location and provide a recommendation to add an appropriate `alt` attribute to improve accessibility."
+                "CoT": "Let's start by looking for the `<iframe>` tag in the HTML code, as it is the element where the `alt` attribute should be present according to the provided rule."
             }
         ]
     },
@@ -20,10 +20,10 @@
         "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
         "error_fixes": [
             {
-                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "problem_type": "input element or button is missing an associated label",
                 "offending_line": "<input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>",
-                "fixed_line": "<label for=\"address\">Address:</label><input type=\"text\" id=\"address\" name=\"address\" required>",
-                "CoT": "First, we need to identify all input elements and buttons on the page. Let's look for any `input` elements and buttons with `class=\"button\"`."
+                "fixed_line": "<label for=\"address\">Address:</label>\n<input type=\"text\" id=\"address\" name=\"address\" required>",
+                "CoT": "1. Look for input elements or buttons in the HTML code.\n2. Check if each input element or button has an associated label using the `<label>` tag.\n3. Verify if any input element or button has an alt attribute.\n4. Ensure that the label associated with an input element or button is not empty."
             }
         ]
     },
@@ -32,14 +32,7 @@
         "success_criteria": "Audio or video element should avoid automatically playing audio ",
         "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
         "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
-        "error_fixes": [
-            {
-                "problem_type": "Audio or video element should avoid automatically playing audio",
-                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
-                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"></iframe>",
-                "CoT": "Step 1: Identify the audio or video element on the page.\nStep 2: Check if the video element has the attribute \"autoplay\" included in its code.\nStep 3: If the \"autoplay\" attribute is present, remove it to prevent the video from automatically playing audio."
-            }
-        ]
+        "error_fixes": []
     },
     {
         "guideline": "1.4.4",
@@ -48,10 +41,10 @@
         "fixed_example": "<p>Description of the book...</p>",
         "error_fixes": [
             {
-                "problem_type": "Use of <font> tag for styling",
+                "problem_type": "Use of <font> tag",
                 "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
-                "fixed_line": "<a href=\"#\" class=\"button\" style=\"font-size: 1.25em;\">View Menu</a>",
-                "CoT": "Step 1: Identify all instances of <font> tag in the HTML code.\nStep 2: Check if <font> tag is used for styling or changing text size.\nStep 3: If <font> tag is used for styling or changing text size, consider replacing it with CSS properties like font-size, color, etc.\nStep 4: Replace <font> tag with appropriate CSS styling to improve accessibility and adhere to best practices."
+                "fixed_line": "<a href=\"#\" class=\"button\" style=\"font-size: 1.25em;\"> View Menu</a>",
+                "CoT": "Here is the step-by-step approach to finding and fixing <b>, <i>, or <font> tag issues:\n1. Go through the HTML code and look for any <b>, <i>, or <font> tags.\n2. Identify where these tags are being used, and see if they are being used for styling purposes.\n3. Replace <b>, <i>, or <font> tags with appropriate HTML elements or CSS styles for better accessibility and maintainability.\n4. Ensure the content remains styled appropriately after making changes.\n5. Test the website to make sure the changes have not introduced any new styling issues or broken the layout.\n\nLet's start by reviewing the HTML code for any <b>, <i>, or <font> tags."
             }
         ]
     },
@@ -64,8 +57,8 @@
             {
                 "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
                 "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
-                "fixed_line": "<h2 onmouseover=\"ToolTip()\" onkeydown=\"ToolTip()\" tabindex=\"0\" role=\"button\">Place Your Order</h2>",
-                "CoT": "First, let's focus on the issue related to keyboard accessibility. We need to look for any interactive elements on the page that do not have keyboard event handlers or are not usable with a keyboard.\n\nIn the provided HTML, the \"Place Your Order\" heading in the third section has an `onmouseover` event attribute. This event is triggered by mouse interaction but does not provide any keyboard equivalent. \n\nSo, the accessibility issue here is that the \"Place Your Order\" heading relies solely on mouse interaction (`onmouseover`) and does not have an equivalent keyboard event, such as `onkeydown`, to make it accessible to users who rely on keyboards for navigation. \n\nTo fix this issue, we can add a keyboard event handler to the heading to ensure keyboard users can interact with it easily. We can add an `onkeydown` event that performs the same action as the `onmouseover` event when a keyboard user navigates to the heading.\n\nLet me provide you with the updated code to make the \"Place Your Order\" heading keyboard accessible."
+                "fixed_line": "<h2 onmouseover=\"ToolTip()\" tabindex=\"0\" onkeydown=\"if (event.key === 'Enter') { ToolTip(); }\">Place Your Order</h2>",
+                "CoT": "1. Identify any interactive elements on the page that may require keyboard accessibility, such as buttons or form inputs.\n\n2. Check if these elements have appropriate keyboard event handlers, such as onkeydown or onkeyup events, to ensure they are accessible via keyboard navigation.\n\n3. Look for any elements that have specific mouse events, like onmousedown, but don't have corresponding keyboard events.\n\n4. Consider how a user who relies on keyboard navigation would interact with the page and whether any actions or functionalities are only accessible through mouse-based events."
             }
         ]
     },
@@ -83,10 +76,10 @@
         "fixed_example": "",
         "error_fixes": [
             {
-                "problem_type": "Using <marquee> element",
-                "offending_line": "<marquee> element should not be used.",
-                "fixed_line": "<marquee> element should not be used. Instead, consider using CSS animations or JavaScript for similar effects.",
-                "CoT": "Sure! Let's go step by step to find the accessibility issue related to the \"<marquee>\" element:\n\n1. Look through the given HTML code to identify if there are any \"<marquee>\" elements present.\n2. Determine if the \"<marquee>\" elements used in the code are causing any accessibility issues.\n3. If \"<marquee>\" elements are found and considered problematic, provide a solution or alternative to address the accessibility concern."
+                "problem_type": "Marquee element used",
+                "offending_line": "<marquee>Welcome to Food Delivery App</marquee>",
+                "fixed_line": "<h1>Welcome to Food Delivery App</h1>",
+                "CoT": "1. Look through the HTML code for any `<marquee>` elements.\n2. Check if any `<marquee>` elements are being used for scrolling text or images.\n3. Identify where the `<marquee>` element is being used and consider a more accessible alternative for conveying the same information or functionality.\n4. Recommend a more accessible solution to replace the `<marquee>` element if found."
             }
         ]
     },
@@ -97,10 +90,10 @@
         "fixed_example": "<title>Beauty Products Store</title>",
         "error_fixes": [
             {
-                "problem_type": "Empty title element",
+                "problem_type": "title element is empty",
                 "offending_line": "<title></title>",
                 "fixed_line": "<title>Food Delivery App</title>",
-                "CoT": "To find and fix the issue where the title element is empty, you need to follow these steps:\n\n1. Locate the `title` element in the HTML document, which should be within the `head` section.\n2. Check the content of the `title` element to ensure it provides a concise and descriptive title for the webpage.\n3. If the `title` element is empty or missing, provide a relevant and descriptive title that accurately reflects the content of the webpage.\n4. Update the content inside the `title` element to improve the accessibility and usability of the webpage for all users, including those using assistive technologies.\n\nLet's go through the code and find the `title` element to see if it is empty or missing."
+                "CoT": "Step 1: Identify the `<title>` element in the HTML code. \n\nStep 2: Check if the `<title>` element has any content inside it. \n\nStep 3: Determine if the content inside the `<title>` element is descriptive and informative for users. \n\nStep 4: If the `<title>` element is empty or not descriptive, it would be considered an accessibility issue related to the title element. \n\nLet's go through the HTML code and find the title element."
             }
         ]
     },
@@ -112,9 +105,9 @@
         "error_fixes": [
             {
                 "problem_type": "anchor element contains no text",
-                "offending_line": "<a href=\"#\"></a>",
-                "fixed_line": "<a href=\"#\">Home</a>",
-                "CoT": "Let's go through the code step by step to find the accessibility issue related to anchor elements containing no text:\n\n1. Look for anchor elements in the HTML code.\n2. Check each anchor element to see if it has any text content inside.\n3. Identify any anchor element that does not have any text content.\n\nLet's start by examining the anchor elements in the `<nav>` section."
+                "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+                "fixed_line": "<a href=\"#\" class=\"button\">View Menu</a>",
+                "CoT": "To find the issue of an anchor element containing no text, we need to look for any anchor `<a>` tags that do not have any text content within them. This can be problematic for users who rely on screen readers, as they may not be able to understand the purpose of the link if there is no descriptive text.\n\nLet's check the anchor tags in the provided HTML code:\n```html\n<nav>\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Menu</a>\n    <a href=\"#\">Order Now</a>\n    <a href=\"#\">Contact</a>\n</nav>\n```\n\nIn this case, all the anchor tags have text content inside them, so they are not the issue.\n\nNext, let's check the anchor tag within the `<section>` element:\n```html\n<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>\n```\n\nHere, the issue is that the anchor tag contains no visible text directly within the `<a>` element. The text \"View Menu\" is wrapped inside a `<font>` tag, which is not a recommended practice in modern HTML and can cause accessibility issues.\n\nTo fix this issue, we should move the text \"View Menu\" outside of the `<font>` tag and directly inside the `<a>` tag. The updated code should look like this:\n```html\n<a href=\"#\" class=\"button\">View Menu</a>\n```"
             }
         ]
     },
@@ -127,8 +120,8 @@
             {
                 "problem_type": "document language not identified or incorrect",
                 "offending_line": "<html lang=\"en\">",
-                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
-                "CoT": "First, we need to ensure that the language of the document is properly identified in the `<html>` tag. Let's check the current code to see if the language attribute is set correctly."
+                "fixed_line": "<html lang=\"en-US\">",
+                "CoT": "1. Look for the `<html>` tag and check if it includes the `lang` attribute specifying the language.\n2. Verify that the language code specified in the `lang` attribute is correct and follows the ISO language code conventions."
             }
         ]
     },
@@ -141,8 +134,8 @@
             {
                 "problem_type": "Input element has more than one associated label",
                 "offending_line": "<input type=\"text\" id=\"address\" alt=\"address\" name=\"address\" required>",
-                "fixed_line": "<label for=\"address\">Address:</label><input type=\"text\" id=\"address\" name=\"address\" required>",
-                "CoT": "First, let's identify all the input elements in the form:\n1. Name input:\n```html\n<input type=\"text\" id=\"name\" name=\"name\" required>\n```\n2. Address input:\n```html\n<input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>\n```\n3. Phone input:\n```html\n<input type=\"text\" id=\"phone\" name=\"phone\" required>\n```\n\nNext, we need to check the associated labels for each input element. Labels are used to provide a description for form elements.\n\nNow, let's identify the labels associated with each input:\n\n1. Name input label:\n```html\n<label for=\"name\">Name:</label>\n```\n2. Address input label:\n```html\n<label for=\"address\">Address:</label>\n```\n3. Phone input label:\nThere seems to be a missing label for the Phone input.\n\nThe issue here is that the Phone input doesn't have an associated label. Each input element should have a corresponding label to improve accessibility for screen reader users. \n\nTo fix this issue, you should add a `<label>` element for the Phone input:\n\n```html\n<label for=\"phone\">Phone:</label>\n```\n\nAdding the missing label for the Phone input will ensure that all input elements have a clear description associated with them, improving the accessibility of the form for all users."
+                "fixed_line": "<input type=\"text\" id=\"address\" name=\"address\" required>",
+                "CoT": "1. Identify all the input elements in the form within the `<section>` tag.\n2. Check for the label elements associated with each input element.\n3. Verify if any input element has more than one associated label."
             }
         ]
     },
@@ -151,13 +144,6 @@
         "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
         "error_example": "<li><a href=\"#\">Services</li>",
         "fixed_example": "<li><a href=\"#\">Services</a></li>",
-        "error_fixes": [
-            {
-                "problem_type": "element does not have complete start and end tags",
-                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
-                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
-                "CoT": "First, let's look for elements that do not have complete start and end tags. This is a common accessibility issue that can cause problems for screen readers.\n\nChecking the code, I see that the iframe element in the video-container div is missing the closing tag. Let's add the closing tag to ensure the element has complete start and end tags:\n\n```html\n<div class=\"video-container\">\n    <iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>\n</div>\n```\n\nNext, let's check if any id attributes are not unique. This is important for accessibility as screen readers navigate the page using unique ids.\n\nIn the form section, the input element with id \"address\" has an alt attribute instead of an id attribute. Let's change it to an id attribute for better accessibility:\n\n```html\n<input type=\"text\" id=\"address\" name=\"address\" required>\n```\n\nThese changes will improve the accessibility of the website by ensuring that all elements have complete start and end tags and that id attributes are unique and correctly assigned."
-            }
-        ]
+        "error_fixes": []
     }
 ]

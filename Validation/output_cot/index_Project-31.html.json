@@ -1,0 +1,59 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 81,
+            "problem": "<marquee>Ticket Booking System</marquee>"
+        },
+        "closest_fix": {
+            "problem_type": "Should not use <marquee> element",
+            "offending_line": "<marquee>Ticket Booking System</marquee>",
+            "fixed_line": "<h1 style='text-align:center;'>Ticket Booking System</h1>",
+            "CoT": "Step 1: Identify the <marquee> element in the html\nStep 2: Recognize that the <marquee> element is being used, which is not recommended for accessibility\nStep 3: Provide an alternative solution for the scrolling effect without using the <marquee> element."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "error_example": "<title></title>",
+            "fixed_example": "<title>Beauty Products Store</title>"
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 3,
+            "problem": "<head>"
+        },
+        "closest_fix": {
+            "problem_type": "Title element is empty",
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Ticket Booking System</title>",
+            "CoT": "Sure, let's find the issue step by step:\n1. Look for the `<title>` element in the HTML code.\n2. Check if the `<title>` element has any text within it.\n3. If the `<title>` element is empty, that would be the accessibility issue related to an empty title element."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 104,
+            "problem": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+        },
+        "closest_fix": {
+            "problem_type": "input element or button is missing an associated label",
+            "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+            "fixed_line": "<label for=\"quantity\">Number of Tickets:</label><input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+            "CoT": "First, we need to identify input elements and buttons on the page. These are the elements that users can interact with, so it's important to ensure they have proper labels or associated text for screen readers. We will look for any inputs or buttons without appropriate labels. \n\nLet's start by checking each input element and button on the page for the mentioned issues. \n\nHere is the list of input elements and buttons on the page:\n1. input with id=\"quantity\"\n2. input with id=\"name\"\n3. button with onclick=\"submitForm()\" \n\nWe will check each of these elements for the accessibility issues mentioned. Let's begin."
+        }
+    }
+]

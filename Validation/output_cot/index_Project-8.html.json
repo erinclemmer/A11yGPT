@@ -1,0 +1,78 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.4.2",
+            "success_criteria": "Audio or video element should avoid automatically playing audio ",
+            "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+            "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+        },
+        "problem": {
+            "guideline": "1.4.2",
+            "line": 33,
+            "problem": "<video autoplay>"
+        },
+        "closest_fix": {
+            "problem_type": "Audio or video element should avoid automatically playing audio",
+            "offending_line": "<video autoplay>",
+            "fixed_line": "<video controls>",
+            "CoT": "1. Find the `<video>` element in the HTML code.\n2. Check if the `<video>` element uses the `autoplay` attribute.\n3. Verify if there is any audio content within the video file.\n4. Ensure that the `<video>` element is not set to automatically play audio."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "error_example": "<title></title>",
+            "fixed_example": "<title>Beauty Products Store</title>"
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 6,
+            "problem": "<title></title>"
+        },
+        "closest_fix": {
+            "problem_type": "Empty title element",
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>DELL Laptops</title>",
+            "CoT": "To find the issue of an empty title element, we need to check the <title> element in the <head> section of the HTML code. Let's look for the <title> element and see if it's empty."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.4",
+            "success_criteria": "anchor element contains no text",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.4.4",
+            "line": 14,
+            "problem": "<li><a href=\"#home\"></a></li>"
+        },
+        "closest_fix": {
+            "problem_type": "anchor element contains no text",
+            "offending_line": "<li><a href=\"#home\"></a></li>",
+            "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+            "CoT": "Step 1: Identify all the anchor elements in the HTML code.\nStep 2: Check if each anchor element has text content within the opening and closing tags."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 46,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "problem_type": "Meta refresh with a time-out is used",
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=index.html\">",
+            "CoT": "Sure, here are the steps to identify the accessibility issue related to the use of `meta refresh` with a time-out:\n\n1. As the problem is related to `meta refresh` with a time-out, let's first locate any `meta` tag that includes a time-out refresh.\n\n2. Verify if the `meta` tag is being used with a time-out refresh. The `meta` tag with a time-out refresh can automatically redirect or reload the page after a specific time period, which can be disorienting for users who may not have enough time to read or interact with the content on the page.\n\n3. Ensure that the time-out value is not set too short, as this could be a hindrance for users who may need more time to process the content on the page.\n\n4. Finally, determine if the `meta refresh` with a time-out is necessary for the functionality of the website, and if there are alternative methods that could be used to achieve the same goal without causing accessibility concerns."
+        }
+    }
+]

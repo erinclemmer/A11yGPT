@@ -1,0 +1,92 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 99,
+            "problem": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>"
+        },
+        "closest_fix": {
+            "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+            "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n<label for=\"1\">1</label>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "error_example": "<font size=\"5\">Description of the book...</font>",
+            "fixed_example": "<p>Description of the book...</p>"
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 113,
+            "problem": "<p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</i></p>"
+        },
+        "closest_fix": {
+            "problem_type": "Use of <i> tag for italic text",
+            "offending_line": "<i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</i>",
+            "fixed_line": "<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</em></p>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "4.1.1",
+            "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+            "error_example": "<li><a href=\"#\">Services</li>",
+            "fixed_example": "<li><a href=\"#\">Services</a></li>"
+        },
+        "problem": {
+            "guideline": "4.1.1",
+            "line": 85,
+            "problem": "<li><a href=\"#\">Services</li>"
+        },
+        "closest_fix": {
+            "problem_type": "element does not have complete start and end tags or id attribute is not unique",
+            "offending_line": "<li><a href=\"#\">Services</li>",
+            "fixed_line": "<li><a href=\"#\">Services</a></li>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 121,
+            "problem": "<input type=\"password\" id=\"pwd\" name=\"pwd\">"
+        },
+        "closest_fix": {
+            "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+            "fixed_line": "<label for=\"username\">Username:</label><br>\n<input type=\"text\" id=\"username\" name=\"username\"><br>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 124,
+            "problem": "<label for=\"1\"></label><br>"
+        },
+        "closest_fix": {
+            "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+            "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n<label for=\"1\">1</label>"
+        }
+    }
+]

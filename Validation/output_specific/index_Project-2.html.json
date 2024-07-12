@@ -1,0 +1,92 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "error_example": "<img src=\"logo.png\">",
+            "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">"
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 49,
+            "problem": "<img src=\"book-cover.jpg\" />"
+        },
+        "closest_fix": {
+            "problem_type": "Alt attribute is missing in img tag",
+            "offending_line": "<img src=\"book-cover.jpg\" />",
+            "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.2",
+            "success_criteria": "Audio or video element should avoid automatically playing audio ",
+            "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+            "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+        },
+        "problem": {
+            "guideline": "1.4.2",
+            "line": 63,
+            "problem": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />"
+        },
+        "closest_fix": {
+            "problem_type": "Audio or video element should avoid automatically playing audio",
+            "offending_line": "<video autoplay>",
+            "fixed_line": "<video controls>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "error_example": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_example": "<label for=\"myfile\">I have a file</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 36,
+            "problem": "<select id=\"filter\">"
+        },
+        "closest_fix": {
+            "problem_type": "Input element or button is missing an associated label",
+            "offending_line": "<button>Apply Filters</button>",
+            "fixed_line": "<label for='filter'>Filter By:</label><button id='filter'>Apply Filters</button>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "error_example": "<font size=\"5\">Description of the book...</font>",
+            "fixed_example": "<p>Description of the book...</p>"
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 61,
+            "problem": "<h2><b>Discover Our Bookstore</b></h2>"
+        },
+        "closest_fix": {
+            "problem_type": "Use of <font> tag",
+            "offending_line": "<font size=\"5\">Description of the book...</font>",
+            "fixed_line": "<p style=\"font-size: large;\">Description of the book...</p>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "error_example": "<font size=\"5\">Description of the book...</font>",
+            "fixed_example": "<p>Description of the book...</p>"
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 52,
+            "problem": "<font size=\"5\">Description of the book...</font>"
+        },
+        "closest_fix": {
+            "problem_type": "Use of <font> tag",
+            "offending_line": "<font size=\"5\">Description of the book...</font>",
+            "fixed_line": "<p style=\"font-size: large;\">Description of the book...</p>"
+        }
+    }
+]

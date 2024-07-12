@@ -1,0 +1,40 @@
+[
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 135,
+            "problem": "<label for=\"message\"></label>"
+        },
+        "closest_fix": {
+            "problem_type": "Document language not identified",
+            "offending_line": "<html lang=\"en\">",
+            "fixed_line": "<html lang=\"en\"  xmlns=\"http://www.w3.org/1999/xhtml\">",
+            "CoT": "To find the accessability issue regarding document language not being identified or incorrect, we need to look for the `lang` attribute in the HTML document. This attribute should be set to the appropriate language code to assist screen readers and other accessibility tools in correctly interpreting the content.\n\nLet's examine the provided HTML to identify if the `lang` attribute is correctly set."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "error_example": "<img src=\"logo.png\">",
+            "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">"
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 118,
+            "problem": "<img src=\"product1.jpg\">"
+        },
+        "closest_fix": {
+            "problem_type": "alt attribute is missing in img tag",
+            "offending_line": "<img src=\"product1.jpg\">",
+            "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
+            "CoT": "Sure! To find the issue where the `alt` attribute is missing in the `img` tag, I will need to:\n1. Identify all the `img` tags in the HTML.\n2. Check if each `img` tag has the `alt` attribute.\n3. If any `img` tag is missing the `alt` attribute, that would be the issue to address."
+        }
+    }
+]
