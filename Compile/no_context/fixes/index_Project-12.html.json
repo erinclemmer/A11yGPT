@@ -1,7 +1,0 @@
-[
-    {
-        "problem_type": "alt_text",
-        "offending_line": "<img src=\"product1.jpg\">",
-        "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1\">"
-    }
-]

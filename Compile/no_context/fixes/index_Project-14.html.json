@@ -1,7 +1,0 @@
-[
-    {
-        "problem_type": "alt_text_missing",
-        "offending_line": "<img src=\"logo.png\" alt=\"SugarBliss Logo\">",
-        "fixed_line": "<img src=\"logo.png\" alt=\"SugarBliss Logo\">"
-    }
-]

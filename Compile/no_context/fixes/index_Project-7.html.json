@@ -1,7 +1,0 @@
-[
-    {
-        "problem_type": "Alt text missing for image",
-        "offending_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">",
-        "fixed_line": "<img src=\"fitness_image.jpg\" alt=\"A person jogging to represent fitness\">"
-    }
-]

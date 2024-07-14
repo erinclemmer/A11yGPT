@@ -1,7 +1,10 @@
 import os
 import json
 import torch
-from typing import List
+from time import sleep
+from typing import List, Callable
+
+from gpt import GptEmbeddings, GptChat
 
 def get_api_key():
 	if not os.path.exists('config.json'):
@@ -90,3 +93,87 @@ class GptFix:
 Problem: {self.offending_line}
 Fixed: {self.fixed_line}
 """)
+
+def find_closest_embedding(fix: GptFix, existing_fixes: List[GptFix]):
+	closest = 0
+	for exisiting_fix in existing_fixes:
+		fix_embedding = exisiting_fix.embedding
+		sim = get_cosine_similarity(fix.embedding, fix_embedding)
+		if sim > closest:
+			closest = sim
+	return closest
+
+def get_fixes_for_error(
+		get_fix: Callable[[GptChat, str, WCGAError], dict], 
+		chat: GptChat, 
+		embed: GptEmbeddings, 
+		html: str, 
+		wcga_error: WCGAError, 
+		sim_threshold: float
+	) -> List[GptFix]:
+	fixes = []
+	retries = 0
+	while retries < 5:
+		try:
+			res = get_fix(chat, html, wcga_error)
+			if res['problem_type'] == 'NONE':
+				retries += 1
+				continue
+		except BaseException as e:
+			print(e)
+			sleep(1)
+			continue
+		try:
+			embedding = embed.get_embedding(res['offending_line'] + '\n\n' + res['fixed_line'])
+			fix = GptFix(res, embedding)
+			print(fix.to_string())
+		except BaseException as e:
+			print(e)
+			sleep(1)
+			continue
+
+		closest = find_closest_embedding(fix, fixes)
+		print(f'Closest sim {closest}')
+		if closest > sim_threshold:
+			retries += 1
+			continue
+		retries = 0
+		fixes.append(fix)
+		print(f'Added new fix, total {len(fixes)} fixes found\n\n')
+	return fixes
+
+def find_fixes_for_file(
+		get_fix: Callable[[GptChat, str, WCGAError], dict],
+		chat: GptChat, 
+		embed: GptEmbeddings, 
+		html_file: str, 
+		fix_folder: str,
+		sim_threshold: float,
+		no_ctx: bool = False
+	):
+	fix_file = f'fixes/{fix_folder}/{html_file}.json'
+	if os.path.exists(fix_file):
+		print(f'Fixes already found for {fix_file}')
+		return
+
+	with open('html/' + html_file, 'r', encoding='utf-8') as f:
+		html = f.read()
+	
+	fixes = []
+	if no_ctx:
+		for fix in get_fixes_for_error(get_fix, chat, embed, html, None, sim_threshold):
+			fixes.append(fix.o)
+	else:
+		for wcga_error in get_wcga_errors():
+			error_fixes = []
+			for fix in get_fixes_for_error(get_fix, chat, embed, html, wcga_error, sim_threshold):
+				error_fixes.append(fix.o)
+			o = wcga_error.o
+			o['error_fixes'] = error_fixes
+			fixes.append(o)
+
+	if not os.path.exists(fix_folder):
+		os.makedirs(fix_folder)
+	
+	with open(fix_file, 'w', encoding='utf-8') as f:
+		json.dump(fixes, f, indent=4)
