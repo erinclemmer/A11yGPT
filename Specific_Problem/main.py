@@ -1,3 +1,5 @@
+# Self instruct paper: https://arxiv.org/pdf/2212.10560
+
 import os
 import json
 from time import sleep
