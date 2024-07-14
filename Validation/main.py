@@ -159,6 +159,7 @@ VIOLATIONS_FILE = 'violations.json'
 OUTPUT_SPECIFIC_FOLDER = 'output_specific'
 OUTPUT_COT_FOLDER = 'output_cot'
 OUTPUT_NO_CTX_FOLDER = 'output_no_ctx'
+OUTPUT_FS_FOLDER = 'output_fs'
 
 if not os.path.exists(OUTPUT_SPECIFIC_FOLDER):
     os.mkdir(OUTPUT_SPECIFIC_FOLDER)
@@ -168,6 +169,9 @@ if not os.path.exists(OUTPUT_COT_FOLDER):
 
 if not os.path.exists(OUTPUT_NO_CTX_FOLDER):
     os.mkdir(OUTPUT_NO_CTX_FOLDER)
+
+if not os.path.exists(OUTPUT_FS_FOLDER):
+    os.mkdir(OUTPUT_FS_FOLDER)
 
 for html_file in os.listdir('../other_projects/html'):
     with open(f'../other_projects/html/{html_file}', 'r', encoding='utf-8') as f:
@@ -193,3 +197,10 @@ for html_file in os.listdir('../other_projects/html'):
         output_no_ctx = get_no_context_fixes_for_problems(html, html_file, VIOLATIONS_FILE, no_ctx_fixes_file)
         with open(no_ctx_output_file, 'w', encoding='utf-8') as f:
             json.dump(output_no_ctx, f, indent=4)
+
+    fs_fixes_file = f'few_shot/fixes/{html_file}.json'
+    fs_output_file = f'{OUTPUT_FS_FOLDER}/{html_file}.json'
+    if os.path.exists(fs_fixes_file) and not os.path.exists(fs_output_file):
+        output = get_specific_fixes_for_problems(html, html_file, VIOLATIONS_FILE, fs_fixes_file)
+        with open(fs_output_file, 'w', encoding='utf-8') as f:
+            json.dump(output, f, indent=4)

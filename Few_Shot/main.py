@@ -1,14 +1,15 @@
-# Chain of Thought paper: https://proceedings.neurips.cc/paper_files/paper/2022/file/9d5609613524ecf4f15af0f7b31abca4-Paper-Conference.pdf
+# Language Models are Few Shot Learners: https://proceedings.neurips.cc/paper_files/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf
+# ^ GPT-3 paper
 
 import os
 import json
 from time import sleep
 from typing import List
 
-from gpt import GptChat, GptEmbeddings
+from gpt import GptChat, GptEmbeddings, Conversation
 from lib import get_api_key, get_cosine_similarity, get_wcga_errors, WCGAError, GptFix
 
-SIM_THRESHOLD = .86
+SIM_THRESHOLD = .85
 
 if not os.path.exists('sys_prompt.txt'):
 	raise Exception('Could not find sys_prompt.txt')
@@ -16,9 +17,6 @@ if not os.path.exists('sys_prompt.txt'):
 api_key = get_api_key()
 chat = GptChat('sys_prompt.txt', api_key)
 embed = GptEmbeddings(api_key)
-
-with open('./result_prompt.txt', 'r', encoding='utf-8') as f:
-	result_prompt = f.read()
 
 def find_closest_embedding(fix: GptFix, existing_fixes: List[GptFix]):
 	closest = 0
@@ -35,10 +33,10 @@ def get_fix(html: str, wcga_error: WCGAError):
 	chat.add_message("assistant", "Ok")
 	chat.add_message("user", f"This is the type of problem: {wcga_error.success_criteria}")
 	chat.add_message("assistant", "Ok")
-	cot = chat.send('Think through finding the issues step by step')
-	data = json.loads(chat.send(result_prompt))
-	data['CoT'] = cot
-	return data
+	for ex in wcga_error.examples:
+		chat.add_message("user", f"This is an example of the problem: {ex.problem}" + f"\n\nThis is a possible solution: {ex.solution}")
+		chat.add_message("assistant", "Ok")
+	return json.loads(chat.send(f"Find the problem"))
 
 def get_fixes_for_error(html: str, wcga_error: WCGAError) -> List[GptFix]:
 	fixes = []
@@ -54,7 +52,7 @@ def get_fixes_for_error(html: str, wcga_error: WCGAError) -> List[GptFix]:
 			sleep(1)
 			continue
 		try:
-			embedding = embed.get_embedding(res['offending_line'])
+			embedding = embed.get_embedding(json.dumps(res))
 			fix = GptFix(res, embedding)
 			print(fix.to_string())
 		except BaseException as e:
@@ -70,7 +68,6 @@ def get_fixes_for_error(html: str, wcga_error: WCGAError) -> List[GptFix]:
 		retries = 0
 		fixes.append(fix)
 		print(f'Added new fix, total {len(fixes)} fixes found\n\n')
-		break
 	return fixes
 
 def find_fixes_for_file(file_name: str):
@@ -84,8 +81,6 @@ def find_fixes_for_file(file_name: str):
 		o = wcga_error.o
 		o['error_fixes'] = error_fixes
 		fixes.append(o)
-	if not os.path.exists('fixes'):
-		os.mkdir('fixes')
 
 	with open(f'fixes/{file_name}.json', 'w', encoding='utf-8') as f:
 		json.dump(fixes, f, indent=4)

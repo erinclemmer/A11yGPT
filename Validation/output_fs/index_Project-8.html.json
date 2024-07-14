@@ -1,0 +1,74 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.4.2",
+            "success_criteria": "Audio or video element should avoid automatically playing audio ",
+            "error_example": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+            "fixed_example": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+        },
+        "problem": {
+            "guideline": "1.4.2",
+            "line": 33,
+            "problem": "<video autoplay>"
+        },
+        "closest_fix": {
+            "problem_type": "Audio or video element should avoid automatically playing audio",
+            "offending_line": "<video autoplay>",
+            "fixed_line": "<video controls>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "error_example": "<title></title>",
+            "fixed_example": "<title>Beauty Products Store</title>"
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 6,
+            "problem": "<title></title>"
+        },
+        "closest_fix": {
+            "problem_type": "title element is empty",
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Website Title</title>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.4",
+            "success_criteria": "anchor element contains no text",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.4.4",
+            "line": 14,
+            "problem": "<li><a href=\"#home\"></a></li>"
+        },
+        "closest_fix": {
+            "problem_type": "Anchor element contains no text",
+            "offending_line": "<li><a href=\"#home\"></a></li>",
+            "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 46,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "problem_type": "Meta refresh with a time-out is used",
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=https://www.example.com/\">"
+        }
+    }
+]

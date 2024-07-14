@@ -1,0 +1,249 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "examples": [
+            {
+                "problem": "<img src=\"foo.png\">",
+                "solution": "<img src=\"foo.png\" alt=\"Bar\">"
+            },
+            {
+                "problem": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "solution": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"Foo Bar\"></iframe>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "alt attribute is missing in iframe tag",
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" aria-hidden=\"true\"></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "examples": [
+            {
+                "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+            },
+            {
+                "problem": "<button type=\"submit\">Submit</button>",
+                "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+            },
+            {
+                "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+            },
+            {
+                "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "examples": [
+            {
+                "problem": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+                "solution": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "problem": "<audio src=\"bookstore-audio.mp3\" type=\"audio/mp3\" autoplay></audio>",
+                "solution": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "Audio or video element should avoid automatically playing audio",
+                "offending_line": "<audio src=\"bookstore-audio.mp3\" type=\"audio/mp3\" autoplay></audio>",
+                "fixed_line": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "examples": [
+            {
+                "problem": "<font size=\"5\">Description of the book...</font>",
+                "solution": "<p>Description of the book...</p>"
+            },
+            {
+                "problem": "<b>Important</b>",
+                "solution": "<strong>Important</strong>"
+            },
+            {
+                "problem": "<i>Italic</i>",
+                "solution": "<em>Italic</em>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "<i>, <b> or <font> tag used",
+                "offending_line": "<b>Important</b>",
+                "fixed_line": "<strong>Important</strong>"
+            },
+            {
+                "problem_type": "<i> tag should not be used",
+                "offending_line": "<i>Italic</i>",
+                "fixed_line": "<em>Italic</em>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "examples": [
+            {
+                "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+            },
+            {
+                "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+                "offending_line": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "fixed_line": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "examples": [
+            {
+                "problem": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">",
+                "solution": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">"
+            }
+        ],
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "examples": [
+            {
+                "problem": "<marquee>Scrolling text...</marquee>",
+                "solution": "<p>Scrolling text...</p>"
+            }
+        ],
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "examples": [
+            {
+                "problem": "<title></title>",
+                "solution": "<title>Beauty Products Store</title>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "Empty title element",
+                "offending_line": "<title>Resume Maker</title>",
+                "fixed_line": "<title>Resume Maker</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "examples": [
+            {
+                "problem": "<a href=\"#\"></a>",
+                "solution": "<a href=\"#\">Home</a>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "Anchor element contains no text",
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "examples": [
+            {
+                "problem": "<html>",
+                "solution": "<html lang=\"en\">"
+            },
+            {
+                "problem": "<html lang=\"tx\">",
+                "solution": "<html lang=\"en\">"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "Document language not identified or incorrect",
+                "offending_line": "<html lang=\"ex\">",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "examples": [
+            {
+                "problem": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                "solution": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\">1</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\">1</label>"
+            },
+            {
+                "problem_type": "input element has more than one associated label",
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>"
+            },
+            {
+                "problem_type": "Input element has more than one associated label",
+                "offending_line": "<input type=\"text\" id=\"name\" placeholder=\"Enter your full name\">",
+                "fixed_line": "<input type=\"text\" id=\"name\" placeholder=\"Enter your full name\" aria-label=\"Enter your full name\">"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "examples": [
+            {
+                "problem": "<li><a href=\"#\">Services</li>",
+                "solution": "<li><a href=\"#\">Services</a></li>"
+            },
+            {
+                "problem": "<div id=\"header\">",
+                "solution": "<div id=\"header\"></div>"
+            }
+        ],
+        "error_fixes": [
+            {
+                "problem_type": "element does not have complete start and end tags or id attribute is not unique",
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\"></label><br>"
+            }
+        ]
+    }
+]

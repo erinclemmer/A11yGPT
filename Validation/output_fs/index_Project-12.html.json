@@ -1,0 +1,38 @@
+[
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 135,
+            "problem": "<label for=\"message\"></label>"
+        },
+        "closest_fix": {
+            "problem_type": "Document language not identified or incorrect",
+            "offending_line": "<html lang=\"tx\">",
+            "fixed_line": "<html lang=\"en\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "error_example": "<img src=\"logo.png\">",
+            "fixed_example": "<img src=\"logo.png\" alt=\"Beauty Products Logo\">"
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 118,
+            "problem": "<img src=\"product1.jpg\">"
+        },
+        "closest_fix": {
+            "problem_type": "alt attribute is missing in iframe or img tag",
+            "offending_line": "<img src=\"product1.jpg\">",
+            "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1\">"
+        }
+    }
+]

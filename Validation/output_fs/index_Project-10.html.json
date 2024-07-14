@@ -1,0 +1,74 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 56,
+            "problem": "<button onmousedown=\"playVideo()\">Play Video</button>"
+        },
+        "closest_fix": {
+            "problem_type": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "offending_line": "<button onmousedown=\"playVideo()\">Play Video</button>",
+            "fixed_line": "<button onmousedown=\"playVideo()\" onkeydown=\"playVideo()\">Play Video</button>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.4",
+            "success_criteria": "anchor element contains no text",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.4.4",
+            "line": 47,
+            "problem": "<li><a href=\"#services\"></a></li>"
+        },
+        "closest_fix": {
+            "problem_type": "Anchor element contains no text",
+            "offending_line": "<li><a href=\"#services\"></a></li>",
+            "fixed_line": "<li><a href=\"#services\">Services</a></li>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html>"
+        },
+        "closest_fix": {
+            "problem_type": "Document language not identified or incorrect",
+            "offending_line": "<html lang=\"tx\">",
+            "fixed_line": "<html lang=\"en\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "error_example": "",
+            "fixed_example": ""
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 86,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "problem_type": "Meta refresh with a time-out is used",
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">"
+        }
+    }
+]
