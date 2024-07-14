@@ -101,10 +101,9 @@ def get_guidance_fixes_for_problems(embed: GptEmbeddings, html: str, html_file: 
 
     return output
 
-def compile(api_key: str):
+def compile(api_key: str, folders: List[str]):
     embed = GptEmbeddings(api_key)
-    output_folders = [GUIDANCE_FOLDER, COT_FOLDER, NO_CTX_FOLDER, FS_FOLDER]
-    for folder in output_folders:
+    for folder in folders:
         if not os.path.exists(folder):
             os.mkdir(folder)
 
@@ -115,14 +114,14 @@ def compile(api_key: str):
         with open(f'html/{html_file}', 'r', encoding='utf-8') as f:
             html = f.read()
 
-        no_ctx_fixes_file = f'fixes/1_no_context/{html_file}.json'
+        no_ctx_fixes_file = f'fixes/1_No_Context/{html_file}.json'
         no_ctx_output_file = f'output/{NO_CTX_FOLDER}/{html_file}.json'
         if os.path.exists(no_ctx_fixes_file) and not os.path.exists(no_ctx_output_file):
             output_no_ctx = get_no_context_fixes_for_problems(embed, html, html_file, VIOLATIONS_FILE, no_ctx_fixes_file)
             with open(no_ctx_output_file, 'w', encoding='utf-8') as f:
                 json.dump(output_no_ctx, f, indent=4)
         
-        for folder in output_folders:
+        for folder in folders:
             fixes_file = f'fixes/{folder}/{html_file}.json'
             output_file = f'output/{folder}/{html_file}.json'
             if not os.path.exists(f'output/{folder}'):

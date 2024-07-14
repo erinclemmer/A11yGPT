@@ -167,8 +167,11 @@ def find_fixes_for_file(
 		for wcga_error in get_wcga_errors():
 			error_fixes = []
 			for fix in get_fixes_for_error(get_fix, chat, embed, html, wcga_error, sim_threshold):
-				error_fixes.append(fix.o)
+				o = fix.o
+				del o['problem_type']
+				error_fixes.append(o)
 			o = wcga_error.o
+			del o['examples']
 			o['error_fixes'] = error_fixes
 			fixes.append(o)
 
@@ -177,3 +180,15 @@ def find_fixes_for_file(
 	
 	with open(fix_file, 'w', encoding='utf-8') as f:
 		json.dump(fixes, f, indent=4)
+
+def run_test(
+		get_fix: Callable[[GptChat, str, WCGAError], dict], 
+		test_folder: str,
+		api_key: str, 
+		embed: GptEmbeddings,
+		sim_threshold: float,
+		no_ctx: bool = False
+    ):
+	chat = GptChat(f'{test_folder}/sys_prompt.txt', api_key)
+	for html_file in os.listdir('html'):
+		find_fixes_for_file(get_fix, chat, embed, html_file, test_folder, sim_threshold, no_ctx)
