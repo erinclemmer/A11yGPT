@@ -1,0 +1,378 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img src='food1.jpg' alt='Food 1'>",
+                "fixed_line": "<img src='food1.jpg' alt='Food 1 Description'>",
+                "CoT": "To find the problem of a missing \"alt\" attribute in the `<img>` tag, we need to:\n\n1. Inspect all `<img>` tags in the HTML.\n2. Check if each `<img>` tag has an \"alt\" attribute.\n3. If any `<img>` tag does not have an \"alt\" attribute, that would be the accessability issue we need to address."
+            },
+            {
+                "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+                "fixed_line": "<img src=\"food1.jpg\" alt=\"Delicious Food Item 1\">",
+                "CoT": "Step 1: Identify all the img tags in the HTML\nStep 2: Check each img tag to ensure it has an alt attribute containing a descriptive text for the image"
+            },
+            {
+                "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+                "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1\"/>",
+                "CoT": "To find the issue related to the missing \"alt\" attribute in the `<img>` tag, we need to:\n\n1. Locate all `<img>` tags in the HTML code.\n2. Check each `<img>` tag to see if it has an \"alt\" attribute.\n3. If any `<img>` tag does not have an \"alt\" attribute, we have identified the issue.\n\nLet's begin by locating all the `<img>` tags in the provided HTML code."
+            },
+            {
+                "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+                "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Delicious Food Image\">",
+                "CoT": "Sure! To find the accessibility issue of missing `alt` attribute in `img` tags, we need to:\n\n1. Identify all the `img` tags present in the HTML.\n2. Check each `img` tag to see if it has an `alt` attribute.\n3. If any `img` tag is missing the `alt` attribute, that would be the accessibility issue to fix."
+            },
+            {
+                "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+                "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Image of Food Item 1\">",
+                "CoT": "Sure, to find the problem where the `alt` attribute is missing in an `img` tag, we need to go through each `img` tag in the HTML code provided and check if they have the `alt` attribute.\n\nLet's start by looking for `img` tags and checking if they have the `alt` attribute."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Enter search term:</label>",
+                "CoT": "First, let's identify all the input elements and buttons on the page that should have associated labels. \nIn this case, we have an input element with id=\"search\" and a button with text \"Add to Cart\" that should have associated labels. \n\nNext, let's check if the input element and button have labels associated with them. The labels should use the \"for\" attribute to specify the id of the input element or button they are labeling.\n\nIn this case, the input element with id=\"search\" has two labels associated with it, but both of them have the same \"for\" attribute value (\"search\"). This is incorrect as each label should be unique and should correctly associate with the input element.\n\nAdditionally, the button with text \"Add to Cart\" does not have an associated label. Buttons that trigger a specific action should have an associated label to provide context for screen readers and assistive technologies.\n\nTherefore, the issue on the page is that the input element with id=\"search\" has two labels with the same \"for\" attribute value, and the button \"Add to Cart\" is missing an associated label."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+                "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+                "CoT": "1. Identify all the input elements and buttons on the webpage.\n2. Check if each input element or button has an associated label.\n3. Verify if the label is empty or missing.\n4. Look for input elements or buttons with alt attributes instead of associated labels."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" aria-hidden=\"true\">",
+                "CoT": "To find and fix the issue of audio or video elements automatically playing audio on the website, we need to follow these steps:\n\n1. Identify any `<audio>` or `<video>` elements on the page that may have audio content.\n2. Check if these elements have attributes that automatically play the audio without user interaction.\n3. If any elements are found to automatically play audio, modify the attributes to prevent automatic playback.\n\nLet's start by examining the HTML code provided in the page to identify any `<audio>` or `<video>` elements that may have auto-play attributes."
+            },
+            {
+                "offending_line": "<video autoplay src=\"video.mp4\"></video>",
+                "fixed_line": "<video src=\"video.mp4\" controls></video>",
+                "CoT": "To identify and fix the accessibility issue related to auto-playing audio or video elements, we need to:\n\n1. Look for any `<video>` or `<audio>` elements in the HTML code that might be set to auto-play.\n2. Check the attributes of these elements to see if they have an attribute like `autoplay` that triggers auto-play functionality.\n3. If an auto-play attribute is found, it should be removed or modified to improve accessibility.\n\nLet's go through the HTML code and identify any `<video>` or `<audio>` elements with auto-play functionality."
+            },
+            {
+                "offending_line": "<video autoplay src='video.mp4'>",
+                "fixed_line": "<video src='video.mp4' controls>",
+                "CoT": "To identify the issue related to audio or video elements automatically playing audio, we need to look for any `<audio>` or `<video>` elements in the HTML code and check if they have the `autoplay` attribute set.\n\n1. Look for `<audio>` and `<video>` tags in the HTML code.\n2. Check if any of these elements have the `autoplay` attribute.\n\nLet's examine the HTML code provided to find any `<audio>` or `<video>` tags with autoplay attribute set."
+            },
+            {
+                "offending_line": "<video autoplay controls>",
+                "fixed_line": "<video controls>",
+                "CoT": "1. Look for any audio or video elements on the webpage.\n2. Check if there are any attributes or settings that indicate if the audio or video should play automatically.\n3. If there is any audio or video element that is set to automatically play, then that is the accessibility issue to address."
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" role=\"button\" tabindex=\"0\">",
+                "CoT": "To find the accessibility issue related to audio or video elements automatically playing audio, I will need to inspect the code for any `<audio>` or `<video>` elements and check if they have the `autoplay` attribute set. If the `autoplay` attribute is present, it means that the audio or video will start playing automatically when the page loads, which can be a problem for some users, especially those using screen readers.\n\nI will also need to check for any JavaScript functions that trigger audio or video playback without user interaction.\n\nLet me check the HTML code for any `<audio>` or `<video>` elements with autoplay attribute or any JavaScript functions triggering automatic playback."
+            },
+            {
+                "offending_line": "<video autoplay controls><source src='video.mp4' type='video/mp4'></video>",
+                "fixed_line": "<video controls><source src='video.mp4' type='video/mp4'></video>",
+                "CoT": "1. Look for any `<audio>` or `<video>` elements in the HTML. \n2. Check if any of these elements have the `autoplay` attribute set."
+            },
+            {
+                "offending_line": "<video autoplay></video>",
+                "fixed_line": "<video autoplay muted></video>",
+                "CoT": "To find the issue related to automatically playing audio or video, we need to look for any audio or video elements that are set to play automatically when the page loads.\n\n1. Check for any `<video>` or `<audio>` elements in the HTML.\n2. Look for attributes like `autoplay` that may indicate automatic playback.\n3. Verify if any JavaScript functions are triggering audio or video playback on page load.\n\nLet's go through the HTML code provided to identify if any audio or video elements are set to automatically play audio."
+            },
+            {
+                "offending_line": "<video autoplay src='video.mp4'></video>",
+                "fixed_line": "<video src='video.mp4'></video>",
+                "CoT": "1. Look for any audio or video elements on the page.\n2. Check if any of these elements have the `autoplay` attribute.\n3. If an audio or video element has the `autoplay` attribute, consider if this could be disruptive to users who may have difficulty controlling audio playback.\n4. If an element with `autoplay` could be disruptive, suggest removing the `autoplay` attribute to improve accessibility."
+            },
+            {
+                "offending_line": "<video autoplay src='video.mp4'></video>",
+                "fixed_line": "<video src='video.mp4' controls muted></video>",
+                "CoT": "To find the issue related to automatically playing audio or video, we need to look for any video or audio elements in the HTML that have the \"autoplay\" attribute set. The autoplay attribute allows media to start playing as soon as it is ready.\n\nLet's scan through the HTML code provided to identify any video or audio elements with the \"autoplay\" attribute."
+            },
+            {
+                "offending_line": "<video src='video.mp4' autoplay>",
+                "fixed_line": "<video src='video.mp4' autoplay='false'>",
+                "CoT": "To find the accessibility issue related to automatically playing audio or video, we need to identify if there is any video or audio element on the webpage and check if it has autoplay enabled. Let's start by looking for any video or audio elements with autoplay attribute in the provided HTML code."
+            },
+            {
+                "offending_line": "<audio src='background_music.mp3' autoplay>",
+                "fixed_line": "<audio src='background_music.mp3' autoplay muted>",
+                "CoT": "To find the problem related to the audio or video element automatically playing audio, we need to look through the HTML and check if there are any `<audio>` or `<video>` elements present. We will then check if these elements have the `autoplay` attribute set, as this attribute causes the media to play automatically when the page loads.\n\nLet's go through the HTML and look for any `<audio>` or `<video>` elements with the `autoplay` attribute."
+            },
+            {
+                "offending_line": "<video autoplay> <!-- Autoplaying video element -->",
+                "fixed_line": "<video controls> <!-- Video element with controls for user interaction -->",
+                "CoT": "To find the issue related to auto-playing audio or video elements, I will need to look for elements within the HTML that could potentially have auto-playing audio or video.\n\n1. Look for any `<audio>` or `<video>` elements in the HTML code that may have the `autoplay` attribute set.\n2. Check if there are any `<video>` elements with the `<source>` element inside them that have the `autoplay` attribute set.\n3. Look for any JavaScript code that triggers the auto-playing of audio or video elements.\n4. Verify that there are no embedded media players or widgets that automatically play audio or video when the page loads.\n\nBy following these steps, I can identify any elements or scripts that may cause audio or video to play automatically, thus potentially causing accessibility issues."
+            },
+            {
+                "offending_line": "<video src='commercial.mp4' autoplay></video>",
+                "fixed_line": "<video src='commercial.mp4' autoplay muted></video>",
+                "CoT": "First, I will look for any `<audio>` or `<video>` elements in the HTML code. If there are any present, I will check if they have the `autoplay` attribute set. If the `autoplay` attribute is present, it means the audio or video will start playing automatically when the page loads, which is an accessibility issue for users who may not want or expect audio to start playing without their consent."
+            },
+            {
+                "offending_line": "<video src='background-video.mp4' autoplay></video>",
+                "fixed_line": "<video src='background-video.mp4' autoplay muted></video>",
+                "CoT": "- Look for any audio or video elements in the HTML code.\n- Check if there are any attributes or settings that would cause audio to play automatically.\n- Determine if there are any scripts or functions that might trigger audio to play without user interaction."
+            },
+            {
+                "offending_line": "<section id=\"home\">\n        <!-- Homepage content with background image, text, buttons, and maybe a video -->\n        <div class=\"hero\">\n            <h1>Welcome to Our Restaurant</h1>\n            <font size=\"5\"> Delicious food just for you!</font>\n            <a href=\"#menu\" class=\"btn\">View Menu</a>\n        </div>\n    </section>",
+                "fixed_line": "<section id=\"home\">\n        <!-- Homepage content with background image, text, buttons, and maybe a video -->\n        <div class=\"hero\">\n            <h1>Welcome to Our Restaurant</h1>\n            <font size=\"5\"> Delicious food just for you!</font>\n            <a href=\"#menu\" class=\"btn\">View Menu</a>\n            <video controls muted>\n              <source src=\"video.mp4\" type=\"video/mp4\">\n              Your browser does not support the video tag.\n            </video>\n        </div>\n    </section>",
+                "CoT": "Step 1: Identify any audio or video elements on the page.\n\nStep 2: Check if any of these elements have the autoplay attribute set.\n\nStep 3: If any elements have autoplay set, determine if they should be removed or adjusted to improve accessibility.\n\nLet me find the issue using these steps."
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\">",
+                "CoT": "To find the issue of automatically playing audio or video when the page loads, I will need to look for any `<audio>` or `<video>` elements in the HTML code and check if they have the `autoplay` attribute. Additionally, I will also check if there are any JavaScript functions that may trigger audio or video playback without user interaction.\n\nLet's examine the HTML code for any `<audio>` or `<video>` elements with autoplay attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>",
+                "CoT": "To address the issue of audio or video elements autoplaying with sound, we need to ensure that the website does not have any elements that automatically play audio without user interaction. Here are the steps to identify and fix the potential issue:\n\n1. Look for any `<audio>` or `<video>` elements in the HTML.\n2. Check if these elements have the `autoplay` attribute set.\n3. If the `autoplay` attribute is present, check if the `muted` attribute is also set. If the `muted` attribute is not set, it means that the audio or video will autoplay with sound.\n4. If there are autoplaying audio or video elements without the `muted` attribute, consider adding the `muted` attribute to prevent the audio from playing automatically with sound.\n\nLet's now go through the provided HTML and identify any `<audio>` or `<video>` elements that autoplay with sound."
+            },
+            {
+                "offending_line": "<video src='promo.mp4' autoplay></video>",
+                "fixed_line": "<video src='promo.mp4' autoplay='false'></video>",
+                "CoT": "To identify the issue related to the audio or video element autoplaying, I will need to examine the HTML code for any video or audio elements that may have autoplay set in their attributes or in their associated scripts. Specifically, I will look for any `<video>` or `<audio>` tags and check if they have the autoplay attribute present. Autoplaying audio or video can be a barrier for some users, so it's important to ensure that it is not set unnecessarily."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<p style=\"font-size: 1.2em;\">Delicious food just for you!</p>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags used in the HTML code provided.\nStep 2: Check if any of these tags are used to style text or add emphasis.\nStep 3: Determine if any of these tags are used for formatting or presentation purposes rather than semantic structuring.\nStep 4: If any of the identified tags are used for formatting or presentation purposes, flag them as potential accessibility issues."
+            },
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<h2 style=\"font-size: 1.875rem;\">Delicious food just for you!</h2>",
+                "CoT": "1. Look for any <b>, <i>, or <font> tags in the html code.\n2. Check if any of these tags are used for styling purposes.\n3. Identify if any of these tags are used to format text or provide emphasis.\n4. Determine if any of these tags are used for accessibility reasons.\n5. Lastly, check if any of these tags can be replaced with more semantic and accessible HTML elements."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"ExternalFunction()\">",
+                "CoT": "For this specific accessibility issue regarding the onmousedown event missing an onkeydown event or script not being keyboard accessible, I would focus on the interactive elements on the page that are triggered by mouse actions.\n\n1. Identify any elements that have onmousedown events or JavaScript functions triggered by mouse clicks.\n2. Check whether these elements have corresponding keyboard accessibility options, such as onkeydown events or keyboard shortcuts.\n3. Verify that users can interact with these elements using keyboard only, without relying on mouse actions.\n4. Test these interactive elements using keyboard navigation to ensure full accessibility for keyboard-only users.\n5. If any elements lack keyboard accessibility, recommend adding onkeydown events or alternative keyboard interactions to ensure all users can effectively engage with the content. \n\nLet's go through the HTML code and identify any elements that may have this accessibility issue."
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"if(event.key === 'Enter' || event.key === ' ') { ExternalFunction(); }\" tabindex=\"0\">",
+                "CoT": "To identify the accessibility issue related to missing onkeydown event or script not being keyboard accessible, we need to look for interactive elements such as buttons or links, and check if they can be navigated and activated using only the keyboard without a mouse.\n\n1. Look for interactive elements that should trigger an action or change in the webpage behavior, like buttons, links, or form inputs.\n2. Check if these interactive elements have the necessary keyboard event handlers or attributes like \"onkeydown\" to handle keyboard interactions.\n3. Ensure that pressing the \"Tab\" key allows you to navigate through all interactive elements on the page.\n4. Test if you can activate the interactive elements using the \"Enter\" key or \"Spacebar\" key instead of relying on mouse events like \"onmousedown\".\n\nLet's now apply these steps on the provided HTML code."
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onfocus=\"ExternalFunction()\">",
+                "CoT": "First, let's identify any event attributes that are related to user interaction. In this case, we have an `onmouseover` event attribute on the `div` element with the class `menu-item`.\n\nNext, let's check if there are corresponding keyboard events for each mouse event to ensure keyboard accessibility. The `onmouseover` event is triggered when the mouse pointer is moved onto the `<div>` element. To make it keyboard accessible, we should consider adding an `onfocus` event as an alternative for keyboard users.\n\nLet's add an `onfocus` event attribute to the `div` element with the class `menu-item`.\n\nHere's the updated HTML:\n\n```html\n<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onfocus=\"ExternalFunction()\">\n```\n\nBy including the `onfocus` event attribute along with the existing `onmouseover` event attribute, we ensure that both mouse and keyboard users can interact with the menu item, making the content more accessible."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onmousedown='ExternalFunction()' onkeydown='if(event.key === \"Enter\"){ExternalFunction()}'>Add to Cart</button>",
+                "CoT": "To address the issue of missing `onmousedown` event and ensuring keyboard accessibility, we need to focus on the interactive elements on the page, such as buttons or links, that should be accessible via keyboard navigation.\n\n1. Identify interactive elements: Look for interactive elements on the page that trigger specific actions, such as buttons or links. In this case, the \"Add to Cart\" button under each menu item is an interactive element that should support keyboard navigation.\n\n2. Check for event handlers: Look for event handlers associated with these interactive elements. In this case, we see that the \"Add to Cart\" button has an `onmouseover` event attached to it (`onmouseover=\"ExternalFunction()\"`). However, an `onmousedown` event is missing, which is often used to handle mouse clicks. \n\n3. Add keyboard support: To make the button more accessible, we should include an `onmousedown` event to handle mouse clicks, and also ensure that the same functionality can be triggered using the keyboard. This can be achieved by also including an `onkeydown` event which triggers the same action when the Enter key is pressed.\n\nLet's update the code to address the missing `onmousedown` event and enhance keyboard accessibility:\nReplace:\n```html\n<button>Add to Cart</button>\n```\n\nWith:\n```html\n<button onmousedown=\"ExternalFunction()\" onkeydown=\"if(event.key === 'Enter'){ExternalFunction()}\">Add to Cart</button>\n```\n\nBy adding the `onmousedown` event to handle clicks and the `onkeydown` event to handle Enter key presses, we ensure that the \"Add to Cart\" button is accessible for both mouse and keyboard users."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addProductToCart(event)\" onkeydown=\"if(event.key === 'Enter'){ addProductToCart(event) }\">Add to Cart</button>",
+                "CoT": "To identify the issue with accessibility related to missing onmousedown event or onkeydown event, or script not being keyboard accessible, we need to look for interactive elements like buttons or links that trigger an action on mouse click but do not have the same action triggered by keyboard input.\n\n1. Look for interactive elements such as buttons or links in the HTML code.\n2. Check if these elements have event handlers like onmousedown for mouse click events.\n3. Verify if these elements have corresponding event handlers like onkeydown for keyboard input events.\n4. Ensure that the functionality triggered by the mouse click can also be triggered by keyboard input for accessibility.\n\nAfter scanning through the HTML code, I have identified the following accessibility issue related to missing keyboard accessibility:\n\nIn the \"menu-item\" div, there is a button for \"Add to Cart\" functionality. However, there is no onkeydown event specified to trigger the same action for keyboard users. This means that users who navigate the website using a keyboard or screen reader may not be able to interact with the \"Add to Cart\" button effectively.\n\nWe need to include an onkeydown event to make the \"Add to Cart\" button keyboard accessible."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<p style=\"font-size: larger;\">Delicious food just for you!</p>",
+                "CoT": "Alright, let's go through the HTML step by step to identify any uses of the <marquee> element. First, I will visually inspect the code for any instances of <marquee>."
+            },
+            {
+                "offending_line": "<marquee> element is used",
+                "fixed_line": "Replace <marquee> element with CSS animations or other modern alternatives",
+                "CoT": "Step 1: Look through the HTML code to find any instances of the <marquee> element."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "The <marquee> element should be replaced with more modern CSS animations or JavaScript for moving text.",
+                "CoT": "Sure! To find and fix the issue related to the use of the `<marquee>` element, we need to follow these steps:\n\n1. Search through the entire HTML code for the `<marquee>` element.\n2. If the `<marquee>` element is found, it should be replaced with more accessibile ways of displaying content.\n3. Determine if there is any important information or content within the `<marquee>`, and ensure it is presented in a more accessible format.\n\nLet's start by looking through the HTML code for any occurrences of the `<marquee>` element."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->",
+                "CoT": "Step 1: Look through the HTML code to find any <marquee> elements."
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<marquee> element should not be used - replace with CSS for animated scrolling text",
+                "CoT": "1. Look through the HTML code for any <marquee> elements.\n2. Check each element to see if it's being used for scrolling text or any other purposes.\n3. If the <marquee> element is being used for scrolling text, it should be replaced with a CSS animation or other more accessible method.\n4. If no <marquee> element is found or if it's not being used for scrolling text, then the code is free of this specific issue."
+            },
+            {
+                "offending_line": "<marquee> element used in the code",
+                "fixed_line": "<marquee> elements should not be used as they are not accessible. It is recommended to use CSS animations or other alternatives for moving content.",
+                "CoT": "Step 1: Locate any <marquee> elements in the HTML code.\nStep 2: Verify if there are any <marquee> elements being used in the code.\nStep 3: If found, identify where the <marquee> element is and what it is being used for.\nStep 4: Determine if the <marquee> element can be replaced with a more accessible alternative.\nStep 5: Provide a recommendation for replacing the <marquee> element if necessary."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Best Restaurant in Town</title>",
+                "CoT": "Sure, let's go step by step to identify and fix the \"title element is empty\" issue:\n\n1. Locate the <title> element within the <head> section of the HTML.\n2. Verify that the <title> element contains text between the opening and closing tags.\n3. If the <title> element is empty, add appropriate text related to the content of the webpage.\n\nLet's start by finding the <title> element and checking its content."
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Your Restaurant Name</title>",
+                "CoT": "Sure! \n1. I will first locate the `<title>` element in the HTML code. \n2. I will check if the `<title>` element has any text inside it. \n3. If the `<title>` element is empty, then that would be the accessability issue to address."
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Delicious Restaurant Menu - Our Specialties</title>",
+                "CoT": "Sure, here is the step-by-step process to identify and fix the issue of an empty title element in the HTML document:\n\n1. **Identify the Title Element**: Locate the `<title>` element within the `<head>` section of the HTML document.\n   \n2. **Check the Content**: Look inside the `<title>` element to see if it contains any text. It should have a meaningful title that describes the purpose or content of the page.\n\n3. **Identify the Problem**: If the `<title>` element is empty or does not provide a descriptive title for the page, then it violates accessibility guidelines.\n\n4. **Fix the Issue**: Update the `<title>` element to include relevant and descriptive text that accurately represents the content of the page. For example, for a restaurant menu website, the title could be \"Delicious Restaurant Menu - Our Specialties\".\n\n5. **Test the Solution**: After making the necessary changes, save the HTML file and open it in a web browser to ensure that the updated title is displayed correctly in the browser tab.\n\nBy following these steps, you can ensure that the `<title>` element of the webpage is accessible and provides useful information to users and assistive technologies."
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Home</title>",
+                "CoT": "Sure, to identify and fix the issue of an empty title element in the HTML document, we can follow these steps:\n\n1. Locate the <title> element in the <head> section of the HTML document.\n2. Check if the <title> element has any text content inside it.\n3. If the <title> element is empty, add a meaningful title that describes the content of the webpage for better accessibility and usability.\n4. Save the changes and ensure that the updated title is relevant and descriptive.\n\nLet's go through these steps to identify and fix the issue of the empty title element in the HTML document."
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Delicious Food Menu</title>",
+                "CoT": "Sure, let's find and fix the \"title element is empty\" issue step by step:\n\n1. Identify the <title> element in the HTML code.\n\n2. Check if the <title> element has any text content within it.\n\n3. If the <title> element is empty, add a relevant title text within the <title> tags.\n\n4. Update the title to provide a descriptive and informative title for the webpage, such as \"Restaurant Menu - Delicious Food Menu\".\n\nLet's go ahead and address this issue by adding a descriptive title within the <title> tags."
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Our Restaurant</title>",
+                "CoT": "Step 1: Identify the \\<title> element in the HTML code.\nStep 2: Check if the \\<title> element is empty or missing its content."
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Our Delicious Menu</title>",
+                "CoT": "First, I need to locate the `<title>` element in the HTML code. It is typically located within the `<head>` section of the document. Let's see if the `<title>` element is empty."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu <span class=\"sr-only\">Navigate to Menu section</span></a>",
+                "CoT": "First, I will identify all the anchor elements in the HTML:\n- Navigation links in the <nav> section\n- \"View Menu\" button in the hero section\n- Links in the navigation bar (not shown in the provided code)\n\nNext, I will check each anchor element to see if it contains any text between the opening and closing <a> tags. This means looking for content like \"Home\", \"Menu\", \"About Us\", or any descriptive text. \n\nIf I find any anchor elements without any text between the <a> tags, then I've identified the problem where the anchor element contains no text."
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home Page</a>",
+                "CoT": "Step 1: Identify all anchor elements in the HTML code.\nStep 2: Check if each anchor element has text content inside it. If an anchor element does not have any text content, then there is potentially a problem of \"anchor element contains no text.\""
+            },
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>Menu",
+                "CoT": "To find and fix the accessibility issue of anchor element containing no text, we need to:\n1. Look for anchor elements (<a>) in the HTML code.\n2. Check if any of the anchor elements have no text content within them.\n3. If we find any anchor element without text content, we need to add descriptive text to make it accessible for screen readers.\n\nLet's go through the HTML code and find any anchor elements that do not have text content within them."
+            },
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>Click here to view our menu</a>",
+                "CoT": "Sure! To find the issue of an anchor element containing no text, we need to:\n\n1. Look for all the anchor elements (<a>) in the HTML.\n2. Verify if each anchor element has text content inside. \n\nLet's go through the HTML and identify any anchor element that does not have text content."
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home</a>",
+                "CoT": "Sure, first I need to identify all the anchor elements in the HTML code. Then, I will check each anchor element to see if it contains any text. If I find any anchor element without text, that would be the problem related to \"anchor element contains no text\"."
+            },
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu</a><span class=\"sr-only\">Go to Menu</span>",
+                "CoT": "First, I will look for anchor elements in the HTML code. \nThen, I will check each anchor element to ensure that it contains text content. \nIf I find any anchor element without text content, I will identify it as a problem related to accessibility."
+            },
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\"></a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">Menu</a>",
+                "CoT": "Sure! To find the issue of an anchor element containing no text, we need to look for `<a>` tags that do not have any text content inside them. \n\n1. We will start by looking through all the `<a>` tags in the HTML code.\n2. Then, we will check if any of these `<a>` tags do not have any text content inside them.\n\nLet's follow these steps to identify and fix the issue."
+            },
+            {
+                "offending_line": "<li><a href=\"#home\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+                "CoT": "Sure! To address the issue of an anchor element containing no text, we need to look for anchor (<a>) elements in the HTML code where the content between the opening and closing tags is empty.\n\nWe will specifically look for `<a>` tags that do not have any text content within them, as this can be a problem for users who rely on screen readers or voice commands to navigate the website. Having meaningful text within anchor tags is crucial for providing context and clarity for users.\n\nLet's go ahead and scan the HTML code to identify any anchor elements that do not contain any text."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"eg\">",
+                "fixed_line": "<html lang=\"en\">",
+                "CoT": "Step 1: Look for the <html> tag in the html code to check if the lang attribute is correctly set to identify the document language.\nStep 2: Verify if the value assigned to the lang attribute is correct according to the ISO language code standards."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><br>",
+                "CoT": "To find the accessability issue of an input element having more than one associated label, we need to:\n\n1. Identify all the input elements in the HTML document.\n2. Check if each input element has one or more associated label elements.\n3. If an input element has more than one associated label, then that is the accessability issue we need to fix. \n\nLet's start by identifying all input elements in the provided HTML code."
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label>\n<label for=\"sort\">Sort by:</label>",
+                "CoT": "Sure, here is the step-by-step process to find the problem of having more than one associated label for an input element:\n\n1. Identify all the input elements on the webpage.\n2. Determine if each input element has an associated label using the \"for\" attribute in the label tag.\n3. Check if any input element has more than one associated label.\n4. If an input element has more than one associated label, it can create confusion for screen reader users as they may not know which label is relevant to the input field.\n\nLet's go through the HTML code to see if there are any input elements with more than one associated label."
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+                "CoT": "Sure, here is how we can approach this:\n\n1. Look for `<input>` elements in the HTML code.\n2. Check if each `<input>` element has one or more associated `<label>` elements using the `for` attribute.\n3. Identify if there are any `<label>` elements associated with more than one `<input>` element.\n\nLet's go through the HTML code and identify input elements and their associated labels."
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>\n        <label for=\"search\">Search:</label>",
+                "fixed_line": "        <label for=\"search\">Search:</label>",
+                "CoT": "To find the problem of an input element having more than one associated label, we need to do the following steps:\n\n1. Identify all the input elements in the HTML code.\n2. Check each input element to see if it has more than one label associated with it.\n3. If we find any input element with more than one associated label, then we have identified the accessibility issue."
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\" aria-labelledby=\"search-label\">",
+                "CoT": "To find the problem of having an input element with more than one associated label, we need to:\n\n1. Identify all input elements in the HTML code.\n2. Check for associated label elements for each input element.\n3. Determine if any input element has more than one associated label.\n\nLet's start by identifying all input elements in the HTML code."
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" aria-labelledby=\"search-label\" placeholder=\"Search...\"><span id=\"search-label\" hidden>Search:</span>",
+                "CoT": "To find the problem of an input element having more than one associated label, I will:\n1. Look for all the input elements in the HTML code.\n2. Check each input element to see if there are multiple `<label>` elements using the `for` attribute that reference the input element using the same `id`.\n\nLet me do that for you."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<p style=\"font-size: larger;\">Delicious food just for you!</p>",
+                "CoT": "Let's start by checking if all elements have complete start and end tags. This means making sure that each tag that needs a closing tag actually has one, and that they are properly nested. We will also check if all tags have proper attributes, such as unique id attributes."
+            }
+        ]
+    }
+]

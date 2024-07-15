@@ -1,0 +1,582 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" alt=\"Choose File\">"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Image description</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Placeholder text</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\"><img src=\"\" alt=\"Icon\"></label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I have a bike</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\"> I own a bike</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\">I have a bike</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I own a vehicle</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\"> I have a vehicle</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\"> I have a bike</label><br>\n<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n<label for=\"vehicle2\"> I have a car</label><br>\n<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n<label for=\"vehicle3\"> I have a boat</label><br>\n<label for=\"myfile\">Upload a file:</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onclick=\"showMessage()\" type=\"button\">Click me</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<b> tag in use. It is not recommended for styling.",
+                "fixed_line": "Replace <b> tag with <strong> tag for better accessibility."
+            },
+            {
+                "offending_line": "<i> or <font> tag should not be used",
+                "fixed_line": "<i> tag should not be used"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I own a bike</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<span aria-hidden=\"true\"></span><label for=\"vehicle1\"></label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I have a vehicle</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"> I have a car</label><br>",
+                "fixed_line": "<label for=\"vehicle2\"><i> I have a car</i></label><br>"
+            },
+            {
+                "offending_line": "            <input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>"
+            },
+            {
+                "offending_line": "<b>",
+                "fixed_line": "<strong>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span>"
+            },
+            {
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onmousedown=\"showMessage()\">Click me</button>"
+            },
+            {
+                "offending_line": "<b> or <font> tag",
+                "fixed_line": "Use CSS to style text instead of <b> or <font> tag"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\" aria-labelledby=\"label_1\">\n<label for=\"1\" id=\"label_1\">1</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"> Bike</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<label for=\"myfile\">Select File</label>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+            },
+            {
+                "offending_line": "<b> or <i> tag used",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<b> or <i> tags should not be used for styling text. Use CSS instead.",
+                "fixed_line": "Instead of <b> or <i> tags, use CSS for styling text."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<span class=\"visually-hidden\">I have a Bike</span><br>"
+            },
+            {
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onclick=\"showMessage()\">Click me</button>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<span> I have a bike </span><input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">"
+            },
+            {
+                "offending_line": "<b> or <i> or <font> tags should not be used for styling. Use CSS instead.",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<font color='red'>",
+                "fixed_line": "<span style='color: red;'>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<label for=\"1\">1</label><br>"
+            },
+            {
+                "offending_line": "<b> tag should not be used",
+                "fixed_line": "<strong> tag should be used"
+            },
+            {
+                "offending_line": "<b> or <font> tag should not be used",
+                "fixed_line": "Use CSS instead for styling"
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"file_input\" name=\"file_input\">"
+            },
+            {
+                "offending_line": "<b>, <i>, or <font> tags should not be used for styling. They are outdated and not recommended for accessibility.",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<span for=\"vehicle1\"></span><br>"
+            },
+            {
+                "offending_line": "<font style=\"color:red;\">Username:</font><br>",
+                "fixed_line": "<label style=\"color:red;\">Username:</label><br>"
+            },
+            {
+                "offending_line": "<b> or <i> or <font> tag found. These tags should not be used for styling.",
+                "fixed_line": "Use CSS for styling instead of <b>, <i>, or <font> tags."
+            },
+            {
+                "offending_line": "<link rel=\"stylesheet\" href=\"styles.css\">",
+                "fixed_line": "<link rel=\"stylesheet\" href=\"styles.css\">"
+            },
+            {
+                "offending_line": "<b> tag",
+                "fixed_line": "Use <strong> tag instead"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Please select a vehicle:</label><br>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "NONE"
+            },
+            {
+                "offending_line": "<font face='Arial, sans-serif'>",
+                "fixed_line": "<span style='font-family: Arial, sans-serif;'>"
+            },
+            {
+                "offending_line": "<i> or <b> tags should not be used for styling purposes. Use CSS instead.",
+                "fixed_line": "<i> tags should not be used for styling purposes. Use CSS instead."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<label for=\"myfile\">Choose a file:</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+            },
+            {
+                "offending_line": "<b> or <i> tags should not be used for styling purposes. Use CSS instead.",
+                "fixed_line": "<span style=\"font-weight: bold;\"> or <span style=\"font-style: italic;\"> tags should be used instead."
+            },
+            {
+                "offending_line": "<font> I have a car</font><br>",
+                "fixed_line": "<label for=\"vehicle2\">I have a car</label><br>"
+            },
+            {
+                "offending_line": "<font color='red'>Click me</font>",
+                "fixed_line": "<button onmousedown='showMessage()' style='color: red;'>Click me</button>"
+            },
+            {
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onmousedown=\"showMessage()\"><strong>Click me</strong></button>"
+            },
+            {
+                "offending_line": "<b>Welcome to our ChatGPT-powered website!</b>",
+                "fixed_line": "<h1>Welcome to our ChatGPT-powered website!</h1>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "<p><strong><em> or <span> tag should be used instead for styling</p>"
+            },
+            {
+                "offending_line": "<font color=\"red\">Invalid entry</font>",
+                "fixed_line": "<span style=\"color:red;\">Invalid entry</span>"
+            },
+            {
+                "offending_line": "<label for=\"1\">1</label><br>",
+                "fixed_line": "<label for=\"1\"><strong>1</strong></label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onmousedown=\"showMessage()\" onkeydown=\"showMessage()\">Click me</button>"
+            },
+            {
+                "offending_line": "<button onmousedown=\"showMessage()\">Click me</button>",
+                "fixed_line": "<button onmousedown=\"showMessage()\" onkeydown=\"if(event.key === 'Enter') { showMessage(); }\">Click me</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://example.com/\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=http://example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=http://example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\" aria-hidden=\"true\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\"> <!-- This meta refresh tag should not be used for automatic redirection -->"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Welcome to ChatGPT</marquee>",
+                "fixed_line": "<span>Welcome to ChatGPT</span>"
+            },
+            {
+                "offending_line": "<marquee>Welcome to our website!</marquee>",
+                "fixed_line": "<p>Welcome to our website!</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p>Scrolling text is not recommended</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='white-space: nowrap; overflow: hidden;'>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div role=\"alert\" aria-live=\"assertive\">"
+            },
+            {
+                "offending_line": "<marquee> element is used which is not recommended for accessibility.",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><em>Sorry, this website does not support the <code>&lt;marquee&gt;</code> element. Please refrain from using it for better accessibility.</em></p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><strong>Do not use the &lt;marquee&gt; element for scrolling text.</strong></p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style=\"color: red; text-align: center;\">The <marquee> element should not be used.</p>"
+            },
+            {
+                "offending_line": "<marquee>Welcome to our ChatGPT-powered website!</marquee>",
+                "fixed_line": "<div>Welcome to our ChatGPT-powered website!</div>"
+            },
+            {
+                "offending_line": "<marquee>Moving text can be distracting to users and is not accessible.</marquee>",
+                "fixed_line": "<p>Moving text can be distracting to users and is not accessible.</p>"
+            },
+            {
+                "offending_line": "<marquee>No scrolling text</marquee>",
+                "fixed_line": "<div>No scrolling text</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p> element should be used instead."
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='color:red;'><strong>Do not use the &lt;marquee&gt; element for moving content.</strong></p>"
+            },
+            {
+                "offending_line": "<marquee>This is a scrolling text</marquee>",
+                "fixed_line": "<p style=\"animation: marquee 5s; white-space: nowrap;\">This is a scrolling text</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used which should not be used for accessibility reasons.",
+                "fixed_line": "<p class='marquee-text' role='alert'>This text scrolls horizontally</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<p class='error'>Element <marquee> should not be used for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><strong>Do not use the <code>&lt;marquee&gt;</code> element as it is not accessible. Consider using CSS animations instead.</strong></p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div aria-hidden=\"true\" style=\"display: inline-block;\">"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><strong>Warning:</strong> The <marquee> element should not be used. Please avoid using it for better accessibility.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>Marquee element should not be used.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p> element should not be used. Create animations using CSS or JavaScript instead."
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='color:red;'>This website does not use the <marquee> element for scrolling text as it is not accessible.</p>"
+            },
+            {
+                "offending_line": "<marquee> element used for scrolling text",
+                "fixed_line": "<div> element with CSS animation used for scrolling text"
+            },
+            {
+                "offending_line": "<marquee> element in use here",
+                "fixed_line": "<p class='error'>Marquee element should not be used for accessibility reasons. Consider alternative ways of achieving the desired effect.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='text-align: center;'>This text should not be moving</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='error'>The use of <marquee> element is not allowed.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>The <marquee> element should not be used due to accessibility reasons. Please avoid using it.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p id=\"marquee-text\" role=\"status\" aria-live=\"polite\">"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>The use of &lt;marquee&gt; element is not recommended for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used which is not recommended for accessibility.",
+                "fixed_line": "<marquee> element is used which is not recommended for accessibility. Consider using CSS animations instead."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.</marquee>",
+                "fixed_line": "<p style='color:red; font-size:18px; font-weight:bold;'>Marquee element should not be used.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>The use of <marquee> element is not recommended for accessibility. Consider removing it and using alternative methods for any desired functionality.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used here</marquee>",
+                "fixed_line": "<div role='alert' aria-live='assertive'>This content should not be animated. </div>"
+            },
+            {
+                "offending_line": "<marquee> element is used which is not recommended for accessibility.",
+                "fixed_line": "<p class=\"announcement\">Breaking news: ChatGPT now available! Sign up today.</p>"
+            },
+            {
+                "offending_line": "            <marquee>Welcome to our ChatGPT-powered website!</marquee>",
+                "fixed_line": "<marquee> is not recommended for usability and accessibility purposes. Consider using CSS animations or JavaScript for similar effects."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='error-message'>Do not use the <marquee> element for scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee>This is a scrolling text.</marquee>",
+                "fixed_line": "<div style=\"overflow: hidden; white-space: nowrap;\">This is a scrolling text.</div>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>ChatGPT Website</title>",
+                "fixed_line": "<title>ChatGPT Website - Powered by ChatGPT</title>"
+            },
+            {
+                "offending_line": "<title>ChatGPT Website</title>",
+                "fixed_line": "<title>ChatGPT Website - AI Chatbot Powered Website</title>"
+            },
+            {
+                "offending_line": "<title>ChatGPT Website</title>",
+                "fixed_line": "<title>ChatGPT Website - Home</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I have a vehicle</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\"> I have a bike</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Select Vehicle 1</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Text for vehicle1</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<meta charset=\"UTF-8\">",
+                "fixed_line": "<meta charset=\"UTF-8\" lang=\"en\">"
+            },
+            {
+                "offending_line": "<!DOCTYPE html>",
+                "fixed_line": "<!DOCTYPE html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html>",
+                "fixed_line": "<html lang='en'>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\">I have a bike</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"></label><br>\n            <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\"> I have a car</label><br>\n            <input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n            <label for=\"vehicle3\"> I have a boat</label>",
+                "fixed_line": "<label for=\"vehicle1\">\n            <input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            Bike</label><br>\n            <label for=\"vehicle2\">\n            <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n             I have a car</label><br>\n            <label for=\"vehicle3\">\n            <input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n             I have a boat</label>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            },
+            {
+                "offending_line": "<input type='checkbox' id='vehicle1' name='vehicle1' value='Bike'>",
+                "fixed_line": "<input type='checkbox' id='vehicle1' name='vehicle1' value='Bike'>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\"></label><br><label for=\"vehicle1\"> I have a bike</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\"> I have a bike</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">I have a vehicle</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Bike</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"fav_number1\" name=\"fav_number\" value=\"1\">"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\"> I have a bike</label><br>"
+            }
+        ]
+    }
+]

@@ -1,0 +1,483 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken\">",
+                "fixed_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken\">",
+                "CoT": "Sure, let's go through the steps to find the problem:\n1. Identify all the `<img>` tags in the HTML code.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If any `<img>` tag is missing the `alt` attribute, indicate that as the accessibility-related problem."
+            },
+            {
+                "offending_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken\">",
+                "fixed_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken - Delicious Indian dish\">",
+                "CoT": "Step 1: Identify img tags in the HTML code.\n\nStep 2: Check if each img tag has an alt attribute.\n\nStep 3: If any img tag does not have an alt attribute, add an appropriate alt attribute describing the image content.\n\nLet's proceed with this approach."
+            },
+            {
+                "offending_line": "<img src=\"chicken_biryani.jpg\" alt=\"Chicken Biryani\">",
+                "fixed_line": "<img src=\"chicken_biryani.jpg\" alt=\"Chicken Biryani - Delicious Chicken Biryani dish\">",
+                "CoT": "1. Look for `<img>` tags in the HTML.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If any `<img>` tag is missing the `alt` attribute, flag it as an accessibility issue."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"sort\"></label>",
+                "fixed_line": "<label for=\"sort\">Sort by:</label>",
+                "CoT": "Step 1: Identify the input elements and buttons present in the HTML code.\nStep 2: Check if each input element or button has an associated label.\nStep 3: Verify if the label is empty or if the input element or button is missing an associated label.\nStep 4: Check if the input element has an alt attribute specified.\nStep 5: Determine if there are any issues related to the accessibility of the input elements and buttons on the website.\nStep 6: Provide a summary of the accessibility issue found in the HTML code."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search\">",
+                "fixed_line": "<label for=\"search\">Search: </label><input type=\"text\" id=\"search\" placeholder=\"Search\">",
+                "CoT": "1. Identify all the input elements and buttons on the page.\n2. Check if each input element or button has an associated label.\n3. If there is a label, check if the label is empty or missing the \"for\" attribute that corresponds to the input element or button.\n4. If there is no label, check if the input element or button has an \"alt\" attribute (for images) that can act as a label.\n5. If the alt attribute is present, make sure it adequately describes the purpose or content of the input element or button."
+            },
+            {
+                "offending_line": " <input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<label for=\"myfile\">File Upload</label>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "CoT": "Step 1: Identify all input elements and buttons in the HTML code.\nStep 2: Check each input element and button for the following:\n  - Whether it has an associated label using the \"for\" attribute or by wrapping the input element within a <label> tag.\n  - Whether the label is empty or missing.\n  - Whether the input element or button has an \"alt\" attribute, which is not applicable for these elements.\nStep 3: If any of the input elements or buttons fail to meet the above criteria, then that would be the accessibility-related problem."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<label for=\"add-to-cart\">Add to Cart</label><button id=\"add-to-cart\">Add to Cart</button>",
+                "CoT": "1. Look for input elements or buttons in the html code.\n2. Check if each input element or button has an associated label using the \"for\" attribute.\n3. Check if the input element or button has an alt attribute.\n4. Check if the label associated with the input element or button is empty."
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<label for=\"1\">1</label><input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "CoT": "First, let's identify all the input elements and buttons on the page:\n1. Search input field with id=\"search\"\n2. Sort select dropdown with id=\"sort\"\n3. Add to Cart buttons within each menu item\n4. Username input field with id=\"username\"\n5. Password input field with id=\"pwd\"\n6. Radio inputs with ids \"1\", \"2\", and \"3\"\n7. Checkbox inputs with ids \"vehicle1\", \"vehicle2\", and \"vehicle3\"\n8. File input with id=\"myfile\"\n9. Submit button\n\nNext, we need to check if each of these elements has an associated label. If an element has an associated label, we need to ensure that:\n- The label's \"for\" attribute matches the id of the element it is labeling.\n- The label text is descriptive and meaningful.\n\nLet's start by checking for elements without an associated label or with an empty label text."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<label for=\"myfile\">Choose a file to upload:</label><input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "CoT": "Step 1: Identify all the input elements and buttons on the webpage.\nStep 2: Check if each input element and button has an associated label.\nStep 3: Verify that the label associated with each input element or button is not empty.\nStep 4: Check if any input element or button has an alt attribute instead of a label."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button aria-label='Add to Cart'>Add to Cart</button>",
+                "CoT": "Step 1: Identify all input elements and buttons in the HTML code.\nStep 2: Check each input element and button to see if it has an associated label.\nStep 3: If an input element or button does not have an associated label, an alt attribute, or has an empty label, then it is the accessability issue we are looking for."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<header><p>Welcome to our Indian Cuisine Restaurant</p></header>",
+                "CoT": "To address the issue of audio or video elements automatically playing audio, we need to check the HTML for any `<audio>` or `<video>` elements and ensure that they do not have the `autoplay` attribute.\n\nLet's examine the provided HTML code to identify if there are any `<audio>` or `<video>` elements and if they have the `autoplay` attribute set:"
+            },
+            {
+                "offending_line": "<audio src='music.mp3' autoplay></audio>",
+                "fixed_line": "<audio src='music.mp3'></audio>",
+                "CoT": "To identify the issue related to automatic playing audio or video elements, I will need to inspect the HTML code for any audio or video elements with autoplay attribute set. \n\nHere are the steps to find and fix the issue:\n1. Search for any audio or video elements in the HTML code.\n2. Check if there is an autoplay attribute set on any of these elements.\n3. If an autoplay attribute is found, remove it to prevent automatic playing of audio or video.\n4. Test the website to ensure that no audio or video elements play automatically.\n\nLet me check the HTML code for any audio or video elements with autoplay attribute set."
+            },
+            {
+                "offending_line": "<audio src='background_music.mp3' autoplay></audio>",
+                "fixed_line": "<audio src='background_music.mp3' controls></audio>",
+                "CoT": "To identify the accessibility issue related to the \"Audio or video element should avoid automatically playing audio\" rule, we need to look for any audio or video elements on the website that play automatically without user interaction. We will specifically check for any `<audio>` or `<video>` elements with autoplay attribute or any `<audio>` elements without controls that play automatically.\n\nLet's review the provided HTML code and check if there are any audio or video elements with autoplay attribute or any audio elements without controls."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<h1>Welcome to our Indian Cuisine Restaurant</h1>",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n\n2. Check if any of these tags are used for styling purposes.\n\n3. Identify if the use of these tags is purely for presentation or if it affects the accessibility of the website.\n\n4. Determine if the content within these tags should be styled differently for better accessibility.\n\n5. Suggest an alternative method for styling the content without using `<b>`, `<i>`, or `<font>` tags if needed."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart(event);\">Add to Cart</button>",
+                "CoT": "To find the problem of missing keyboard accessibility due to the `onmousedown` event without a corresponding `onkeydown` event in the code, we need to do the following steps:\n\n1. Scroll through the HTML code and identify any interactive elements like buttons or form fields that have JavaScript events attached to them.\n\n2. Check if these interactive elements have event handlers like `onmousedown` without a corresponding `onkeydown` event.\n\n3. Determine if the use of `onmousedown` event alone may make it difficult for keyboard users to interact with the elements.\n\n4. Suggest adding the appropriate `onkeydown` event or handler to ensure keyboard accessibility for users who navigate with the keyboard.\n\nLet's apply these steps to the provided code to identify the potential issue."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick='addToCart()' onkeydown='addToCart()'>Add to Cart</button>",
+                "CoT": "Step 1: Identify interactive elements on the page that could be triggered by a mouse click or keyboard action.\nStep 2: Check for event handlers like \"onmousedown\" that are used for mouse click events.\nStep 3: Look for corresponding event handlers like \"onkeydown\" that should be used for keyboard accessibility.\nStep 4: Ensure that interactive elements have proper keyboard focus and can be activated using the keyboard.\nStep 5: If any interactive elements are missing keyboard accessibility features, flag them as potential issues."
+            },
+            {
+                "offending_line": "      <marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "      <h1>Welcome to our Indian Cuisine Restaurant</h1>",
+                "CoT": "1. Look for interactive elements on the page that may require keyboard access.\n2. Check if these elements have event handlers for keyboard interaction such as `onkeydown`.\n3. Identify if any interactive element is missing keyboard accessibility by not having an `onkeydown` event or alternative keyboard interaction method."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button role=\"button\" onclick=\"addToCart()\" onkeydown=\"if(event.key === 'Enter'){ addToCart() }\">Add to Cart</button>",
+                "CoT": "Sure, to find the accessibility issue related to the onmousedown event missing onkeydown event or script not being keyboard accessible, I will need to look for interactive elements on the webpage that rely on mouse interaction but do not have equivalent keyboard functionality. \n\nI will focus on elements like buttons, links, form elements, or any other interactive elements that trigger some behavior on mouse click (onmousedown event) but do not have keyboard interaction implemented (onkeydown event or other keyboard accessible script)."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"handleClick(event)\" onkeydown=\"handleKeydown(event)\">Add to Cart</button>",
+                "CoT": "To find the issue related to accessibility in terms of missing `onmousedown` event or script not being keyboard accessible, we need to look for interactive elements like buttons, links, or form controls that should be accessible to users who navigate using a keyboard.\n\n1. Look for elements that require interactive actions:\n   - Buttons: `<button>`\n   - Links: `<a>`\n   - Form controls: `<input>`, `<select>`, `<textarea>`, `<button>`\n\n2. Check if these interactive elements have event handlers for `onmousedown` or any other relevant events that make them keyboard accessible.\n\nI will start by examining the elements on the page to identify any interactive elements that may have accessibility issues related to keyboard navigation. Let's begin the examination:"
+            },
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<marquee onmousedown='this.stop();' onkeydown='this.start();'>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "CoT": "Step 1: Identify elements that have scripting events such as onmousedown or onclick.\nStep 2: Check if there are corresponding keyboard events like onkeydown or onkeypress.\nStep 3: Verify if the scripting events are necessary for accessibility.\nStep 4: Evaluate if the scripting events should be added or modified to make the website more keyboard accessible."
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onkeydown=\"if(event.keyCode == 13) this.click()\">Submit</button>",
+                "CoT": "To find the problem related to missing `onmousedown` event or lack of keyboard accessibility, we need to look for interactive elements like buttons or form fields that might require keyboard interaction. We should check if these elements have appropriate keyboard event handlers such as `onkeydown` in addition to `onmousedown` for mouse users. \n\n1. Look for interactive elements like buttons, form fields, or any element that the user can interact with.\n2. Check if these elements have event handlers like `onmousedown` for mouse interactions.\n3. Check if these elements have event handlers like `onkeydown` for keyboard interactions.\n\nLet me review the given HTML code to identify if any interactive element lacks keyboard accessibility."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" onkeydown=\"if(event.keyCode == 13) { document.getElementById('myfile').click(); }\">",
+                "CoT": "To find the accessibility issue of missing `onmousedown` event or `onkeydown` event for keyboard accessibility, we need to check if there are any interactive elements in the form that require user interaction. Then we should ensure that all interactive elements have appropriate event handlers for both mouse and keyboard users.\n\nIn this case, let's focus on the form inside the footer:\n```html\n<form>\n  <label for=\"username\">Username:</label><br>\n  <input type=\"text\" id=\"username\" name=\"username\"><br>\n  <label for=\"password\">Password:</label><br>\n  <input type=\"password\" id=\"pwd\" name=\"pwd\">\n\n  <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n  <label for=\"1\">1</label><br>\n  <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n  <label for=\"2\">2</label><br>\n  <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n  <label for=\"3\">3</label>\n\n  <input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n  <label for=\"vehicle1\"> I have a bike</label><br>\n  <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n  <label for=\"vehicle2\"> I have a car</label><br>\n  <input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n  <label for=\"vehicle3\"> I have a boat</label>\n\n  <label for=\"myfile\">Upload File:</label>\n  <input type=\"file\" id=\"myfile\" name=\"myfile\">\n\n  <button type=\"submit\">Submit</button>\n</form>\n```\n\nIn the form above, we have interactive elements like radio buttons, checkboxes, text inputs, and a submit button. To ensure accessibility, we need to make sure that these elements can be interacted with using both mouse and keyboard.\n\nSo, for each interactive element:\n1. Check if the element has `onmousedown` event for mouse users.\n2. Check if the element has `onkeydown` event for keyboard users.\n\nLet's check if these events are implemented for each of the interactive elements in the form to identify the missing event handlers for keyboard"
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart()\" onkeydown=\"if(event.key === 'Enter'){ addToCart()}\" tabindex=\"0\">Add to Cart</button>",
+                "CoT": "First, I will look for any elements that have a `onmousedown` event handler specified. Then, I will check if there is also an `onkeydown` event handler or if the functionality provided by `onmousedown` can be accessed using keyboard input."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "<input type=\"text\" id=\"username\" name=\"username\" onkeydown=\"\"></br>",
+                "CoT": "First, let's review the HTML structure and look for any elements or attributes related to events such as `onmousedown` or `onkeydown`. We are specifically looking for interactive elements that might require keyboard accessibility.\n\nIn this case, the only interactive element that could potentially require keyboard accessibility is the form within the `<footer>` section. Let's inspect the form elements and see if there are any accessibility issues related to keyboard events.\n\nNext, we need to check if there are any input elements (like text inputs, checkboxes, radio buttons) within the form that may require keyboard accessibility.\n\nLastly, we need to review if there are any event handler attributes like `onmousedown`, `onclick`, or `onkeydown` being used in a way that may cause issues for keyboard users.\n\nLet's investigate the form within the footer section to identify any potential issues related to keyboard accessibility."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button type=\"button\" onmousedown=\"someFunction()\" onkeydown=\"someFunction()\">Add to Cart</button>",
+                "CoT": "First, I will look for interactive elements on the webpage that might require keyboard access, such as form fields, buttons, or links. Then, I will check if these elements have an `onmousedown` event attached to them. If an `onmousedown` event is present but an `onkeydown` event is missing, it means that the element is not fully keyboard accessible. I will then suggest adding an `onkeydown` event to make the element accessible via keyboard as well. Let me go through the code to find such instances."
+            },
+            {
+                "offending_line": "<button type='submit'>Submit</button>",
+                "fixed_line": "<button type='submit' onkeydown='if(event.key === \"Enter\") this.click()'>Submit</button>",
+                "CoT": "To address the issue of missing onmousedown event or script not being keyboard accessible, we need to look through the HTML and check if there are any interactive elements (like buttons or links) that are not accessible via keyboard. We need to ensure that all interactive elements can be accessed and activated using only the keyboard.\n\nHere are the steps to find and fix the problem:\n\n1. Identify all interactive elements on the page - This includes buttons, links, form elements, and any elements that change state or trigger an action when interacted with.\n\n2. Check if the interactive elements have an associated onmousedown event - Look for any JavaScript event handlers like onmousedown that are used to handle mouse clicks. If an onmousedown event is used without a corresponding onkeydown event, it can cause accessibility issues for keyboard users.\n\n3. Ensure keyboard accessibility - Check if the interactive elements can be focused on using the keyboard (by pressing Tab key) and activated by pressing Enter key.\n\n4. Add necessary keyboard event handling - If any interactive elements are found to be inaccessible via keyboard, add keyboard event handling (like onkeydown event) to ensure that keyboard users can interact with them.\n\nLet's now go through the HTML to find any interactive elements that might be missing keyboard accessibility."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart()\" onkeydown=\"if(event.keyCode==13){addToCart()}\" role=\"button\" tabindex=\"0\">Add to Cart</button>",
+                "CoT": "To find the accessibility issue related to the missing `onmousedown` event or lack of keyboard accessibility, we need to focus on interactive elements that should be accessible using keyboard inputs.\n\n1. Look for interactive elements such as buttons, links, form inputs that require user interaction.\n2. Check if these interactive elements can be accessed and activated using only the keyboard.\n3. Verify if the interactive elements have proper `onkeydown` event handlers or alternative keyboard interaction methods.\n4. Ensure that any behaviors initiated by a mouse click also have equivalent keyboard interactions.\n5. Make sure that the interactive elements are properly focusable and navigable using the tab key.\n6. Identify any elements or controls where a keyboard user might be unable to perform a specific action that is available to mouse users.\n\nBy following these steps and inspecting the code for keyboard accessibility, we should be able to find the issue related to missing `onmousedown` event or lack of keyboard accessibility."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart(event)\" onkeydown=\"addToCart(event)\">Add to Cart</button>",
+                "CoT": "1. Identify interactive elements on the page that may require keyboard accessibility.\n2. Check if these elements have appropriate keyboard event handlers such as onkeydown along with onmousedown.\n3. Verify if the elements have focus styling to indicate keyboard focus.\n4. Ensure that all interactive elements can be accessed and used solely using a keyboard.\n5. Test the website with a screen reader or keyboard-only navigation to confirm keyboard accessibility."
+            },
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<header><h1>Welcome to our Indian Cuisine Restaurant</h1></header>",
+                "CoT": "First, I will look for any event handlers within the HTML that are triggered by mouse actions, such as onclick or onmouseover. Then, I will check if there are corresponding event handlers that are triggered by keyboard actions, such as onkeydown or onkeyup. If I find an event handler that lacks a keyboard equivalent, I will identify it as a potential accessibility issue. Let me check the HTML for any event handlers that may not be keyboard accessible."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"functionName()\" onkeydown=\"functionName()\">Add to Cart</button>",
+                "CoT": "First, I will look for interactive elements on the page that may require user interaction through keyboard. These could include buttons, forms, links, etc. Next, I will check if these elements have any associated event handlers such as onclick, onmousedown, etc. Finally, I will ensure that there is a corresponding event handler for keyboard users, such as onkeydown, to provide the same functionality accessible via keyboard."
+            },
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<header>\n    <h1>Welcome to our Indian Cuisine Restaurant</h1>\n    <p>Enjoy authentic flavors of India</p>\n  </header>",
+                "CoT": "Sure! Let's break it down step by step to find the accessibility issue related to the event handling.\n\n1. **Identify Interactivity:** We are looking for any interactive elements on the webpage that may require event handling.\n\n2. **Examine Event Attributes:** Check if there are any event attributes like `onmousedown` or `onkeydown` attached to the interactive elements.\n\n3. **Evaluate Keyboard Accessibility:** Determine if the event handling is providing keyboard accessibility. This means ensuring that users can interact with the element using the keyboard and not just the mouse.\n\nLet's go through the HTML code provided and identify any interactive elements that may be missing keyboard accessibility."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onkeydown=\"if(event.keyCode===13) { // Add your function here }\">Add to Cart</button>",
+                "CoT": "First, let's identify any elements that have interactivity or behavior triggered by mouse events like `onmousedown` that need to be made keyboard accessible. Specifically, we need to look for elements that may have `onmousedown` events associated with them.\n\nIn the given HTML, there are `<button>` elements that have the potential to trigger behavior through `onmousedown` event. Let's focus on making sure these buttons are keyboard accessible.\n\nLet's add the `onkeydown` event handler to the buttons to ensure they are accessible via keyboard."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart()\">Add to Cart</button>",
+                "CoT": "First, I will check for any interactive elements (like buttons or form inputs) that are missing keyboard accessibility. In this case, I see that the \"Add to Cart\" buttons are missing any keyboard event handling. The buttons only have the \"onmousedown\" event, which is not a keyboard accessible event.\n\nI will recommend adding keyboard event handling for these buttons, such as \"onclick\" or \"onkeydown\", to ensure that users can interact with them using the keyboard.\n\nLet me know if you need further clarification or assistance with this issue."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"handleAddToCart(event)\">Add to Cart</button>",
+                "CoT": "To find the issue related to the onmousedown event missing onkeydown event or script not being keyboard accessible, we need to look for interactive elements that rely solely on mouse events without providing keyboard accessibility.\n\n1. Check for any elements that have a mouse-related event (e.g., onclick, onmouseover, onmouseup) but are missing a corresponding keyboard event (e.g., onkeydown, onkeypress, onkeyup).\n\n2. Look for elements like buttons, links, or form controls that may trigger actions or change state based on mouse events only.\n\n3. Verify if there are any scripts or event handlers attached to these elements that do not have keyboard event equivalents.\n\nLet's inspect the provided HTML code to identify any such accessibility issues."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"handleMouseDown(event)\" onkeydown=\"handleKeyPress(event)\">Add to Cart</button>",
+                "CoT": "First, I will check for any elements that have an `onmousedown` event but do not have a corresponding `onkeydown` event. Next, I will look for any interactive elements that are not keyboard accessible, such as buttons that cannot be focused with the keyboard or form elements that do not have proper keyboard interactions. I will also check if there are any keyboard traps present on the page."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button role=\"button\" onkeydown=\"if(event.keyCode === 13 || event.keyCode === 32) { /* Add to Cart functionality here */ }\" onclick=\"/* Add to Cart functionality here */\">Add to Cart</button>",
+                "CoT": "To solve this problem, we need to make sure that the website is accessible via keyboard navigation. This means that users should be able to interact with all elements on the page using only the keyboard without relying on mouse clicks.\n\n1. Start by going through each interactive element on the page, such as links, buttons, form fields, and dropdown menus.\n2. Check if each element is focusable using the \"Tab\" key. They should be reachable in a logical order that follows the visual layout of the page.\n3. Test if the interactive elements can be activated or selected using the \"Enter\" key or spacebar. This is crucial for buttons, links, and form inputs.\n4. Look for any event handlers that are triggered by mouse events (like \"onmousedown\") but are missing keyboard event handlers (like \"onkeydown\").\n5. Make sure that any functionality dependent on mouse actions can also be performed using the keyboard without losing any functionality.\n\nBy checking these points, you can identify if there are any accessibility issues related to keyboard navigation on the website."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" onkeydown=\"\">",
+                "CoT": "First, let's identify any interactive elements on the page that may require keyboard accessibility. In this case, we have the form in the footer which contains input fields, radio buttons, checkboxes, a file input, and a submit button.\n\nNext, we need to ensure that all interactive elements can be accessed and used using only the keyboard. This includes focusing on the elements, navigating between them, selecting options, and submitting the form.\n\nNow, let's specifically look for the missing keyboard accessibility attribute \"onkeydown\" on the interactive elements within the form (input fields, radio buttons, checkboxes, file input, and submit button). The \"onkeydown\" event handler is used to process keyboard events when keys are pressed.\n\nLet's check each interactive element within the form and see if the \"onkeydown\" event is missing. We need to make sure that keyboard users can interact with these elements effectively."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button aria-label='Add to Cart' onclick='addToCart()' onkeydown='addToCartOnEnter()'>Add to Cart</button>",
+                "CoT": "Sure! Here are the steps to find the accessability problem for the given type of issue:\n1. Identify interactive elements: Look for elements like buttons or form inputs that require user interaction.\n2. Check for event handlers: Look for event attributes like \"onmousedown\" or \"onclick\" that handle mouse interactions.\n3. Check for keyboard accessibility: Confirm if there are corresponding keyboard events like \"onkeydown\" or \"onkeypress\" that handle keyboard interactions.\n4. Ensure keyboard users can perform the same actions: Verify that keyboard users can perform the same actions as mouse users for the interactive elements.\n\nLet's go through the HTML and find the accessability problem based on the steps outlined above."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<h1>Welcome to our Indian Cuisine Restaurant</h1>",
+                "CoT": "Step 1: Identify if there is a <marquee> element in the HTML code.\n\nStep 2: If there is a <marquee> element, determine if it is being used to scroll text or content on the webpage.\n\nStep 3: If the <marquee> element is being used to scroll text or content, it should be removed or replaced with a more accessible alternative.\n\nLet's go through the HTML code to find if there is a <marquee> element present and if it is being used to scroll text or content."
+            },
+            {
+                "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+                "fixed_line": "<header>Welcome to our Indian Cuisine Restaurant</header>",
+                "CoT": "Step 1: Identify the problematic element.\n\nStep 2: Determine why the element is considered problematic for accessibility.\n\nStep 3: Propose a solution or alternative to the problematic element."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Indian Cuisine Restaurant</title>",
+                "fixed_line": "<title>Indian Cuisine Restaurant - Home</title>",
+                "CoT": "To identify the accessability issue of the \"title element is empty\", we need to look specifically at the `<title>` element within the `<head>` section of the HTML code.\n\n1. Locate the `<title>` element within the `<head>` section.\n2. Check the content inside the `<title>` element to see if it is empty.\n3. If the `<title>` element is empty or doesn't have meaningful content, then that would be the accessability issue that needs to be fixed.\n\nLet's analyze the HTML code to identify this specific problem."
+            },
+            {
+                "offending_line": "<title>Indian Cuisine Restaurant</title>",
+                "fixed_line": "<title>Indian Cuisine Restaurant - Authentic Indian Flavors</title>",
+                "CoT": "Sure! To find and fix the \"title element is empty\" issue, we need to:\n\n1. Identify the `<title>` element in the HTML code.\n2. Check if the `<title>` element has any text content within it.\n3. If the `<title>` element is empty, add relevant text to describe the content of the page.\n\nLet's go through these steps to find and fix the issue."
+            },
+            {
+                "offending_line": "<label for=\"sort\"></label>",
+                "fixed_line": "<label for=\"sort\">Sort By:</label>",
+                "CoT": "Sure, let's start by analyzing the HTML code provided. \n1. The title element in the head section is not empty, it contains the text \"Indian Cuisine Restaurant\".\n2. The issue mentioned is related to the footer, so let's focus on that section.\n3. In the footer, we have form elements like input fields, radio buttons, checkboxes, file input, and a submit button.\n4. However, there is an empty label element `<label for=\"sort\"></label>` before the sorting filters. This label does not have any text content associated with it, which could cause accessibility issues for screen readers or users navigating with keyboard-only controls. \n5. To improve accessibility, the label should have descriptive text inside it that conveys the purpose of the sorting filters.\n\nTherefore, the issue found is an empty label element without any text content associated with it in the sorting filters section. This can be improved by adding descriptive text inside the label element."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"sort\"></label>",
+                "fixed_line": "<label for=\"sort\">Sort By: </label>",
+                "CoT": "To find the issue of an anchor element containing no text, we need to look at all the anchor `<a>` elements in the HTML code provided and check if they have any text content inside them.\n\nLet's start by identifying all the anchor elements in the HTML code:\n1. `<a href=\"#home\">Home</a>`\n2. `<a href=\"#menu\">Menu</a>`\n3. `<a href=\"#contact\">Contact</a>`\n\nNow, we need to check each anchor element to see if they contain any text content inside them."
+            },
+            {
+                "offending_line": "<li><a href=\"#home\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+                "CoT": "Step 1: Identify all anchor elements in the HTML code.\n\nStep 2: Check if each anchor element has text content inside it.\n\nLet's start by looking for anchor elements in the code."
+            },
+            {
+                "offending_line": "<li><a href=\"#home\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home Page</a></li>",
+                "CoT": "To find the issue of anchor element containing no text, I will need to locate all the anchor elements `<a>` in the HTML code and check if they have any text content within them. If an anchor element is empty or does not have any visible text, then it will be flagged as an accessibility issue."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xml:lang=\"en\">",
+                "CoT": "Step 1: Check if the document language is properly identified in the html tag.\nStep 2: Verify if the identified language is correct for the content of the website."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en\">",
+                "CoT": "Step 1: Check if the document language is identified in the <html> tag.\nStep 2: Verify if the language attribute is set correctly.\nStep 3: If the language attribute is missing or incorrect, update it to the appropriate language code."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "Step 1: Identify the language attribute in the html tag\nStep 2: Check if the language attribute is correctly set to the language used in the document"
+            },
+            {
+                "offending_line": "<html lang='en'>",
+                "fixed_line": "Add the 'lang' attribute with the correct language code, for example: <html lang='en' dir='ltr'>",
+                "CoT": "Step 1: Identify the language attribute in the opening <html> tag:\n```html\n<html lang=\"en\">\n```\n\nStep 2: Check if the language attribute is properly set to the appropriate language code for English ('en').\n\nStep 3: Confirm that the language attribute is set correctly in accordance with accessibility guidelines to ensure proper language processing by assistive technologies."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en-US\">",
+                "CoT": "To address the issue of document language not identified or incorrect, we need to ensure that the language of the document is properly specified in the HTML. This is important for accessibility tools to provide the correct language support for users who rely on such tools.\n\n1. Check the <html> tag:\n   - Look for the \"lang\" attribute in the opening <html> tag.\n   - Verify that it is set to the appropriate language code (e.g., \"en\" for English).\n   \n2. If the \"lang\" attribute is not present or set incorrectly, add or modify it accordingly.\n\n3. Update the language attribute to the correct language code, such as \"en\" for English or others as needed.\n\nLet's check the given HTML document for the presence and correctness of the language attribute."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "",
+                "CoT": "To identify if the document language is correctly identified, we need to look at the `<html>` tag and see if the `lang` attribute is properly set to indicate the language of the document. In this case, the `lang` attribute is set to `en` which indicates English as the language of the document. So, the document language is correctly identified as English."
+            },
+            {
+                "offending_line": "<html lang='en'>",
+                "fixed_line": "<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>",
+                "CoT": "To identify if the document language is correctly identified, I will check for the presence of the \"lang\" attribute in the opening <html> tag. The \"lang\" attribute should indicate the language of the document. If it is missing or incorrect, it can cause accessibility issues for screen readers and other tools that depend on the language information to provide better user experience."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n      <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\"> <label for=\"vehicle1\">I have a bike</label><br>\n      <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\"> <label for=\"vehicle2\"> I have a car</label>",
+                "CoT": "First, I will look for input elements in the HTML code. Then, I will check if any input element has more than one associated label by checking the \"for\" attribute of the label elements."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"> I have a car</label><br>",
+                "fixed_line": "<label for=\"vehicle1\"></label><br><label for=\"vehicle2\"> I have a car</label>",
+                "CoT": "To find the problem where an input element has more than one associated label, we need to:\n1. Identify all the input elements in the HTML code.\n2. Check for each input element if there are multiple labels associated with it by looking for 'label' elements with 'for' attribute pointing towards the input element.\n\nLet's start by identifying all the input elements in the HTML code."
+            },
+            {
+                "offending_line": "<label for=\"username\">Username:</label><br>",
+                "fixed_line": "<label for=\"username\">Username:</label>",
+                "CoT": "Step 1: Identify all input elements in the form within the footer section of the HTML document.\nStep 2: For each input element, check how many associated label elements are present in the HTML.\nStep 3: If an input element has more than one associated label element, then that is the accessibility issue we need to address."
+            },
+            {
+                "offending_line": "<label for=\"password\">Password:</label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br><input type=\"password\" id=\"pwd\" name=\"pwd\">",
+                "CoT": "Step 1: Identify all the input elements in the HTML code:\n- Search input element: `<input type=\"text\" id=\"search\" placeholder=\"Search\">`\n- Sort select element: `<select id=\"sort\">`\n- Username input element: `<input type=\"text\" id=\"username\" name=\"username\">`\n- Password input element: `<input type=\"password\" id=\"pwd\" name=\"pwd\">`\n- Radio buttons: `<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">`, `<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">`, `<input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">`\n- Checkbox inputs: `<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">`, `<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">`, `<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">`\n- File input element: `<input type=\"file\" id=\"myfile\" name=\"myfile\">`\n\nStep 2: Identify the labels associated with each input element:\n- Search input label: `<label for=\"search\">Search: </label>`\n- Sort select label: `<label for=\"sort\"></label>`\n- Username label: `<label for=\"username\">Username:</label>`\n- Password label: `<label for=\"password\">Password:</label>`\n- Radio buttons labels: `<label for=\"1\">1</label>`, `<label for=\"2\">2</label>`, `<label for=\"3\">3</label>`\n- Checkbox labels: `<label for=\"vehicle2\"> I have a car</label>`, `<label for=\"vehicle3\"> I have a boat</label>`\n- File input label: `<label for=\"myfile\"></label>`\n\nStep 3: Check if any input element has more than one associated label.\n- In this case, the Password input element has two labels associated with it. The first label is `<label for=\"password\">Password:</label>` and the second one is the text field `<input type=\"password\" id=\"pwd\" name=\"pwd\">`. This is a problem as each input element should only have one associated label for proper accessibility.\n\nSo, the accessibility issue found in the HTML code: The Password input element has more than one associated"
+            },
+            {
+                "offending_line": "<label for=\"username\">Username:</label><br>",
+                "fixed_line": "<label for=\"username\">Username:</label><input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "CoT": "Step 1: Identify all input elements within the form.\nStep 2: Identify all associated label elements for each input element.\nStep 3: Check if any input element has more than one associated label element."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"> <label for=\"vehicle1\">",
+                "fixed_line": "<label for=\"vehicle1\"> I have a bike</label><br>",
+                "CoT": "Step 1: Identify all input elements in the HTML code\nStep 2: Check each input element to see if it has more than one associated label"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"> I have a car</label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\"> I have a bike</label><br>\n<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n<label for=\"vehicle2\"> I have a car</label><br>\n<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n<label for=\"vehicle3\"> I have a boat</label>",
+                "CoT": "To find the issue with the input element having more than one associated label, we need to follow these steps:\n\n1. Look for all the `<label>` elements in the HTML code.\n2. Match each `<label>` element with its corresponding `<input>` element.\n3. Check if any `<input>` element has more than one associated `<label>` element.\n\nLet's go through the code to identify any `<input>` element that has more than one `<label>` element associated with it."
+            },
+            {
+                "offending_line": "<label for=\"myfile\"></label>",
+                "fixed_line": "<label for=\"myfile\">Choose a file to upload:</label>",
+                "CoT": "Step 1: Identify all input elements in the HTML. \n- There are multiple input elements in the form inside the footer:\n\n1. Input for username\n2. Input for password\n3. Radio buttons for favorite number\n4. Checkboxes for vehicle options\n5. File input for myfile\n\nStep 2: Identify all label elements in the HTML.\n- There are multiple label elements associated with the input elements in the form inside the footer:\n\n1. Label for username input\n2. Label for password input\n3. Labels for radio buttons for favorite number\n4. Labels for checkboxes for vehicle options\n5. Label for file input for myfile\n\nStep 3: Check if any input element is associated with more than one label:\n- The file input for myfile does not have any visible label text associated with it. The label element is empty: `<label for=\"myfile\"></label>`\n\nStep 4: Determine the accessibility issue:\n- The file input element does not have any visible label text associated with it, which can be confusing for screen reader users or users who navigate the form using the keyboard.\n\nStep 5: Provide a solution:\n- Add descriptive text within the label element for the file input element to provide context and guidance for users. For example: `<label for=\"myfile\">Choose a file to upload:</label>`\n\nBy following these steps, you can identify the accessibility issue where an input element has more than one associated label."
+            },
+            {
+                "offending_line": "      <label for=\"username\">Username:</label><br>",
+                "fixed_line": "      <label for=\"username\">Username:</label><br>\n      <label for=\"password\">Password:</label><br>",
+                "CoT": "To find the issue where an input element has more than one associated label, I need to:\n1. Identify all input elements within the form.\n2. Check for each input element if they have more than one associated label using the \"for\" attribute in the label tags.\n\nLet's go through the HTML code provided and identify if there are any input elements with more than one associated label."
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n      <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n      <label for=\"vehicle2\">Car</label>",
+                "CoT": "To find the issue of an input element having more than one associated label, we need to:\n1. Identify all the input elements in the HTML.\n2. Check how many <label> elements are associated with each input element using the `for` attribute or implicit association.\n3. If an input element has more than one associated label, then it is a violation of accessibility standards.\n\nLet's start by identifying all the input elements in the code."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\"><label for=\"vehicle1\"> I have a bike</label><br>",
+                "CoT": "Step 1: Identify all input elements on the page.\n\nStep 2: Check if any input element has more than one associated label. \n\nStep 3: If there are input elements with more than one associated label, then it is the accessibility issue to be fixed."
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n      <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "<fieldset>\n      <legend>Choose your vehicle:</legend>\n      <input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n      <label for=\"vehicle1\">Bike</label><br>\n      <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n      <label for=\"vehicle2\">Car</label>\n    </fieldset>",
+                "CoT": "To find the issue where an input element has more than one associated label, we need to:\n1. Identify all the input elements in the HTML.\n2. Check if each input element has associated label elements using the \"for\" attribute or by wrapping the input element within a label element.\n3. Verify that each input element has only one associated label.\n\nLet's go through each step to identify if there are any input elements with multiple associated labels."
+            },
+            {
+                "offending_line": "<label for=\"sort\"></label>",
+                "fixed_line": "<label for=\"sort\">Sort by:</label>",
+                "CoT": "Step 1: Identify all the input elements on the page.\nStep 2: Check each input element to see if it has more than one associated label.\nStep 3: If any input element has more than one associated label, then it is the accessibility problem we are looking for."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "Change the id to username_input <input type=\"text\" id=\"username_input\" name=\"username\"><br>",
+                "CoT": "Sure, to find an input element that has more than one associated label, we need to look for input elements that have multiple `<label>` elements associated with them. We will need to check each `<input>` element in the HTML code and see if there are multiple `<label>` elements with a `for` attribute referring to the same `id` as the `id` attribute of the `<input>` element."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\"><label for=\"myfile\">Choose a file</label>",
+                "CoT": "1. Determine which input elements have associated labels.\n2. Check if any input element has more than one label associated with it.\n3. Identify the input element and the associated labels.\n4. Suggest a solution to fix the issue."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "Add separate input elements for \"Username\" and \"Password\"",
+                "CoT": "To find the issue of an input element having more than one associated label, we need to:\n1. Identify all the `<label>` elements in the code.\n2. Check which `<input>` elements they are associated with using the `for` attribute in `<label>` and the `id` attribute in `<input>`.\n3. Look for any `<input>` elements that have more than one associated `<label>`.\n\nLet's start by looking at all the `<label>` elements in the provided HTML code."
+            },
+            {
+                "offending_line": "      <label for=\"username\">Username:</label><br>\n      <input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "      <label for=\"username\">Username:</label><br>\n      <input type=\"text\" id=\"username\" name=\"username\"><br><label for=\"username\">Enter your username</label><br>",
+                "CoT": "Step 1: Identify all the input elements in the HTML document\n- There are multiple input elements in the form inside the footer.\n\nStep 2: Identify all the labels associated with each input element\n- There are multiple labels associated with these input elements in the form inside the footer.\n\nStep 3: Check if any input element has more than one associated label\n- The input elements inside the form in the footer have multiple labels associated with them, which is not ideal for accessibility.\n\nStep 4: Provide feedback and suggest a solution\n- The issue identified is that the input elements in the form inside the footer have more than one associated label. This can be confusing for screen readers and users relying on assistive technologies. \n- To fix this issue, each input element should only have one associated label for better accessibility."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\">I have a car</label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\"> I have a car</label><br>",
+                "CoT": "Step 1: Identify all the input elements on the page.\nStep 2: Check if any of the input elements have more than one associated label."
+            },
+            {
+                "offending_line": "<label for=\"sort\"></label>",
+                "fixed_line": "<label for=\"sort\">Filter by:</label>",
+                "CoT": "To find the issue with an input element having more than one associated label, we need to:\n\n1. Identify all the input elements in the HTML.\n2. Check if each input element has a corresponding label element.\n3. Identify if any input element has more than one associated label.\n\nLet's go through the HTML and identify the input elements along with their associated label elements:\n\n1. Search input elements:\n   - Input element with id=\"search\" for the search field.\n   - Input element with id=\"sort\" for the sorting filters.\n   - Input elements within the form in the footer section for username, password, radio buttons, checkboxes, and file input.\n\n2. Identify associated labels:\n   - The search input has a label with \"Search:\" as the associated label.\n   - The sort input has an empty label element associated with it.\n   - The inputs in the footer have labels associated with them based on the \"for\" attribute in the label tags.\n\nBased on this assessment, we can see that the input element with id=\"sort\" does not have any visible label associated with it, as the associated label element has an empty text content. This could confuse users relying on screen readers or other assistive technologies, as they may not receive proper context for the sorting filters.\n\nTherefore, the accessability issue found is that the input element with id=\"sort\" has an associated label which is empty, leading to unclear information for users with disabilities."
+            },
+            {
+                "offending_line": "<label for=\"username\">Username:</label><br>",
+                "fixed_line": "<label for=\"username\">Username:</label><br>\n<label for=\"password\">Password:</label><br>",
+                "CoT": "Step 1: Identify all input elements in the HTML document.\n\nStep 2: Check if any input element has more than one associated label.\n\nStep 3: If an input element has more than one associated label, then that would be the accessability issue."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">",
+                "CoT": "To find the accessibility issue of \"input element has more than one associated label\" in the provided HTML code, we need to focus on the `<input>` elements and their associated `<label>` elements. Here is the step-by-step process to identify this problem:\n\n1. Look for all `<input>` elements in the HTML code.\n2. Check each `<input>` element to see if it has more than one `<label>` tag associated with it.\n3. If any `<input>` element is associated with more than one `<label>` tag, then we have identified the accessibility issue.\n\nLet's go through these steps to find the accessibility problem in the HTML code provided."
+            },
+            {
+                "offending_line": "<label for='vehicle2'> I have a car</label><br>",
+                "fixed_line": "<label for='vehicle1'> I have a bike</label><br>",
+                "CoT": "Step 1: Identify all input elements in the HTML code.\nStep 2: Check each input element to see if it has more than one associated label.\nStep 3: If any input element is associated with more than one label, mark it as the accessability problem."
+            },
+            {
+                "offending_line": "<input type='checkbox' id='vehicle1' name='vehicle1' value='Bike'>",
+                "fixed_line": "Add only one label element for the checkbox input",
+                "CoT": "Sure, to find the issue of an input element having more than one associated label, we need to:\n1. Identify all the input elements in the HTML.\n2. Check if each input element has one and only one associated <label> element.\n3. If any input element has more than one <label> associated with it, then that is the accessibility issue we are looking for."
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n\t\t<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "Only one label should be associated with each input element.",
+                "CoT": "To find the problem of an input element having more than one associated label, we need to:\n1. Identify all input elements in the HTML code.\n2. Check each input element to see if it has more than one associated `<label>` element using the `for` attribute.\n\nLet's start by looking at the input elements in the code: \n- One input element with `id=\"search\"` is associated with a `<label>` element.\n- One select element with `id=\"sort\"` is associated with an empty `<label>` element.\n- One text input with `id=\"username\"` is associated with a `<label>` element.\n- One password input with `id=\"pwd\"` is associated with a `<label>` element.\n- Three radio input elements are associated with `<label>` elements.\n- Three checkbox input elements are associated with `<label>` elements.\n- One file input with `id=\"myfile\"` is associated with an empty `<label>` element.\n\nNow, we will check if any input element has more than one associated label."
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"> I have a car</label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle Type:</label><br>",
+                "CoT": "In this case, the issue is related to accessibility because each input element should ideally have one associated label. Having multiple labels associated with one input element may cause confusion for screen readers and other assistive technologies.\n\nTo identify this problem, we need to look for input elements that have more than one <label> tags associated with them. We will focus on the <input> elements in the form within the footer section of the HTML code.\n\nLet's examine the <input> elements in the form and check if any of them have more than one associated <label> tags."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search\">",
+                "fixed_line": "Give the label a 'for' attribute and assign the correct ID of the input element.",
+                "CoT": "To find the accessibility issue of an input element having more than one associated label, follow these steps:\n1. Identify all the input elements in the HTML code.\n2. Check for each input element if it has more than one associated <label> element using the `for` attribute.\n3. If an input element has multiple labels associated with it, then it violates the accessibility guideline as each input element should have only one associated label.\n\nLet's start by identifying the input elements in the code."
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"> I have a car</label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\"><label for=\"vehicle2\"> I have a car</label><br>",
+                "CoT": "Step 1: Identify all input elements in the HTML code:\n- input type=\"text\" with id \"search\"\n- input type =\"password\" with id \"pwd\"\n- input type=\"text\" with id \"username\"\n- input type=\"radio\" with id \"1\"\n- input type=\"radio\" with id \"2\"\n- input type=\"radio\" with id \"3\"\n- input type=\"checkbox\" with id \"vehicle1\"\n- input type=\"checkbox\" with id \"vehicle2\"\n- input type=\"checkbox\" with id \"vehicle3\"\n- input type=\"file\" with id \"myfile\"\n\nStep 2: Identify all labels in the HTML code:\n- label for \"search\"\n- label for \"username\"\n- label for \"password\"\n- label for \"1\"\n- label for \"2\"\n- label for \"3\"\n- label for \"vehicle2\"\n- label for \"vehicle3\"\n- label for \"myfile\"\n\nStep 3: Check each input element to see if it has more than one associated label.\n\nStep 4: Identify the input element(s) that have more than one associated label. \n\nLet's follow these steps to identify the input element that has more than one associated label."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "<label for=\"username\">Username:</label><br>\n<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "CoT": "Sure, to find the issue of an input element having more than one associated label, we need to:\n\n1. Identify all the `<label>` elements in the HTML document.\n2. Look for `<input>` elements that have more than one `<label>` associated with them.\n3. Verify that each `<input>` element should ideally have only one `<label>` associated with it.\n\nLet's start by looking for all the `<label>` elements in the HTML document."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"sort\"></label>",
+                "fixed_line": "<label for=\"sort\">Sort by:</label>",
+                "CoT": "Step 1: Identify elements that may have incomplete start and end tags or duplicate id attributes.\n\nStep 2: Check each element in the HTML code to ensure that they have complete start and end tags.\n\nStep 3: Check the id attributes of each element to ensure they are unique.\n\nStep 4: Identify any elements that do not adhere to the accessibility guideline provided."
+            }
+        ]
+    }
+]

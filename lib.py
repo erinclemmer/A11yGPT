@@ -17,7 +17,6 @@ def get_api_key():
 	return config['openai_api_key']
 
 def get_cosine_similarity(embedding1: List[float], embedding2: List[float]):
-    # Move the embeddings to the GPU
     embedding1 = torch.tensor(embedding1)
     embedding2 = torch.tensor(embedding2)
 
@@ -25,10 +24,7 @@ def get_cosine_similarity(embedding1: List[float], embedding2: List[float]):
     embedding1_norm = embedding1 / torch.norm(embedding1)
     embedding2_norm = embedding2 / torch.norm(embedding2)
 
-    # Compute the cosine similarity
-    similarity = torch.matmul(embedding1_norm, embedding2_norm.T)
-
-    return similarity
+    return torch.matmul(embedding1_norm, embedding2_norm.T)
 
 class WCGAExample:
 	problem: str
@@ -175,8 +171,9 @@ def find_fixes_for_file(
 			o['error_fixes'] = error_fixes
 			fixes.append(o)
 
-	if not os.path.exists(fix_folder):
-		os.makedirs(fix_folder)
+	fix_folder_path = f'fixes/{fix_folder}'
+	if not os.path.exists(fix_folder_path):
+		os.makedirs(fix_folder_path)
 	
 	with open(fix_file, 'w', encoding='utf-8') as f:
 		json.dump(fixes, f, indent=4)

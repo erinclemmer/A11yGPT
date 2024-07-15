@@ -1,0 +1,302 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" aria-hidden=\"true\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" title=\"Embedded Video\"></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<source src='video/sample-video.mp4' type='video/mp4'>",
+                "fixed_line": "<video controls>\n\t<source src='video/sample-video.mp4' type='video/mp4'>\n\tYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<audio src=\"bookstore-audio.mp3\" type=\"audio/mp3\" autoplay></audio>",
+                "fixed_line": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+            },
+            {
+                "offending_line": "<video autoplay>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+                "fixed_line": "<video controls>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<header>\n        <h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Welcome to DELL Laptops\n        </h1>\n        <p style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Discover the latest innovation in computing\n        </p>\n    </header>",
+                "fixed_line": "<header>\n        <h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Welcome to DELL Laptops\n        </h1>\n        <p style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Discover the latest innovation in computing\n        </p>\n    </header>"
+            },
+            {
+                "offending_line": "<i>Italic</i>",
+                "fixed_line": "<em>Italic</em>"
+            },
+            {
+                "offending_line": "<b>Important</b>",
+                "fixed_line": "<strong>Important</strong>"
+            },
+            {
+                "offending_line": "<b>Explore our latest laptops</b>",
+                "fixed_line": "<strong>Explore our latest laptops</strong>"
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Welcome to DELL Laptops\n        </h1>",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            <strong>Welcome to DELL Laptops</strong>\n        </h1>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "fixed_line": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://www.example.com/\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=index.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<!-- Avoid using the <marquee> element for scrolling text -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<p>&copy; 2023 DELL Laptops. All rights reserved.</p>"
+            },
+            {
+                "offending_line": "",
+                "fixed_line": ""
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>DELL Laptops</title>"
+            },
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Page Title</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"tx\">",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"name\">Name</label>",
+                "fixed_line": "<label for=\"name\">Full Name</label>"
+            },
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">"
+            },
+            {
+                "offending_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                "fixed_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "Add a unique label for this input field to clarify its purpose"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\" />"
+            },
+            {
+                "offending_line": "<label for=\"name\">Name</label>",
+                "fixed_line": "Split the input element into two separate input elements, each with one label associated."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\" aria-label=\"name\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<label style=\"display: none;\" for=\"refresh\">Refresh</label>\n<meta http-equiv=\"refresh\" content=\"0\">"
+            },
+            {
+                "offending_line": "NONE",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<label for=\"name\">First Name</label>",
+                "fixed_line": "<label for=\"name\">Name</label><input type=\"text\" id=\"name\" name=\"name\">"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" aria-label=\"View Laptops\" class=\"btn\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<label for=\"name\">Name</label>",
+                "fixed_line": "<label for=\"name\">Name</label>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Video section'>"
+            },
+            {
+                "offending_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                "fixed_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"first_name\">First Name</label>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "Manually fix the association by updating the labels to be unique for each input"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "Add unique IDs to labels and associate each label with only one input element."
+            },
+            {
+                "offending_line": "<label for=\"name\">First Name</label>",
+                "fixed_line": "<label for=\"name\">Name</label>"
+            },
+            {
+                "offending_line": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                "fixed_line": "Split the labels into separate input elements with unique IDs"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "Adjust the labels to have unique for attributes for each input element."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "Split the input elements and associate each with a unique label"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<label> tags should not be associated with <meta> tags."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\">",
+                "fixed_line": "Modify the input element to have only one associated label"
+            },
+            {
+                "offending_line": "<meta charset=\"UTF-8\">",
+                "fixed_line": "<meta charset=\"UTF-8\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\" aria-hidden=\"true\">"
+            },
+            {
+                "offending_line": "<body>",
+                "fixed_line": "<body>\n    <label for=\"home\">Navigation</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<header>",
+                "fixed_line": "<header></header>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\" />"
+            }
+        ]
+    }
+]

@@ -1,0 +1,32 @@
+[
+    {
+        "problem_type": "missing alt attribute for images",
+        "offending_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
+        "fixed_line": "<img src=\"product1.jpg\" alt=\"ComfortFit T-Shirt\">"
+    },
+    {
+        "problem_type": "Incorrect label usage",
+        "offending_line": "<label for=\"email\">Email:</label>",
+        "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
+    },
+    {
+        "problem_type": "Accessibility",
+        "offending_line": "<div id=\"video-container\"></div>",
+        "fixed_line": "<video controls id=\"video\"></video>"
+    },
+    {
+        "problem_type": "missing-label",
+        "offending_line": "<label for=\"email\">Email:</label>",
+        "fixed_line": "<label for=\"email\">Email:</label><br>"
+    },
+    {
+        "problem_type": "Missing labels for form inputs",
+        "offending_line": "<input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">",
+        "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
+    },
+    {
+        "problem_type": "Missing label for inputs",
+        "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">",
+        "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">"
+    }
+]

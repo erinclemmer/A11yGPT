@@ -1,0 +1,210 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<marquee><img src='logo.png' alt='Hospital Management System'></marquee>"
+            },
+            {
+                "offending_line": "<video width=\"400\" controls>",
+                "fixed_line": "<video width=\"400\" controls alt=\"Hospital Video\">\n      <source src=\"hospital_video.mp4\" type=\"video/mp4\">\n      Your browser does not support the video tag.\n    </video>"
+            },
+            {
+                "offending_line": "<video width=\"400\" controls>",
+                "fixed_line": "<video width=\"400\" controls aria-label=\"hospital_video\"></video>"
+            },
+            {
+                "offending_line": "    <video width=\"400\" controls>",
+                "fixed_line": "    <video width=\"400\" controls alt=\"Hospital Video\">"
+            },
+            {
+                "offending_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\" alt=\"Hospital Video\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required>",
+                "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" required>"
+            },
+            {
+                "offending_line": "<label for=\"name\"></label>",
+                "fixed_line": "<label for=\"name\">Name:</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video width=\"400\" controls>",
+                "fixed_line": "<video width=\"400\" controls muted>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1>Hospital Management System</h1>"
+            },
+            {
+                "offending_line": "NONE",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<p><strong>Hospital Management System</strong></p>"
+            },
+            {
+                "offending_line": "",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1>Hospital Management System</h1>"
+            },
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1 aria-label='Hospital Management System' tabindex='0' onkeydown='if(event.keyCode == 13){ this.onClick(); }' onclick='this.onClick();'>Hospital Management System</h1>"
+            },
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1 onclick='this.focus()'>Hospital Management System</h1>"
+            },
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1 tabindex='0' onmousedown='this.focus()' onkeydown='if(event.keyCode===13)this.click();'>Hospital Management System</h1>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://bhargavichandu1.github.io/\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Hospital Management System</marquee>",
+                "fixed_line": "<h1>Hospital Management System</h1>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Hospital Management System</title>",
+                "fixed_line": "<title>Hospital Management System - Home</title>"
+            },
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Hospital Management System</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\">Home</a>\n<a href=\"#services\">Services</a>\n<a href=\"#about\">About Us</a>\n<a href=\"#contact\">Contact</a>",
+                "fixed_line": "<a href=\"#home\">Home</a>\n<a href=\"#services\">Services</a>\n<a href=\"#about\">About Us</a>\n<a href=\"#contact\">Contact</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\" aria-label=\"Navigate to Home section\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home Page</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home<span class=\"sr-only\">Link to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home <span class=\"sr-only\">Navigate to Home</span></a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"name\"></label>",
+                "fixed_line": "<label for=\"name\">Name:</label>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required>",
+                "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" required>"
+            },
+            {
+                "offending_line": "<label for=\"name\"></label>",
+                "fixed_line": "<label for=\"name\">Full Name:</label>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required>",
+                "fixed_line": "<input type=\"text\" id=\"name\" name=\"name\" required aria-labelledby=\"name-label\">"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"name\"></label>",
+                "fixed_line": "<label for=\"name\">Name:</label>"
+            }
+        ]
+    }
+]

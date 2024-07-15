@@ -1,0 +1,186 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen alt=\"Embedded Video\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen alt=\"Featured Video\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen title=\"Food Delivery App Featured Video\"></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>",
+                "fixed_line": "<label for=\"address\">Address:</label><input type=\"text\" id=\"address\" name=\"address\" required>"
+            },
+            {
+                "offending_line": "<input type=\"submit\" value=\"Place Order\" class=\"button\">",
+                "fixed_line": "<input type=\"submit\" value=\"Place Order\" class=\"button\" aria-label=\"Place Order\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen muted></iframe>"
+            },
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube-nocookie.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>"
+            },
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\"></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+                "fixed_line": "<a href=\"#\" class=\"button\" style=\"font-size: 1.25em;\">View Menu</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
+                "fixed_line": "<h2 onmouseover=\"ToolTip()\" onkeydown=\"ToolTip()\" tabindex=\"0\">Place Your Order</h2>"
+            },
+            {
+                "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
+                "fixed_line": "<h2 aria-label=\"Place Your Order\" role=\"button\" tabindex=\"0\" onmouseover=\"ToolTip()\" onkeydown=\"ToolTip()\">Place Your Order</h2>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
+                "fixed_line": "<h2>Place Your Order</h2>"
+            },
+            {
+                "offending_line": "<font size=\"5\"> View Menu</font>",
+                "fixed_line": "<a href=\"#\" class=\"button\"> View Menu</a>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Food Delivery App</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+                "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\">View Menu</font></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\"><span aria-hidden=\"true\">Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+                "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font><span class=\"sr-only\">View Menu</span></a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xml:lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"text\" id=\"address\" alt=\"address\" name=\"address\" required>",
+                "fixed_line": "<label for=\"address\">Address:</label>\n<input type=\"text\" id=\"address\" name=\"address\" required>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"address\" alt=\"address\" name=\"address\" required>",
+                "fixed_line": "<input type=\"text\" id=\"address\" name=\"address\" required>"
+            },
+            {
+                "offending_line": "<label for=\"address\">Address:</label>",
+                "fixed_line": "<label for=\"address\">Address:</label><input type=\"text\" id=\"address\" name=\"address\" required>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+                "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen>\n</iframe>"
+            },
+            {
+                "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
+                "fixed_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>"
+            },
+            {
+                "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+                "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a></a>"
+            },
+            {
+                "offending_line": "<font size=\"5\"> View Menu</font>",
+                "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>"
+            }
+        ]
+    }
+]

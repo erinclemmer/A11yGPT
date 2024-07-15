@@ -1,0 +1,229 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt=\"\">"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" ></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"bookstore-video.mp4\" type=\"video/mp4\"></iframe>",
+                "fixed_line": "<iframe src=\"bookstore-video.mp4\" type=\"video/mp4\" alt=\"Bookstore Video\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" title=\"YouTube Video\"></iframe>"
+            },
+            {
+                "offending_line": "<img src=\"book-cover.jpg\" />",
+                "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>\n        <source src=\"bookstore-video.mp4\" type=\"video/mp4\">\n        Your browser does not support the video tag.\n      </video>"
+            },
+            {
+                "offending_line": "<audio autoplay>",
+                "fixed_line": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+            },
+            {
+                "offending_line": "<audio autoplay>",
+                "fixed_line": "<audio controls>"
+            },
+            {
+                "offending_line": "<video autoplay>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />\nYour browser does not support the video tag.\n</video>",
+                "fixed_line": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<b>Discover Our Bookstore</b>",
+                "fixed_line": "<strong>Discover Our Bookstore</strong>"
+            },
+            {
+                "offending_line": "<i>Discover Our Bookstore</i>",
+                "fixed_line": "<em>Discover Our Bookstore</em>"
+            },
+            {
+                "offending_line": "<b>Important</b>",
+                "fixed_line": "<strong>Important</strong>"
+            },
+            {
+                "offending_line": "<i>Italic</i>",
+                "fixed_line": "<em>Italic</em>"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p>Description of the book...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "fixed_line": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Scrolling text...</marquee>",
+                "fixed_line": "<p>Scrolling text...</p>"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: 1.25em;\">Description of the book...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore - Online Bookstore</title>"
+            },
+            {
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore</title>"
+            },
+            {
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore</title> <!-- Add a descriptive title for the webpage -->"
+            },
+            {
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore - Your One Stop Shop for Books</title>"
+            },
+            {
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore - Explore a vast collection of books</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            },
+            {
+                "offending_line": "<li><a href=\"#home\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "No issue found"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"tx\">",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"search\">Search:</label>\n      <input\n        type=\"text\"\n        id=\"search\"\n        placeholder=\"Search...\"\n        aria-label=\"Search\"\n      />",
+                "fixed_line": "<label for=\"search\">Search:</label>\n      <input\n        type=\"text\"\n        id=\"search\"\n        placeholder=\"Search...\"\n      />"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+            },
+            {
+                "offending_line": "<label for=\"name\">Your Name:</label>",
+                "fixed_line": "<label for=\"name\">Your Name:</label>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": "<label for=\"name\">Your Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+            },
+            {
+                "offending_line": "<label for=\"name\">Your Name:</label>\n        <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />\n        <label for=\"name\">First Name:</label>",
+                "fixed_line": "<label for=\"name\">Your Name:</label>\n        <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<font size=\"5\">Description of the book...</font>"
+            },
+            {
+                "offending_line": "<div id=\"filters\">",
+                "fixed_line": "<div id=\"filters\"></div>"
+            },
+            {
+                "offending_line": "<div id=\"header\">",
+                "fixed_line": "<div id=\"header\"></div>"
+            }
+        ]
+    }
+]

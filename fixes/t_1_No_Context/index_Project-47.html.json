@@ -1,0 +1,42 @@
+[
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"carType\"></label>",
+        "fixed_line": "<label for=\"carType\">Car Type</label>"
+    },
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+        "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label>"
+    },
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"carType\"></label>",
+        "fixed_line": "<label for=\"carType\">Select Car Type:</label>"
+    },
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+        "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - Image of a blue Sedan car\">"
+    },
+    {
+        "problem_type": "alt_attribute_missing",
+        "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+        "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - Description of Car 1.\">"
+    },
+    {
+        "problem_type": "Accessibility Issue",
+        "offending_line": "<label for=\"2\">2</label><br>",
+        "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>"
+    },
+    {
+        "problem_type": "missing-label",
+        "offending_line": "<label for=\"2\">2</label><br>",
+        "fixed_line": "<label for=\"2\">2</label><br>"
+    },
+    {
+        "problem_type": "Missing label for form elements",
+        "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+        "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\"><label for=\"vehicle2\">Car</label>"
+    }
+]

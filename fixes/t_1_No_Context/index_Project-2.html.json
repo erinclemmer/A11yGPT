@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "missing alt attribute",
+        "offending_line": "<img src=\"book-cover.jpg\" />",
+        "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+    },
+    {
+        "problem_type": "color_contrast",
+        "offending_line": "<font size=\"5\">Description of the book...</font>",
+        "fixed_line": "<p style=\"font-size: 1.5em;\">Description of the book...</p>"
+    }
+]

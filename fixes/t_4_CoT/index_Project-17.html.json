@@ -1,0 +1,538 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img class=\"icon\" src=\"icon.png\">",
+                "fixed_line": "<img class=\"icon\" src=\"icon.png\" alt=\"Icon for the resume\">",
+                "CoT": "Sure, let's approach this step by step:\n\n1. Identify all `<img>` tags in the HTML code.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If an `<img>` tag is not missing an `alt` attribute, add it with a descriptive text to improve accessibility."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" alt=\"file upload\">",
+                "CoT": "To find the problem of a missing alt attribute in an img tag, you need to:\n1. Look for `<img>` tags in the HTML code.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If the `alt` attribute is missing, it needs to be added to ensure the image is accessible to users who cannot see the image.\n\nLet's start by searching for `<img>` tags in the provided HTML code."
+            },
+            {
+                "offending_line": "<img src='background.jpg'>",
+                "fixed_line": "<img src='background.jpg' alt='Background Image'>",
+                "CoT": "To find the problem related to missing `alt` attribute in the `img` tag, we need to:\n\n1. Look through all the `img` tags in the HTML.\n2. Check if each `img` tag has an `alt` attribute.\n3. If any `img` tag is missing the `alt` attribute, that would be the accessibility issue related to missing `alt` attribute."
+            },
+            {
+                "offending_line": "<img src='logo.png' class='icon'>",
+                "fixed_line": "<img src='logo.png' class='icon' alt='Logo'>",
+                "CoT": "Alright, to find the problem related to a missing `alt` attribute in an `img` tag, we need to go through the HTML code and look for any `img` tags that do not have an `alt` attribute specified. Let's review the HTML code provided and specifically look for `img` tags without the `alt` attribute."
+            },
+            {
+                "offending_line": "<img class=\"icon\" src=\"image.jpg\">",
+                "fixed_line": "<img class=\"icon\" src=\"image.jpg\" alt=\"Icon image\">",
+                "CoT": "Step 1: Look through the HTML code for any <img> or <iframe> tags.\n\nStep 2: Check if each <img> tag has an \"alt\" attribute that provides a text alternative for the image.\n\nStep 3: If there are any <img> tags without the \"alt\" attribute, add it with a descriptive text describing the image. \n\nStep 4: If there are any <iframe> tags, check if they have a meaningful \"title\" attribute describing the content of the iframe. \n\nStep 5: If any <iframe> tags have missing or inadequate \"title\" attributes, add or update them accordingly."
+            },
+            {
+                "offending_line": "<img class='icon' src='icon.png'>",
+                "fixed_line": "<img class='icon' src='icon.png' alt='Icon'>",
+                "CoT": "To find the problem of a missing \"alt\" attribute in an \"img\" tag, we need to:\n\n1. Look through the HTML code provided.\n2. Specifically, we need to search for any \"img\" tags.\n3. Check if the \"img\" tags have the \"alt\" attribute.\n4. If any \"img\" tags are missing the \"alt\" attribute, we need to add it for accessibility.\n\nLet's find and add the \"alt\" attribute where necessary."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "1. Look for input elements and buttons in the HTML code.\n2. Check if each input element or button has a corresponding label associated with it using the \"for\" attribute.\n3. Make sure that each label has a meaningful content to describe the input element or button.\n4. Check if any input element has an alt attribute which should not be present for input elements.\n5. Verify that no label is empty and all labels have proper text content."
+            },
+            {
+                "offending_line": "<select id=\"experience\">",
+                "fixed_line": "<label for=\"experience\">Experience Level:</label><select id=\"experience\">",
+                "CoT": "First, let's identify all the input elements and buttons on the page. Then, we will check if each one has an associated label or if the label is empty. We will also check if any of them have alt attributes. Let's go through each one:\n1. Name input field:\n   - It has a label \"Name:\", so it is associated correctly.\n2. Email input field:\n   - It has a label \"Email:\", so it is associated correctly.\n3. Experience select element:\n   - It doesn't have an associated label. This is a problem as select elements should have a label to provide context. \n4. Generate Resume button:\n   - It doesn't have an associated label. Buttons should have labels to provide context for screen readers.\n5. Username input field:\n   - It has a label \"Username:\", so it is associated correctly.\n6. Password input field:\n   - It doesn't have a label. This is a problem as passwords should have labels to inform users.\n7. Radio buttons for fav_number:\n   - Each radio button has a label associated with it, so they are correct.\n8. Checkboxes for vehicles:\n   - Each checkbox has a label associated with it, so they are correct.\n9. File input field:\n   - It doesn't have a label. This is a problem as file inputs should have labels to inform users.\n10. Submit button:\n    - It doesn't have an associated label. Buttons should have labels for screen readers.\n\nBased on our assessment, the \"Experience\" select element, \"Generate Resume\" button, \"Password\" input field, \"File\" input field, and the \"Submit\" button are missing associated labels. These should be fixed for better accessibility."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" accept=\"audio/*, video/*\">",
+                "CoT": "Step 1: Look for any audio or video elements in the HTML code.\nStep 2: Check if any of these elements have the \"autoplay\" attribute.\nStep 3: If there are any autoplaying audio or video elements, identify them as an accessibility issue."
+            },
+            {
+                "offending_line": "<audio controls autoplay src='audio.mp3'></audio>",
+                "fixed_line": "<audio controls src='audio.mp3'></audio>",
+                "CoT": "To find the problem related to automatic audio playing, we need to look for any audio or video elements in the HTML code that have the `autoplay` attribute set. If we find any, we should remove or adjust this attribute to prevent automatic audio or video playback.\n\nLet's go through the HTML code provided and specifically look for any audio or video elements with the `autoplay` attribute."
+            },
+            {
+                "offending_line": "<video autoplay src='example.mp4'></video>",
+                "fixed_line": "<video src='example.mp4'></video>",
+                "CoT": "1. Look for any audio or video elements in the HTML code.\n2. Check if there are any attributes that indicate autoplay or automatically playing audio or video.\n3. Make sure that any audio or video elements do not have autoplay enabled to ensure that they do not start playing automatically when the page loads."
+            },
+            {
+                "offending_line": "<video autoplay controls><source src='example.mp4' type='video/mp4'></video>",
+                "fixed_line": "<video controls><source src='example.mp4' type='video/mp4'></video>",
+                "CoT": "1. Look for any audio or video elements in the HTML code.\n2. Check if any of these elements have the \"autoplay\" attribute, which automatically starts playing audio or video when the page loads.\n3. If any element has the \"autoplay\" attribute, remove it to ensure that audio or video does not play automatically."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>",
+                "CoT": "To address the issue of audio or video elements automatically playing sound, we need to check if there are any audio or video elements present on the website and ensure that they are not set to autoplay. Here's the step-by-step process to find and fix such elements:\n\n1. Search for `<audio>` and `<video>` tags in the HTML code.\n2. Check if these tags have the `autoplay` attribute set. If they do, remove the `autoplay` attribute to prevent automatic playback of audio or video.\n\nLet's start by examining the HTML code for any audio or video elements."
+            },
+            {
+                "offending_line": "<audio src='background_music.mp3' autoplay></audio>",
+                "fixed_line": "<audio src='background_music.mp3' autoplay='false'></audio>",
+                "CoT": "To find the accessibility issue related to automatically playing audio, we need to look for any audio or video element in the HTML that plays audio automatically without any user interaction or control. Let's review the code for any audio or video elements that may be set to autoplay."
+            },
+            {
+                "offending_line": "    <a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "    <a onmouseover=\"event.preventDefault();\" href=\"#\">Home</a>",
+                "CoT": "To identify the issue with automatic audio playback, we need to look for any `<audio>` or `<video>` elements in the HTML code. In this case, there are no `<audio>` or `<video>` elements present, so we need to think if there are any other elements that may trigger sound.\n\nIn this code, there is a JavaScript function `sample()` that is triggered on `onmouseover`. This function triggers an alert message which can be considered equivalent to audio in terms of accessibility guidelines.\n\nAlthough it's not a direct `<audio>` or `<video>` element, the `onmouseover` event triggering sound can still be an accessibility issue for users who rely on screen readers or who may find sudden unexpected sound disruptive.\n\nTherefore, the accessibility issue is the use of the `onmouseover` event triggering a sound alert, and this should be addressed to comply with accessibility guidelines."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" autoplay=\"false\">",
+                "CoT": "1. Look for any audio or video element in the HTML code.\n2. Check if there are any attributes like `autoplay` that would automatically play audio or video when the page loads.\n3. If any autoplay attribute is found, it should be removed or modified to ensure that audio or video elements do not play automatically when the page loads."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video>",
+                "CoT": "Sure, here are the steps to find the issue related to the automatic playing of audio or video:\n\n1. Look through the provided HTML code.\n2. Identify any `<audio>` or `<video>` elements in the code.\n3. Check if any of these elements have the `autoplay` attribute.\n4. If there is an `autoplay` attribute present, it means that the audio or video will start playing automatically when the page loads.\n5. Consider removing the `autoplay` attribute from any `<audio>` or `<video>` elements to prevent automatic playing of audio or video content when the page loads."
+            },
+            {
+                "offending_line": "<audio controls autoplay><source src='audio.mp3' type='audio/mpeg'></audio>",
+                "fixed_line": "<audio controls><source src='audio.mp3' type='audio/mpeg'></audio>",
+                "CoT": "Step 1: Identify if there are any `<audio>` or `<video>` elements on the webpage that may have auto-playing audio.\nStep 2: Check if there are any JavaScript functions that trigger audio playback automatically.\nStep 3: Look for any `autoplay` attribute on audio or video elements.\nStep 4: Inspect any embedded media content to ensure they do not start playing automatically when the page loads."
+            },
+            {
+                "offending_line": "<video controls autoplay>",
+                "fixed_line": "<video controls>",
+                "CoT": "Step 1: Identify any audio or video elements within the HTML code.\n\nStep 2: Check if any of the audio or video elements have the autoplay attribute.\n\nStep 3: If there are audio or video elements with the autoplay attribute, remove or adjust the attribute to prevent automatic playback of audio.\n\nLet's go through the code provided to identify and address this issue."
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\" autoplay=\"false\">",
+                "CoT": "First, let's check the HTML code for any audio or video elements that might be automatically playing audio.\nNext, we'll need to ensure that the autoplay attribute is not present on any audio or video elements, as autoplaying audio can be disruptive for some users.\nLet's review the code to see if there are any audio or video elements present and if they have the autoplay attribute."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "<video controls autoplay>...</video>",
+                "CoT": "Step 1: Identify if there is any audio or video element on the page.\nStep 2: Check if the audio or video element is set to automatically play without user interaction."
+            },
+            {
+                "offending_line": "<audio autoplay>",
+                "fixed_line": "<audio controls>",
+                "CoT": "1. Check if there are any audio or video elements present in the HTML code.\n2. Look for attributes like `autoplay` that might automatically play audio or video content.\n3. If autoplay attribute is present, the audio or video content may start playing automatically, which can be an accessibility issue."
+            },
+            {
+                "offending_line": "None",
+                "fixed_line": "None",
+                "CoT": "First, we need to identify any <audio> or <video> elements in the HTML code. Let's search for them."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" muted>",
+                "CoT": "1. Identify if there is an audio or video element present on the website.\n\n2. Check if the audio or video element is set to automatically play audio when the page loads.\n\n3. If the audio or video element is set to auto-play audio, then that would be the accessibility issue that needs to be fixed."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "<video src='your-video.mp4' controls autoplay='false'></video>",
+                "CoT": "Step 1: Identify any audio or video elements in the HTML code.\nStep 2: Check if there are any attributes within these elements that control autoplay behavior.\nStep 3: Look for any autoplay functionality that plays audio automatically without user interaction."
+            },
+            {
+                "offending_line": "<audio controls autoplay>Your browser does not support the audio tag.</audio>",
+                "fixed_line": "<audio controls>Your browser does not support the audio tag.</audio>",
+                "CoT": "Step 1: Identify any audio or video elements on the page that might automatically play audio.\n\nStep 2: Check if there are any <audio> or <video> elements present in the HTML code.\n\nStep 3: If found, ensure that the autoplay attribute is not set to true for any of the audio or video elements.\n\nLet's go through the HTML code to identify any audio or video elements with autoplay attribute set to true."
+            },
+            {
+                "offending_line": "<audio autoplay src='audio.mp3'></audio>",
+                "fixed_line": "<audio src='audio.mp3'></audio>",
+                "CoT": "Step 1: Identify any audio or video elements on the page that have the `autoplay` attribute set. \n\nLet's search the HTML for `<audio>` and `<video>` elements with the `autoplay` attribute."
+            },
+            {
+                "offending_line": "<audio autoplay src='background-music.mp3'></audio>",
+                "fixed_line": "<audio src='background-music.mp3'></audio>",
+                "CoT": "Step 1: Identify if there are any audio or video elements on the page.\n\nStep 2: Check if any of the audio or video elements have the `autoplay` attribute set.\n\nStep 3: If there are audio or video elements with the `autoplay` attribute, consider removing it to prevent automatically playing audio."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "<input type=\"text\" id=\"username\" name=\"username\" style=\"font-family: Arial, sans-serif;\">",
+                "CoT": "To find the issue where a `<b>`, `<i>`, or `<font>` tag is used, we need to look through the entire HTML code provided. We will focus on identifying these tags and suggesting alternative approaches for styling content without relying on deprecated elements. Let's carefully review the HTML to locate any instances of these tags."
+            },
+            {
+                "offending_line": " <label for=\"username\">Username:</label><br>",
+                "fixed_line": "<label style=\"color: #333; background-color: #fff; display: block; padding: 5px; border-radius: 5px; margin-bottom: 5px;\" for=\"username\">Username:</label><br>",
+                "CoT": "To find and fix the accessibility issue of using `<font>`, `<b>`, or `<i>` tags, we need to locate any instances of these tags in the HTML code provided and replace them with semantic HTML elements or CSS styles for better accessibility and maintainability.\n\n1. Look through the entire HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Identify the element where these tags are used and decide on the appropriate replacement.\n3. Replace `<b>` with `<strong>` for emphasizing content.\n4. Replace `<i>` with `<em>` for italicizing content.\n5. Replace `<font>` with CSS styles to apply color, font size, or other styles as needed.\n6. Verify that the replacements maintain or improve the visual presentation of the content.\n7. Test the website to ensure that the changes did not introduce any new issues.\n\nLet's search the HTML code for any instances of `<font>`, `<b>`, or `<i>` tags and make the necessary replacements."
+            },
+            {
+                "offending_line": "<h1>Resume Maker</h1>",
+                "fixed_line": "<h1 style=\"font-weight: bold;\">Resume Maker</h1>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags in the HTML code. \n\nStep 2: Determine if any of these tags are being used for styling or text formatting purposes.\n\nStep 3: If any <b>, <i>, or <font> tags are found and are being used for styling purposes, these need to be replaced with appropriate CSS styles to ensure accessibility.\n\nLet's start by checking the HTML code for the presence of <b>, <i>, or <font> tags."
+            },
+            {
+                "offending_line": "<b> tag used for styling",
+                "fixed_line": "Replace <b> tag with appropriate CSS styling for bolding text",
+                "CoT": "1. Look through the HTML code provided.\n2. Search for any `<b>`, `<i>`, or `<font>` tags used in the code.\n3. Check if any of these tags are being used for styling purposes.\n4. If any of these tags are found, determine if they can be replaced with more appropriate methods like CSS for styling."
+            },
+            {
+                "offending_line": "<b>Create Your Resume</b>",
+                "fixed_line": "<strong>Create Your Resume</strong>",
+                "CoT": "To find the problem of using `<b>`, `<i>`, or `<font>` tags, we need to look through the HTML code and identify any instances where these tags are being used to style text. Here are the steps to follow:\n\n1. Search for `<b>` tag: Look for any instances where the `<b>` tag is used to bold text. Replace `<b>` with `<strong>` for semantic meaning.\n\n2. Search for `<i>` tag: Look for any instances where the `<i>` tag is used to italicize text. Replace `<i>` with `<em>` for semantic meaning.\n\n3. Search for `<font>` tag: Look for any instances where the `<font>` tag is used to change text color, size, or face. Replace `<font>` with CSS styling using classes or IDs.\n\nBy following these steps and updating the HTML code accordingly, we can ensure that the `<b>`, `<i>`, and `<font>` tags are not being used for styling purposes, which helps improve accessibility and maintain semantic structure in the document."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "",
+                "CoT": "Sure. To identify if a `<b>`, `<i>`, or `<font>` tag is being used, we need to check the entire HTML code for these tags. We can start by looking for `<b>` tags. Let's search for any `<b>` tags in the HTML code snippet provided."
+            },
+            {
+                "offending_line": "<b> <i> or <font> tags found in the code",
+                "fixed_line": "Change <b>, <i>, or <font> tags to appropriate semantic tags like <strong>, <em>, or <span>",
+                "CoT": "First, we need to look for any instances of `<b>`, `<i>`, or `<font>` tags being used in the HTML code. Let's search through the code to identify any of these tags."
+            },
+            {
+                "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "fixed_line": "<button onclick=\"generateResume()\" class=\"resume-button\">Generate Resume</button>",
+                "CoT": "1. Look through the HTML code for any <b>, <i>, or <font> tags.\n2. Check if any of these tags are used for styling purposes.\n3. Identify if there are any instances where these tags are used to format text.\n4. Determine if any alternative method, such as CSS styling, can be used instead of these tags. \n5. Recommend removing or replacing the <b>, <i>, or <font> tags with appropriate CSS styles to improve accessibility."
+            },
+            {
+                "offending_line": "<b> tag used",
+                "fixed_line": "Replace <b> tag with <strong> tag",
+                "CoT": "Let's start by looking through the HTML code and identifying any instances of the `<b>`, `<i>`, or `<font>` tags. It's important to remember that these tags are not considered good practice for formatting text in modern web development."
+            },
+            {
+                "offending_line": "<label for='name'>Name:</label>",
+                "fixed_line": "<label for='name' style='color: #333; background-color: #fff; display: block; padding: 5px; border-radius: 5px; margin-bottom: 5px;'>Name:</label>",
+                "CoT": "1. Look through the entire code to identify any instances of <b>, <i>, or <font> tags being used.\n\n2. Check if any of these tags are used for styling or formatting text.\n\n3. If any of these tags are found, determine if they can be replaced with more semantic HTML elements or CSS for styling instead."
+            },
+            {
+                "offending_line": "<font color='red'>I have a bike</font><br>",
+                "fixed_line": "<span style='color:red;'>I have a bike</span><br>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags in the HTML code.\n\nStep 2: Check if any of these tags are used for styling or emphasis.\n\nStep 3: Determine if the styling or emphasis can be achieved using CSS instead.\n\nStep 4: If any of the <b>, <i>, or <font> tags are unnecessary for styling or emphasis, recommend removing them and using CSS for styling instead."
+            },
+            {
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "Consider using CSS for text formatting or a different approach for text emphasis.",
+                "CoT": "Step 1: Identify any instances of `<b>`, `<i>`, or `<font>` tags in the HTML code. \n\nStep 2: Determine if any of these tags are being used for text formatting or styling.\n\nStep 3: If any of these tags are found to be used for formatting, consider replacing them with appropriate semantic HTML elements or using CSS for styling instead.\n\nLet's go through the code to find any instances of `<b>`, `<i>`, or `<font>` tags."
+            },
+            {
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "Add event listener in a separate script tag or file for better accessibility and maintainability.",
+                "CoT": "Step 1: Scan through the HTML code and look for any instances of the `<b>`, `<i>`, or `<font>` tags.\n\nStep 2: Check if any of these tags are being used to style text or elements on the page.\n\nStep 3: Determine if the styling applied using these tags can be achieved using CSS instead.\n\nStep 4: Once you identify any `<b>`, `<i>`, or `<font>` tags being used for styling purposes, suggest an alternative approach using CSS to ensure accessibility and better coding practices."
+            },
+            {
+                "offending_line": "<font color=\"#333\">Adjust resume details as needed for clarity.</font>",
+                "fixed_line": "<span style=\"color: #333\">Adjust resume details as needed for clarity.</span>",
+                "CoT": "First, we need to search for any instances of `<b>`, `<i>`, or `<font>` tags in the HTML code provided. Let's start by examining the entire code for these tags."
+            },
+            {
+                "offending_line": "<font color='#333'> Adjusted background color for better contrast </font>",
+                "fixed_line": "Replace <font> tag with appropriate CSS styling in the <style> section",
+                "CoT": "Sure, I will go through the steps to find the problem:\n\n1. Look through the HTML code to identify any <b>, <i>, or <font> tags being used.\n2. Check if any of these tags are being used for styling or formatting text.\n3. Ensure that CSS styling is being used instead of <b>, <i>, or <font> tags for text styling.\n4. If any of the problematic tags are found, they should be replaced with appropriate CSS styling in the <style> section."
+            },
+            {
+                "offending_line": "<label for=\"1\" style=\"font-weight:bold;\">1</label>",
+                "fixed_line": "<label for=\"1\" style=\"font-weight:bold;\">1</label>",
+                "CoT": "Sure, let's approach this step by step:\n\n1. Look through the entire HTML code.\n2. Check for any instances of `<b>`, `<i>`, or `<font>` tags being used.\n3. Identify where these tags are used and determine if they can be replaced with more semantically appropriate elements.\n4. If any of these tags are found, recommend replacing them with CSS for styling or using more appropriate HTML tags."
+            },
+            {
+                "offending_line": "<b>Resume Maker</b>",
+                "fixed_line": "<h1>Resume Maker</h1>",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Identify if any of these tags are being used.\n3. If any of these tags are found, determine if they are being used for styling purposes.\n4. If they are being used for styling, they should be replaced with CSS styles.\n5. If they are being used for semantic purposes (such as marking up text as bold or italic), consider using appropriate HTML5 semantic elements or CSS classes instead.\n\nLet's go through the code and identify if there are any instances of `<b>`, `<i>`, or `<font>` tags and determine if they raise any accessibility concerns."
+            },
+            {
+                "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "fixed_line": "It's recommended to use classes with defined styles in a separate CSS file to ensure accessible color contrast. For example, define a class in the style section and apply it to the button.",
+                "CoT": "Step 1: Look through the HTML code for any occurrences of the `<b>`, `<i>`, or `<font>` tags.\nStep 2: Identify where these tags are being used and determine if they are necessary for styling or if they can be replaced with more semantic and accessible alternatives.\nStep 3: Make necessary changes to replace `<b>`, `<i>`, or `<font>` tags with appropriate HTML elements and CSS styling to ensure accessibility and adherence to best practices."
+            },
+            {
+                "offending_line": "<font> tag used for styling",
+                "fixed_line": "Consider removing the <font> tag and using CSS for styling",
+                "CoT": "1. Look through the HTML code for any instances of <b>, <i>, or <font> tags.\n2. Check if any of these tags are used for styling or emphasis.\n3. Consider whether the same styling or emphasis could be achieved using CSS instead of HTML tags.\n4. Identify the specific tag that is being used inappropriately for styling or emphasis.\n\nLet's go through the code to find any <b>, <i>, or <font> tags that are used for styling or emphasis."
+            },
+            {
+                "offending_line": "<b>Resume Maker</b>",
+                "fixed_line": "<strong>Resume Maker</strong>",
+                "CoT": "Sure, here is the step by step process to find and fix the issue:\n\n1. Look through the HTML code provided and focus on the content within the `<body>` tag.\n\n2. Search for any `<b>`, `<i>`, or `<font>` tags used in the content.\n\n3. Identify the specific instances where `<b>`, `<i>`, or `<font>` tags are used for styling or formatting text.\n\n4. Replace the `<b>`, `<i>`, or `<font>` tags with semantic HTML elements or CSS properties to achieve the desired styling without using presentational markup.\n\n5. Update the CSS styles in the `<style>` tag to ensure consistent styling for the replaced elements.\n\n6. Test the page to ensure that the text styling remains the same after removing the `<b>`, `<i>`, or `<font>` tags.\n\n7. Update the code accordingly to fix the issue.\n\nLet me know if you need any more assistance."
+            },
+            {
+                "offending_line": "<b> tag used in the code",
+                "fixed_line": "Replace <b> tag with <strong> tag for better semantic meaning and accessibility.",
+                "CoT": "Let's go through the HTML code provided and look for any <b>, <i>, or <font> tags. If any of these tags are found, we will identify them as the accessibility-related issue. Let's start by examining the code for these tags."
+            },
+            {
+                "offending_line": "<b>Generate Resume</b>",
+                "fixed_line": "Use CSS styling instead of <b> tag, e.g., <button style=\"font-weight: bold;\">Generate Resume</button>",
+                "CoT": "1. Look through the provided HTML code for any instances of the `<b>`, `<i>`, or `<font>` tags.\n2. Check if these tags are used for styling purposes.\n3. If any of these tags are found, determine if they are being used for semantic purposes or purely for visual styling.\n4. If the tags are used solely for visual styling, consider replacing them with appropriate CSS styles.\n5. Make the necessary changes to ensure proper accessibility and adherence to best practices."
+            },
+            {
+                "offending_line": "<b>Generate Resume</b>",
+                "fixed_line": "<button onclick='generateResume()' style='color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);'>Generate Resume</button>",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Check if these tags are being used for styling purposes like bolding text, italicizing text, or changing font size/color.\n3. Determine if there are more appropriate HTML elements or CSS styles that can be used instead of these deprecated tags for better accessibility and maintainability."
+            },
+            {
+                "offending_line": "<font color='red'>Entry Level</font>",
+                "fixed_line": "<span style='color: red;'>Entry Level</span>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags in the HTML code\nStep 2: Check if any of these tags are used for styling or formatting purposes\nStep 3: Determine if any of these tags can be replaced with semantic HTML or CSS for better accessibility\nStep 4: Provide a recommendation on how to improve the usage of these tags to adhere to accessibility best practices"
+            },
+            {
+                "offending_line": "<font color=\"#333\"> Adjusted text color for better contrast </font>",
+                "fixed_line": "CSS should be used for styling instead of the <font> tag. Update the CSS style directly.",
+                "CoT": "To identify if there are any <b>, <i>, or <font> tags in the HTML code:\n\n1. Scan through the entire HTML code provided.\n2. Look for any instances where the <b>, <i>, or <font> tags are used.\n3. If any of these tags are found, they should be replaced with appropriate semantic HTML elements or CSS styling.\n\nLet's check the provided HTML code for the use of <b>, <i>, or <font> tags."
+            },
+            {
+                "offending_line": "        <h1>Resume Maker</h1>",
+                "fixed_line": "        <h1><strong>Resume Maker</strong></h1>",
+                "CoT": "1. Look through the HTML code for any instances of the `<b>`, `<i>`, or `<font>` tags.\n2. Check if these tags are being used for styling or formatting purposes.\n3. Identify if any of these tags are being used instead of appropriate semantic HTML elements or CSS properties.\n4. Consider how to replace these tags with more accessible alternatives to ensure proper structure and styling separation."
+            },
+            {
+                "offending_line": "<font color=\"red\">Enter your full name</font>",
+                "fixed_line": "<span style=\"color: red;\">Enter your full name</span>",
+                "CoT": "Step 1: Look through the HTML code and identify any instances of the <b>, <i>, or <font> tags.\n\nStep 2: Determine if any of these tags are used to style the text on the page.\n\nStep 3: If any of these tags are found being used for styling purposes, you need to update the styling using CSS instead.\n\nStep 4: Replace the <b>, <i>, or <font> tags with appropriate CSS properties to achieve the same styling effect."
+            },
+            {
+                "offending_line": "<font color=\"red\">Generate Resume</font>",
+                "fixed_line": "<span style=\"color: red;\">Generate Resume</span>",
+                "CoT": "To find and fix the issue of using `<b>`, `<i>`, or `<font>` tags, we need to:\n\n1. Identify where these tags are used in the HTML code.\n2. Replace them with appropriate HTML elements or CSS styling for better accessibility and maintainability.\n\nLet's start by examining the HTML code for the presence of `<b>`, `<i>`, or `<font>` tags. Then, we can make adjustments accordingly."
+            },
+            {
+                "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "fixed_line": "Consider using CSS to style the button instead of <b> tag.",
+                "CoT": "Step 1: Identify if there are any `<b>`, `<i>`, or `<font>` tags used in the HTML code."
+            },
+            {
+                "offending_line": "<b> or <i> tag should not be used",
+                "fixed_line": "",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Check if these tags are being used for styling purposes.\n3. If any of these tags are found and are used for styling, they need to be replaced with CSS styles to ensure better accessibility.\n4. Consider converting the styling to CSS classes and applying those classes to the relevant elements instead of using inline styling with these tags."
+            },
+            {
+                "offending_line": "<h2>Create Your Resume</h2>",
+                "fixed_line": "<h2>Create Your Resume</h2>",
+                "CoT": "To find the accessibility issue related to the use of `<b>`, `<i>`, or `<font>` tags, we need to look for instances of these tags being used in the HTML code provided. Let's go through each step:\n\n1. Search the entire HTML document for the use of `<b>`, `<i>`, or `<font>` tags.\n2. Identify any instances where these tags are being used to format text.\n3. Check if there are any alternatives provided in the CSS styles that can be used instead of these tags for text formatting.\n4. If any of these tags are found to be used for styling purposes, consider replacing them with proper CSS rules for accessibility compliance.\n\nLet's go through the HTML code provided to identify any instances of `<b>`, `<i>`, or `<font>` tags being used."
+            },
+            {
+                "offending_line": "None",
+                "fixed_line": "None",
+                "CoT": "First, I will scan through the HTML code to identify any instances of `<b>`, `<i>`, or `<font>` tags being used. I will ensure that these tags are not present in the code. Let's check the entire HTML code for any occurrences of these tags."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "    <button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "fixed_line": "    <button onclick=\"generateResume()\" onkeydown=\"if(event.key === 'Enter') { event.preventDefault(); generateResume(); }\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "CoT": "First, I will look for any elements on the page that have interactivity, such as buttons or links, that may require keyboard accessibility. In this case, the \"Generate Resume\" button has an `onclick` event which triggers a function.\n\nNext, I will check if there is a corresponding keyboard event for the `onclick` event. In this case, the `onclick` event should ideally have a corresponding `onkeydown` event to ensure keyboard accessibility.\n\nI will look for the `onkeydown` event or any keyboard event handlers associated with the \"Generate Resume\" button or any other interactive elements on the page.\n\nLet me check the code for the presence of keyboard events or their corresponding alternative for accessibility."
+            },
+            {
+                "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "fixed_line": "<button onclick=\"generateResume()\" onkeydown=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+                "CoT": "To find the issue related to the \"onmousedown event missing onkeydown event or script is not keyboard accessible\", we need to go through the HTML code and check for any elements or functionalities that rely solely on mouse interaction without providing an alternative keyboard-accessible method. Specifically, we are looking for any event handlers that are triggered by mouse actions but do not have corresponding keyboard accessibility.\n\n1. Look for any elements that have `onmousedown` event handlers in the HTML code.\n2. Check if these elements also have corresponding `onkeydown` event handlers or any keyboard-accessible alternative.\n3. If there are elements that lack keyboard accessibility, we need to provide an alternative method for keyboard users to interact with those elements.\n\nLet's start by searching for elements with `onmousedown` event handlers in the given HTML code."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!--<marquee> element should not be used.</marquee> Commented out the <marquee> element -->",
+                "CoT": "Step 1: Identify if the <marquee> element exists in the HTML code."
+            },
+            {
+                "offending_line": "<marquee>This text is scrolling</marquee>",
+                "fixed_line": "<div style='overflow: auto; white-space: nowrap;'>This text is scrolling</div>",
+                "CoT": "1. Look through the HTML code provided to identify any instance of the `<marquee>` element being used.\n2. Determine if the `<marquee>` element is being used for scrolling text or any similar effect that could potentially cause accessibility issues.\n3. If the `<marquee>` element is found and is being used inappropriately for scrolling text or similar purposes, it should be replaced with a more accessible and modern alternative to ensure a better user experience for all users."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "",
+                "CoT": "Step 1: Identify if there is any `<marquee>` element used in the HTML code provided. \n\nStep 2: If `<marquee>` element is found in the code, then it should be replaced with a more accessible alternative. \n\nStep 3: Provide guidance on using CSS animations or other techniques to achieve the desired effect without using the `<marquee>` element. \n\nLet's check if there is any `<marquee>` element in the code provided."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- This marquee element has been removed as it is not recommended for accessibility reasons. -->",
+                "CoT": "Step 1: Identify any <marquee> elements in the HTML code.\nStep 2: If there are any <marquee> elements, flag them as they should not be used for accessibility reasons."
+            },
+            {
+                "offending_line": "NONE",
+                "fixed_line": "",
+                "CoT": "Step 1: Identify the <marquee> element in the HTML code."
+            },
+            {
+                "offending_line": "<marquee><h1>Creating Beautiful Resumes</h1></marquee>",
+                "fixed_line": "<h1>Creating Beautiful Resumes</h1>",
+                "CoT": "Step 1: Look through the HTML code for any <marquee> elements.\n\nStep 2: Determine if any <marquee> elements are being used on the page, and if so, identify where they are located.\n\nStep 3: If a <marquee> element is found, confirm that the element is being used inappropriately for scrolling text or images.\n\nStep 4: If the <marquee> element is being used for unnecessary animation or movement, flag it as an accessibility issue that needs to be removed or replaced with a more accessible alternative.\n\nStep 5: Provide a recommendation for a more accessible way to achieve the desired effect without using the <marquee> element."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "Use CSS animations or JavaScript for animation effects instead of <marquee> element.",
+                "CoT": "Step 1: Identify the <marquee> element in the HTML code. \nStep 2: Verify if the <marquee> element is being used anywhere in the code.\nStep 3: Determine if the <marquee> element is used for scrolling text or any other animation effect.\nStep 4: If the <marquee> element is found and used for scrolling text or animation, then the problem has been identified as using the <marquee> element which is an accessibility issue."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "Should be removed and replaced with a more accessible alternative.",
+                "CoT": "1. Look through the HTML code for any `<marquee>` elements.\n2. If any `<marquee>` elements are found, remove or replace them with a more accessible alternative.\n3. Check for any potential animation or scrolling text that may impact accessibility for users."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "Replace the <marquee> element with a suitable alternative.",
+                "CoT": "To find and fix the issue of using the `<marquee>` element, we need to follow these steps:\n\n1. Search through the HTML code to identify if the `<marquee>` element is being used.\n\n2. Once the `<marquee>` element is found, we need to remove it and replace it with a suitable alternative that adheres to accessibility standards.\n\nLet's go ahead and search for the `<marquee>` element in the provided HTML code."
+            },
+            {
+                "offending_line": "<marquee> element used in the code.",
+                "fixed_line": "Replace the <marquee> element with a more accessible and modern alternative.",
+                "CoT": "Step 1: Identify the \"<marquee>\" element in the html code.\n\nStep 2: Determine if the \"<marquee>\" element is being used in the code.\n\nStep 3: If the \"<marquee>\" element is found to be used, it should be replaced with a more accessible and modern alternative."
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<marquee> element is an outdated and non-accessible element. It should be avoided. To create moving text, use CSS animations or JavaScript.",
+                "CoT": "Step 1: Identify if there is any <marquee> element used in the HTML code."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->",
+                "CoT": "Let's first review the HTML content provided in order to identify the problematic <marquee> element. We will search for any instance of the <marquee> tag within the document."
+            },
+            {
+                "offending_line": "<marquee",
+                "fixed_line": "Use of <marquee> elements is not recommended for accessibility reasons. Consider using CSS animations or alternative methods to achieve similar effects.",
+                "CoT": "1. Look through the HTML code to find any <marquee> elements used in the document. \n2. If any <marquee> elements are found, identify where they are being used and what content is included in them.\n3. Consider the purpose of the <marquee> element and whether it aligns with accessibility guidelines.\n4. Determine if the content within the <marquee> element can be displayed in a more accessible and usable way.\n5. Propose an alternative solution or styling method that adheres to accessibility standards."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "Remove the <marquee> element from the code.",
+                "CoT": "Step 1: Identify the <marquee> element in the HTML code. \n\nStep 2: Check if the <marquee> element is present in the code.\n\nStep 3: If the <marquee> element is present, identify the text or content inside the <marquee> element.\n\nStep 4: Confirm that the <marquee> element is not used for any essential information or functionality on the website.\n\nStep 5: If the <marquee> element is found and not crucial, suggest removing it to improve accessibility."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Resume Maker</title>",
+                "fixed_line": "<title>Resume Maker</title>",
+                "CoT": "Step 1: Identify the title element in the HTML code.\nStep 2: Check the content of the title element to see if it is empty or missing."
+            },
+            {
+                "offending_line": "<title>Resume Maker</title>",
+                "fixed_line": "<title>Resume Maker - Your Professional Resume Builder</title>",
+                "CoT": "To address the issue that the title element is empty, we need to ensure that the title element within the head section contains a meaningful and descriptive title for the webpage. \n\nLet's inspect the HTML code provided to locate the title element and ensure it is not empty."
+            },
+            {
+                "offending_line": "<title>Resume Maker</title>",
+                "fixed_line": "<title>Resume Maker - Make Your Resume Online</title>",
+                "CoT": "Sure, to find and fix the problem of an empty title element, we need to follow these steps:\n1. Locate the <title> element in the <head> section of the HTML document.\n2. Check if the content inside the <title> element is empty or missing.\n3. If the <title> element is empty or missing, we need to provide a descriptive and meaningful title for the webpage.\n4. Update the content inside the <title> element to make it relevant to the content of the page.\nLet's start by locating and checking the <title> element in the HTML document provided."
+            },
+            {
+                "offending_line": "<title>Resume Maker</title>",
+                "fixed_line": "<title>Resume Maker - Your Name</title>",
+                "CoT": "Sure! \nTo check for an empty title element in the provided HTML:\n- Look for the `<title>` tag in the `<head>` section of the HTML document.\n- Verify if the `<title>` tag has any content inside it.\n- If the `<title>` tag is empty (`<title></title>`), then it violates the rule that the title element should not be empty.\n- Provide a recommendation to add meaningful content to the `<title>` tag.\n\nLet's look for the `<title>` tag in the given HTML code."
+            },
+            {
+                "offending_line": "<title>Resume Maker</title>",
+                "fixed_line": "<title>Resume Maker - Build Your Resume</title>",
+                "CoT": "Step 1: Look for the title element in the HTML code. This is usually found within the head section of the document.\n\nStep 2: Check the content of the title element to see if it is empty.\n\nStep 3: If the title element is empty, that would be the accessibility issue related to an empty title element."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "<a onmouseover=\"sample()\" href=\"#\"><span>Home</span></a>",
+                "CoT": "Sure, to find the problem of an anchor element containing no text, we need to:\n1. Look for all the anchor (`<a>`) elements in the HTML code.\n2. Check if each anchor element has text content within it.\n3. Identify any anchor element that does not have any text content.\n\nLet's start by looking for all the anchor elements in the HTML code. Let's identify if any of them have no text content within them."
+            },
+            {
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "CoT": "To address the issue of an anchor element containing no text, we need to inspect each anchor `<a>` element in the HTML code provided.\n\n1. Look for all anchor `<a>` elements in the HTML.\n2. Check the content inside each anchor element to ensure that they have descriptive text.\n3. If any anchor element is found without any text, take appropriate action to add meaningful text inside the anchor element.\n\nLet's start by examining each anchor `<a>` element in the code."
+            },
+            {
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "<a onmouseover=\"sample()\" href=\"#\">Home <span class=\"hidden\">(Link to the Home page)</span></a>",
+                "CoT": "Sure, to find the problem of an anchor element containing no text, we will look through the HTML code provided and specifically examine the anchor (`<a>`) elements. We need to ensure that each anchor element has text content inside it for screen readers to announce.\n\nLet's go through the HTML code and check each anchor element to make sure it has text content."
+            },
+            {
+                "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+                "fixed_line": "<a onmouseover=\"sample()\" href=\"#\">Home <span class=\"sr-only\">(link to home)</span></a>",
+                "CoT": "To find the accessibility issue of \"anchor element contains no text\", I will:\n\n1. Look for all anchor `<a>` elements in the HTML code.\n2. Check if any of the anchor elements have empty or no text content within them.\n3. If I find any anchor element without any text content, I will consider it as an accessibility issue.\n\nLet me check the HTML code for any anchor elements without text content."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"ex\">",
+                "fixed_line": "<html lang=\"en\">",
+                "CoT": "To identify and fix the problem of the document language not being identified or being incorrect, we need to follow these steps:\n\n1. Locate the `<html>` tag in the HTML document.\n2. Check if the `lang` attribute is specified within the `<html>` tag.\n3. Verify if the value of the `lang` attribute corresponds to the correct language code defined by ISO standards.\n4. If the `lang` attribute is not present or contains an incorrect language code, update it to the appropriate language code.\n5. Save the HTML file with the corrected language attribute.\n\nI will now check the provided HTML code to determine if the document language is correctly identified."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "Step 1: Identify all the input elements on the page:\n- Input element with id \"name\"\n- Input element with id \"email\"\n- Input element with id \"username\"\n- Input element with id \"pwd\"\n- Input element with id \"1\"\n- Input element with id \"2\"\n- Input element with id \"3\"\n- Input element with id \"vehicle1\"\n- Input element with id \"vehicle2\"\n- Input element with id \"vehicle3\"\n- Input element with id \"myfile\"\n\nStep 2: Identify all the corresponding labels associated with each input element:\n- Label with \"for\" attribute set to \"name\"\n- Label with \"for\" attribute set to \"email\"\n- Label with \"for\" attribute set to \"username\"\n- Label with \"for\" attribute set to \"password\"\n- Label with \"for\" attribute set to \"1\"\n- Label with \"for\" attribute set to \"2\"\n- Label with \"for\" attribute set to \"3\"\n- Label with \"for\" attribute set to \"vehicle1\"\n- Label with \"for\" attribute set to \"vehicle2\"\n- Label with \"for\" attribute set to \"vehicle3\"\n\nStep 3: Identify if any input element has more than one associated label\n- The input element with id \"pwd\" does not have an associated label\n- The input element with id \"myfile\" does not have an associated label\n\nTherefore, the accessability related problem is that the input elements with ids \"pwd\" and \"myfile\" do not have an associated label. Each input element should have a clear and associated label for better accessability."
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\" aria-labelledby=\"vehicle3-label\">",
+                "CoT": "First, I need to identify all the input elements on the page. Then, I need to check if any of them have more than one associated label. If I find an input element with more than one associated label, that would be the accessibility issue we are looking for."
+            },
+            {
+                "offending_line": "<label for=\"username\">Username:</label><br>",
+                "fixed_line": "Split the input element into separate inputs with individual labels.",
+                "CoT": "Sure, let's go through the steps to identify the problem of an input element having more than one associated label:\n\n1. Identify all input elements in the HTML code.\n2. Check each input element to see if there are multiple `<label>` elements associated with it using the `for` attribute in the labels and the `id` attribute in the input elements.\n3. Note down any instances where an input element has more than one associated label.\n\nLet's go through these steps to find the specific issue in the HTML code provided."
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "Update the radio button to have a single associated label element.",
+                "CoT": "Alright, to find the issue where an input element has more than one associated label, we need to:\n\n1. Identify all the `<label>` elements in the HTML code.\n2. Check the `for` attribute of each `<label>` element to see which input element it is associated with.\n3. Look for any input element that has more than one `<label>` associated with it.\n\nLet's start by identifying all the `<label>` elements in the code."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"> I have a bike</label><br>\n<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">",
+                "fixed_line": "<label for=\"vehicle1\"> I have a bike<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\"></label>",
+                "CoT": "To find the problem where an input element has more than one associated label, we can follow these steps:\n\n1. Identify all the `<input>` elements in the HTML code.\n2. Check for each `<input>` element if there are multiple `<label>` elements associated with it.\n3. If any `<input>` element has more than one `<label>` associated with it, that is the problem.\n\nLet's start by identifying all `<input>` elements in the code."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "Sure! Let's start by looking for elements that do not have complete start and end tags. This means checking for any elements that are not properly closed with a closing tag. Let's also check if any elements are missing the `id` attribute or if any `id` attributes are not unique. Let's look through the code to identify and fix any such issues."
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"fav_1\" name=\"fav_number\" value=\"1\">",
+                "CoT": "Let's start by examining the code for incomplete start and end tags or duplicate id attributes. \n\nWe will check each element in the HTML code provided to ensure that:\n1. Every element has a complete start and end tag.\n2. Each element with an id attribute has a unique id value.\n\nLet's go through the HTML code and look for any instances where these rules are violated."
+            }
+        ]
+    }
+]

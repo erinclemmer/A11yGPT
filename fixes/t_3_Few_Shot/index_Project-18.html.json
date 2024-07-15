@@ -1,0 +1,261 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" ></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label>"
+            },
+            {
+                "offending_line": "<label for=\"username\">Username:</label><br>",
+                "fixed_line": "<label for=\"username\">Username:</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            },
+            {
+                "offending_line": "<label for=\"1\"></label><br>",
+                "fixed_line": "<label for=\"1\">Enter 1</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"1\"></label><br>",
+                "fixed_line": "<label for=\"1\">1</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"1\"></label><br>",
+                "fixed_line": "<label for=\"1\">Favorite Number:</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video controls>\n    <source src=\"bank_video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>",
+                "fixed_line": "<video controls>\n    <source src=\"bank_video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<source src=\"bank_video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<video controls>\n            <source src=\"bank_video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>"
+            },
+            {
+                "offending_line": "<audio src=\"bookstore-audio.mp3\" type=\"audio/mp3\" autoplay></audio>",
+                "fixed_line": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls playsinline>"
+            },
+            {
+                "offending_line": "<video controls>\n<source src=\"bank_video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+                "fixed_line": ""
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</i>",
+                "fixed_line": "<em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</em>"
+            },
+            {
+                "offending_line": "<h1 style=\"color: #ffffff; background-color: rgba(0, 0, 0, 0.7); padding: 10px;\">",
+                "fixed_line": "<h1 style=\"color: #ffffff; background-color: rgba(0, 0, 0, 0.7); padding: 10px;\"><em>"
+            },
+            {
+                "offending_line": "<b>Important</b>",
+                "fixed_line": "<strong>Important</strong>"
+            },
+            {
+                "offending_line": "<p style=\"color: #ffffff; background-color: rgba(0,0,0,0.7); padding: 10px\">\n    Your Trusted Financial Partner\n</p>",
+                "fixed_line": "<p style=\"color: #ffffff; background-color: rgba(0,0,0,0.7); padding: 10px\">\n    Your Trusted Financial Partner\n</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "fixed_line": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            },
+            {
+                "offending_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>",
+                "fixed_line": "<button onclick=\"playVideo()\" onkeydown=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Scrolling text...</marquee>",
+                "fixed_line": "<p>Scrolling text...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Your Bank</title>",
+                "fixed_line": "<title>Your Bank - Trusted Financial Partner</title>"
+            },
+            {
+                "offending_line": "<title>Your Bank</title>",
+                "fixed_line": "<title>Your Bank - Personal Banking Services</title>"
+            },
+            {
+                "offending_line": "<title>Your Bank</title>",
+                "fixed_line": "<title>Your Bank - Online Banking</title>"
+            },
+            {
+                "offending_line": "<title>Your Bank</title>",
+                "fixed_line": "<title>Your Bank - Trusted Banking Services</title>"
+            },
+            {
+                "offending_line": "<title>Your Bank</title>",
+                "fixed_line": "<title> Your Bank </title>"
+            },
+            {
+                "offending_line": "<title>Your Bank</title>",
+                "fixed_line": "<title>Your Bank - Serving Your Financial Needs</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<li><a href=\"#\">Accounts</a></li>",
+                "fixed_line": "<li><a href=\"#\">Accounts</a></li>"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#\">Home</a></li>"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Accounts</a></li>",
+                "fixed_line": "<li><a href=\"#\">Services</a></li>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"tx\">",
+                "fixed_line": "<html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\"><label for=\"1\"></label>"
+            },
+            {
+                "offending_line": "<label for=\"1\"></label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"username\" name=\"username\"><br>",
+                "fixed_line": "<label for=\"username\">Username:</label><br>\n<input type=\"text\" id=\"username\" name=\"username\"><br>"
+            },
+            {
+                "offending_line": "            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\"></label><br>\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>",
+                "fixed_line": "            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\">1</label><br>\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>"
+            },
+            {
+                "offending_line": "<label for=\"1\"></label><br>",
+                "fixed_line": "<label for=\"1\"></label>"
+            },
+            {
+                "offending_line": "            <label for=\"1\"></label><br>",
+                "fixed_line": "<label for=\"1\">1</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "Add label text for the radio button"
+            },
+            {
+                "offending_line": "<label for=\"1\"></label>",
+                "fixed_line": "<label for=\"1\">One</label>"
+            },
+            {
+                "offending_line": "            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\"></label><br>",
+                "fixed_line": "            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\">1</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\"></label><br>\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>",
+                "fixed_line": "<fieldset>\n            <legend>Choose Your Favorite Number:</legend>\n            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\">1</label><br>\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>\n        </fieldset>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<p style=\"color: #ffffff; background-color: rgba(0,0,0,0.7); padding: 10px\">",
+                "fixed_line": "<p style=\"color: #ffffff; background-color: rgba(0,0,0,0.7); padding: 10px\"></p>"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Services</li>",
+                "fixed_line": "<li><a href=\"#\">Services</a></li>"
+            },
+            {
+                "offending_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>",
+                "fixed_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>"
+            },
+            {
+                "offending_line": "<h1 style=\"color: #ffffff; background-color: rgba(0, 0, 0, 0.7); padding: 10px;\">",
+                "fixed_line": "<h1 style=\"color: #ffffff; background-color: rgba(0, 0, 0, 0.7); padding: 10px;\"></h1>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"fav_number1\" name=\"fav_number\" value=\"1\">"
+            }
+        ]
+    }
+]

@@ -1,0 +1,42 @@
+[
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">",
+        "fixed_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">"
+    },
+    {
+        "problem_type": "Missing label for form input",
+        "offending_line": "<label for=\"email\">Email:</label>",
+        "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" required><br>"
+    },
+    {
+        "problem_type": "Accessibility",
+        "offending_line": "<h2 onmouseout=\"PauseVideo()\">Exercise Videos</h2>",
+        "fixed_line": "<h2>Exercise Videos</h2>"
+    },
+    {
+        "problem_type": "missing alt attribute for image tag",
+        "offending_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">",
+        "fixed_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\" role=\"presentation\">"
+    },
+    {
+        "problem_type": "missing_label_element_for_input",
+        "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required><br>",
+        "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" required><br>"
+    },
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\">",
+        "fixed_line": "<img src=\"fitness_image.jpg\" alt=\"Fitness Image\" aria-hidden=\"true\">"
+    },
+    {
+        "problem_type": "Accessibility",
+        "offending_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\"></button>",
+        "fixed_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\" aria-label=\"Submit\"></button>"
+    },
+    {
+        "problem_type": "Accessibility",
+        "offending_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\"></button>",
+        "fixed_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\">Submit</button>"
+    }
+]

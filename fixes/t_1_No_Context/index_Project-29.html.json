@@ -1,0 +1,12 @@
+[
+    {
+        "problem_type": "missing_form_labels",
+        "offending_line": "<label for=\"sort\"></label>",
+        "fixed_line": "<label for=\"sort\">Sort By:</label>"
+    },
+    {
+        "problem_type": "image missing alt attribute",
+        "offending_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken\">",
+        "fixed_line": "<img src=\"butter_chicken.jpg\" alt=\"Butter Chicken\" aria-label=\"Butter Chicken\">"
+    }
+]

@@ -1,0 +1,27 @@
+[
+    {
+        "problem_type": "missing alt attribute",
+        "offending_line": "<img src='product1.jpg'>",
+        "fixed_line": "<img src='product1.jpg' alt='Product 1'>"
+    },
+    {
+        "problem_type": "alt_attribute_missing",
+        "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"name\" placeholder=\"Your Name\">",
+        "fixed_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" aria-label=\"Your Name\">"
+    },
+    {
+        "problem_type": "alt_attribute_missing",
+        "offending_line": "                <input type=\"text\" id=\"name\" name=\"name\" alt=\"name\" placeholder=\"Your Name\">",
+        "fixed_line": "                <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\">"
+    },
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"message\"></label>",
+        "fixed_line": "<label for=\"message\">Your Message:</label>"
+    },
+    {
+        "problem_type": "alt_attribute_missing",
+        "offending_line": "                <img src=\"product1.jpg\">",
+        "fixed_line": "                <img src=\"product1.jpg\" alt=\"Product 1\">"
+    }
+]

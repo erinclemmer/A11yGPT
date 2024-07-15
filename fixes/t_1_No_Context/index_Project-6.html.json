@@ -1,0 +1,27 @@
+[
+    {
+        "problem_type": "missing_alt_attribute",
+        "offending_line": "<img src=\"song1.jpg\" alt=\"Song 1\">",
+        "fixed_line": "<img src=\"song1.jpg\" alt=\"Song 1 - Artist Name\">"
+    },
+    {
+        "problem_type": "missing_alt_attribute",
+        "offending_line": "<img src=\"song1.jpg\" alt=\"Song 1\">",
+        "fixed_line": "<img src=\"song1.jpg\" alt=\"Song 1\" aria-label=\"Song 1\">"
+    },
+    {
+        "problem_type": "Color Contrast",
+        "offending_line": "<p><b>Artist Name</b></p>",
+        "fixed_line": "<p><b style='color: #000'>Artist Name</b></p>"
+    },
+    {
+        "problem_type": "Link with no meaningful text",
+        "offending_line": "<a href=\"#browse\" class=\"btn\">Browse Music</a>",
+        "fixed_line": "<a href=\"#browse\" class=\"btn\">Browse Music</a> - Browse Music Section"
+    },
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<img src=\"song1.jpg\" alt=\"Song 1\">",
+        "fixed_line": "<img src=\"song1.jpg\" alt=\"Cover art for Song 1\">"
+    }
+]

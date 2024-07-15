@@ -1,0 +1,17 @@
+[
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+        "fixed_line": "<img src=\"food1.jpg\" alt=\"Food Item 1\">"
+    },
+    {
+        "problem_type": "semantic_markup",
+        "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+        "fixed_line": "<p style=\"font-size: 1.6em;\"> Delicious food just for you!</p>"
+    },
+    {
+        "problem_type": "missing alt attribute",
+        "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+        "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1 - Description of the food item.\">"
+    }
+]

@@ -1,0 +1,898 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - High-performance sedan\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - description\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - High quality sedan car\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - A luxury sedan\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - High-end luxury sedan in silver color\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1\" role=\"presentation\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Highway sedan car with sleek design\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - Image of a sedan\">"
+            },
+            {
+                "offending_line": "<img src=\"car2.jpg\" alt=\"Car 2\">",
+                "fixed_line": "<img src=\"car2.jpg\" alt=\"Car 2 - Image of Car 2\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - Car Image\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1 - High-performance red sports car\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "            <label for=\"carType\"></label>",
+                "fixed_line": "            <label for=\"carType\">Car Type:</label>"
+            },
+            {
+                "offending_line": "<label for=\"carType\"></label>",
+                "fixed_line": "<label for=\"carType\">Select Car Type:</label>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\"><label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"carType\"></label>",
+                "fixed_line": "<label for=\"carType\">Car Type</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>\n            <source src=\"video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls muted>\n            <source src=\"video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>"
+            },
+            {
+                "offending_line": "<source src=\"video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<source src=\"video.mp4\" type=\"video/mp4\" muted>"
+            },
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls muted>"
+            },
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls autoplay=\"false\">"
+            },
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls autoplay>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<font color=\"red\">",
+                "fixed_line": "<span style=\"color: red;\">"
+            },
+            {
+                "offending_line": "<h4>Form:</h4>",
+                "fixed_line": "<h3>Form:</h3>"
+            },
+            {
+                "offending_line": "",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<font>Password:</font><br>",
+                "fixed_line": "<label for='password'>Password:</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle 2</label><br>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tags should not be used for styling. Use CSS instead.",
+                "fixed_line": "<span style='font-weight: bold; font-style: italic;'>This text is bold and italic.</span>"
+            },
+            {
+                "offending_line": "            <button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">",
+                "fixed_line": "            <button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" aria-label=\"Search Cars\">"
+            },
+            {
+                "offending_line": "<b>Form:</b>",
+                "fixed_line": "<p><strong>Form:</strong></p>"
+            },
+            {
+                "offending_line": "<font color='red'> I have a boat</font>",
+                "fixed_line": "<label style='color: red;'> I have a boat</label>"
+            },
+            {
+                "offending_line": "<label for=\"username\">Username:</label><br>",
+                "fixed_line": "<label for=\"username\"><strong>Username:</strong></label><br>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span>"
+            },
+            {
+                "offending_line": "<b> <i>",
+                "fixed_line": "<strong> <em>"
+            },
+            {
+                "offending_line": "            <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "            <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<font face='Arial' color='red'>Car Rental Service</font>",
+                "fixed_line": "<h1 style='font-family: Arial; color: red;'>Car Rental Service</h1>"
+            },
+            {
+                "offending_line": "            <font color='red'> I have a boat</font>",
+                "fixed_line": "<label for='vehicle3'> I have a boat</label>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<i>2</i>",
+                "fixed_line": "<em>2</em>"
+            },
+            {
+                "offending_line": "<font color=\"rgb(255, 255, 255)\" style=\"text-align: center;\">",
+                "fixed_line": "<div style=\"color: rgb(255, 255, 255); text-align: center;\">"
+            },
+            {
+                "offending_line": "<b>Form:</b>",
+                "fixed_line": "<h4>Form:</h4>"
+            },
+            {
+                "offending_line": "<i>Description of Car 1.</i>",
+                "fixed_line": "<p><i>Description of Car 1.</i></p>"
+            },
+            {
+                "offending_line": "<b>Watch Our Video</b>",
+                "fixed_line": "<strong>Watch Our Video</strong>"
+            },
+            {
+                "offending_line": "<font color='red'>Submit file</font>",
+                "fixed_line": "<label for='myfile'>Submit file</label>"
+            },
+            {
+                "offending_line": "<b></b>",
+                "fixed_line": "<strong></strong>"
+            },
+            {
+                "offending_line": "<font color='red'>Form:</font>",
+                "fixed_line": "<h4>Form:</h4>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "NONE"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "<label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<b> or <i> tags are used in the form labels.",
+                "fixed_line": "Replace <b> and <i> tags with CSS styles for form labels."
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"fav_number_2\">2</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"2\"><i>2</i></label><br>"
+            },
+            {
+                "offending_line": "<font>Arial, sans-serif</font>;",
+                "fixed_line": "font-family: Arial, sans-serif;"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "To style text, use CSS properties like font-weight, font-style, and color."
+            },
+            {
+                "offending_line": "<font",
+                "fixed_line": "Replace <font> tag with appropriate CSS styling"
+            },
+            {
+                "offending_line": "<b>",
+                "fixed_line": "<strong>"
+            },
+            {
+                "offending_line": "            <input type=\"password\" id=\"pwd\" name=\"pwd\">      ",
+                "fixed_line": "            <input type=\"password\" id=\"pwd\" name=\"pwd\"><br> "
+            },
+            {
+                "offending_line": "            <label for=\"2\">2</label><br>",
+                "fixed_line": "            <span>2</span><br>"
+            },
+            {
+                "offending_line": "<input type='text' id='username' name='username'><br>",
+                "fixed_line": "<input type='text' id='username' name='username' style='font-style: italic;'><br>"
+            },
+            {
+                "offending_line": "<b>, <i>, or <font> tags should not be used for styling purposes. Use CSS instead.",
+                "fixed_line": "NONE"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"number2\">2</label><br>"
+            },
+            {
+                "offending_line": "<b>Car Rental Service</b>",
+                "fixed_line": "<h1>Car Rental Service</h1>"
+            },
+            {
+                "offending_line": "<font> tag should not be used</button>",
+                "fixed_line": "<button type=\"submit\">Submit</button>"
+            },
+            {
+                "offending_line": "<font color='red'>End of form</font>",
+                "fixed_line": "<span style='color: red;'>End of form</span>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<p style=\"font-family: Arial, sans-serif;\">"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "<strong> <i> or <font> tag should not be used"
+            },
+            {
+                "offending_line": "            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n",
+                "fixed_line": "            <label for=\"2\">2</label><br>\n"
+            },
+            {
+                "offending_line": "            <label for=\"username\">Username:</label><br>",
+                "fixed_line": "            <label for=\"username\">Username:</label>"
+            },
+            {
+                "offending_line": "<h3>Form:</h3>",
+                "fixed_line": "<h3>Form:</h3>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<label for=\"carType\">Car Type</label>"
+            },
+            {
+                "offending_line": "<font style='background-color: rgb(76, 175, 80); color: rgb(255, 255, 255);'>",
+                "fixed_line": "<button type='submit' style='background-color: rgb(76, 175, 80); color: rgb(255, 255, 255);'>"
+            },
+            {
+                "offending_line": "<font size='4'>",
+                "fixed_line": "<p style='font-size: 1.3em;'>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<strong>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag found. These tags are deprecated and should not be used for styling.",
+                "fixed_line": "<strong> <em> or inline CSS styling should be used instead."
+            },
+            {
+                "offending_line": "<b> or <i> or <font> tags should not be used for styling, use CSS instead.",
+                "fixed_line": "<span style='font-weight: bold;'> or <span style='font-style: italic;'> tags should be used for styling text, use CSS instead."
+            },
+            {
+                "offending_line": "<b>End of form</b>",
+                "fixed_line": "<h3>End of form</h3>"
+            },
+            {
+                "offending_line": "            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "            <span for=\"vehicle2\"></span><br>"
+            },
+            {
+                "offending_line": "<font color='red'>",
+                "fixed_line": "<span style='color: red;'>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "Instead of using <font>, use CSS to style text."
+            },
+            {
+                "offending_line": "<b><i>This is bold and italic</i></b>",
+                "fixed_line": "<strong><em>This is bold and italic</em></strong>"
+            },
+            {
+                "offending_line": "<font>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</font>",
+                "fixed_line": "<span>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</span>"
+            },
+            {
+                "offending_line": "<font color='red'>Description of Car 1.</font>",
+                "fixed_line": "<p style='color: red;'>Description of Car 1.</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onkeydown=\"if(event.key === 'Enter'){ this.click(); }\">"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onkeydown=\"if(event.keyCode===13){this.click();}\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onkeydown=\"if(event.key === 'Enter') this.click();\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onclick=\"submitForm()\" onkeydown=\"if(event.key === 'Enter') { submitForm(); }\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Search Cars</button>",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onkeydown=\"if(event.keyCode==13){this.click();}\">Search Cars</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">\n                Search Cars\n            </button>",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onkeydown=\"if(event.key==='Enter'){ event.preventDefault(); document.querySelector('#carType').click();}\">\n                Search Cars\n            </button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onmousedown=\"this.blur();\">Submit</button>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"pickupLocation\" name=\"pickupLocation\" required>",
+                "fixed_line": "<input type=\"text\" id=\"pickupLocation\" name=\"pickupLocation\" required onkeydown=\"if(event.which === 13 || event.keyCode === 13) this.blur();\">"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onmousedown=\"this.style.backgroundColor='rgb(76, 175, 80)'\" onkeydown=\"if(event.key === 'Enter'){this.style.backgroundColor='rgb(76, 175, 80)'}\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onkeydown=\"submitForm(event)\">"
+            },
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onkeydown=\"if(event.keyCode===32 || event.key === 'Enter') alert('Submitted!');\">"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">",
+                "fixed_line": "<label for=\"vehicle1\">I have a bike</label><input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">"
+            },
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">\n                Search Cars\n            </button>",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onkeydown=\"submitForm(event)\">\n                Search Cars\n            </button>\n<script>\nfunction submitForm(event) {\n  if (event.key === 'Enter') {\n    event.preventDefault();\n    document.querySelector('form').submit();\n  }\n}\n</script>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onmousedown=\"this.innerHTML = 'Submitting...'\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type='submit' style='color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);'>",
+                "fixed_line": "<button type='submit' style='color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);' onmousedown='this.style.backgroundColor=\"#45a049\";'>"
+            },
+            {
+                "offending_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">\n                Search Cars\n            </button>",
+                "fixed_line": "<button type=\"submit\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\" onmousedown=\"this.style.backgroundColor='#45a049';\">\n                Search Cars\n            </button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\"> <!-- Refresh meta tag with a time-out -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\">\n<meta http-equiv=\"refresh\" content=\"0;url=URL\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=otherpage.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=otherpage.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='30;url=example.com'>",
+                "fixed_line": "<meta http-equiv='refresh' content='30;url=example.com'>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=home.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30;url=home.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=http://www.example.com'>",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=http://www.example.com'>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=error-page.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=error-page.html\">"
+            },
+            {
+                "offending_line": "",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=https://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://www.example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=dashboard.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=dashboard.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=example.com'>",
+                "fixed_line": "<meta http-equiv='refresh' content='5;url=example.com'>"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=page2.html'>",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=page2.html'>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;URL=page2.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30;URL=page2.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=index.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30;url=index.html\"> <!-- This meta refresh is not recommended for accessibility -->"
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "<meta http-equiv='refresh' content='0;URL=pageurl.html'>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p> element should be used instead of <marquee>."
+            },
+            {
+                "offending_line": "<marquee>Welcome to our Car Rental Service</marquee>",
+                "fixed_line": "<p>Welcome to our Car Rental Service</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p><strong>Attention:</strong> The use of &lt;marquee&gt; element is not recommended for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p>Do not use the &lt;marquee&gt; element for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style=\"color: red\">Please do not use the &lt;marquee&gt; element as it is not accessible.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used. ",
+                "fixed_line": "<p><strong>Notice:</strong> The &lt;marquee&gt; element should not be used. </p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used in the HTML as it is not a valid or accessible element. It can cause accessibility issues for users, especially those with visual or cognitive impairments.",
+                "fixed_line": "<p>Instead of using the <marquee> element for scrolling text, consider using CSS animations or JavaScript to achieve a similar effect in a more accessible way.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p>DO NOT USE MARQUEE ELEMENT FOR ACCESSIBILITY</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<!-- Marquee element removed for accessibility -->"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<marquee> element should not be used. Please remove this element for better accessibility."
+            },
+            {
+                "offending_line": "<marquee> element found in the code",
+                "fixed_line": "Replace <marquee> element with CSS animations or JavaScript for scrolling text"
+            },
+            {
+                "offending_line": "<marquee> element is used, which should be avoided.",
+                "fixed_line": "<p><strong>Notice:</strong> This page contains scrolling content for demonstration purposes only.</p>"
+            },
+            {
+                "offending_line": "<marquee direction='left'>Special Offer: 10% off all rentals this weekend!</marquee>",
+                "fixed_line": "<p style='color: red; font-weight: bold; text-align: center;'>Special Offer: 10% off all rentals this weekend!</p>"
+            },
+            {
+                "offending_line": "<marquee>Hello, this is a scrolling text.</marquee>",
+                "fixed_line": "<div role='alert' aria-hidden='true'>Hello, this is a scrolling text.</div>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p> element with CSS animation"
+            },
+            {
+                "offending_line": "<marquee> element is used.",
+                "fixed_line": "<p style='color:red;'>Please avoid using the <marquee> element.</p>"
+            },
+            {
+                "offending_line": "<marquee>This is a sample marquee text</marquee>",
+                "fixed_line": "<div role=\"alert\">This is a sample marquee text</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<p class=\"error\">The <marquee> element should not be used for accessibility reasons. Consider using alternative methods for displaying dynamic content.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>This is some scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee> element used",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style='color: red; font-weight: bold;'>Do not use the &lt;marquee&gt; element as it is not considered accessible. Consider using other methods for animations or scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p style=\"color: red; font-weight: bold;\">Marquee element is not accessible. Please remove it.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<marquee> element should not be used for accessibility reasons. Instead, consider using CSS animations or JavaScript for similar effects."
+            },
+            {
+                "offending_line": "<marquee> element should not be used as it can be distracting and is not accessible for all users.",
+                "fixed_line": "<p> element styled with CSS animation should be used instead for moving text or elements."
+            },
+            {
+                "offending_line": "<marquee direction='left'>Welcome to our Car Rental Service</marquee>",
+                "fixed_line": "<div role='alert' aria-label='Welcome to our Car Rental Service' style='white-space: nowrap;'>Welcome to our Car Rental Service</div>"
+            },
+            {
+                "offending_line": "<marquee> element is used in the code.",
+                "fixed_line": "<p>This text will scroll from right to left.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p>Car Rental Service is powered by Company X</p>"
+            },
+            {
+                "offending_line": "<marquee behavior=\"scroll\" direction=\"left\">Welcome to our Car Rental Service</marquee>",
+                "fixed_line": "<div style=\"overflow: hidden;\"><p>Welcome to our Car Rental Service</p></div>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='color: red;'>The use of the marquee element is discouraged for accessibility reasons. Please avoid using it.</p>"
+            },
+            {
+                "offending_line": "<marquee>This is a scrolling message</marquee>",
+                "fixed_line": "<p style='animation: marquee 5s infinite; white-space: nowrap;'>This is a scrolling message</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used to create scrolling text which is not accessible for all users.",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>Please do not use the <marquee> element for scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class=\"note\">The <marquee> element should not be used.</p>"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p style=\"color: red; font-size: 20px;\">This website does not use the <marquee> element for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<p style='color: red;'>Marquee element should not be used</p>"
+            },
+            {
+                "offending_line": "<marquee> element found",
+                "fixed_line": "<marquee> element removed"
+            },
+            {
+                "offending_line": "<marquee> element is used which is not considered accessible.",
+                "fixed_line": "<p style='color: red;'>Avoid using <marquee> element for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div role=\"alert\" aria-live=\"assertive\">"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<marquee> element should not be used"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p>Marquee element should not be used for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee>Submit file</marquee>",
+                "fixed_line": "<label for=\"myfile\">Submit file</label>"
+            },
+            {
+                "offending_line": "<marquee> element is used for animation which is not recommended.",
+                "fixed_line": "<marquee> element is used for animation which is not recommended. Please use CSS animations or JavaScript for animated effects."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>This website does not support the <marquee> HTML element.</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used which should not be used as per accessibility guidelines.",
+                "fixed_line": "<marquee> element should be replaced with proper HTML elements to ensure accessibility."
+            },
+            {
+                "offending_line": "<marquee> element is used to scroll text or images across the screen, which can cause accessibility issues for some users, such as individuals with vestibular disorders or cognitive impairments.",
+                "fixed_line": "To fix this issue, you can replace the <marquee> element with a more accessible alternative like CSS animations or JavaScript code to achieve similar effects without causing accessibility problems."
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'><marquee>Some scrolling text...</marquee></div>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style=\"color: red; font-weight: bold;\">WARNING: The <marquee> element should not be used. Consider alternative ways to achieve the desired effect.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='error-message'>Marquee element should not be used.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used within a webpage as it can cause accessibility and usability issues.",
+                "fixed_line": "<p> element should not be used within a webpage as it can cause accessibility and usability issues."
+            },
+            {
+                "offending_line": "<marquee> element is being used.",
+                "fixed_line": "<p>This is a scrolling message</p>"
+            },
+            {
+                "offending_line": "<marquee> element detected in the code.",
+                "fixed_line": "<marquee> element detected in the code. This element is not accessible and should be avoided. Consider using alternative methods for displaying moving text."
+            },
+            {
+                "offending_line": "<marquee direction='left'>Check out our special offers!</marquee>",
+                "fixed_line": "<p>Check out our special offers!</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Car Rental Service</title>",
+                "fixed_line": "<title>Car Rental Service</title>"
+            },
+            {
+                "offending_line": "<label for=\"carType\"></label>",
+                "fixed_line": "<label for=\"carType\">Select Car Type:</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle 2</label><br>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home <span class=\"hidden\">(current)</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home<img src=\"transparent.gif\" alt=\"\" aria-hidden=\"true\"></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home Page</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home<span class=\"sr-only\">Navigate to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\"><span aria-hidden=\"true\">Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home <span class=\"sr-only\">Link to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\"><span>Home</span></a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en-US\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"2\">2</label>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+                "fixed_line": "<label for=\"2\">2</label><br>\n<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>"
+            },
+            {
+                "offending_line": "<label for='2'>2</label><br>",
+                "fixed_line": "<input type='radio' id='1' name='fav_number' value='1'><label for='1'>1</label><br><input type='radio' id='2' name='fav_number' value='2'><label for='2'>2</label><br><input type='radio' id='3' name='fav_number' value='3'><label for='3'>3</label>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\" aria-labelledby=\"1_label\">"
+            },
+            {
+                "offending_line": "            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>\n            <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>   ",
+                "fixed_line": "            <div>\n                <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n                <label for=\"1\">1</label><br>\n            </div>\n            <div>\n                <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n                <label for=\"2\">2</label><br>\n            </div>\n            <div>\n                <input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n                <label for=\"3\">3</label><br>\n            </div>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">",
+                "fixed_line": "<label for=\"vehicle1\"> I have a bike</label>"
+            },
+            {
+                "offending_line": "            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle 2</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n            <label for=\"vehicle1\">Bike</label><br>\n            <input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\"><br><label for=\"2\">2</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+                "fixed_line": "            <input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\"><label for=\"1\">1</label>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"2\">Select your favorite number:</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle 2</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\" />"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n            <label for=\"vehicle3\"> I have a boat</label>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\"><label for=\"vehicle1\">Bike</label>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle3\"> I have a boat</label>",
+                "fixed_line": "<label for=\"vehicle3\"> I have a boat</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n<label for=\"vehicle2\">Car</label><br>\n<input type=\"checkbox\" id=\"vehicle3\" name=\"vehicle3\" value=\"Boat\">\n<label for=\"vehicle3\">Boat</label>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+                "fixed_line": "<input type=\"radio\" id=\"fav2\" name=\"fav_number\" value=\"2\" id=\"fav2\">\n<label for=\"fav2\">2</label>"
+            }
+        ]
+    }
+]

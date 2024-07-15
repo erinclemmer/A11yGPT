@@ -1,0 +1,473 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<td>Apples</td>",
+                "fixed_line": "<td><img src='apples.jpg' alt='Apples'></td>",
+                "CoT": "To find the problem of a missing \"alt\" attribute in an \"img\" tag, we need to:\n\n1. Look for any \"img\" tags within the HTML.\n2. Check each \"img\" tag to see if they have an \"alt\" attribute.\n3. If any \"img\" tag is missing the \"alt\" attribute, that would be the accessibility issue we need to fix."
+            },
+            {
+                "offending_line": "<img src='background-image.jpg'>",
+                "fixed_line": "<img src='background-image.jpg' alt='Background Image'>",
+                "CoT": "To find the problem of a missing `alt` attribute in an `img` tag in the provided HTML code, we will:\n\n1. Look through the entire HTML code for any `img` tags.\n2. Check if each `img` tag has an `alt` attribute.\n3. If any `img` tag is found without an `alt` attribute, that will be considered the accessibility issue.\n\nLet's go through the HTML and find any `img` tags without the `alt` attribute."
+            },
+            {
+                "offending_line": "<img src='logo.png' width='200' height='100'>",
+                "fixed_line": "<img src='logo.png' width='200' height='100' alt='Company Logo'>",
+                "CoT": "Step 1: Look for any `<img>` or `<iframe>` tags in the HTML code.\n\nStep 2: Check if each `<img>` tag has an `alt` attribute defined. \n\nStep 3: Check if each `<iframe>` tag has an `alt` attribute defined.\n\nStep 4: If any `<img>` or `<iframe>` tag is missing the `alt` attribute, it means the accessability issue of missing `alt` attribute in an `<img>` or `<iframe>` tag has been found.\n\nLet's follow these steps to identify if there are any `<img>` or `<iframe>` tags without the `alt` attribute in the HTML code given."
+            },
+            {
+                "offending_line": "<img src='logo.png'>",
+                "fixed_line": "<img src='logo.png' alt='Company Logo'>",
+                "CoT": "1. Look through the HTML code to find any `<img>` tags.\n2. Inspect each `<img>` tag to see if it has an `alt` attribute or not.\n3. If an `alt` attribute is missing, note down the location and suggest adding an appropriate `alt` attribute for accessibility."
+            },
+            {
+                "offending_line": "<img>",
+                "fixed_line": "<img src='image.jpg' alt='Grocery Store logo'>",
+                "CoT": "1. Look through the HTML code provided for any `<img>` or `<iframe>` tags.\n2. For each `<img>` tag, check if the `alt` attribute is present and contains a descriptive text.\n3. For each `<iframe>` tag, check if the `alt` attribute is present and contains a descriptive text.\n4. If an `<img>` or `<iframe>` tag does not have an `alt` attribute, note it as the accessibility issue."
+            },
+            {
+                "offending_line": "<img src='example.jpg'>",
+                "fixed_line": "<img src='example.jpg' alt='Example description'>",
+                "CoT": "1. Look for `<img>` tags in the HTML code.\n2. Check if each `<img>` tag has an `alt` attribute with a descriptive text.\n3. Look for `<iframe>` tags in the HTML code.\n4. Check if each `<iframe>` tag has an `alt` attribute (if applicable) with a descriptive text."
+            },
+            {
+                "offending_line": "<img src='logo.png'>",
+                "fixed_line": "<img src='logo.png' alt='Logo of Grocery Store'>",
+                "CoT": "Alright, let's find the issue step by step:\n\n1. Look through the HTML for any `<img>` or `<iframe>` tags.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If an `<img>` tag is found without an `alt` attribute, consider it as the accessibility issue.\n4. If there are `<iframe>` tags, also check if they have an `alt` attribute.\n\nLet's start by looking for `<img>` tags first."
+            },
+            {
+                "offending_line": "<img src='logo.png' style='width:120px;height:120px;'>",
+                "fixed_line": "<img src='logo.png' alt='Logo' style='width:120px;height:120px;'>",
+                "CoT": "1. Look through the HTML code to identify any `<img>` or `<iframe>` tags.\n2. Check each `<img>` and `<iframe>` tag to see if they have an `alt` attribute.\n3. If any `<img>` or `<iframe>` tag is missing the `alt` attribute, that is where the accessibility issue lies."
+            },
+            {
+                "offending_line": "<img src='logo.png' style='width:100px;height:100px;'>",
+                "fixed_line": "<img src='logo.png' style='width:100px;height:100px;' alt='Grocery Store Logo'>",
+                "CoT": "Step 1: Identify all `<img>` and `<iframe>` tags in the HTML\n\nStep 2: Check if each `<img>` and `<iframe>` tag has an `alt` attribute\n\nStep 3: If any `<img>` or `<iframe>` tag is missing the `alt` attribute, then it is the accessibility issue we are looking for."
+            },
+            {
+                "offending_line": "<h2>Grocery Store</h2>",
+                "fixed_line": "<img src='logo.jpg' alt='Grocery Store'>",
+                "CoT": "Step 1: Look through the HTML code for any `<img>` tags or `<iframe>` tags.\nStep 2: Check if any of these tags have the `alt` attribute missing.\nStep 3: If you find any `<img>` or `<iframe>` tags without the `alt` attribute, that would be the accessibility issue."
+            },
+            {
+                "offending_line": "<img src='logo.png'>",
+                "fixed_line": "<img src='logo.png' alt='Logo'>",
+                "CoT": "Sure! To find the issue of missing alt attribute in an img tag, you need to:\n\n1. Look through all the img tags in the HTML.\n2. Check if each img tag has an alt attribute.\n3. If any img tag is missing the alt attribute, that is the accessibility issue.\n\nLet's apply this process to the provided HTML code."
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" alt=\"File input\">",
+                "CoT": "1. I will search for any `<img>` tags in the HTML code.\n2. I will check if each `<img>` tag has an `alt` attribute.\n3. I will also check for any `<iframe>` tags and verify if they have an `alt` attribute as well."
+            },
+            {
+                "offending_line": "<input type='file' id='myfile' name='myfile'>",
+                "fixed_line": "<input type='file' id='myfile' name='myfile' alt='Select a file:'>",
+                "CoT": "To find and fix the accessibility issue related to missing \"alt\" attribute in the img tag, we need to do the following:\n\n1. Look through the HTML code for any <img> tags to see if they have alt attributes.\n2. If any <img> tags are missing the alt attribute, we need to add one with a descriptive text that conveys the purpose or content of the image.\n3. If there are no <img> tags without alt attributes, we can assume that the accessibility issue related to missing \"alt\" attribute does not exist.\n\nLet's go through the HTML code provided to identify if there are any <img> tags without alt attributes."
+            },
+            {
+                "offending_line": "<img src='logo.png' style='width: 100px;'>",
+                "fixed_line": "<img src='logo.png' style='width: 100px;' alt='Logo image'>",
+                "CoT": "To find the issue where the `alt` attribute is missing in the `iframe` or `img` tag, we need to:\n1. Identify all `iframe` and `img` tags in the HTML code.\n2. Check if each `iframe` and `img` tag has the `alt` attribute.\n3. If the `alt` attribute is missing, it needs to be added.\n\nLet's start by looking for `iframe` and `img` tags in the given HTML code."
+            },
+            {
+                "offending_line": "<img src='logo.png' width='200' height='100'>",
+                "fixed_line": "<img src='logo.png' width='200' height='100' alt='Grocery Store Logo'>",
+                "CoT": "1. Look through the HTML code to find any `<img>` or `<iframe>` tags.\n2. Check if each `<img>` or `<iframe>` tag has an `alt` attribute.\n3. If an `alt` attribute is missing for any `<img>` or `<iframe>` tag, then that would be the accessability issue."
+            },
+            {
+                "offending_line": "<td><img src='apple.jpg' width='50' height='50'></td>",
+                "fixed_line": "<td><img src='apple.jpg' width='50' height='50' alt='Apple'></td>",
+                "CoT": "Step 1: Identify all `<img>` tags in the HTML code.\nStep 2: Check if each `<img>` tag has an `alt` attribute.\nStep 3: If any `<img>` tag does not have an `alt` attribute, flag it as missing."
+            },
+            {
+                "offending_line": "<img src='image.jpg'>",
+                "fixed_line": "<img src='image.jpg' alt='Description of the image'>",
+                "CoT": "Step 1: Identify all the `<img>` or `<iframe>` tags in the HTML code. \n\nStep 2: Check if each `<img>` tag has an `alt` attribute. \n\nStep 3: Check if each `<iframe>` tag has an `alt` attribute. \n\nStep 4: If any `<img>` tag or `<iframe>` tag is missing the `alt` attribute, flag it as an accessibility issue related to the missing `alt` attribute. \n\nLet's go through the code and find if there are any `<img>` or `<iframe>` tags without the `alt` attribute."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "1. Look for input elements or button elements in the HTML code.\n2. Check if each input element or button element has a label associated with it.\n3. Verify if the label is empty or non-existent.\n4. Confirm if the input element or button element has an alt attribute instead of a label."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>",
+                "CoT": "To identify the issue related to audio or video elements automatically playing audio, we need to search for any audio or video elements in the HTML code and check if they have the autoplay attribute set. Therefore, let's look for any audio or video elements and verify if they have autoplay attribute set."
+            },
+            {
+                "offending_line": "<video autoplay><source src='video.mp4' type='video/mp4'></video>",
+                "fixed_line": "<video controls><source src='video.mp4' type='video/mp4'></video>",
+                "CoT": "Step 1: Look for any `<audio>` or `<video>` elements in the HTML code.\n\nStep 2: Check if these elements have the `autoplay` attribute.\n\nStep 3: If `autoplay` attribute is present, check if the audio or video content is set to play automatically without any user interaction.\n\nStep 4: If the audio or video content is set to play automatically, it violates the accessibility rule of avoiding automatic playing audio/video.\n\nLet's follow these steps to find the issue."
+            },
+            {
+                "offending_line": "<audio id=\"myAudio\" autoplay controls>",
+                "fixed_line": "<audio id=\"myAudio\" controls>",
+                "CoT": "To find the problem related to audio or video elements automatically playing audio, we need to locate any audio or video elements in the HTML code and check if they have attributes that would enable autoplay. \nHere are the steps to find the issue in the given HTML code:\n1. Look for any `<audio>` or `<video>` elements in the code.\n2. Check if these elements have the `autoplay` attribute included.\n3. If the `autoplay` attribute is present, it means the audio or video would automatically start playing when the page loads, which can be disruptive for some users.\n\nLet's go through the HTML code and identify if there are any `<audio>` or `<video>` elements with the autoplay attribute included."
+            },
+            {
+                "offending_line": "<video autoplay controls>\n<source src=\"video.mp4\" type=\"video/mp4\">\n</video>",
+                "fixed_line": "<video controls>\n<source src=\"video.mp4\" type=\"video/mp4\">\n</video>",
+                "CoT": "Step 1: Identify any audio or video elements on the page that may contain audio.\n\nStep 2: Check if these elements have the `autoplay` attribute set.\n\nStep 3: If any audio or video elements have the `autoplay` attribute set, remove it to prevent them from automatically playing audio."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<h1>Available Groceries</h1>",
+                "fixed_line": "<h1 style=\"color: #FFFFFF;\">Available Groceries</h1>",
+                "CoT": "1. Look through the HTML code for any instances of the `<b>`, `<i>`, or `<font>` tags.\n2. Check if any of these tags are used for styling purposes.\n3. If any of these tags are found, consider an alternative approach to achieve the styling while maintaining accessibility standards."
+            },
+            {
+                "offending_line": "<b>Available Groceries</b>",
+                "fixed_line": "<h1>Available Groceries</h1>",
+                "CoT": "1. Search through the HTML code for any <b>, <i>, or <font> tags.\n2. If any of these tags are found, consider the impact they have on accessibility.\n3. Determine if the usage of these tags complies with the accessability guidelines.\n4. Identify and provide feedback on the use of these tags if they do not conform to accessability standards."
+            },
+            {
+                "offending_line": "<font color='red'>Change the text color to white for better contrast</font>",
+                "fixed_line": "Change the text color to white for better contrast",
+                "CoT": "1. Look through the HTML code to identify any instances of the <b>, <i>, or <font> tags being used.\n2. Determine if any of these tags are being used for styling or formatting purposes.\n3. Check if the styling or formatting could be achieved using CSS instead of these tags.\n4. Make sure to remove or replace any <b>, <i>, or <font> tags with appropriate CSS styles."
+            },
+            {
+                "offending_line": "<h1>Available Groceries</h1>",
+                "fixed_line": "<h1><strong>Available Groceries</strong></h1>",
+                "CoT": "1. Look through the HTML code for any instances of the `<b>`, `<i>`, or `<font>` tags.\n   \n2. Check if any text content is enclosed within these tags.\n\n3. Determine if the use of these tags can be replaced with modern CSS styling for better accessibility.\n\n4. Identify any instances where the use of these tags may impact the readability or accessibility of the content.\n\nLet's start by looking through the HTML code for any `<b>`, `<i>`, or `<font>` tags and assess their impact on accessibility."
+            },
+            {
+                "offending_line": "<td>Apples</td>",
+                "fixed_line": "<td style=\"color: black;\">Apples</td>",
+                "CoT": "To find and fix the issue with the `<font>` tag, we need to:\n\n1. Identify if there is any use of `<font>` tag in the HTML.\n2. Replace the `<font>` tag with CSS styles to ensure separation of content and presentation.\n3. Ensure all styling is done using CSS instead of inline styles or deprecated tags.\n\nLet's now look through the provided HTML to identify if there are any `<font>` tags used."
+            },
+            {
+                "offending_line": "<td><button>Add to Cart</button></td>",
+                "fixed_line": "<td><button><span style='font-weight: bold; font-style: italic;'>Add to Cart</span></button></td>",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags used in the HTML code.\nStep 2: Check if any of these tags are being used for styling purposes.\nStep 3: If any of these tags are being used for styling, replace them with appropriate CSS properties.\nStep 4: Update the code to adhere to modern best practices for styling (using CSS instead of inline styling tags).\nStep 5: Confirm that the code no longer includes <b>, <i>, or <font> tags being used for styling purposes."
+            },
+            {
+                "offending_line": "<b>Grocery Store</b>",
+                "fixed_line": "<strong>Grocery Store</strong>",
+                "CoT": "Here is the step-by-step approach to find and fix the accessibility issue of using `<b>`, `<i>`, or `<font>` tags in the HTML code:\n\n1. Look through the entire HTML code provided.\n2. Check for the use of `<b>`, `<i>`, or `<font>` tags within the content.\n3. Replace `<b>` and `<i>` tags with `<strong>` and `<em>` respectively for semantic correctness and accessibility.\n4. Replace any `<font>` tags with CSS styling for better separation of content and design.\n5. Ensure that all styles are defined in the CSS instead of inline styles to separate content and presentation.\n6. Confirm that the updated code aligns with modern accessibility best practices and semantic HTML structure.\n\nLet me know if you need further assistance or if you have any questions."
+            },
+            {
+                "offending_line": "<b>Grocery Store</b>",
+                "fixed_line": "h2 { font-weight: bold; }",
+                "CoT": "Step 1: Identify any <b>, <i>, or <font> tags in the HTML code. \n\nStep 2: Determine if any of these tags are being used for styling purposes. \n\nStep 3: If any <b>, <i>, or <font> tags are found and used for styling, they should be replaced with CSS style rules to ensure accessibility and better separation of content and presentation."
+            },
+            {
+                "offending_line": "<td>Apples</td>",
+                "fixed_line": "<td><strong>Apples</strong></td>",
+                "CoT": "Sure! To find and fix the issue related to the use of `<b>`, `<i>`, or `<font>` tags, we need to follow these steps:\n\n1. Review the HTML code provided.\n2. Look for any instances of `<b>`, `<i>`, or `<font>` tags.\n3. Replace these tags with appropriate HTML5 semantic elements or CSS styles.\n4. Ensure that the content remains styled appropriately for emphasis or formatting.\n\nLet's start by examining the HTML code and searching for any uses of `<b>`, `<i>`, or `<font>` tags."
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"two\">2</label><br>",
+                "CoT": "1. Look through the entire HTML code provided.\n2. Identify any <b>, <i>, or <font> tags used in the code.\n3. Check if any of these tags are being used for styling purposes.\n4. If any <b>, <i>, or <font> tags are found and are used for styling, then suggest using CSS instead.\n5. If any of these tags are used for semantic purposes, evaluate if there is a more accessible way to convey the same meaning without using these tags."
+            },
+            {
+                "offending_line": "<header style=\"background-color: #4CAF50; color: white;\">",
+                "fixed_line": "Remove inline styles and define styles in the internal stylesheet",
+                "CoT": "1. Look through the HTML code to find any <b>, <i>, or <font> tags being used.\n2. If any of these tags are found, it indicates a style being applied directly in the HTML, which is not considered best practice for accessibility.\n3. Replace the <b>, <i>, or <font> tags with appropriate CSS styling in the <style> section of the document.\n4. Ensure that all styling is done using CSS to separate content from presentation for better accessibility."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button>Add to Cart</button> <span role='button' tabindex='0' onkeydown='if (event.key === \"Enter\") { /* handle Enter key press */ }'>Add to Cart</span>",
+                "CoT": "1. Look for any elements that have an `onmousedown` event but do not have a corresponding `onkeydown` event.\n2. Check if there are any elements that rely solely on mouse events for interaction, making them not keyboard accessible.\n3. Check if there are any scripts or functions within the page that may not be triggered or accessible via keyboard navigation.\n4. Ensure that all interactive elements have keyboard event handlers to provide accessibility to users who rely on keyboard navigation."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick='addToCart()' onkeydown='addToCart()'>Add to Cart</button>",
+                "CoT": "1. Look for elements that have functionality triggered by a \"mousedown\" event.\n2. Verify if there is an equivalent functionality for keyboard users triggered by an \"onkeydown\" event.\n3. If an equivalent functionality for keyboard users is missing, then there is an accessability issue."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button tabindex='0' onclick='addProductToCart(event)'>Add to Cart</button>",
+                "CoT": "First, I will review the HTML elements that have interactive features which may require keyboard accessibility. In this case, the <button> elements have a 'hover' and 'focus' CSS styling which indicates they are interactive elements.\n\nSecond, I will check if the <button> elements have associated keyboard events such as 'onkeydown' to ensure they are keyboard accessible. \n\nLet me verify if the <button> elements have proper keyboard accessibility by checking for the 'onkeydown' event or script."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"handleClick(event)\">Add to Cart</button>",
+                "CoT": "Sure! To find the issue related to the missing `onmousedown` event or lack of keyboard accessibility, we need to inspect the elements in the HTML code for any interactive elements like buttons, checkboxes, radio buttons, or form submission actions. \n\nHere are the steps to find the problem:\n1. Look for interactive elements - In the provided HTML, we already have several interactive elements like buttons, checkboxes, radio buttons, and a form submission button.\n2. Check the buttons - Verify that the buttons have appropriate `onmousedown` event handlers or keyboard accessibility features.\n3. Check the form elements - Ensure that form elements like input fields, radio buttons, and checkboxes have corresponding `onkeydown` event handlers or are accessible via keyboard navigation.\n4. Check the submit button - Verify that the form submit button has appropriate keyboard accessibility for users who navigate without a mouse.\n5. Identify any missing or inadequate keyboard accessibility features and provide a solution to improve the accessibility of the website.\n\nLet's go through the HTML code to identify any missing `onmousedown` event handlers or lack of keyboard accessibility for the interactive elements."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick='handleClick(event)' onkeydown='handleKeyDown(event)'>Add to Cart</button>",
+                "CoT": "Step 1: Identify interactive elements that require keyboard interaction.\n\nStep 2: Check if these interactive elements have event listeners for keyboard interactions like onkeydown or onkeypress.\n\nStep 3: Check if the interactive elements have corresponding events for mouse interactions like onmousedown.\n\nStep 4: Determine if the keyboard events are necessary for accessibility and if they are missing for any interactive elements."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button>Add to Cart</button><script>document.querySelectorAll('button').forEach(button => {button.addEventListener('keydown', function(event) {if (event.key === 'Enter') {event.preventDefault(); button.click();}});});</script>",
+                "CoT": "1. Look for any elements that have a `onmousedown` event but do not have an equivalent `onkeydown` event.\n2. Verify if the elements with `onmousedown` events can be interacted with using the keyboard.\n3. If any elements cannot be interacted with using the keyboard, consider adding `onkeydown` events to make them keyboard accessible."
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onmousedown=\"submitForm();\" onkeydown=\"submitForm();\">Submit</button>",
+                "CoT": "First, let's identify where user interactions occur on the page. In this case, there is a form with various input fields and a submit button. \nNext, let's focus on the submit button and check for any JavaScript event handlers associated with it. \nFinally, let's specifically look for the attributes \"onmousedown\" and \"onkeydown\" on the submit button to ensure that the button is accessible via keyboard navigation as well as mouse clicks."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onkeydown='if(event.keyCode===13) { /* add your functionality here */ }' tabindex='0'>Add to Cart</button>",
+                "CoT": "First, I need to identify if there are any elements on the page that have an `onmousedown` event but are missing an equivalent `onkeydown` event. This will help determine if there are any interactive elements that can only be activated with a mouse click and not by keyboard users."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button type='button' onclick='addToCart()'>Add to Cart</button>",
+                "CoT": "Step 1: Identify interactive elements that require keyboard accessibility.\nStep 2: Check if the interactive elements have appropriate attributes or events for keyboard accessibility.\nStep 3: Identify if any elements have an \"onmousedown\" event but are missing an equivalent \"onkeydown\" event for keyboard accessibility."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart(event)\">Add to Cart</button>",
+                "CoT": "To find the issue related to the missing `onmousedown` event or lack of keyboard accessibility, let's go through the HTML code step by step:\n\n1. Look for any elements that have `onmousedown` event handlers.\n2. Check if there are corresponding `onkeydown` event handlers for keyboard accessibility.\n3. Ensure that interactive elements have keyboard accessibility in addition to mouse interactions.\n\nLet's start by examining the HTML code for any elements with `onmousedown` events."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onkeydown=\"if(event.key === 'Enter') { /* Add your function here */ }\">Add to Cart</button>",
+                "CoT": "Let's look through the HTML code and identify any elements that might be lacking keyboard accessibility due to missing `onkeydown` events or scripts. Based on the criteria provided, we need to find instances where an `onmousedown` event is present but a corresponding `onkeydown` event is missing, or where scripts are not keyboard accessible. \n\nLet's start by examining elements that typically require keyboard accessibility, such as buttons or form inputs. We will specifically look for any elements with an `onmousedown` event and check if a corresponding `onkeydown` event or keyboard accessibility script is missing. \n\nWe'll check the `<button>` elements in the code to see if there are any issues related to keyboard accessibility. Let's focus on the `<button>` elements present in the table for adding items to the cart."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick=\"submitForm(event)\">Add to Cart</button>",
+                "CoT": "To check for the `onmousedown` event missing `onkeydown` event or script not being keyboard accessible, we need to ensure that all interactive elements on the page can also be accessed and used using the keyboard only. Here's how we can approach this:\n\n1. Identify all interactive elements - buttons, form elements, links, etc.\n2. Check if these elements are accessible using the keyboard only (tab key to navigate and activate elements).\n3. Look for any custom event handlers (e.g., `onmousedown`) that might not have an equivalent keyboard event (e.g., `onkeydown`).\n4. Verify that all interactive elements can be activated or triggered using the Enter key when focused.\n5. If there are any elements that require mouse interaction only, modify them to be accessible via keyboard as well.\n\nLet's go through the HTML code provided and find if there are any elements that might have this issue."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onclick='addToCart()' onkeydown='if(event.key === \"Enter\") { addToCart(); }'>Add to Cart</button>",
+                "CoT": "First, let's identify any areas where user interaction is involved. In this case, we have a button labeled \"Add to Cart\" within the table. This button likely triggers an action when clicked.\n\nNext, we need to check if the button has proper keyboard accessibility. This means ensuring that users can access and interact with the button using only the keyboard. \n\nFor this, we need to check if the button has keyboard focus styles applied so that users can see which element is currently focused. Additionally, we need to check if there are keyboard events attached to the button, such as `onkeydown` or `onkeypress`, to allow users to trigger the same action as clicking using the keyboard.\n\nLet's check the button in the `<td>` tag with the text \"Add to Cart\"."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button role='button' onmousedown=':function(e) { e.preventDefault(); }' onkeydown='function(e){if(e.keyCode === 13) e.preventDefault(); }'>Add to Cart</button>",
+                "CoT": "First, I will check if there are any elements on the page that have a `onmousedown` event but are missing an equivalent `onkeydown` event. This is important for keyboard accessibility as users who navigate using a keyboard should have the same functionality as those using a mouse."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button>Add to Cart</button><input type='button' value='Add to Cart' onmousedown='click()' onkeydown='enterKey()'>",
+                "CoT": "Let's break down the process:\n\n1. Identify elements that have interactivity requiring mouse clicks or hover effects.\n2. Check if these elements have corresponding keyboard accessibility features such as onkeydown events or accessible scripts.\n3. Ensure that users can interact with these elements using the keyboard alone.\n4. If any interactive elements are found without keyboard accessibility, determine how to add keyboard support to improve accessibility."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"doSomething\" onkeydown=\"doSomething\">Add to Cart</button>",
+                "CoT": "First, I will look for elements that have an `onmousedown` event attribute. This attribute is typically used for mouse-related interactions. If an element has an `onmousedown` event, it should also have an `onkeydown` event or a script to make it keyboard accessible."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button aria-label='Add to Cart' onclick='addToCart()' onkeydown='addToCart()'>Add to Cart</button>",
+                "CoT": "1. Look for elements that have a `mousedown` event but don't have an equivalent `keydown` event or are not keyboard accessible.\n2. Check if any interactive elements (like buttons, links, form elements) have `mousedown` events but lack `keydown` events for keyboard accessibility.\n3. Ensure that all interactive elements can be accessed and triggered using the keyboard only, without relying on mouse interactions.\n4. Check for any JavaScript functions or event listeners that handle mouse interactions (such as `mousedown` events) without providing keyboard accessibility through `keydown` events.\n5. Make sure that users can navigate through the website and interact with all elements using keyboard controls.\n6. Identify any areas where the lack of keyboard accessibility may hinder users with disabilities from using the website effectively."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button type=\"button\" onclick=\"addToCart()\" onkeydown=\"handleKeyDown(event)\">Add to Cart</button>",
+                "CoT": "First, let's identify elements that require user interaction:\n\n1. Buttons with the text \"Add to Cart\".\n2. Text input fields for the username and password.\n3. Radio buttons.\n4. Checkboxes.\n5. File input for selecting a file.\n6. Submit button for the form.\n\nNext, let's check if these elements have appropriate keyboard accessibility:\n\n1. Check if the buttons have an `onmousedown` event handler to capture mouse clicks.\n2. Check if the text input fields have an `onkeydown` event handler to capture keyboard input.\n3. Check if the radio buttons and checkboxes have `onkeydown` event handlers for keyboard navigation.\n4. Check if the file input has an `onkeydown` event handler for keyboard accessibility.\n5. Check if the submit button has an `onkeydown` event handler to submit the form using the keyboard.\n\nLet's assess each of these elements in the HTML code provided to ensure they are properly accessible via keyboard interaction."
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"console.log('Mouse event triggered')\" onkeydown=\"console.log('Keyboard event triggered')\">Add to Cart</button>",
+                "CoT": "1. Look for elements that have an `onmousedown` event but do not have an equivalent `onkeydown` event for keyboard accessibility.\n2. Check if any scripts or event handlers are attached to elements that need to be accessible via keyboard as well.\n3. Ensure that any interactive elements that have a `onmousedown` event also have appropriate keyboard accessibility options in place."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<marquee> element should not be used. To create a scrolling effect, consider using CSS animations or JavaScript.",
+                "CoT": "Step 1: Look through the HTML code for any `<marquee>` elements.\nStep 2: Check if there are any `<marquee>` elements being used in the code provided.\nStep 3: If `<marquee>` elements are found, indicate that its use is a accessibility issue that should be fixed."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!--<marquee> element should not be used.</marquee> -->",
+                "CoT": "Step 1: Look through the HTML code for any <marquee> elements."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "NONE",
+                "CoT": "Step 1: Identify the <marquee> element in the provided HTML code.\n\nStep 2: Determine if the <marquee> element is being used anywhere in the code.\n\nStep 3: Confirm if the use of <marquee> violates the accessibility guideline that it should not be used."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Grocery Store - Online Shopping for Fresh Produce</title>",
+                "CoT": "First, let's identify the `<title>` element in the HTML code. The `<title>` element is typically found within the `<head>` section of the HTML document.\n\nIn this case, the `<title>` element is currently empty:\n```html\n<title></title>\n```\n\nThe purpose of the `<title>` element is to provide a meaningful and descriptive title for the webpage. This title is often displayed in the browser tab and in search engine results.\n\nHaving an empty `<title>` element can create accessibility issues for users who rely on screen readers, as the title provides important context about the content of the page.\n\nTo fix this issue, we should add a descriptive title within the `<title>` element to help users understand the purpose of the webpage. For example:\n```html\n<title>Grocery Store - Online Shopping for Fresh Produce</title>\n```"
+            },
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Grocery Store</title>",
+                "CoT": "Step 1: Identify the <title> element in the HTML code.\nStep 2: Check if the <title> element is empty or missing a value.\nStep 3: If the <title> element is empty, consider adding a descriptive title to improve accessibility for users and search engines."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Missing Text</a>",
+                "CoT": "Sure, let's go step by step in identifying the accessibility issue of \"anchor element contains no text\":\n\n1. Start by looking at the anchor elements in the HTML code.\n2. Evaluate each anchor element to see if it has text content within the <a> tags.\n3. Ensure that each anchor element has descriptive text between the opening and closing <a> tags.\n4. If you find any anchor element without any text content (such as an empty <a> tag or a <a> tag with only spaces), then that would be the accessibility issue of \"anchor element contains no text\".\n\nLet's go through the HTML code and check each anchor element to see if it contains text."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">&nbsp;</a>",
+                "CoT": "Step 1: Identify anchor elements in the HTML code.\nStep 2: Check if any of the anchor elements have no text content within them.\nStep 3: If an anchor element has no text content, flag it as a problem related to accessibility."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link</a>",
+                "CoT": "To find the problem of an anchor element containing no text, we need to look for any anchor `<a>` elements that do not have any text content inside them. This can be a challenge because anchor elements are often used for links and should have descriptive text to indicate the destination of the link. \n\nLet's examine the `<nav>` section of the HTML code where the anchor elements are located:\n\n```html\n<nav>\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Products</a>\n    <a href=\"#\">About Us</a>\n    <a href=\"#\"></a>\n</nav>\n```\n\nBased on the code provided, the fourth anchor element `<a href=\"#\"></a>` does not contain any text content between the opening and closing tags. This is an accessibility issue because screen readers and other assistive technologies rely on text content within anchor elements to provide context for users navigating the website, and an anchor element with no text can be confusing or misleading.\n\nSo, the problem in the code is that the fourth anchor element in the navigation bar does not have any text content inside it."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Text</a>",
+                "CoT": "Step 1: Identify all anchor elements in the HTML code.\nStep 2: Check if any anchor element does not have text within it (between the <a> and </a> tags)."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Empty Link</a>",
+                "CoT": "Step 1: Identify the anchor elements in the HTML code.\n\nStep 2: Check if each anchor element has text content inside the `<a></a>` tags.\n\nStep 3: If any anchor element does not have text content, it is an issue of \"anchor element containing no text\"."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Text Here</a>",
+                "CoT": "Sure, let's go step by step to identify the issue of an anchor element containing no text:\n\n1. Identify all anchor elements in the HTML code.\n2. Check if any anchor element does not have any text content between the opening and closing tags.\n3. If any anchor element is found without text content, that would be the issue of \"anchor element contains no text.\"\n\nLet me go through the HTML code to identify any anchor elements without text content."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link Text</a>",
+                "CoT": "Step 1: Identify anchor elements in the HTML code.\nStep 2: Check each anchor element to see if it contains any text.\nStep 3: If an anchor element does not contain any text, then it violates the rule of \"anchor element contains no text\"."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Contact Us</a>",
+                "CoT": "First, let's identify the anchor elements in the `<nav>` section of the HTML code:\n```html\n<nav>\n    <a href=\"#\">Home</a>\n    <a href=\"#\">Products</a>\n    <a href=\"#\">About Us</a>\n    <a href=\"#\"></a>\n</nav>\n```\n\nWe will focus on the last anchor element which seems to be empty:\n```html\n<a href=\"#\"></a>\n```\n\nSince this anchor element contains no text between the opening and closing tags, it could potentially be a problem for users who rely on screen readers as they may not understand the purpose of this link. \n\nWe should add text inside the anchor element to make it clear to users where the link will take them. \n\nLet's update the anchor element as follows:\n```html\n<a href=\"#\">Contact Us</a>\n``` \n\nBy making this change, we provide a clear and descriptive link for all users, including those using screen readers."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">No Text</a>",
+                "CoT": "Sure, let's go step by step:\n\n1. Look for all anchor elements `<a>` in the HTML.\n2. Check if each anchor element has text content inside it.\n3. Identify any anchor element that is empty or does not have any text content.\n4. Determine if the missing text inside the anchor element is essential for understanding the link."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Blank Link</a>",
+                "CoT": "Step 1: Identify all the anchor elements in the HTML. An anchor element is denoted by `<a>` tags.\n\nStep 2: Check if each anchor element has text content within it. An anchor element should have descriptive text to indicate its purpose or destination.\n\nStep 3: If any anchor element does not have text content, then that would be the accessibility issue where the anchor element contains no text.\n\nLet's go ahead and check the anchor elements in the provided HTML for this issue."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Click here</a>",
+                "CoT": "Sure, to find the problem of an anchor element containing no text, I will follow these steps:\n\n1. Identify all the anchor (`<a>`) elements on the page.\n2. Check the `href` attribute of each anchor element to see if it contains a valid link.\n3. Verify if there is any visible text content within each anchor element.\n4. Flag any anchor element that does not have any visible text content as a potential issue with an anchor element containing no text."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "To find and fix the issue of the document language not being identified or being incorrect, we need to ensure that the appropriate language attribute is included in the HTML tag. Here's how we can do it step by step:\n\n1. Look at the `<html>` tag at the beginning of the document: \n   - Check if the `lang` attribute is present.\n   - Verify that the value of the `lang` attribute is correctly set to indicate the language of the document.\n\n2. If the `lang` attribute is missing or incorrect:\n   - Add or correct the `lang` attribute to specify the language used in the document.\n\nLet's go ahead and check the `<html>` tag to see if the document language is identified correctly."
+            },
+            {
+                "offending_line": "<html lang='en'>",
+                "fixed_line": "<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>",
+                "CoT": "1. Check if the language attribute is set in the opening `<html>` tag.\n2. Verify if the value of the language attribute is correctly set to the language used in the document.\n3. If the language attribute is not set or set to an incorrect language, it would cause a document language identification issue."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en-US\">",
+                "CoT": "Step 1: Check the <html> tag to see if the lang attribute is set to identify the language used in the document."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xml:lang=\"en\">",
+                "CoT": "1. Look for the `<html>` tag in the HTML document.\n2. Check if the `lang` attribute is present and set to the correct language code. \n3. Verify that the language code is correct according to the W3C specifications.\n4. If the `lang` attribute is missing or incorrect, update it to the appropriate language code."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en\">",
+                "CoT": "Step 1: Identify the <html> tag in the HTML document.\nStep 2: Check if the \"lang\" attribute is present in the <html> tag.\nStep 3: Verify if the value of the \"lang\" attribute is set to the correct language code (e.g., \"en\" for English).\nStep 4: If the \"lang\" attribute is missing or set to an incorrect value, update it to the appropriate language code."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": " <label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "To find the accessibility issue of an input element having more than one associated label, we need to:\n\n1. Identify all `<label>` elements in the HTML code.\n2. Check if any `<input>` element has more than one `<label>` associated with it.\n3. Ensure that each `<input>` element should have at most one `<label>` associated with it for better accessibility.\n\nLet's go through the code and identify if any `<input>` element has multiple associated `<label>` elements."
+            },
+            {
+                "offending_line": "<label for=\"username\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "To find the issue where an input element has more than one associated label, we need to:\n1. Identify all input elements in the form.\n2. Check each input element for associated label elements.\n3. Ensure that each input element has only one associated label.\n\nLet's start by reviewing the form in the provided HTML code and identifying all the input elements."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"> I have a bike</label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">\n<label for=\"vehicle1\"> I have a bike</label><br>",
+                "CoT": "First, I will look for all the `<input>` elements in the form. Then, I will check if each input element has more than one associated `<label>` element either by checking the `for` attribute of the label or by checking if the label elements are placed adjacent to the input element using visual inspection."
+            },
+            {
+                "offending_line": "<label for=\"password\"></label>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "Step 1: Identify all input elements on the page.\n\nStep 2: Check each input element to see if it has more than one associated label.\n\nStep 3: If any input element has more than one associated label, then that is the accessibility issue related to having multiple associated labels for a single input element."
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>",
+                "CoT": "Sure! Here are the steps to find the problem of an input element having more than one associated label:\n\n1. Look for all the input elements in the form.\n2. Check each input element for its associated label(s).\n3. Make sure each input element has only one label associated with it.\n4. Identify any input element that has more than one associated label.\n\nLet's follow these steps to find the input element with more than one associated label in the given HTML."
+            },
+            {
+                "offending_line": "<label for=\"vehicle1\"> I have a bike</label><br>",
+                "fixed_line": "<label for=\"vehicle1\"> I have a bike</label>",
+                "CoT": "First, we need to identify all the input elements in the form that have associated labels. This includes input elements with the \"label\" tag, as well as radio buttons and checkboxes.\n\nNext, we need to check if any of the input elements have more than one associated label.\n\nFinally, we need to determine if having multiple associated labels for an input element poses an accessibility issue."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>",
+                "CoT": "To find the element with incomplete start and end tags or non-unique id attribute, I will need to carefully examine each element in the HTML code provided. I will look for any missing closing tags or duplicate id attributes. \n\nI will start by checking each element tag by tag and make sure they have complete start and end tags. Then, I will look for any id attributes and ensure they are unique within the document.\n\nLet's start by examining each element in the provided HTML code."
+            }
+        ]
+    }
+]

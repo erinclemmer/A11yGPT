@@ -1,0 +1,354 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img src=\"book-cover.jpg\" />",
+                "fixed_line": "<img src=\"book-cover.jpg\" alt=\"Book Cover\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<input\n        type=\"text\"\n        id=\"search\"\n        placeholder=\"Search...\"\n        aria-label=\"Search\"\n      />",
+                "fixed_line": "<label for=\"search\">Search:</label>\n      <input\n        type=\"text\"\n        id=\"search\"\n        placeholder=\"Search...\"\n        aria-label=\"Search\"\n      />"
+            },
+            {
+                "offending_line": "<button>Read More</button>",
+                "fixed_line": "<button aria-label=\"Read More\">Read More</button>"
+            },
+            {
+                "offending_line": "<button>Apply Filters</button>",
+                "fixed_line": "<label for='filter'>Apply Filters: </label><button id='filterButton'>Apply Filters</button>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\" aria-label=\"Search\" />",
+                "fixed_line": "<label for=\"search\">Search:</label>\n<input type=\"text\" id=\"search\" placeholder=\"Search...\" aria-label=\"Search\" />"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p>Description of the book...</p>"
+            },
+            {
+                "offending_line": "<button>Apply Filters</button>",
+                "fixed_line": "<button aria-label=\"Apply Filters\">Apply Filters</button>"
+            },
+            {
+                "offending_line": "<button>Read More</button>",
+                "fixed_line": "<label for=\"read-more\">Read More:</label><button id=\"read-more\">Read More</button>"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p><label for=\"description\">Description:</label> Description of the book...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: x-large;\">Description of the book...</p>"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<span style=\"font-size: 1.2em;\">Description of the book...</span>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: 1.2em;\">Description of the book...</p>"
+            },
+            {
+                "offending_line": "<button>Apply Filters</button>",
+                "fixed_line": "<button onclick='applyFilters()' onkeydown='applyFilters()'>Apply Filters</button>"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p>Description of the book...</p>"
+            },
+            {
+                "offending_line": "<font size='5'>Description of the book...</font>",
+                "fixed_line": "<p aria-hidden='true' style='font-size: 1.3em;'>Description of the book...</p>"
+            },
+            {
+                "offending_line": "<button>Read More</button>",
+                "fixed_line": "<button aria-label=\"Read More\" onmousedown=\"this.blur()\" onkeydown=\"if(event.key === 'Enter') { this.click(); }\">Read More</button>"
+            },
+            {
+                "offending_line": "<button>Read More</button>",
+                "fixed_line": "<button onclick='showMoreInfo(event)' onkeydown='showMoreInfo(event)' tabindex='0'>Read More</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=dashboard.php\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=dashboard.php\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=index.html' />",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=index.html' />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=books.html\" />",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=books.html\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.bookstore.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.bookstore.com\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=example.com'>",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=example.com'>"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='30;url=example.com' />",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=example.com' />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=main.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=main.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=example.com\" />",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=example.com\" aria-hidden=\"true\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=anotherpage.html\" />",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=anotherpage.html\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=home.html\" />",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=home.html\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5; url=bookstore.html\" />",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5; url=bookstore.html\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=page2.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=page2.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=index.html' />",
+                "fixed_line": "<meta http-equiv='refresh' content='5;url=index.html' aria-hidden='true' />"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=redirect.html' />",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=redirect.html' />"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Welcome to our Bookstore</marquee>",
+                "fixed_line": "<h1>Welcome to our Bookstore</h1>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><strong>Do not use <marquee> element for accessibility reasons.</strong></p>"
+            },
+            {
+                "offending_line": "<marquee>Welcome to our Bookstore</marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>Welcome to our Bookstore</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style='color: red; font-weight: bold;'>Do not use &lt;marquee&gt; element. It is not accessible.</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p class='announcement'>Latest Deals - Buy One Get One Free!</p>"
+            },
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: larger;\">Description of the book...</p>"
+            },
+            {
+                "offending_line": "<marquee>Discover Our Bookstore</marquee>",
+                "fixed_line": "<h2><b>Discover Our Bookstore</b></h2>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>Dynamic content of the bookstore will be added here.</p>"
+            },
+            {
+                "offending_line": "<marquee direction='left'>Visit our Bookstore for exciting deals!</marquee>",
+                "fixed_line": "<div style='white-space: nowrap; overflow: hidden;'>Visit our Bookstore for exciting deals!</div>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style='color:red'>The <marquee> element should not be used</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used for scrolling text which can be disorienting for some users.",
+                "fixed_line": "<marquee> element should not be used. Instead, consider using CSS animations or other methods for text animations."
+            },
+            {
+                "offending_line": "<marquee>welcome to our Bookstore</marquee>",
+                "fixed_line": "<div>welcome to our Bookstore</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style='overflow: hidden;'> element with CSS animation"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;' aria-hidden='true'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<div role='alert' aria-live='polite'>Content inside a marquee tag is difficult for screen reader users to access. Instead of using <marquee> element, consider using CSS animations or other alternatives for moving content.</div>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Bookstore</title>",
+                "fixed_line": "<title>Bookstore - Online Bookstore</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<li><a href=\"#home\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            },
+            {
+                "offending_line": "<li><a href=\"#home\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#home\"><span>Home</span></a></li>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a></li>",
+                "fixed_line": "<a href=\"#home\">Home</a></li>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home <span class=\"sr-only\">Navigate to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\"><span aria-hidden=\"true\">Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home Page</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"name\">Your Name:</label>",
+                "fixed_line": "<label for=\"name\">Your Name:</label>"
+            },
+            {
+                "offending_line": "        <input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": "<label for=\"name\">Your Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+            },
+            {
+                "offending_line": "<textarea\r\n          id=\"message\"\r\n          name=\"message\"\r\n          placeholder=\"Your Message\"\r\n        ></textarea>",
+                "fixed_line": "<label for=\"message\">Your Message:</label>\n        <textarea\r\n          id=\"message\"\r\n          name=\"message\"\r\n          placeholder=\"Your Message\"\r\n        ></textarea>"
+            },
+            {
+                "offending_line": "<input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your Email\" />",
+                "fixed_line": "<label for=\"email\">Your Email:</label><input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your Email\" />"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" aria-labelledby=\"name-label\" />"
+            },
+            {
+                "offending_line": "<label for=\"name\">Your Name:</label>",
+                "fixed_line": "<label for=\"name\">Your Name:</label><br /><label for=\"name\">Your Name:</label>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\" aria-label=\"Search\" />",
+                "fixed_line": "<label for=\"search\">Search:</label> <input type=\"text\" id=\"search\" placeholder=\"Search...\" aria-label=\"Search\" />"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />",
+                "fixed_line": "<label for=\"name\">Your Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your Name\" />"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\">Description of the book...</font>",
+                "fixed_line": "<p style=\"font-size: 1.2em;\">Description of the book...</p>"
+            },
+            {
+                "offending_line": "        <font size=\"5\">Description of the book...</font>",
+                "fixed_line": "        <p style=\"font-size: 1.2em;\">Description of the book...</p>"
+            }
+        ]
+    }
+]

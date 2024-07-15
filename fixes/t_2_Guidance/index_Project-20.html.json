@@ -1,0 +1,550 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<source src=\"hospital-tour.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<source src=\"hospital-tour.mp4\" type=\"video/mp4\" alt=\"Virtual tour of the hospital\">"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls alt='Hospital Video'>"
+            },
+            {
+                "offending_line": "<img src='hospital-banner.jpg' style='width: 100%;'>",
+                "fixed_line": "<img src='hospital-banner.jpg' style='width: 100%;' alt='Hospital Banner'>"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls aria-label='Hospital Tour Video'><source src='hospital-tour.mp4' type='video/mp4'>Your browser does not support the video tag.</video>"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls alt='Hospital virtual tour'>"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls alt='Hospital Tour Video'>"
+            },
+            {
+                "offending_line": "                <source src=\"hospital-tour.mp4\" type=\"video/mp4\">",
+                "fixed_line": "                <source src=\"hospital-tour.mp4\" type=\"video/mp4\" alt=\"Virtual tour video\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button aria-label='Learn More' type='button'>Learn More</button>"
+            },
+            {
+                "offending_line": "                <label for=\"password\"></label><br>",
+                "fixed_line": "                <label for=\"password\">Password:</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls autoplay muted>"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls muted>"
+            },
+            {
+                "offending_line": "<video controls>",
+                "fixed_line": "<video controls autoplay=\"false\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<b>Learn More",
+                "fixed_line": "<strong>Learn More</strong>"
+            },
+            {
+                "offending_line": "<font face='Arial' size='4' color='red'>",
+                "fixed_line": "<span style='font-family: Arial; font-size: 4; color: red;'>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span>"
+            },
+            {
+                "offending_line": "<font color=\"#333\">",
+                "fixed_line": "<span style=\"color: #333;\">"
+            },
+            {
+                "offending_line": "<font color=\"#333\"> Set a darker text color for better contrast </font>",
+                "fixed_line": "<span style=\"color: #333;\"> Set a darker text color for better contrast </span>"
+            },
+            {
+                "offending_line": "<font color=\"red\">Welcome to our state-of-the-art healthcare facility</font>",
+                "fixed_line": "<p style=\"color: red;\">Welcome to our state-of-the-art healthcare facility</p>"
+            },
+            {
+                "offending_line": "<h2>Our Services</h2>",
+                "fixed_line": "<h2><em>Our Services</em></h2>"
+            },
+            {
+                "offending_line": "            <button>Learn More",
+                "fixed_line": "            <button style=\"font-weight: bold;\">Learn More</button>"
+            },
+            {
+                "offending_line": "<b>",
+                "fixed_line": "<strong>"
+            },
+            {
+                "offending_line": "<font size=\"4\">Learn More</font>",
+                "fixed_line": "<span style=\"font-size: 4em;\">Learn More</span>"
+            },
+            {
+                "offending_line": "<b>Welcome to Our Hospital</b>",
+                "fixed_line": "<strong>Welcome to Our Hospital</strong>"
+            },
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>"
+            },
+            {
+                "offending_line": "<font color=\"#333\"> Set a darker text color for better contrast </font>",
+                "fixed_line": "<h1 style='color: #333;'>Your Hospital Name</h1>"
+            },
+            {
+                "offending_line": "<font color=\"#333\"> I have a bike</font><br>",
+                "fixed_line": "<span style=\"color: #333;\"> I have a bike</span><br>"
+            },
+            {
+                "offending_line": "<font color=\"red\">",
+                "fixed_line": "<span style=\"color: red;\">"
+            },
+            {
+                "offending_line": "<i> tag should not be used for italic text. Use CSS instead.",
+                "fixed_line": "<em> tag should be used for italic text. Using CSS is also recommended."
+            },
+            {
+                "offending_line": "<b> tag used in the 'Learn More' button",
+                "fixed_line": "<button>Learn More</button>"
+            },
+            {
+                "offending_line": "<i>Welcome to our state-of-the-art healthcare facility</i>",
+                "fixed_line": "<em>Welcome to our state-of-the-art healthcare facility</em>"
+            },
+            {
+                "offending_line": "<p>Welcome to our state-of-the-art healthcare facility</p>",
+                "fixed_line": "<p style=\"font-family: Arial, sans-serif;\">Welcome to our state-of-the-art healthcare facility</p>"
+            },
+            {
+                "offending_line": "<h1>Your Hospital Name</h1>",
+                "fixed_line": "<h1 style=\"font-family: Arial, sans-serif;\">Your Hospital Name</h1>"
+            },
+            {
+                "offending_line": "<style>",
+                "fixed_line": "<link rel=\"stylesheet\" href=\"styles.css\">"
+            },
+            {
+                "offending_line": "<font color=\"#fff\">",
+                "fixed_line": "<span style=\"color: #fff;\">"
+            },
+            {
+                "offending_line": "<font face=\"Arial\" size=\"4\">",
+                "fixed_line": "<span style=\"font-family: Arial; font-size: 1.5em;\">"
+            },
+            {
+                "offending_line": "<b>Tag line 8</b>",
+                "fixed_line": "<strong>Tag line 8</strong>"
+            },
+            {
+                "offending_line": "<font style='font-size: 18px;'>",
+                "fixed_line": "<span style='font-size: 18px;'>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span style=\"color: #333;\">"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span style=\"font-family: Arial, sans-serif;\">"
+            },
+            {
+                "offending_line": "<b>Learn More",
+                "fixed_line": "<button>Learn More</button>"
+            },
+            {
+                "offending_line": "<h2>Welcome to Our Hospital</h2>",
+                "fixed_line": "<h2><em>Welcome to Our Hospital</em></h2>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<p>"
+            },
+            {
+                "offending_line": "<b>Our Services</b>",
+                "fixed_line": "<strong>Our Services</strong>"
+            },
+            {
+                "offending_line": "<h1>Your Hospital Name</h1>",
+                "fixed_line": "<header>\n        <h1>Your Hospital Name</h1>\n        <p>Welcome to our state-of-the-art healthcare facility</p>\n    </header>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button><strong>Learn More</strong></button>"
+            },
+            {
+                "offending_line": "<font face='Arial'>",
+                "fixed_line": "<span style='font-family: Arial;'>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onclick=\"location.href='#home'\" onkeydown=\"if(event.key === 'Enter'){location.href='#home'}\">Learn More</button>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onclick='location.href=\"#home\"' onkeydown='location.href=\"#home\"'>Learn More</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onkeydown=\"if(event.key==='Enter'){ this.click();}\">Submit</button>"
+            },
+            {
+                "offending_line": "Your browser does not support the video tag.",
+                "fixed_line": "<p>Your browser does not support the video tag. Please use the link below to download the video.</p>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onkeydown='if(event.key === \"Enter\"){// your code here}' onmousedown='// your code here'>Learn More</button>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button tabindex='0' onmousedown='this.blur()' onkeydown='if(event.key === \"Enter\"){ this.click(); return false; }'>Learn More</button>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onkeydown=\"if(event.keyCode===32 || event.keyCode===13) { event.preventDefault(); this.click(); }\"  onmousedown=\"this.blur();\">Learn More</button>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onkeydown>Learn More</button>"
+            },
+            {
+                "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                "fixed_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\" onkeydown=\"if(event.key === 'Enter' || event.key === ' ') { this.click(); return false; }\" onclick=\"return false;\">"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onkeydown='if(event.key === \"Enter\"){console.log(\"Enter key pressed\")}' onmousedown='console.log(\"Mouse click\")'>Learn More</button>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button onclick=\"window.location.href='#home'\">Learn More</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=https://example.com'>",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=https://example.com'>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;URL=http://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=http://www.example.com\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Welcome to our state-of-the-art healthcare facility</marquee>",
+                "fixed_line": "<p>Welcome to our state-of-the-art healthcare facility</p>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button>Learn More</button>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden;'>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='color:red;'>This content is scrolling, which may be distracting for some users. Please consider using a different approach for highlighting content.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p> element should not be used."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style='overflow: hidden;'>"
+            },
+            {
+                "offending_line": "<marquee>Welcome to our state-of-the-art healthcare facility</marquee>",
+                "fixed_line": "<header>\n        <h1>Your Hospital Name</h1>\n        <p>Welcome to our state-of-the-art healthcare facility</p>\n    </header>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><em>marquee</em> element should not be used.</p>"
+            },
+            {
+                "offending_line": "<marquee direction='left'>Take a Virtual Tour</marquee>",
+                "fixed_line": "<div class='container'><h2>Take a Virtual Tour</h2></div>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p> element with scrolling text CSS"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div role=\"alert\" aria-live=\"assertive\">"
+            },
+            {
+                "offending_line": "<marquee direction=\"left\">Emergency Room Closed. Please visit another hospital nearby.</marquee>",
+                "fixed_line": "<div role=\"alert\" aria-live=\"assertive\"><p>Emergency Room Closed. Please visit another hospital nearby.</p></div>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<marquee aria-hidden='true'>"
+            },
+            {
+                "offending_line": "<marquee>Please make your selection:</marquee>",
+                "fixed_line": "<p>Please make your selection:</p>"
+            },
+            {
+                "offending_line": "<marquee direction=\"left\">COVID-19 Updates: Get the latest information regarding our response to the pandemic</marquee>",
+                "fixed_line": "<p>COVID-19 Updates: Get the latest information regarding our response to the pandemic</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>The use of <marquee> element is not recommended for accessibility reasons. Please avoid using it.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<!-- <marquee> element removed - not recommended for accessibility -->"
+            },
+            {
+                "offending_line": "<marquee> element used",
+                "fixed_line": "<marquee> element should not be used. Consider using CSS animations instead."
+            },
+            {
+                "offending_line": "<marquee> element is used",
+                "fixed_line": "<p style='color: red'>Marquee element should not be used for accessibility reasons. Please consider an alternative way to achieve desired effects.</p>"
+            },
+            {
+                "offending_line": "<marquee>Please check the latest updates on our services and departments</marquee>",
+                "fixed_line": "<div>Please check the latest updates on our services and departments</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<p>Please do not use the <marquee> element as it is not accessible. Consider using alternative methods for animations.</p>"
+            },
+            {
+                "offending_line": "<marquee direction=\"left\" behavior=\"scroll\" scrollamount=\"4\">Emergency Services Available 24/7</marquee>",
+                "fixed_line": "<div>Emergency Services Available 24/7</div>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Your Hospital Name</title>",
+                "fixed_line": "<title>Your Hospital Name - Home</title>"
+            },
+            {
+                "offending_line": "<title>Your Hospital Name</title>",
+                "fixed_line": "<title>Your Hospital Name</title>"
+            },
+            {
+                "offending_line": "<title>Your Hospital Name</title>",
+                "fixed_line": "<title>Your Hospital Name - State-of-the-Art Healthcare Facility</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home<span class=\"sr-only\"> Link to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#departments\">Departments</a>",
+                "fixed_line": "<a href=\"#departments\">Departments</a>"
+            },
+            {
+                "offending_line": "<a href=\"#contact\">Contact</a>",
+                "fixed_line": "<a href=\"#contact\">Contact Us</a>"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button>Learn More</button>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services</a> Learn about the services we offer"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services<span class=\"sr-only\">Go to Services</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\" aria-label=\"Home\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services</a> Go to Services"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services <span class=\"sr-only\">Click to navigate to services section</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a> \n        <a href=\"#services\">Services</a> \n        <a href=\"#departments\">Departments</a> \n        <a href=\"#contact\">Contact</a>",
+                "fixed_line": "<a href=\"#home\">Home</a> \n        <a href=\"#services\">Services</a> \n        <a href=\"#departments\">Departments</a> \n        <a href=\"#contact\">Contact</a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\"><span aria-hidden=\"true\">Services</span><span class=\"sr-only\">Learn More About Our Services</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\"><span aria-hidden=\"true\">Services</span><span class=\"sr-only\">Navigate to Services</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services<span class=\"sr-only\"> - Link to Services</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\" aria-label=\"Services\">Services</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\">Home Page</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\"><span hidden aria-hidden=\"true\">Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#services\">Services</a>",
+                "fixed_line": "<a href=\"#services\">Services</a>Link to services"
+            },
+            {
+                "offending_line": "<a href=\"#contact\">Contact</a>",
+                "fixed_line": "<a href=\"#contact\"><span>Contact</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\">Home</a>",
+                "fixed_line": "<a href=\"#home\"><span>Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#departments\">Departments</a>",
+                "fixed_line": "<a href=\"#departments\">Departments</a>Learn More"
+            },
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button aria-label='Learn More'>Learn More</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"tx\">",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"password\"></label><br>",
+                "fixed_line": "<label for=\"password\">Password:</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<button>Learn More",
+                "fixed_line": "<button>Learn More</button>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"fav_number1\" name=\"fav_number\" value=\"1\">"
+            },
+            {
+                "offending_line": "<input type=\"password\" id=\"pwd\" name=\"pwd\">",
+                "fixed_line": "<label for=\"password\">Password:</label><br>\n<input type=\"password\" id=\"password\" name=\"pwd\">"
+            }
+        ]
+    }
+]

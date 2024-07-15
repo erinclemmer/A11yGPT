@@ -1,0 +1,287 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<label for=\"quantity\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">\n        Number of Tickets:\n      </label>",
+                "CoT": "First, let's look for any `<img>` or `<iframe>` tags in the HTML code. We will check if they have the `alt` attribute defined. Let's start by checking for `<img>` tags."
+            },
+            {
+                "offending_line": "<img src='background.jpg'>",
+                "fixed_line": "<img src='background.jpg' alt='Background Image'>",
+                "CoT": "1. Look through the HTML code for any `<img>` or `<iframe>` tags.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If an `<img>` tag is missing the `alt` attribute, identify it as the accessibility issue to be fixed."
+            },
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<input type=\"number\" alt=\"Number of Tickets\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "CoT": "First, let's look through the entire HTML code to see if there are any `<iframe>` or `<img>` tags present. We will then check if these tags have an `alt` attribute specified. Let's start by identifying all `<iframe>` and `<img>` tags in the code."
+            },
+            {
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<img src='ticket_booking_system.jpg' alt='Ticket Booking System'>",
+                "CoT": "To find the accessability issue with missing \"alt\" attribute in \"img\" tag, we need to:\n\n1. Look through the HTML code provided.\n2. Search for any \"img\" tags.\n3. Check if each \"img\" tag has an \"alt\" attribute.\n4. If we find any \"img\" tag without the \"alt\" attribute, then we have identified the accessability issue.\n\nLet's go through the code and find any \"img\" tags without the \"alt\" attribute."
+            },
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required alt=\"\">",
+                "CoT": "To find the problem with the missing `alt` attribute in an `iframe` or `img` tag, we need to:\n\n1. Look through the HTML code for `iframe` or `img` tags.\n2. Check if there is an `alt` attribute present in these tags.\n3. If the `alt` attribute is missing, it needs to be added for accessibility purposes.\n\nLet's carefully inspect the provided HTML code for any `iframe` or `img` tags and ensure they have the `alt` attribute."
+            },
+            {
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<img src='logo.png' alt='Ticket Booking System'>",
+                "CoT": "Step 1: Identify all img tags in the HTML code.\nStep 2: Check each img tag for the presence of the alt attribute.\nStep 3: If any img tag is missing the alt attribute, flag it as an accessibility issue."
+            },
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<img src=\"path_to_image.jpg\" alt=\"Description of the image\">",
+                "CoT": "Sure, let's find the problem step by step:\n\n1. Look through the HTML code to find any `img` or `iframe` tags.\n\n2. Check if each `img` or `iframe` tag has an `alt` attribute.\n\n3. If any `img` or `iframe` tag is missing the `alt` attribute, then that would be the accessibility issue we are looking for.\n\nLet's go through the HTML code to identify any `img` or `iframe` tags and check if they have the `alt` attribute."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<label for=\"quantity\">Number of Tickets:</label><input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "CoT": "Step 1: Identify input elements and buttons on the page.\nStep 2: Check if each input element or button has an associated label using the \"for\" attribute.\nStep 3: Verify that the label is not empty.\nStep 4: Ensure that if an input element uses the \"alt\" attribute, it is not used as a replacement for a label."
+            },
+            {
+                "offending_line": "<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->\n        Book Now\n      </button>",
+                "fixed_line": "<button type=\"button\" onclick=\"submitForm()\" aria-label=\"Book your tickets\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->\n        Book Now\n      </button>",
+                "CoT": "In this case, we need to look for any input element or button that is missing an associated label, contains an alt attribute, or has an empty label. We will check each input element and button to see if they have a corresponding label.\n\nLet's start by looking at the input elements and buttons in the form:\n\n1. The first input element with id \"quantity\" has a label associated with it: \"Number of Tickets:\" correctly.\n2. The second input element with id \"name\" also has a label associated with it: \"Your Name:\" correctly.\n\nBoth input elements in the form have associated labels, so there is no issue with missing or empty labels. \n\nThe button with \"Book Now\" text doesn't have an associated label. This is a problem because buttons should have labels for accessibility purposes.\n\nTherefore, the issue is that the \"Book Now\" button is missing an associated label. This can be fixed by adding a label for the button to provide context for screen readers and assistive technologies."
+            },
+            {
+                "offending_line": "<label for='event'></label>",
+                "fixed_line": "<label for='event'>Event:</label>",
+                "CoT": "Step 1: Identify input elements and buttons in the form:\n- There are two input elements and one button in the form.\n\nStep 2: Check if each input element and button has an associated label:\n- The first input element does not have an associated label. The label is empty: `<label for=\"event\"></label>`\n- The second input element has a label with some styles but the content is not directly associated with the input element: `<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">Your Name:</label>`\n- The button does not have an associated label.\n\nStep 3: Determine the nature of the problem:\n- The first input element has an empty label, which does not provide any meaningful information or context to screen reader users.\n- The second input element's label \"Your Name:\" is not directly associated with the input field as it should be, making it difficult for screen reader users to understand its purpose.\n- The button is missing an associated label, making it unclear to screen reader users what action the button performs.\n\nStep 4: Suggest a fix for each problem:\n- For the first input element, add a meaningful label that describes the purpose of the input field.\n- For the second input element, link the label directly with the input field using the \"for\" attribute.\n- For the button, add a label that describes the action it performs, such as \"Submit\" or \"Book Now\"."
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required>",
+                "fixed_line": "<label for=\"name\">Your Name:</label><input type=\"text\" id=\"name\" name=\"name\" required>",
+                "CoT": "Step 1: Identify input elements and buttons on the page:\n- There are two input elements in the form: one for the number of tickets and one for the name.\n- There is a button for booking the tickets.\n\nStep 2: Check if each input element and button has an associated label:\n- The input element for the number of tickets has a label \"Number of Tickets\" associated with it.\n- The input element for the name does not have an associated label. It only has a visual label with text \"Your Name\". This can be confusing for screen-reader users.\n- The button for booking does not have an associated label.\n\nStep 3: Check if the label is empty for any element:\n- The label for the name input element is not empty, but it could be improved to include the actual label text within the \"for\" attribute.\n\nStep 4: Check if any element contains an \"alt\" attribute:\n- The number input element has an \"alt\" attribute with the value \"quantity\". This is not a standard attribute for input elements and may not provide meaningful information for accessibility.\n\nSo, the accessability related problem found is that the input element for the name does not have an associated label. It should be fixed to improve accessability for screen-reader users."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": []
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header><strong>Ticket Booking System</strong></header>",
+                "CoT": "To find the issue related to the use of `<b>`, `<i>`, or `<font>` tags, we need to look through the HTML code for any of these tags being used. These tags are considered deprecated in modern web development practices and should be replaced with proper semantic HTML elements or CSS styling.\n\nLet's check the entire HTML code provided for the usage of `<b>`, `<i>`, or `<font>` tags."
+            },
+            {
+                "offending_line": "    <marquee>Ticket Booking System</marquee>",
+                "fixed_line": "    <h1>Ticket Booking System</h1>",
+                "CoT": "1. Review the HTML code provided.\n2. Look for any instances of `<b>`, `<i>`, or `<font>` tags being used.\n3. Determine if any of these tags are present and used in the code.\n4. If found, ensure to replace these tags with appropriate semantic HTML elements or CSS styling.\n5. Make the necessary modifications to remove the `<b>`, `<i>`, or `<font>` tags.\n6. Test the accessibility of the website after making the changes to ensure proper rendering."
+            },
+            {
+                "offending_line": "<b> or <font> tag should not be used",
+                "fixed_line": "Replace any <b> tags with <strong> tags",
+                "CoT": "Sure, here is a step-by-step process to find and fix the issue of using `<b>`, `<i>`, or `<font>` tags in the HTML:\n\n1. Check the entire HTML code provided for the presence of `<b>`, `<i>`, or `<font>` tags.\n2. Replace any `<b>` tags with `<strong>` tags. The `<strong>` tag is used to indicate text of strong importance.\n3. Replace any `<i>` tags with `<em>` tags. The `<em>` tag is used to indicate emphasized text.\n4. Remove any `<font>` tags and use CSS for styling instead.\n5. Make sure to verify that the styling previously applied through `<font>` tags is now implemented using CSS in the `<style>` section provided.\n6. Test the website to ensure that the changes have been applied correctly and the appearance of the text remains as desired."
+            },
+            {
+                "offending_line": "<b>Book Your Tickets</b>",
+                "fixed_line": "<h2>Book Your Tickets</h2>",
+                "CoT": "1. Look through the HTML code for any instances of `<b>`, `<i>`, or `<font>` tags.\n2. Check if any of these tags are being used for styling purposes or to change the appearance of text.\n3. Identify where these tags are located and what they are being used for.\n4. Determine if the styling can be achieved using CSS instead of these deprecated tags.\n5. Propose a solution to replace the deprecated tags with CSS for better accessibility and maintainability."
+            },
+            {
+                "offending_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">Your Name:</label>",
+                "fixed_line": "<label for=\"name\" class=\"label\">Your Name:</label>",
+                "CoT": "1. Review the HTML code looking for any <b>, <i>, or <font> tags.\n2. Check if any of these tags are being used for styling or formatting text.\n3. Ensure that CSS is being used for styling purposes instead of inline HTML tags.\n4. Replace any <b>, <i>, or <font> tags with appropriate semantic HTML elements or CSS styles to maintain accessibility and best practices."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "fixed_line": "<button type=\"button\" onclick=\"submitForm()\" onkeydown=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "CoT": "First, let's identify the element that has the potential accessability issue related to the event handling. In this case, we are looking for an element where the `onmousedown` event is used without a corresponding `onkeydown` event or script that is not keyboard accessible.\n\nNext, we need to check each element in the HTML code and see if any of them have an `onmousedown` event handler that might require a corresponding `onkeydown` event handler for keyboard accessibility.\n\nLet's review the code to find such an element."
+            },
+            {
+                "offending_line": "<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\">",
+                "fixed_line": "<button type=\"button\" onclick=\"submitForm()\" onkeyup=\"submitFormOnEnter(event)\" style=\"background-color: #45a049;\">",
+                "CoT": "First, let's identify the element that has an event attached to it. In this case, the button has an `onclick` event associated with it:\n```html\n<button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\">\n  Book Now\n</button>\n```\n\nNext, we need to consider if this `onclick` event should be accompanied by an `onmousedown` event or if there is an alternative solution that would make the button more keyboard accessible.\n\nIn this case, when a user navigates the website using a keyboard, they should be able to interact with the button easily without relying on the mouse. However, the current setup does not include an `onkeydown` event to ensure keyboard accessibility.\n\nTo address this issue, we can add a keyup event listener to the button element so that users can trigger the same action via the keyboard. By doing so, the functionality becomes more inclusive and accessible.\n\nLet me update the script with the key event listener:\n\n```html\n<button type=\"button\" onclick=\"submitForm()\" onkeyup=\"submitFormOnEnter(event)\" style=\"background-color: #45a049;\">\n  Book Now\n</button>\n\n<script>\n  function submitFormOnEnter(event) {\n    if (event.key === \"Enter\") {\n      submitForm();\n    }\n  }\n</script>\n```\n\nWith this addition, users will now also be able to trigger the button action by pressing the Enter key when the button is in focus. This modification enhances the keyboard accessibility of the button functionality, ensuring a better user experience for all visitors."
+            },
+            {
+                "offending_line": "      <button type=\"button\" onclick=\"submitForm()\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "fixed_line": "      <button type=\"button\" onclick=\"submitForm()\" onkeydown=\"if(event.key==='Enter'){submitForm()}\" style=\"background-color: #45a049;\"> <!-- Adjusted background color for better contrast -->",
+                "CoT": "To find the issue related to missing keyboard accessibility, we need to check if all interactive elements on the page can be easily accessed and used with a keyboard. In this case, we have a form with a button that triggers an action on click. \n\n1. Check if the button can receive focus using the \"Tab\" key: Press the \"Tab\" key repeatedly to navigate through the page. Make sure the focus indicator is visible on the button element. \n\n2. Check if the button is clickable using the \"Enter\" key: Once the button is focused, press the \"Enter\" key to trigger the action. The action should be triggered as expected.\n\nIf the button cannot be accessed or triggered using only the keyboard, then we can conclude that the issue related to missing keyboard accessibility is present."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Ticket Booking System</marquee>",
+                "fixed_line": "<header>Ticket Booking System</header>",
+                "CoT": "Step 1: Identify the <marquee> element in the HTML code provided.\nStep 2: Understand that the <marquee> element is used to create a scrolling text effect which is not accessible and should be avoided.\nStep 3: Determine the alternative ways to create the desired effect without using the <marquee> element.\nStep 4: Suggest a replacement method or technique to achieve the scrolling text effect in a more accessible way."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Ticket Booking System</title>",
+                "CoT": "To address the issue of the title element being empty, we need to make sure that the title of the webpage is meaningful and descriptive to assist users, especially those using screen readers, in understanding the content of the page.\n\nStep 1: Locate the `<title>` tag within the `<head>` section of the HTML document.\nStep 2: Check if the `<title>` tag has any content within it.\nStep 3: If the `<title>` tag is empty or missing, add a descriptive and concise title that represents the content of the webpage.\nStep 4: Update the content within the `<title>` tag to provide a meaningful title for the webpage.\n\nLet's go through the HTML code provided to locate and address the empty `<title>` element issue."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Select Event:</label>",
+                "CoT": "Step 1: Identify all anchor elements in the HTML code.\nStep 2: Check if each anchor element has text content inside it."
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Home</a>",
+                "CoT": "To find the issue where an anchor element contains no text, we need to look for instances where the `a` tag does not have any text content between the opening `<a>` and closing `</a>` tags. We'll need to check each `a` tag within the `nav` section to ensure that it has meaningful text content for screen readers and other assistive technologies. Let's examine the code:"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home Page</a>",
+                "CoT": "Sure! To find and fix the issue where an anchor element contains no text, we need to:\n\n1. Look through the HTML code for any anchor elements (<a>) that do not have any text content between the opening and closing tags.\n2. Make sure that all anchor elements have descriptive text content to provide meaningful information to users who rely on screen readers or cannot view the content visually.\n3. Modify the anchor elements to include relevant text content within the tags.\n\nLet's go through the HTML code provided and identify any anchor elements that do not contain text content."
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home</a>",
+                "CoT": "Sure, let's break down the process step by step to identify the problem of the anchor element containing no text:\n\nStep 1: Identify all anchor elements in the code.\nStep 2: Check each anchor element to see if it contains any text within the <a> tags.\nStep 3: If any anchor element does not contain text, then we have identified the problem."
+            },
+            {
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Event Type:</label>",
+                "CoT": "Sure, to find the problem of an anchor element containing no text, we need to look at the anchor elements in the HTML and check if they have any text content within them. Anchor elements ( `<a>` ) must have descriptive text or an alternative text to provide meaningful information to screen readers and assistive technologies. \n\nLet's inspect the anchor elements in the HTML code provided to identify any instances where the anchor elements contain no text."
+            },
+            {
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Event:</label>",
+                "CoT": "Sure! To find the problem with the anchor element containing no text, we need to look at the anchor elements in the HTML provided. \n\n1. Identify all anchor elements `<a>` in the HTML.\n2. Check if any of the anchor elements have empty text content inside them.\n\nLet's go through the HTML and identify the anchor elements."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "First, let's check the `<html>` tag to see if the `lang` attribute is properly set to identify the language of the document. This is important for screen readers to correctly interpret the text content. Let's locate the `<html>` tag in the provided HTML code."
+            },
+            {
+                "offending_line": "<html lang='en'>",
+                "fixed_line": "<html lang='en' xml:lang='en'>",
+                "CoT": "To identify the issue of \"document language not identified or incorrect,\" we need to ensure that the language of the document is properly specified in the HTML code. This is important for screen readers and other assistive technologies to correctly interpret and present the content to users.\n\n1. Look for the opening `<html>` tag in the HTML code.\n2. Check if the `lang` attribute is present within the `<html>` tag.\n3. Verify that the value of the `lang` attribute reflects the language of the content on the page (in this case, English).\n4. If the `lang` attribute is missing or incorrect, update it to `lang=\"en\"` to specify that the document is in English.\n\nLet's check the HTML code to ensure that the document language is correctly identified."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">\n        Your Name:\n      </label>",
+                "fixed_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">\n",
+                "CoT": "Step 1: Identify all input elements in the form.\n\nStep 2: Identify all associated label elements for each input element.\n\nStep 3: Check if any input element has more than one associated label element."
+            },
+            {
+                "offending_line": "<label for=\"quantity\"> Number of Tickets: </label>",
+                "fixed_line": " <label for=\"quantity\"> Number of Tickets: </label> <label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\"> Your Name: </label>",
+                "CoT": "To find the problem where an input element has more than one associated label, we need to:\n\n1. Identify all the input elements in the form.\n2. Check each input element to see if it has more than one associated label.\n3. If any input element has more than one associated label, then that would be the accessibility issue we need to fix.\n\nLet's start by looking at the input elements in the form. We have two input elements:\n1. Number of Tickets input:\n```html\n<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>\n```\n2. Name input:\n```html\n<input type=\"text\" id=\"name\" name=\"name\" required>\n```\n\nNext, we will check each input element to see if it has more than one associated label. We will specifically look for the \"for\" attribute in the label tags to identify the association."
+            },
+            {
+                "offending_line": "<label for=\"quantity\">\n        Number of Tickets:\n      </label>",
+                "fixed_line": "<label for=\"quantity\">Number of Tickets:</label>",
+                "CoT": "To find the issue where an input element has more than one associated label, we need to:\n1. Identify all the input elements in the form.\n2. Check if any of the input elements have more than one label associated with them."
+            },
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "CoT": "To identify the issue where an input element has more than one associated label, we first need to review all the label elements and check their `for` attribute values. Then, we need to compare these values with the `id` attributes of the input elements to ensure that each input is associated with only one label. Let's go ahead and examine the labels and input elements in the provided HTML code."
+            },
+            {
+                "offending_line": "      <label for=\"quantity\">\n      </label>",
+                "fixed_line": "      <label for=\"quantity\">Number of Tickets:</label>",
+                "CoT": "To find the problem of an input element having more than one associated label, we need to identify all the labels in the HTML code and check if any of them are associated with the same input element. Let's start by locating all the label elements in the code."
+            },
+            {
+                "offending_line": "<label for=\"quantity\">\n        Number of Tickets:\n      </label>\n      <input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "<label for=\"quantity\">Number of Tickets:</label>\n<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "CoT": "To find the problem where an input element has more than one associated label, we need to first identify all the input elements on the page and then check the associated labels for each input element. If any input element has more than one label associated with it, that would be the accessibility issue we are looking for."
+            },
+            {
+                "offending_line": "<label for=\"quantity\">\n        Number of Tickets:\n      </label>",
+                "fixed_line": "<label for=\"quantity\">\n        Number of Tickets:\n      </label>\n      <label for=\"quantity-description\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">\n        Quantity:\n      </label>",
+                "CoT": "Step 1: Identify all input elements in the form.\nStep 2: Check if any input element has more than one associated label."
+            },
+            {
+                "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+                "fixed_line": "Add separate label elements for 'Number of Tickets' and 'quantity'.",
+                "CoT": "To find the issue where an input element has more than one associated label, we need to:\n1. Look for all <input> elements in the form.\n2. Check the 'for' attribute of each <label> element to see if it matches the 'id' of any <input>.\n3. If an <input> has multiple <label> elements with the 'for' attribute pointing to it, then we have found the issue."
+            },
+            {
+                "offending_line": "      <label for=\"quantity\">\n        Number of Tickets:\n      </label>",
+                "fixed_line": "      <label for=\"quantity\">\n        Number of Tickets:\n      </label>\n      <br />",
+                "CoT": "Step 1: Identify all the input elements in the form.\nStep 2: Check if any of the input elements have more than one associated label."
+            },
+            {
+                "offending_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">Your Name:</label>",
+                "fixed_line": "<label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">Your Name:</label><label for=\"name\" style=\"color: #fff; background-color: rgba(0, 0, 0, 0.7);\">Your Name:</label>",
+                "CoT": "Step 1: Identify all input elements on the page:\n- There is an input element with id=\"quantity\" for the number of tickets.\n- There is an input element with id=\"name\" for the user's name.\n\nStep 2: Identify associated label elements for each input element:\n- There is a label element with for=\"quantity\" for the number of tickets.\n- There is a label element with for=\"name\" for the user's name.\n\nStep 3: Determine if any input element has more than one associated label:\n- The input element for the user's name with id=\"name\" has an associated label with inline styles but also a separate label element without any styles.\n\nTherefore, the issue is that the input element with id=\"name\" has more than one associated label, one with inline styles and one without any styles. This can be confusing for screen readers and may impact accessibility. \n\nTo fix this issue, remove the duplicate label element without any styles or ensure that both labels are styled consistently to provide a clear and accessible user experience."
+            },
+            {
+                "offending_line": "<label for=\"quantity\">\n        Number of Tickets:\n      </label>",
+                "fixed_line": "<label for=\"quantity\">\n        Number of Tickets:\n      </label>\n      <label for=\"quantity_tip\" hidden>Number of Tickets</label>",
+                "CoT": "To find the problem where an input element has more than one associated label, we need to:\n\n1. Identify all the `<input>` elements in the form.\n2. Check if any `<input>` element has more than one `<label>` associated with it.\n\nLet's look at the HTML code provided to identify any `<input>` element with more than one associated `<label>`."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Event:</label>",
+                "CoT": "1. Look for elements that do not have complete start and end tags. Check each element in the HTML code to ensure that they have both an opening tag (\\<tag>) and a closing tag (\\</tag>), where required.\n\n2. Check if there are any elements missing their closing tag. This could cause issues with accessibility as screen readers may not interpret the content correctly.\n\n3. Ensure that each element with a start tag also has a corresponding end tag. Check for elements like \\<label>, \\<select>, \\<input>, and \\<button> to ensure they are properly closed with an end tag.\n\n4. Lastly, confirm that the id attribute is unique within the document. Each id attribute should only be assigned to one element on the page to avoid any conflicts or accessibility issues.\n\nLet's go through the code and identify any elements that do not have complete start and end tags or any duplicate id attributes."
+            },
+            {
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Event type:</label>",
+                "CoT": "Step 1: Identify elements that may have incomplete start and end tags or missing id attribute. Look for any elements that might be problematic.\nStep 2: Check each element for completeness of start and end tags and uniqueness of id attribute.\nStep 3: Determine if any element is missing its end tag or has a duplicate id attribute.\nStep 4: If an issue is found, suggest a solution to fix the problem."
+            },
+            {
+                "offending_line": "<label for=\"event\"></label>",
+                "fixed_line": "<label for=\"event\">Choose Event:</label>",
+                "CoT": "Step 1: Look for incomplete start and end tags in the HTML code. Check each element to ensure it has both a complete start tag (\\<tag>) and end tag (\\</tag>).\n\nStep 2: Check if each element has a unique id attribute assigned to it. Ensure that no two elements have the same id value. The id attribute should be unique within the document.\n\nLet's start by examining the HTML code provided."
+            }
+        ]
+    }
+]

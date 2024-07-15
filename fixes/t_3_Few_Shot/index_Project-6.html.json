@@ -1,0 +1,225 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" title=\"YouTube Video\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" ></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" aria-hidden=\"true\"></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<audio autoplay>",
+                "fixed_line": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>\n<source src=\"music-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<source src=\"music-video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<video controls>\n    <source src=\"music-video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<audio autoplay>",
+                "fixed_line": "<audio controls>"
+            },
+            {
+                "offending_line": "<audio autoplay></audio>",
+                "fixed_line": "<audio controls>\n<source src=\"\" type=\"\">\nYour browser does not support the audio tag.\n</audio>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<b>Discover and Enjoy Your Favorite Music</b>",
+                "fixed_line": "<strong>Discover and Enjoy Your Favorite Music</strong>"
+            },
+            {
+                "offending_line": "<i>Italic</i>",
+                "fixed_line": "<em>Italic</em>"
+            },
+            {
+                "offending_line": "<i>Listen to the latest tracks and create your own playlists</i>",
+                "fixed_line": "<em>Listen to the latest tracks and create your own playlists</em>"
+            },
+            {
+                "offending_line": "<b>Important</b>",
+                "fixed_line": "<strong>Important</strong>"
+            },
+            {
+                "offending_line": "<i>Latest tracks</i>",
+                "fixed_line": "<em>Latest tracks</em>"
+            },
+            {
+                "offending_line": "<b>Home</b>",
+                "fixed_line": "<strong>Home</strong>"
+            },
+            {
+                "offending_line": "<b>Artist Name</b>",
+                "fixed_line": "<strong>Artist Name</strong>"
+            },
+            {
+                "offending_line": "<i>Discover and Enjoy Your Favorite Music</i>",
+                "fixed_line": "<em>Discover and Enjoy Your Favorite Music</em>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "fixed_line": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Scrolling text...</marquee>",
+                "fixed_line": "<p>Scrolling text...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Music Player</title>",
+                "fixed_line": "<title>Music Player - Listen and Enjoy Your Favorite Music</title>"
+            },
+            {
+                "offending_line": "<title>Music Player</title>",
+                "fixed_line": "<title>Music Player</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link Text</a>"
+            },
+            {
+                "offending_line": "<a href=\"#browse\" class=\"btn\">Browse Music</a>",
+                "fixed_line": "<a href=\"#browse\" class=\"btn\">Browse Music</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"tx\">",
+                "fixed_line": "<html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": ""
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"song-list\">Song List:</label>\n            <textarea id=\"song-list\" name=\"song-list\" rows=\"4\" required></textarea>",
+                "fixed_line": "<label for=\"song-list\">Song List:</label>\n            <textarea id=\"song-list\" name=\"song-list\" rows=\"4\" required></textarea>"
+            },
+            {
+                "offending_line": "<label for=\"song-list\">Song List:</label>\n<textarea id=\"song-list\" name=\"song-list\" rows=\"4\" required></textarea>",
+                "fixed_line": "<label for=\"song-list\">Song List:</label>\n<textarea id=\"song-list\" name=\"song-list\" rows=\"4\" required aria-describedby=\"song-list-desc\"></textarea>\n<p id=\"song-list-desc\" class=\"sr-only\">Enter the list of songs for the playlist</p>"
+            },
+            {
+                "offending_line": "<label for=\"song-list\">Song List:</label>",
+                "fixed_line": "<label for=\"song-list\">Song List:</label>\n<input type=\"text\" id=\"song-list\" name=\"song-list\" required>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+                "fixed_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required aria-labelledby=\"playlist-label\">"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+                "fixed_line": "<label for=\"playlist-name\">Playlist Name:</label>\n<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>"
+            },
+            {
+                "offending_line": "<label for=\"song-list\">Song List:</label>",
+                "fixed_line": "<label for=\"song-list\">Song List:</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<div id=\"header\">",
+                "fixed_line": "<div id=\"header\"></div>"
+            },
+            {
+                "offending_line": "<div class=\"music-card\">",
+                "fixed_line": "<div class=\"music-card\"></div>"
+            }
+        ]
+    }
+]

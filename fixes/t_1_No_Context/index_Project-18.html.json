@@ -1,0 +1,47 @@
+[
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>",
+        "fixed_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\" aria-label=\"Play Video\"></button>"
+    },
+    {
+        "problem_type": "Missing label for form elements",
+        "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+        "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\"><label for=\"1\">1</label>"
+    },
+    {
+        "problem_type": "missing alt attribute in image",
+        "offending_line": "<h1 style=\"color: #ffffff; background-color: rgba(0, 0, 0, 0.7); padding: 10px;\">",
+        "fixed_line": "<h1 style=\"color: #ffffff; background-color: rgba(0, 0, 0, 0.7); padding: 10px;\" aria-hidden=\"true\">"
+    },
+    {
+        "problem_type": "Missing alt attribute for image",
+        "offending_line": "background-image: url('background.jpg');",
+        "fixed_line": "background-image: url('background.jpg');\n alt='Background image for hero section';"
+    },
+    {
+        "problem_type": "missing alt text in image",
+        "offending_line": "background-image: url('background.jpg');",
+        "fixed_line": "background-image: url('background.jpg') alt='' role='img';"
+    },
+    {
+        "problem_type": "missing label for form elements",
+        "offending_line": "            <label for=\"1\"></label><br>",
+        "fixed_line": "            <label for=\"1\">1</label><br>"
+    },
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"1\"></label><br>",
+        "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n<label for=\"1\">1</label><br>"
+    },
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"1\"></label><br>",
+        "fixed_line": "<label for=\"1\">1</label><br>"
+    },
+    {
+        "problem_type": "link_text_not_descriptive",
+        "offending_line": "<li><a href=\"#\">Services</li>",
+        "fixed_line": "<li><a href=\"#\">Services</a></li>"
+    }
+]

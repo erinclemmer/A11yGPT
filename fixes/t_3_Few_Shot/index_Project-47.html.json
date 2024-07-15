@@ -1,0 +1,284 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<iframe width=\"640\" height=\"360\" controls>",
+                "fixed_line": "<iframe width=\"640\" height=\"360\" controls\" alt=\"Video\"></iframe>"
+            },
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls alt=\"Video Player\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">\n        <p>Description of Car 1.</p>\n        \n        <img src=\"car2.jpg\" alt=\"Car 2\">\n        <p>Description of Car 2.</p>",
+                "fixed_line": " <img src=\"car1.jpg\" alt=\"Car 1\">\n        <p>Description of Car 1.</p>\n        \n        <img src=\"car2.jpg\" alt=\"Car 2\">\n        <p>Description of Car 2.</p>"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">\n        <img src=\"car2.jpg\" alt=\"Car 2\">\n        <img src=\"background-image.jpg\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1\">\n        <img src=\"car2.jpg\" alt=\"Car 2\">\n        <img src=\"background-image.jpg\" alt=\"Background Image\">"
+            },
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls alt=\"Video Player\">\n            <source src=\"video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">\n        ",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1\">"
+            },
+            {
+                "offending_line": "<img src=\"car1.jpg\" alt=\"Car 1\">\n        <img src=\"car2.jpg\" alt=\"Car 2\">",
+                "fixed_line": "<img src=\"car1.jpg\" alt=\"Car 1\">\n        <img src=\"car2.jpg\" alt=\"Car 2\">"
+            },
+            {
+                "offending_line": "<iframe src=\"video.mp4\" type=\"video/mp4\"></iframe>",
+                "fixed_line": "<iframe src=\"video.mp4\" type=\"video/mp4\" alt=\"Video\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" aria-hidden=\"true\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" aria-label=\"Embedded Video\"></iframe>"
+            },
+            {
+                "offending_line": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                "fixed_line": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"\" ></iframe>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label>"
+            },
+            {
+                "offending_line": "<label for=\"email\"></label>",
+                "fixed_line": "<label for=\"email\">Email</label>\\<br>\\<input type=\"text\" id=\"email\" name=\"email\">"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"email\" name=\"email\">",
+                "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<audio src='bookstore-audio.mp3' type='audio/mp3' autoplay></audio>",
+                "fixed_line": "<audio controls>\n<source src='bookstore-audio.mp3' type='audio/mp3'>\nYour browser does not support the audio tag.\n</audio>"
+            },
+            {
+                "offending_line": "<video width=\"640\" height=\"360\" controls>\n            <source src=\"video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>",
+                "fixed_line": "<video width=\"640\" height=\"360\" controls>\n            <source src=\"video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onkeydown=\"\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onclick=\"submitForm()\" onkeydown=\"submitForm()\">Submit</button>"
+            },
+            {
+                "offending_line": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                "fixed_line": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onmousedown=\"\" onkeydown=\"\">Submit</button>"
+            },
+            {
+                "offending_line": "<button type=\"submit\">Submit</button>",
+                "fixed_line": "<button type=\"submit\" onkeydown=\"submitForm(event)\">Submit</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": []
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee>Scrolling text...</marquee>",
+                "fixed_line": "<p>Scrolling text...</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Car Rental Service</title>",
+                "fixed_line": "<title>Car Rental Service</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"carType\"></label>",
+                "fixed_line": "<label for=\"carType\">Car Type:</label>"
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle 2</label><br>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">&nbsp;</a>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">I have a car</label><br>"
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Link Text</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "None"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"tx\">",
+                "fixed_line": "<html lang=\"en\">"
+            },
+            {
+                "offending_line": "<html>",
+                "fixed_line": "<html lang='en'>"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": ""
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"2\">2</label><br><input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">"
+            },
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\">Car</label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\"></label>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+                "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"2\">2</label><br><label for=\"3\">3</label>"
+            },
+            {
+                "offending_line": "<label for=\"2\">2</label><br>",
+                "fixed_line": "<label for=\"2\">2</label>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>",
+                "fixed_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">\n            <label for=\"1\">1</label><br>\n            <input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n            <label for=\"2\">2</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">I own a car</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\">Vehicle Type:</label><br>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">\n            <label for=\"vehicle2\">Car</label></br>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label>",
+                "fixed_line": "<label for=\"vehicle2\"></label><br>"
+            },
+            {
+                "offending_line": "<input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"3\">3</label>",
+                "fixed_line": "<input type=\"radio\" id=\"3\" name=\"fav_number\" value=\"3\">\n            <label for=\"fav_number3\">3</label>"
+            },
+            {
+                "offending_line": "<label for=\"carType\"></label>",
+                "fixed_line": "<label for=\"carType\"></label><select id=\"carType\" name=\"carType\">\n                <option value=\"sedan\">Sedan</option>\n                <option value=\"suv\">SUV</option>\n                <option value=\"convertible\">Convertible</option>\n            </select>"
+            },
+            {
+                "offending_line": "<label for=\"vehicle2\"></label><br>",
+                "fixed_line": "<label for=\"vehicle2\"><input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\"> Car</label><br>"
+            }
+        ]
+    }
+]

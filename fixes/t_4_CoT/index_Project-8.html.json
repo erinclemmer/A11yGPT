@@ -1,0 +1,439 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='video player'>",
+                "CoT": "First, I will need to search for any `<img>` tags in the HTML code to see if there is any missing `alt` attribute. Let me do that now."
+            },
+            {
+                "offending_line": "<source src=\"video/sample-video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample Video\">",
+                "CoT": "First, I will look through the HTML code for any <img> or <iframe> tags. Then, I will check if any of these tags are missing the \"alt\" attribute, which is used to provide alternative text for screen readers and in case the image cannot be displayed."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Video of DELL laptops'>",
+                "CoT": "1. Look for img or iframe tags in the HTML code.\n2. Check if each img or iframe tag has an alt attribute.\n3. If any img or iframe tag is missing the alt attribute, then that would be the accessibility issue."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Video'>",
+                "CoT": "First, I need to search for any `<img>` or `<iframe>` tags in the HTML code provided. \n\nLet me check if there are any `<img>` or `<iframe>` tags in the code."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Video of our latest laptops'>",
+                "CoT": "To find the issue where the alt attribute is missing in the iframe or img tag, I will need to:\n\n1. Scan through the HTML code for any <img> or <iframe> tags.\n2. Check if each <img> and <iframe> tag has an \"alt\" attribute.\n3. If any of the <img> or <iframe> tags do not have an \"alt\" attribute, then that would be the accessibility-related problem we are looking for."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay></video>",
+                "CoT": "First, we need to check if there are any `<img>` tags or `<iframe>` tags in the HTML code. Then, we need to verify if the `alt` attribute is present in those tags. If the `alt` attribute is missing, that would be the accessibility issue we are looking for. Let's proceed with searching the code for any `<img>` or `<iframe>` tags without the `alt` attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Sample video of our products'>",
+                "CoT": "To find and fix the accessibility issue of missing alt attributes in `<img>` tags, we need to review the HTML code provided:\n\n1. Look through the HTML code for any `<img>` tags.\n2. Check each `<img>` tag to see if they have an `alt` attribute.\n3. If any `<img>` tags are missing the `alt` attribute, add a descriptive `alt` attribute to improve accessibility for users who may not be able to see the image.\n\nLet's go through the provided HTML code and identify any `<img>` tags without an `alt` attribute:"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>",
+                "CoT": "Step 1: Identify all `<img>` and `<iframe>` tags in the HTML code. \nStep 2: Check if each `<img>` tag has an `alt` attribute.\nStep 3: Check if each `<iframe>` tag has an `alt` attribute.\nStep 4: Identify any `<img>` or `<iframe>` tags that are missing the `alt` attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Demo video'>",
+                "CoT": "To find the problem of missing 'alt' attribute in 'iframe' or 'img' tag, we need to go through the HTML code and specifically look for any 'iframe' or 'img' tags that are missing the 'alt' attribute.\n\nLet's start by checking each 'iframe' and 'img' tag in the HTML code provided to ensure they have the 'alt' attribute added where necessary."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Sample video showcasing new laptops'>",
+                "CoT": "To find the problem of missing alt attribute in an img tag, I will need to check all img tags in the HTML code provided and ensure that each img tag includes the alt attribute with a descriptive text. Let's go through the code to find any img tags without the alt attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='description of video'>",
+                "CoT": "Step 1: Identify all the <img> and <iframe> tags in the HTML code.\nStep 2: Check if each <img> and <iframe> tag has an \"alt\" attribute.\nStep 3: If any <img> or <iframe> tag is missing the \"alt\" attribute, then it is a violation of the accessability rule."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='sample video'>",
+                "CoT": "1. Look through the HTML code to find any <img> or <iframe> tags.\n2. Check if there is an \"alt\" attribute present in each <img> or <iframe> tag.\n3. If an \"alt\" attribute is missing, that would be an accessibility issue for users who rely on screen readers to understand the content.\n4. Make a note of the tag where the \"alt\" attribute is missing for fixing."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Video' alt='Dell laptops promotional video'>",
+                "CoT": "1. Look through the HTML code for any `<img>` or `<iframe>` tags.\n2. Check if each `<img>` or `<iframe>` tag has an `alt` attribute.\n3. If any tag is missing the `alt` attribute, then that is the accessibility issue related to missing `alt` attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt=\"Video presentation\">",
+                "CoT": "Step 1: Identify any <img> or <video> tags in the HTML.\n\nStep 2: Check if each <img> or <video> tag has an \"alt\" attribute with a descriptive text.\n\nLet's use this process to find and fix the accessibility issue in the HTML provided."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay>Your browser does not support the video tag.</video>",
+                "CoT": "To find the problem of missing `alt` attributes in the `img` tags, I will need to carefully inspect all the `img` tags in the provided HTML code. The `alt` attribute is an important element for accessibility as it provides a text alternative for screen readers in case the image file cannot be displayed. Let's go through each `img` tag and ensure that they have the `alt` attribute."
+            },
+            {
+                "offending_line": "<video autoplay>\n            <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>",
+                "fixed_line": "<video autoplay>\n            <source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample video\">\n            Your browser does not support the video tag.\n        </video>",
+                "CoT": "1. Look through the HTML code for any <img> or <iframe> tags.\n2. Check if there is an alt attribute present in each of these tags.\n3. If an alt attribute is missing, then that is the accessibility issue we need to address.\n4. If there are no <img> or <iframe> tags present in the HTML, then the issue does not exist in this particular code snippet."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Video about the latest laptops'>",
+                "CoT": "To find the problem of a missing \"alt\" attribute in an \"iframe\" or \"img\" tag:\n1. Look through the HTML code provided.\n2. Identify any \"img\" or \"iframe\" tags present.\n3. Check if there is an \"alt\" attribute within these tags.\n4. If the \"alt\" attribute is missing, that is the accessibility issue that needs to be fixed."
+            },
+            {
+                "offending_line": "<video autoplay>\n            <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>",
+                "fixed_line": "<video autoplay>\n            <source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Video about the latest laptops\">\n            Your browser does not support the video tag.\n        </video>",
+                "CoT": "Step 1: Identify all img tags in the html document\n\nStep 2: Check if each img tag has an alt attribute and if it is empty or missing"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Video of sample products'>",
+                "CoT": "First, let's look for `<img>` tags in the HTML code to check if the `alt` attribute is missing. If there are no `<img>` tags, we will then look for `<iframe>` tags to check for the same issue. Let's start by examining the HTML code for `<img>` tags."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay><img src='video/sample-video.png' alt='Video'  />",
+                "CoT": "Here are the steps to find the problem of missing alt attribute in the HTML code:\n\n1. Look through the HTML code for any `<img>` tags that may be missing the `alt` attribute.\n2. Check if there are any `<iframe>` tags in the code and ensure they have appropriate `alt` attributes.\n3. If you find any `<img>` or `<iframe>` tags without the `alt` attribute, add a descriptive and meaningful `alt` attribute to improve accessibility for users who may rely on screen readers.\n\nLet's go through the code now to identify and fix any missing `alt` attributes."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Sample video' alt='Sample video'>",
+                "CoT": "To find the accessability issue related to a missing `alt` attribute in an `img` tag, I will need to:\n\n1. Look through the HTML code for any `<img>` tags.\n2. Check if each `<img>` tag has an `alt` attribute.\n3. If an `alt` attribute is missing, that will be the accessability issue.\n\nLet me now go through the HTML code and identify any `<img>` tags without an `alt` attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Video Player'>",
+                "CoT": "1. Look for `<img>` or `<iframe>` tags in the HTML code.\n2. Check if each `<img>` or `<iframe>` tag has an `alt` attribute.\n3. If any `<img>` or `<iframe>` tag is missing the `alt` attribute, that would be the accessibility issue."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Sample Video'><source src='video/sample-video.mp4' type='video/mp4'>Your browser does not support the video tag.</video>",
+                "CoT": "1. Look through the HTML code for any `<img>` tags or `<iframe>` tags that are missing the `alt` attribute. \n2. The `alt` attribute provides alternative text for an image or iframe, which is important for accessibility purposes.\n3. Check each `<img>` tag and `<iframe>` tag to ensure that it includes the `alt` attribute with a descriptive text.\n4. If you find any `<img>` tag or `<iframe>` tag without the `alt` attribute, that would be the accessibility issue in this case."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay><source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample video\"></video>",
+                "CoT": "Step 1: Identify if there are any `<img>` or `<iframe>` tags in the HTML code.\n\nStep 2: Check if the `alt` attribute is present in each `<img>` tag and if it is meaningful.\n\nStep 3: If there are `<iframe>` tags, check if the `alt` attribute is present in each of them and if it provides a meaningful alternative text description."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample Video\">\nYour browser does not support the video tag.\n</video>",
+                "CoT": "To find the problem of missing \"alt\" attributes in the \"img\" tags, we need to look for all the \"img\" tags in the HTML code and check if they have the \"alt\" attribute specified. If the \"alt\" attribute is missing, then it needs to be added for accessibility purposes. Let's review the HTML code for any \"img\" tags without the \"alt\" attribute."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample video\">\nYour browser does not support the video tag.\n</video>",
+                "CoT": "1. Look through the HTML code for any <iframe> or <img> tags.\n2. Check if these tags have the \"alt\" attribute included.\n3. If the \"alt\" attribute is missing, then that would be the accessibility issue related to missing alt attribute in <iframe> or <img> tag."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay controls>\n    <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>",
+                "CoT": "Sure, let's go step by step to find the problem:\n\n1. Look for any `<img>` or `<iframe>` tags in the HTML.\n2. Check if there is an `alt` attribute present in the `<img>` or `<iframe>` tags.\n3. If the `alt` attribute is missing, that would indicate the accessibility issue."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay controls>",
+                "CoT": "Step 1: Identify if there are any `<img>` tags or `<iframe>` tags in the HTML code provided. \n\nStep 2: Check if these tags have the `alt` attribute.\n\nStep 3: If any `<img>` tags or `<iframe>` tags are missing the `alt` attribute, then that is the accessibility issue we need to fix."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay>",
+                "CoT": "To find the missing `alt` attribute in an `img` tag, we need to look for any `img` tags in the HTML code that do not have the `alt` attribute specified. Let's search through the provided HTML code and identify any such instances."
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\">Home</a>",
+                "CoT": "Step 1: Identify input elements or buttons on the page.\nStep 2: Check if each input element or button has an associated label.\nStep 3: Check if the label is empty or if the input element or button has an alt attribute.\nStep 4: Determine if any input element or button is missing an associated label, contains an alt attribute, or has an empty label."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video>",
+                "CoT": "Step 1: Identify any audio or video elements on the page. \n\nLooking at the HTML provided, there is a video element in the Video Section:\n```html\n<video autoplay>\n    <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>\n```\n\nStep 2: Check if the video element has the attribute autoplay.\n\nIn this case, the video element does have the attribute autoplay.\n\nStep 3: Determine if the autoplay behavior is appropriate.\n\nAs per the accessibility rule, autoplaying audio or video is discouraged as it can be disruptive for users, especially those who use screen readers or have cognitive disabilities.\n\nStep 4: Provide a solution to ensure accessibility compliance.\n\nTo fix this issue, you can remove the `autoplay` attribute from the video element. By removing this attribute, you prevent the video from automatically playing audio when the page loads.\n\nModified Video Element:\n```html\n<video>\n    <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>\n```"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>",
+                "CoT": "1. Look for any <video> elements in the HTML code.\n2. Check if the <video> element has the \"autoplay\" attribute.\n3. If the \"autoplay\" attribute is present, check if there is any accompanying audio that plays automatically.\n4. If there is accompanying audio that plays automatically, identify the issue as the audio playing automatically without user interaction."
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls muted>",
+                "CoT": "Step 1: Identify the audio or video element on the page:\n- The only video element on the page is the one within the `<video>` tag under the \"Video Section\" where a sample video is sourced.\n\nStep 2: Check if the video element is set to autoplay:\n- Yes, the video element has the autoplay attribute set, which means it will automatically start playing when the page loads.\n\nStep 3: Confirm if the video has audio:\n- Since there is no indication of audio being included in the video element (no controls, muted attribute, etc.), we can assume it may contain audio.\n\nStep 4: Determine if the autoplaying audio is an accessibility issue:\n- Autoplaying audio can be considered an accessibility issue as it may be disruptive to users who rely on screen readers or have cognitive disorders.\n\nStep 5: Identify the problem:\n- The accessibility issue on this page is that the video element is set to autoplay without any indication that it contains audio, potentially causing a disruption for users.\n\nStep 6: Suggest a solution:\n- To improve accessibility, consider adding a control for users to manually play the video with the option to turn on the audio, and ensure that the autoplay feature is disabled for the video element."
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\"><span style=\"font-weight: bold;\">Welcome to DELL Laptops</span></h1>",
+                "CoT": "To find and fix the issue of using <b>, <i>, or <font> tags which should not be used for accessibility reasons, we will need to do the following steps:\n\n1. Review the HTML code for any instances of <b>, <i>, or <font> tags.\n2. Replace these tags with semantic HTML elements or CSS styling for better accessibility.\n3. Test the website to ensure that the text is styled appropriately without using <b>, <i>, or <font> tags.\n\nLet's start by examining the HTML code provided to identify any use of these deprecated tags."
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\nWelcome to DELL Laptops\n</h1>",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\nWelcome to DELL Laptops\n</h1>",
+                "CoT": "First, I will review the HTML code and look for any use of the `<b>`, `<i>`, or `<font>` tags which are not recommended for accessibility."
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Welcome to DELL Laptops\n        </h1>",
+                "fixed_line": "<h1 class=\"header\">Welcome to DELL Laptops</h1>",
+                "CoT": "First, I will look through the HTML code to identify any <b>, <i>, or <font> tags. These tags are used for styling text, which should be handled with CSS instead. If any of these tags are found in the code, I will flag them as accessibility issues. Let me check the code for any of these tags."
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<h1 class=\"header-title\">",
+                "CoT": "To identify the issue of using <b>, <i>, or <font> tags in the HTML code, I will need to carefully examine the code looking for these tags. These tags are typically used for styling content, which should be done using CSS for accessibility purposes.\n\nLet's go through the HTML code and specifically look for <b>, <i>, or <font> tags."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "",
+                "CoT": "Step 1: Look through the HTML code to identify any `<b>`, `<i>`, or `<font>` tags.\n\nStep 2: Determine if any of these tags are being used in the document.\n\nStep 3: If any of these tags are found, notify that they should not be used for accessibility reasons."
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "CoT": "1. Look through the HTML code starting from the top.\n2. Search for any instances of `<b>`, `<i>`, or `<font>` tags being used.\n3. If any of these tags are found, note that as the accessibility issue related to the given rule."
+            },
+            {
+                "offending_line": "NONE",
+                "fixed_line": "",
+                "CoT": "Step 1: Look through the HTML code for any <b>, <i>, or <font> tags."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\" onkeydown=\"if(event.keyCode===13){location.href='#home'}\"></a></li>",
+                "CoT": "First, let's identify if there are any interactive elements on the page that might require keyboard accessibility. In this case, the navigation bar contains links which are interactive.\n\nNext, we need to check if the links in the navigation bar have both `onmousedown` and `onkeydown` events or if there is any script that makes them keyboard accessible.\n\nLet's inspect the navigation links in the code."
+            },
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\" onkeydown=\"if(event.keyCode===13) { window.location='#home';}\"></a>",
+                "CoT": "To identify the issue with accessibility related to the \"onmousedown event missing onkeydown event or script is not keyboard accessible,\" we need to consider the following steps:\n\n1. Look through the HTML code provided to identify any interactive elements that may require keyboard accessibility, such as links or buttons.\n2. Check if there are any elements that rely solely on mouse-based events, like onmousedown, without providing an alternative keyboard event, such as onkeydown, to perform the same action.\n3. Verify if any scripts or functionalities are implemented in a way that limits keyboard accessibility, hindering users who rely on keyboard navigation rather than a mouse.\n4. Ensure that all interactive elements can be operated using only a keyboard, following web accessibility guidelines.\n5. Finally, suggest a solution or improvement to make the website more accessible in terms of keyboard navigation.\n\nLet's now proceed to review the HTML code provided for any issues related to keyboard accessibility."
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\" onkeydown=\"if(event.key === 'Enter') { window.location = '#laptops';}\">View Laptops</a>",
+                "CoT": "1. Identify interactive elements on the page that could benefit from keyboard accessibility, such as links or buttons.\n2. Check for any event handlers or scripts attached to these elements that are triggered by mouse clicks (onmousedown event) but do not have an equivalent keyboard event (onkeydown event).\n3. Look for any missing keyboard event handling logic in the JavaScript code that might affect keyboard accessibility.\n4. Ensure that all interactive elements can be easily accessed and triggered using keyboard navigation alone."
+            },
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\" onmousedown=\"return true;\">Home</a></li>",
+                "CoT": "To find the accessibility issue related to missing `onmousedown` event or keyboard accessibility, I will look for interactive elements on the website that require user interaction. Specifically, I will look for elements like buttons, links, or form inputs that are missing certain keyboard accessibility features.\n\nI will examine each interactive element in the HTML code to ensure that they have keyboard accessibility. This can include making sure that each clickable element can also be activated using the keyboard only.\n\nIn this case, I see that there is a `<a>` tag within the navigation bar. I will check to see if this link is keyboard accessible and if it supports keyboard events like `onmousedown`.\n\nLet me check the `<a>` tag in the navigation bar to ensure it is keyboard accessible."
+            },
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+                "CoT": "First, let's identify any interactive elements on the page that might require keyboard accessibility. In this case, the navigation links in the `<nav>` element could be interactive elements that should be accessible via keyboard.\n\nNext, we need to check if the navigation links have any keyboard interaction associated with them. In this case, the navigation links are `<a>` tags without any text content within the anchor tag itself. This could be problematic for keyboard users because they might not be able to identify the links easily.\n\nTo fix this accessibility issue, we should ensure that the navigation links have visible text content within the anchor tag to make them properly accessible via keyboard navigation. For example, we can modify the anchor tags in the navigation bar like this:\n\n```html\n<nav>\n    <ul>\n        <li><a href=\"#home\">Home</a></li>\n        <li><a href=\"#laptops\">Laptops</a></li>\n        <li><a href=\"#about\">About</a></li>\n        <li><a href=\"#contact\">Contact</a></li>\n    </ul>\n</nav>\n```\n\nBy adding text content within the anchor tags, keyboard users will be able to easily navigate through the navigation links on the page."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">",
+                "CoT": "Step 1: Identify the issue - The issue is related to the use of a meta refresh with a timeout in the HTML code.\n\nStep 2: Understand the impact - Using a meta refresh with a timeout can be problematic for users with certain disabilities, such as users who may require more time to read and interact with the content on the page.\n\nStep 3: Locate the specific code - Look for the meta tag with the attribute \"http-equiv\" set to \"refresh\" in the HTML code.\n\nLet's find and address the issue in the provided HTML code."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=actual-page.html\">",
+                "CoT": "To find the accessibility issue related to the use of meta refresh with a time-out in the HTML code, we need to consider the impact it may have on users with disabilities. Here are the steps to identify the problem:\n\n1. Understand the issue: The use of meta refresh with a time-out automatically redirects users to another page after a specified time period. This can be problematic for users who may require more time to read and understand the content on the current page, especially for users with certain disabilities such as visual impairments or cognitive disabilities.\n\n2. Consider accessibility principles: According to Web Content Accessibility Guidelines (WCAG), providing users with control over content changes is essential for accessibility. Users should have the ability to pause, stop, or control any automatic updates or changes on a webpage. This helps users with disabilities to navigate and interact with the content at their own pace.\n\n3. Evaluate the impact on users: In the given HTML code, the meta refresh tag with a content attribute set to 0 automatically refreshes the page with no delay. This can be disorienting for users who rely on screen readers, keyboard navigation, or other assistive technologies as it interrupts their workflow and may cause difficulties in accessing the content.\n\n4. Solution: To address this accessibility issue, the meta refresh tag with a time-out should be removed or adjusted to allow users to control the refresh behavior. Providing users with a manual option to trigger the refresh or navigate to the new content would improve the accessibility of the webpage.\n\nIn summary, the accessibility issue in the provided HTML code is the use of meta refresh with a time-out that restricts users' control over content changes and may disrupt the user experience for individuals with disabilities."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5\">",
+                "CoT": "Step 1: Identify the issue\n- The issue is that a meta refresh with a time-out is used, which can be problematic for accessibility as it can interfere with users who rely on screen readers or users who have difficulty processing dynamic content changes.\n\nStep 2: Locate the specific problem in the HTML\n- In the provided HTML, the meta refresh tag is used with a content attribute set to 0:\n```html\n<meta http-equiv=\"refresh\" content=\"0\">\n```\n\nStep 3: Determine potential impact on accessibility\n- The meta refresh tag with a content attribute set to 0 will automatically refresh the page after 0 seconds, causing content to change without user interaction. This can be disorienting for users who rely on screen readers or users with cognitive disabilities.\n\nStep 4: Propose a solution\n- To address this accessibility issue, consider removing the meta refresh tag from the HTML code or increasing the time-out value to allow users more time to process the content before any automatic refresh occurs. Alternatively, consider implementing a different approach to provide dynamic content updates that are more user-friendly and accessible."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "",
+                "CoT": "Step 1: Identify the issue:\n\nThe issue to look for is the use of meta refresh with a time-out, as it can be problematic for accessibility.\n\nStep 2: Locate the meta refresh tag:\n\nIn the provided HTML code, we can see a meta refresh tag at the end of the body section:\n```html\n<meta http-equiv=\"refresh\" content=\"0\">\n```\n\nStep 3: Determine if it's an accessibility issue:\n\nThe use of meta refresh can be problematic for accessibility as it can interfere with users' control over the content. It can cause issues for users who rely on screen readers or keyboard navigation as it automatically refreshes the page without warning. This can be disorienting and confusing for some users.\n\nStep 4: Suggest a fix:\n\nInstead of using meta refresh, it's better to use standard HTML and CSS techniques to implement any desired behavior, such as using JavaScript for dynamic content updates or redirects. Removing the meta refresh tag would be a good step towards improving accessibility for all users.\n\nIn this case, the meta refresh tag with a time-out should be removed to address the accessibility issue related to automatically refreshing the page without user control."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=pageurl\">",
+                "CoT": "Step 1: Identify the potential accessibility issue related to the \"meta refresh with a time-out\" for users who may have limited cognitive abilities or require more time to interact with content.\n\nStep 2: Consider how the auto-refresh functionality may disrupt the user experience for individuals who rely on assistive technologies or who may have difficulty processing information quickly.\n\nStep 3: Evaluate if the auto-refresh behavior could cause confusion or prevent users from navigating the website at their own pace, potentially violating the principle of \"operable\" in web accessibility guidelines.\n\nStep 4: Further analyze if there are alternative methods to achieve the same functionality without imposing a time restriction that could be a barrier for some users.\n\nStep 5: Propose a solution or recommendation to remove or adjust the auto-refresh feature to improve accessibility and ensure all users can interact with the website effectively."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0; URL=.\">",
+                "CoT": "To identify and fix the accessibility issue related to the use of meta refresh with a time-out in the HTML code:\n1. Understand the issue: The use of meta refresh with a time-out can be problematic for users with disabilities, as it can interfere with their ability to interact with the page content or navigate it using assistive technologies such as screen readers.\n2. Look for the meta refresh tag: In the given HTML code, we can see a meta refresh tag with a content attribute set to \"0\". This meta refresh tag is causing the page to refresh automatically after 0 seconds.\n3. Assess the impact: The automatic refresh can be disorienting for users, especially for those who rely on assistive technologies to navigate the page, as it disrupts their reading or interaction with the content.\n4. Consider alternative solutions: Instead of using a meta refresh tag with a time-out, it is recommended to provide users with control over when they want to refresh the page, such as through a manual refresh option or a notification prompting them about the refresh.\n5. Implement the fix: To address the accessibility issue, remove or modify the meta refresh tag in the HTML code to ensure that users have full control over the page refresh process.\n6. Verify the fix: After making the changes, test the updated code to ensure that the issue has been resolved and that users can interact with the page effectively without any automatic refresh disruptions."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=http://yourwebsite.com\">",
+                "CoT": "Step 1: Identify the issue - The issue here is that a meta refresh tag with a time-out is being used.\n\nStep 2: Understand the problem - The use of meta refresh tags with a time-out can be problematic for accessibility, as it can interfere with user control and navigation. It can cause frustration for users who are trying to interact with the website at their own pace.\n\nStep 3: Determine a solution - The meta refresh tag with a time-out should be removed to ensure better accessibility for all users. If any automatic refresh or redirection is needed, it should be implemented in a user-friendly way that allows users to control or pause the action.\n\nLet me know if you need help implementing the solution."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<!-- This meta refresh tag causes accessibility issues by automatically refreshing the page. Consider removing it or providing user control over the refresh. -->",
+                "CoT": "To identify and address the accessibility issue related to the use of meta refresh with a time-out in the provided HTML code, we need to follow these steps:\n\n1. **Understand the Issue**:\n   - Meta refresh with a time-out automatically redirects users to another page after a specified time. This practice can be problematic for users who may require more time to read and interact with content, such as users with disabilities or older adults.\n  \n2. **Identify the Code**:\n   - Look for the `<meta http-equiv=\"refresh\" content=\"0\">` tag in the HTML code. This is the tag that triggers the automatic refresh or redirect.\n  \n3. **Evaluate Impact on Accessibility**:\n   - Consider how the automatic refreshing behavior may affect users with disabilities, such as those using screen readers or assistive technologies. These users may not have enough time to process the content before the redirection.\n  \n4. **Recommend Solution**:\n   - To improve accessibility, remove the `<meta http-equiv=\"refresh\" content=\"0\">` tag from the HTML code. \n   - Instead, provide users with control over when and how they interact with the content, avoiding any unexpected page changes.\n\nBy following these steps, you can effectively identify and address the accessibility issue related to the use of meta refresh with a time-out in the provided HTML code."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<a href=\"#home\">Return to Home</a>",
+                "CoT": "1. Identify the issue: The problem is that a meta refresh with a time-out is used in the HTML code.\n2. Understand the impact: Using meta refresh can be problematic for accessibility because it can interrupt users who rely on screen readers or keyboard navigation to access the content. It may also cause issues for users who have certain cognitive disabilities or those who need additional time to interact with the content.\n3. Determine the solution: Instead of using meta refresh for automatic redirection, it is recommended to provide manual control to users through a button or link that allows them to navigate to the refreshed content. This way, users have the autonomy to choose when to move to a new page.\n4. Implement the solution: Remove the meta refresh tag from the HTML code and replace it with a user-controlled method for navigation. For example, you can add a button or a link that users can click to proceed to another page.\n5. Test the solution: After making the changes, test the website to ensure that users can easily navigate to the new page without any automatic redirection. Test with screen readers, keyboard navigation, and other accessibility tools to verify the improved accessibility of the website."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<!-- <meta http-equiv=\"refresh\" content=\"0\"> -->",
+                "CoT": "1. The meta refresh tag with a time-out is used in the HTML document.\n2. Check if the meta refresh tag is used for redirecting users to another page automatically after a certain time.\n3. Confirm whether this auto-redirection behavior may cause accessibility issues for users who may need more time to interact with the content.\n4. Determine if the meta refresh tag with a time-out violates the accessibility principle of providing users with control over the content they interact with.\n5. Identify the potential solution, such as allowing users to manually trigger any content updates or changes instead of automatic redirection.\n6. Suggest removing the meta refresh tag with a time-out or providing users with an option to disable the automatic redirection feature to improve accessibility."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5\"> <!-- Refresh after 5 seconds -->",
+                "CoT": "Sure! Let's go through the steps to identify the accessibility issue related to the use of meta refresh with a time-out in the provided HTML code:\n\n1. **Understand the Issue**: The use of meta refresh with a time-out can be problematic for accessibility because it can disrupt users who rely on assistive technologies such as screen readers. It may prevent users from having enough time to interact with or read the content on the page before it automatically refreshes.\n\n2. **Locate the Problem**: In the given HTML code, we can see the following line:\n```html\n<meta http-equiv=\"refresh\" content=\"0\">\n```\n\n3. **Analyze the Impact**: This meta refresh tag with a time-out of 0 indicates that the page will automatically refresh immediately upon loading. This can be disorienting for users who may need more time to navigate the content or who may not be able to perceive the change in content quickly.\n\n4. **Propose a Solution**: To address this accessibility issue, consider removing the meta refresh tag entirely or adjusting the time-out value to allow users enough time to interact with the content before any automatic refresh occurs. If a page refresh is necessary for some reason, consider providing a user-controlled mechanism to trigger the refresh instead of an automatic process.\n\nSo, in this case, the problem related to the use of a meta refresh with a time-out has been identified in the HTML code provided."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0; url=index.html\">",
+                "CoT": "Step 1: Reviewing the HTML structure to identify any <marquee> elements.\nStep 2: Checking if any <marquee> elements are present in the code provided.\nStep 3: If a <marquee> element is found, determining its purpose and considering alternative methods to achieve the same result."
+            },
+            {
+                "offending_line": "None",
+                "fixed_line": "",
+                "CoT": "1. Look for any <marquee> element in the HTML code.\n2. Identify if any <marquee> element is being used in the code provided.\n3. Mention that the <marquee> element should not be used as it can cause accessibility issues for some users, especially those with cognitive or visual impairments."
+            },
+            {
+                "offending_line": "No <marquee> element found",
+                "fixed_line": "NONE",
+                "CoT": "1. Look through the html code provided for any <marquee> elements.\n2. If there are no <marquee> elements, then the code does not violate the rule specified.\n3. If there is a <marquee> element present, it should be removed or replaced with a more accessible alternative."
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"> <!-- This meta tag refreshes the page every 0 seconds. This behavior may be considered as problematic. -->",
+                "CoT": "To find and fix the accessibility issue related to the use of the `<marquee>` element, I will need to follow these steps:\n\n1. Scan through the HTML code provided to search for any instances of the `<marquee>` element.\n2. If the `<marquee>` element is found, I will need to consider if it is being used for essential functionality or if it is purely for decorative purposes.\n3. If the `<marquee>` element is used for essential functionality, I will need to find an accessible alternative to ensure all users can access the content.\n4. If the `<marquee>` element is used for decorative purposes, I will remove it and find a more accessible way to implement any similar effects.\n\nLet me check the HTML code for any presence of the `<marquee>` element."
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>DELL Laptops</title>",
+                "CoT": "1. Identify the `<title>` element in the HTML.\n2. Check the content of the `<title>` element to ensure it is not empty.\n3. If the `<title>` element is empty, that would be the accessibility-related issue to address."
+            },
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>DELL Laptops - Latest Innovation in Computing</title>",
+                "CoT": "First, let's identify where the `<title>` element is in the HTML code. The `<title>` element is located within the `<head>` section of the HTML document.\n\nUpon reviewing the HTML code provided, we can see that the `<title>` element is present, however, it does not have any content within it. The `<title>` element is used to specify a title for the HTML document, which is important for accessibility and SEO purposes.\n\nTo fix the issue of the empty `<title>` element, we need to provide a descriptive and meaningful title for the document. This title should succinctly describe the content of the webpage to assist users and search engines in understanding the purpose of the page.\n\nTherefore, to address the accessibility issue related to an empty `<title>` element, we should update it as follows:\n\n```html\n<title>DELL Laptops - Latest Innovation in Computing</title>\n```"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+                "CoT": "To find the problem of \"anchor element contains no text\", we need to look for any anchor `<a>` elements that do not contain any text between the opening and closing tags. \n\nIn the provided HTML code, the first anchor element within the navigation bar does not contain any text between the opening and closing tags:\n```html\n<li><a href=\"#home\"></a></li>\n```\n\nThis can be considered an accessibility issue because screen readers rely on text within anchor elements to provide meaningful information and context to users who may have visual impairments. An empty anchor element like this may confuse users and make it difficult for them to understand the purpose of the link. It is recommended to always provide descriptive text within anchor elements to ensure accessibility for all users. \n\nIn this case, adding descriptive text within the anchor element like \"Home\" would make it more accessible:\n```html\n<li><a href=\"#home\">Home</a></li>\n``` \n\nBy providing descriptive text within all anchor elements, we can improve the accessibility and usability of the website for all users."
+            },
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\">Home</a>",
+                "CoT": "Step 1: Identify all the anchor elements in the HTML code.\nStep 2: Check if each anchor element contains text between the opening and closing tags.\nStep 3: If any anchor element does not contain text between the tags, then it is considered a problem in terms of accessibility.\nStep 4: Provide a solution to add descriptive text inside the anchor element to make it accessible."
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang='en'>",
+                "fixed_line": "<html lang='en' xmlns='http://www.w3.org/1999/xhtml'>",
+                "CoT": "Step 1: Check if the document language is identified in the HTML code.\nStep 2: Look for the \"lang\" attribute in the opening <html> tag.\nStep 3: Verify if the value of the \"lang\" attribute is set to the appropriate language code, such as \"en\" for English.\nStep 4: If the document language is not identified or the incorrect language code is used, it would be flagged as an accessibility issue."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">",
+                "CoT": "Step 1: Identify the language attribute in the opening html tag. \n\nStep 2: Check if the language attribute value is correctly set to the language being used on the website. \n\nStep 3: Verify if the language attribute value is correct and follows the correct format."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en\">",
+                "CoT": "To address the issue of the document language not being identified or being incorrect, we need to ensure that the language of the document is properly specified for accessibility purposes. Here's how we can proceed step by step:\n\n1. Look for the `<html>` tag at the beginning of the document.\n2. Check for the `lang` attribute within the `<html>` tag to specify the language of the document.\n3. Verify that the value of the `lang` attribute is set to the correct language code (e.g., \"en\" for English).\n4. If the `lang` attribute is missing or set incorrectly, add/modify it to reflect the appropriate language code.\n\nLet's go through the HTML provided and see if the document language is identified correctly."
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xml:lang=\"en\">",
+                "CoT": "Step 1: Check the `<html>` tag for the `lang` attribute. It should specify the language of the document.\n\nStep 2: Verify that the value of the `lang` attribute is set to the correct language code (e.g., \"en\" for English).\n\nLet's go ahead and check the HTML code for this particular issue."
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<input id=\"lname\" name=\"lname\" type=\"text\"><label for=\"lname\">Last Name</label><label for=\"lname\">Surname</label>",
+                "fixed_line": "<input id=\"lname\" name=\"lname\" type=\"text\"><label for=\"lname\">Last Name</label>",
+                "CoT": "1. Identify all input elements in the HTML code.\n2. Check each input element to see if it has more than one associated label.\n3. If any input element has more than one associated label, then it violates the rule."
+            },
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+                "CoT": "To find and fix the issue with an input element having more than one associated label, we need to:\n\n1. Look for any input elements in the HTML code.\n2. Check if each input element has more than one associated label.\n3. If we find an input element with multiple associated labels, we will need to correct it by associating each input element with only one label.\n\nLet's start by examining the HTML code for any input elements."
+            },
+            {
+                "offending_line": "<a href=\"#laptops\">Laptops</a>",
+                "fixed_line": "<label for=\"laptops\">Laptops</label><input type=\"text\" id=\"laptops\">",
+                "CoT": "To find the problem of an input element having more than one associated label, we need to:\n\n1. Identify all input elements in the HTML code.\n2. Check each input element to see if it has associated labels.\n3. Confirm if any input element has more than one label associated with it. \n\nLet's start by looking for all input elements in the HTML code."
+            },
+            {
+                "offending_line": "",
+                "fixed_line": "<label for=\"unique_id\">Input Label</label><input id=\"unique_id\" type=\"text\">",
+                "CoT": "Step 1: Identify all the input elements in the HTML code provided. Step 2: Look for associated labels for each input element. Step 3: Check if any input element has more than one associated label."
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+                "CoT": "To check if the elements have complete start and end tags, I will look at each element in the HTML code provided and make sure they all have a complete start and end tag. \n\nTo check if the id attribute is unique, I will look for any elements that have an id attribute and check if each id is unique within the document."
+            }
+        ]
+    }
+]

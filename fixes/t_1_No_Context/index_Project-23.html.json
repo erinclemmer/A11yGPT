@@ -1,0 +1,32 @@
+[
+    {
+        "problem_type": "image_alt_text",
+        "offending_line": "<input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>",
+        "fixed_line": "<input type=\"text\" id=\"address\" name=\"address\" required aria-label=\"Address\">"
+    },
+    {
+        "problem_type": "link_color_contrast",
+        "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+        "fixed_line": "<a href=\"#\" class=\"button\" style=\"color: white;\"> View Menu</a>"
+    },
+    {
+        "problem_type": "images without alt text",
+        "offending_line": "<img src='background.jpg'>",
+        "fixed_line": "<img src='background.jpg' alt='background image'>"
+    },
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen></iframe>",
+        "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/your-video-id\" frameborder=\"0\" allowfullscreen title=\"Featured Video\"></iframe>"
+    },
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>",
+        "fixed_line": "<input type=\"text\" id=\"address\" name=\"address\" required placeholder=\"Enter your address\">"
+    },
+    {
+        "problem_type": "Accessibility",
+        "offending_line": "<font size=\"5\"> View Menu</font>",
+        "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>"
+    }
+]

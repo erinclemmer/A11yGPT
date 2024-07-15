@@ -1,0 +1,306 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+                "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1\" />"
+            },
+            {
+                "offending_line": "<img src=\"food1.jpg\" alt=\"Food 1\">",
+                "fixed_line": "<img src=\"food1.jpg\" alt=\"Food 1\" aria-label=\"Food 1\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<button aria-label='Add to Cart'>Add to Cart</button>"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+                "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">"
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label>\n<input type=\"text\" id=\"search\" aria-label=\"Search\" placeholder=\"Search...\">"
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<label for=\"food1\">Add to Cart</label><button id=\"food1\">Add to Cart</button>"
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label>\n<input type=\"text\" id=\"search\" placeholder=\"Search...\" aria-label=\"Search for menu items\">"
+            },
+            {
+                "offending_line": "<button>Add to Cart</button>",
+                "fixed_line": "<label for='cart-button'>Add to Cart</label><button id='cart-button'>Add to Cart</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video src='background-video.mp4' autoplay loop muted></video>",
+                "fixed_line": "<video src='background-video.mp4' autoplay loop muted playsinline></video>"
+            },
+            {
+                "offending_line": "<video controls autoplay loop>",
+                "fixed_line": "<video controls loop>"
+            },
+            {
+                "offending_line": "<video autoplay controls>",
+                "fixed_line": "<video autoplay muted controls>"
+            },
+            {
+                "offending_line": "<video autoplay controls>",
+                "fixed_line": "<video controls>"
+            },
+            {
+                "offending_line": "<video autoplay controls><source src='video.mp4' type='video/mp4'></video>",
+                "fixed_line": "<video controls><source src='video.mp4' type='video/mp4'></video>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>"
+            },
+            {
+                "offending_line": "<video autoplay src=\"background_video.mp4\">",
+                "fixed_line": "<video autoplay muted src=\"background_video.mp4\">"
+            },
+            {
+                "offending_line": "<video autoplay controls>This is a video</video>",
+                "fixed_line": "<video controls muted>This is a video</video>"
+            },
+            {
+                "offending_line": "<video autoplay src=\"video.mp4\" controls>",
+                "fixed_line": "<video src=\"video.mp4\" controls>"
+            },
+            {
+                "offending_line": "<video src='background-video.mp4' autoplay></video>",
+                "fixed_line": "<video src='background-video.mp4' autoplay muted></video>"
+            },
+            {
+                "offending_line": "<video controls autoplay>\n<source src=\"video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+                "fixed_line": "<video controls>\n<source src=\"video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<video src='video.mp4' autoplay></video>",
+                "fixed_line": "<video src='video.mp4' autoplay muted></video>"
+            },
+            {
+                "offending_line": "<audio autoplay>",
+                "fixed_line": "<audio>"
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" aria-label=\"Food Item Name, Description of the food item, $10.99\">"
+            },
+            {
+                "offending_line": "<audio controls autoplay>\n  <source src=\"background_music.mp3\" type=\"audio/mpeg\">\n</audio>",
+                "fixed_line": "<audio controls>\n  <source src=\"background_music.mp3\" type=\"audio/mpeg\">\n</audio>"
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\">\n          <img src=\"food1.jpg\" alt=\"Food 1\">\n          <h3>Food Item Name</h3>\n          <p>Description of the food item.</p>\n          <span class=\"price\">$10.99</span>\n          <!-- Add to cart button -->\n          <button>Add to Cart</button>\n        </div>"
+            },
+            {
+                "offending_line": "<video autoplay><source src='video.mp4' type='video/mp4'></video>",
+                "fixed_line": "<video autoplay muted><source src='video.mp4' type='video/mp4'></video>"
+            },
+            {
+                "offending_line": "<audio id=\"background-audio\" src=\"background.mp3\" autoplay></audio>",
+                "fixed_line": "<audio id=\"background-audio\" src=\"background.mp3\" autoplay muted></audio>"
+            },
+            {
+                "offending_line": "<audio src='music.mp3' autoplay controls></audio>",
+                "fixed_line": "<audio src='music.mp3' controls></audio>"
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<p style=\"font-size: 1.2em;\">Delicious food just for you!</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"if(event.key === 'Enter'){ExternalFunction()}\" tabindex=\"0\">"
+            },
+            {
+                "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+                "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"ExternalFunction()\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30; url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30; url=https://example.com/\">"
+            },
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<p style=\"font-size: 1.2em;\">Delicious food just for you!</p>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=http://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=http://example.com/\">\n<meta http-equiv=\"refresh\" content=\"0;url=#\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=http://www.example.com'>",
+                "fixed_line": "<meta http-equiv='refresh' content='5;url=http://www.example.com'>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.restaurant.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.restaurant.com/\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=example.com\">\n<meta http-equiv=\"Content-Security-Policy\" content=\"upgrade-insecure-requests\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://www.example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='5;url=example.html'>",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=example.html'>"
+            },
+            {
+                "offending_line": "<meta http-equiv='refresh' content='30;url=/' />",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=/' />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\" aria-hidden=\"true\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=https://www.example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30;url=https://www.example.com/\" aria-hidden=\"true\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30;url=https://example.com/\"> should be removed."
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<p style=\"font-size: 1.5em;\"> Delicious food just for you!</p>"
+            },
+            {
+                "offending_line": "<marquee>Welcome to Our Restaurant</marquee>",
+                "fixed_line": "<h1>Welcome to Our Restaurant</h1>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu</title>"
+            },
+            {
+                "offending_line": "<title>Restaurant Menu</title>",
+                "fixed_line": "<title>Restaurant Menu - Home</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu<span class=\"sr-only\"> - Link to Menu</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu</a> Click here to view our menu"
+            },
+            {
+                "offending_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>",
+                "fixed_line": "<a href=\"#menu\" class=\"btn\">View Menu</a>View Menu"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"eg\">",
+                "fixed_line": "<html lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label>\n<label for=\"search\">Search:</label>"
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">"
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><br>"
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:</label><label for=\"sort\">Sort by:</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+                "fixed_line": "<font size=\"5\"> Delicious food just for you!</font>"
+            },
+            {
+                "offending_line": "<label for=\"search\">Search:</label>",
+                "fixed_line": "<label for=\"search\">Search:<input type=\"text\" id=\"search\" placeholder=\"Search...\"></label>"
+            }
+        ]
+    }
+]

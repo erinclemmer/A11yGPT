@@ -1,0 +1,7 @@
+[
+    {
+        "problem_type": "missing_text_content",
+        "offending_line": "<li><a href=\"#services\"></a></li>",
+        "fixed_line": "<li><a href=\"#services\">Services</a></li>"
+    }
+]

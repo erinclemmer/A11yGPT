@@ -1,0 +1,357 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Sample Video' controls><source src='video/sample-video.mp4' type='video/mp4'><span>Sample Video</span></video>"
+            },
+            {
+                "offending_line": "<source src=\"video/sample-video.mp4\" type=\"video/mp4\">",
+                "fixed_line": "<source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample Video\">"
+            },
+            {
+                "offending_line": "Your browser does not support the video tag.",
+                "fixed_line": "<video autoplay>\n<source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample video\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay=\"autoplay\" aria-label=\"video player\">"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay><source src=\"video/sample-video.mp4\" type=\"video/mp4\" alt=\"Sample Video\"></video>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay alt='Sample Video'>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay aria-label='Dell Laptops video' alt='Dell Laptops video'>"
+            },
+            {
+                "offending_line": "<img src='logo.jpg' width='200' height='50'>",
+                "fixed_line": "<img src='logo.jpg' width='200' height='50' alt='DELL logo'>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a><span class=\"hidden\">Link to view laptops</span>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a> (Explore our latest laptops)"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<label for=\"laptops\">View Laptops</label><a id=\"laptops\" class=\"btn\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a> <span class=\"label\">Explore Dell Laptops</span>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay muted>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video controls>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<font color='red'>",
+                "fixed_line": "<span style='color: red;'>"
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">"
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n            Welcome to DELL Laptops\n        </h1>",
+                "fixed_line": "<h1>Welcome to DELL Laptops</h1>"
+            },
+            {
+                "offending_line": "<p style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<p style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">"
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\" class=\"header\">"
+            },
+            {
+                "offending_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">",
+                "fixed_line": "<h1 style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\" role=\"heading\">"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tags should not be used",
+                "fixed_line": "<style> \n b { font-weight: bold; } \n i { font-style: italic; } \n font { font-family: 'Arial', sans-serif; } \n </style>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\" onmousedown=\"if(event.which==1 || event.which==13){ event.preventDefault(); event.target.click(); }\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\" onkeydown=\"if(event.key === 'Enter'){window.location='#laptops'}\" tabindex=\"0\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\" onmousedown=\"this.blur();\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\" onclick=\"handleClick(event)\" onkeydown=\"handleKeyDown(event)\">View Laptops</a>"
+            },
+            {
+                "offending_line": "<a href=\"#laptops\" class=\"btn\">View Laptops</a>",
+                "fixed_line": "<a href=\"#laptops\" class=\"btn\" onkeydown=\"if(event.keyCode===13){location.href='#laptops';}\">View Laptops</a>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;URL=page.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=your-new-page.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=http://www.example.com/\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<!-- Avoid using <marquee> element -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"><!-- Avoid using <meta http-equiv=\"refresh\"> for automatic page refresh -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<p>This page will refresh automatically. Please do not use the <marquee> element for automatic page refresh.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used",
+                "fixed_line": "<p>Please avoid using the <marquee> element for scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p style='color: red;'>Avoid using the <marquee> element for moving text.</p>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<!-- Do not use the <marquee> element for scrolling text -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<!-- This meta tag is used to refresh the page with a 0 second delay. Consider removing it as it may cause accessibility issues. -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<!-- <meta http-equiv=\"refresh\" content=\"0\"> -->"
+            },
+            {
+                "offending_line": "<marquee>Hello World</marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>Hello World</div>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<marquee><meta http-equiv=\"refresh\" content=\"0\"></marquee>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<!-- The following line replaces the use of <marquee> element: -->\n<meta http-equiv=\"refresh\" content=\"0\">"
+            },
+            {
+                "offending_line": "    <meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"><div style=\"display: none;\"></div>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<p class=\"warning\">This page automatically refreshes. Use of auto-refresh is not recommended for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"> <!-- Refresh meta tag, consider removing for improved accessibility -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"> <!-- Refresh meta tag should be removed as it can be disorienting for users -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<p style=\"color: rgb(255, 255, 255); background-color: rgb(0, 0, 0);\">\n\tDo not use the <marquee> element as it is not accessible.\n</p>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n<!-- Code modified: The use of <meta http-equiv=\"refresh\"> element is not recommended for accessibility. -->"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"><span>Refresh is disabled for accessibility</span>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\">\n    <div style=\"display: none\">Do not use the &lt;marquee&gt; element for moving content.</div>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"><div style=\"display:none;\">Do not use the <marquee> element for accessibility reasons.</div>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>DELL Laptops</title>"
+            },
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>DELL Laptops - Home</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            },
+            {
+                "offending_line": "<li><a href=\"#home\"></a></li>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en-US\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" lang=\"en\">"
+            },
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xml:lang=\"en\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": []
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<li><a href=\"#home\">Home</a></li>"
+            },
+            {
+                "offending_line": "<video autoplay>",
+                "fixed_line": "<video autoplay></video>"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0\"/>"
+            },
+            {
+                "offending_line": "<a href=\"#home\"></a>",
+                "fixed_line": "<a href=\"#home\">Home</a>"
+            }
+        ]
+    }
+]

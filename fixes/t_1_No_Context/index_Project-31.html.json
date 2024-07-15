@@ -1,0 +1,22 @@
+[
+    {
+        "problem_type": "missing_label",
+        "offending_line": "<label for=\"event\"></label>",
+        "fixed_line": "<label for=\"event\">Select Event:</label>"
+    },
+    {
+        "problem_type": "alt_text_missing",
+        "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+        "fixed_line": "<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required aria-label=\"Number of Tickets\">"
+    },
+    {
+        "problem_type": "missing alt attribute for image",
+        "offending_line": "<select id=\"event\" name=\"event\">",
+        "fixed_line": "<select id=\"event\" name=\"event\" aria-label=\"Select Event\">"
+    },
+    {
+        "problem_type": "missing label for form input",
+        "offending_line": "<label for=\"event\"></label>",
+        "fixed_line": "<label for=\"event\">Event:</label>"
+    }
+]

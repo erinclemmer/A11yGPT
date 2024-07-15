@@ -1,0 +1,790 @@
+[
+    {
+        "guideline": "1.1.1",
+        "success_criteria": "alt attribute is missing in iframe or img tag",
+        "error_fixes": [
+            {
+                "offending_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
+                "fixed_line": "<img src=\"product1.jpg\" alt=\"ComfortFit T-Shirt\">"
+            }
+        ]
+    },
+    {
+        "guideline": "1.3.1",
+        "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" aria-label=\"Email Address\" placeholder=\"Your email\">"
+            },
+            {
+                "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">",
+                "fixed_line": "<label for=\"name\">Name:</label><input type=\"text\" id=\"name\" name=\"name\" placeholder=\"Your name\">"
+            },
+            {
+                "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+                "fixed_line": "<label for=\"cart-button\">Add to Cart</label><button id=\"cart-button\" onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>"
+            },
+            {
+                "offending_line": "<label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email: <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\"></label>"
+            },
+            {
+                "offending_line": "<input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">",
+                "fixed_line": "<label for=\"email\">Email:</label> <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
+            },
+            {
+                "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\"><span aria-hidden=\"true\">Add to Cart</span><span class=\"sr-only\">Add ComfortFit T-Shirt to Cart</span></button>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.2",
+        "success_criteria": "Audio or video element should avoid automatically playing audio ",
+        "error_fixes": [
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"video-container\" controls muted></video>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"video-container\" controls></video>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video controls src=\"our-story.mp4\" alt=\"Our Story\"></video>"
+            },
+            {
+                "offending_line": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">",
+                "fixed_line": "<section id=\"video-container\" onmouseout=\"PauseVideo()\" aria-hidden=\"true\" tabindex=\"-1\">"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"main-video\" controls playsinline>\n\t<source src=\"our-story.mp4\" type=\"video/mp4\">\n\tYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video controls autoplay=\"false\" id=\"video\" onmouseout=\"PauseVideo()\">\n            <source src=\"our-story.mp4\" type=\"video/mp4\">\n            Your browser does not support the video tag.\n        </video>"
+            },
+            {
+                "offending_line": "<video autoplay controls>",
+                "fixed_line": "<video controls>"
+            },
+            {
+                "offending_line": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">",
+                "fixed_line": "<section id=\"video-container\">"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"video-player\" controls>\n<source src=\"our_story.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"story-video\" controls muted></video>"
+            },
+            {
+                "offending_line": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">",
+                "fixed_line": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">\n\t\t<video src=\"ourStory.mp4\" controls></video>\n\t</section>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"story-video\" controls autoplay=\"false\">\n<source src=\"our_story.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<div id=\"video-container\" aria-hidden=\"true\"></div>"
+            },
+            {
+                "offending_line": "<section id=\"video-container\" onmouseout=\"PauseVideo()\">",
+                "fixed_line": "<section id=\"video-container\">\n        <h2>Our Story</h2>\n        <div id=\"video-container\" aria-hidden=\"true\"></div>\n    </section>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<video id=\"video\" controls>\n<source src=\"#\" type=\"video/mp4\">\n</video>"
+            },
+            {
+                "offending_line": "<video autoplay controls>\n<source src=\"ourstory.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>",
+                "fixed_line": "<video controls>\n<source src=\"ourstory.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+            },
+            {
+                "offending_line": "<video autoplay src='story.mp4'></video>",
+                "fixed_line": "<video src='story.mp4'></video>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></div>",
+                "fixed_line": "<div id=\"video-container\" aria-live=\"off\"></div>"
+            }
+        ]
+    },
+    {
+        "guideline": "1.4.4",
+        "success_criteria": "<b> <i> or <font> tag should not be used",
+        "error_fixes": [
+            {
+                "offending_line": "<b>&copy; 2023 Calvin Kelvin Products</b>",
+                "fixed_line": "<p>&copy; 2023 Calvin Kelvin Products</p>"
+            },
+            {
+                "offending_line": "<label for=\"email\">Email:</label>\n                <label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email:</label>"
+            },
+            {
+                "offending_line": "<p>Your go-to destination for <i>quality</i> products.</p>",
+                "fixed_line": "<p>Your go-to destination for <em>quality</em> products.</p>"
+            },
+            {
+                "offending_line": "<b> or <i> tags should not be used for styling. Use CSS instead.",
+                "fixed_line": "<p style=\"font-weight: bold;\"> or <p style=\"font-style: italic;\"> should be used instead for styling."
+            },
+            {
+                "offending_line": "<b> or <i> tags should not be used for styling purposes.",
+                "fixed_line": "<strong> or <em> tags should be used instead for semantic meaning."
+            },
+            {
+                "offending_line": "<b> or <font>",
+                "fixed_line": "<strong> or <em> tags can be used instead"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#\"><strong>Home</strong></a></li>"
+            },
+            {
+                "offending_line": "<b> Classic Denim Jeans </b>",
+                "fixed_line": "<strong> Classic Denim Jeans </strong>"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#\"><em>Home</em></a></li>"
+            },
+            {
+                "offending_line": "<b> <i>",
+                "fixed_line": "<em>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "<p><strong> <em> or <span> tag should be used</p>"
+            },
+            {
+                "offending_line": "<b>, <i> or <font> tags should not be used for styling as they are not accessible to all users.",
+                "fixed_line": "<b>, <i> or <font> tags should not be used for styling as they are not accessible to all users."
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<span>"
+            },
+            {
+                "offending_line": "<b> tag is used in the following line: <b>&copy; 2023 Calvin Kelvin Products</b>",
+                "fixed_line": "<strong>&copy; 2023 Calvin Kelvin Products</strong>"
+            },
+            {
+                "offending_line": "<b>ComfortFit T-Shirt</b>",
+                "fixed_line": "<strong>ComfortFit T-Shirt</strong>"
+            },
+            {
+                "offending_line": "<b> or <font> tag should not be used",
+                "fixed_line": "<strong> or  tag should be used instead"
+            },
+            {
+                "offending_line": "<div class=\"product-card\">\n            <h2>Classic Denim Jeans</h2>",
+                "fixed_line": "<div class=\"product-card\">\n            <strong>Classic Denim Jeans</strong>"
+            },
+            {
+                "offending_line": "<font color='red'>Your go-to destination for quality products.</font>",
+                "fixed_line": "<p style='color: red;'>Your go-to destination for quality products.</p>"
+            },
+            {
+                "offending_line": "<b>, <i>, or <font> tags should not be used for styling. Use CSS instead.",
+                "fixed_line": "NONE"
+            },
+            {
+                "offending_line": "<font size='4' color='red'>Example text</font>",
+                "fixed_line": "<span style='font-size: 1.2em; color: red;'>Example text</span>"
+            },
+            {
+                "offending_line": "<b>Calvin Kelvin Products</b>",
+                "fixed_line": "<strong>Calvin Kelvin Products</strong>"
+            },
+            {
+                "offending_line": "<font color=\"red\">Contact Us</font>",
+                "fixed_line": "<span style=\"color: red;\">Contact Us</span>"
+            },
+            {
+                "offending_line": "<b>, <i>",
+                "fixed_line": "<strong>, <em>"
+            },
+            {
+                "offending_line": "<font color='red' size='4'>",
+                "fixed_line": "<span style='color: red; font-size: 1.2em;'>"
+            },
+            {
+                "offending_line": "<b> or <i> tags should not be used for styling purposes.",
+                "fixed_line": "Use CSS for styling instead of <b>, <i>, or <font> tags."
+            },
+            {
+                "offending_line": "<font face=\"Arial\" color=\"blue\">",
+                "fixed_line": "<span style=\"font-family: Arial; color: blue;\">"
+            },
+            {
+                "offending_line": "<font face='Arial'>",
+                "fixed_line": "<span style='font-family: Arial;'>"
+            },
+            {
+                "offending_line": "<i>",
+                "fixed_line": "<em>"
+            },
+            {
+                "offending_line": "<b> or <i> tags are used in the following lines:",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+                "fixed_line": "<button onclick=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tags should not be used",
+                "fixed_line": "<b> <i> or <font> tags should not be used"
+            },
+            {
+                "offending_line": "<p>Your go-to destination for quality products.</p>",
+                "fixed_line": "<p>Your go-to destination for quality products.</p>"
+            },
+            {
+                "offending_line": "<p>Your go-to destination for <b>quality</b> products.</p>",
+                "fixed_line": "<p>Your go-to destination for <strong>quality</strong> products.</p>"
+            },
+            {
+                "offending_line": "<font>",
+                "fixed_line": "<div>"
+            },
+            {
+                "offending_line": "<h1><b>Calvin Kelvin Products</b></h1>",
+                "fixed_line": "<h1><strong>Calvin Kelvin Products</strong></h1>"
+            },
+            {
+                "offending_line": "<font> tag should not be used",
+                "fixed_line": "<div style=\"font-family: Arial;\">"
+            },
+            {
+                "offending_line": "<p>Stay stylish and comfortable with our classic denim jeans.</p>",
+                "fixed_line": "<p>Stay stylish and comfortable with our classic denim jeans.</p>"
+            },
+            {
+                "offending_line": "<b> tag is used in the website which is not recommended for semantic HTML.",
+                "fixed_line": "Instead of using <b> tag, <strong> tag should be used for semantic bold text."
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "NONE"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tags should not be used for styling. Use CSS instead.",
+                "fixed_line": "Replace <b> <i> or <font> tags with appropriate CSS styling."
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Products</a></li>",
+                "fixed_line": "<li><a href=\"#\"><em>Products</em></a></li>"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tag should not be used",
+                "fixed_line": "<span> tag should be used instead"
+            },
+            {
+                "offending_line": "<b> <i> or <font> tags should not be used.",
+                "fixed_line": "<p>&copy; 2023 Calvin Kelvin Products</p>"
+            },
+            {
+                "offending_line": "<i> or <font> tag should not be used",
+                "fixed_line": "<em> tag should be used"
+            },
+            {
+                "offending_line": "<b> or <font> tag should not be used",
+                "fixed_line": "Use CSS for styling instead"
+            },
+            {
+                "offending_line": "<b> or <i> tags are used in the html",
+                "fixed_line": "Replace <b> and <i> tags with appropriate semantic elements like <strong> and <em>"
+            },
+            {
+                "offending_line": "<b> or <font> tags should not be used for styling. Use CSS classes instead.",
+                "fixed_line": "<b> or <font> tags should not be used for styling. Use CSS classes instead."
+            }
+        ]
+    },
+    {
+        "guideline": "2.1.1",
+        "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+        "error_fixes": [
+            {
+                "offending_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>",
+                "fixed_line": "<button onmousedown=\"addToCart('ComfortFitTShirt')\" onkeydown=\"addToCart('ComfortFitTShirt')\">Add to Cart</button>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.1",
+        "success_criteria": "meta refresh with a time-out is used.",
+        "error_fixes": [
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=home.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30;url=home.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=page2.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=page2.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=redirect.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=redirect.html\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30;url=https://example.com\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://example.com\">"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=https://example.com/\">",
+                "fixed_line": "<meta http-equiv='refresh' content='0;url=https://example.com/' />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"30; url=index.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"30; url=index.html\">\n<meta http-equiv=\"refresh\" content=\"0;url=index.html;\" />"
+            },
+            {
+                "offending_line": "<meta http-equiv=\"refresh\" content=\"5;url=landingpage.html\">",
+                "fixed_line": "<meta http-equiv=\"refresh\" content=\"5;url=landingpage.html\">"
+            }
+        ]
+    },
+    {
+        "guideline": "2.2.2",
+        "success_criteria": "<marquee> element should not be used.",
+        "error_fixes": [
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p>Please avoid using the <marquee> element as it is not accessible. </p>"
+            },
+            {
+                "offending_line": "<marquee>Browse our products for the latest deals and discounts</marquee>",
+                "fixed_line": "<span>Browse our products for the latest deals and discounts</span>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- <marquee> element should not be used. -->"
+            },
+            {
+                "offending_line": "<marquee>Welcome to Calvin Kelvin Products</marquee>",
+                "fixed_line": "<p>Welcome to Calvin Kelvin Products</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<div role='alert' aria-hidden='true'>Please do not use the &lt;marquee&gt; element.</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<marquee> element should not be used. Consider using CSS animations or other alternatives for moving text or images."
+            },
+            {
+                "offending_line": "<marquee> element used in the code.",
+                "fixed_line": "Replace <marquee> element with CSS animations for moving text."
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p><strong>WARNING:</strong> The use of &lt;marquee&gt; element is discouraged for accessibility reasons. Consider using alternative methods for animations or scrolling effects.</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='error-message' role='alert'>Please do not use the <marquee> element for moving content.</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div> element with CSS animation"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style='text-align:center;'>Scrolling text in a more accessible way</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;' aria-hidden='true'>"
+            },
+            {
+                "offending_line": "<marquee> element is used, which should not be used.",
+                "fixed_line": "<marquee> element is used, which should not be used. Consider using CSS animations or JavaScript to achieve similar effects."
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<!-- Please remove the <marquee> element as it is not a recommended practice -->"
+            },
+            {
+                "offending_line": "<marquee>Your go-to destination for quality products.</marquee>",
+                "fixed_line": "<p>Your go-to destination for quality products.</p>"
+            },
+            {
+                "offending_line": "<marquee direction='left'>Calvin Kelvin Products - Quality guaranteed!</marquee>",
+                "fixed_line": "<div>Calvin Kelvin Products - Quality guaranteed!</div>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<marquee> element should not be used. Consider using CSS animations for moving text."
+            },
+            {
+                "offending_line": "<marquee>Welcome to Calvin Kelvin Products</marquee>",
+                "fixed_line": "<div>Welcome to Calvin Kelvin Products</div>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<marquee> element is not accessible and should not be used. To create a moving text effect, consider using CSS animations."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style=\"animation: marquee 5s infinite;\">Do not use &lt;marquee&gt; element for animations.</p>"
+            },
+            {
+                "offending_line": "<marquee></marquee>",
+                "fixed_line": "<div></div>"
+            },
+            {
+                "offending_line": "<marquee direction='left'>Calvin Kelvin Products - Your one-stop shop for quality products.</marquee>",
+                "fixed_line": "<p>Calvin Kelvin Products - Your one-stop shop for quality products.</p>"
+            },
+            {
+                "offending_line": "<marquee>This text is scrolling</marquee>",
+                "fixed_line": "<p style='overflow: hidden; white-space: nowrap;'>This text is scrolling</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p class='marquee'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>Please do not use the <marquee> element.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p> element should not be used."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<strong>Do not use the &lt;marquee&gt; element for scrolling text.</strong>"
+            },
+            {
+                "offending_line": "<h1>Calvin Kelvin Products</h1>",
+                "fixed_line": "<h1>Calvin Kelvin Products</h1>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<marquee> element replaced with CSS animation."
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p class=\"alert\">Please do not use the &lt;marquee&gt; element for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>This site does not support the <marquee> element for accessibility reasons.</p>"
+            },
+            {
+                "offending_line": "<marquee> element.",
+                "fixed_line": "<p class='marquee'>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<!-- Marquee Element Removed --><div>Marquee element should not be used.</div>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style='overflow: hidden;'> element"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div role='alert' aria-hidden='true'>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='text-align:center;'>&lt;marquee&gt; elements should not be used for scrolling text. Please consider alternative approaches such as CSS animations or JavaScript for dynamic content.</div>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<span style='display: block; overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee> element is used in the html which should be avoided.",
+                "fixed_line": "<marquee> element is used in the html which should be avoided. Replace with CSS animations for similar effect."
+            },
+            {
+                "offending_line": "<marquee> element used",
+                "fixed_line": "<marquee> element should not be used"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>This website does not support marquee elements.</p>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p style=\"color: red;\">Please do not use the &lt;marquee&gt; element.</p>"
+            },
+            {
+                "offending_line": "<marquee>This is a scrolling text...</marquee>",
+                "fixed_line": "<div style=\"overflow: hidden;\">This is a scrolling text...</div>"
+            },
+            {
+                "offending_line": "<marquee>No marquee tags here!</marquee>",
+                "fixed_line": "<p>No marquee tags here!</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used",
+                "fixed_line": "<!-- <marquee> element is used -->"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='warning'>Using the <marquee> element for moving text is not accessible. Consider alternative methods for displaying dynamic content.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='color:red;'>Please avoid using the <marquee> element for scrolling text</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<span style='display: inline-block; overflow: hidden; white-space: nowrap;'>"
+            },
+            {
+                "offending_line": "<marquee>This text is scrolling</marquee>",
+                "fixed_line": "<p style=\"animation: scroll-left 15s linear infinite;\">This text is scrolling</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<marquee></marquee>"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='error'>The <marquee> element should not be used.</p>"
+            },
+            {
+                "offending_line": "<marquee> element used",
+                "fixed_line": "<marquee> element not used. Use CSS animations for moving text if needed"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style='overflow: hidden; white-space: nowrap;'><p>Replace <marquee> element with scrolling text</p></div>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div role=\"alert\" aria-live=\"polite\" style=\"overflow: hidden; white-space: nowrap;\">"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<p style='color:red;'>Do not use the <marquee> element for scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p> element with CSS animation"
+            },
+            {
+                "offending_line": "<marquee>This is a scrolling text example.</marquee>",
+                "fixed_line": "<div role='alert' style='white-space: nowrap; overflow: hidden; text-overflow: ellipsis;'>This is a scrolling text example.</div>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p class='marquee'> element, style with CSS to create similar effect"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p>This website does not contain any <marquee> element.</p>"
+            },
+            {
+                "offending_line": "        <h1>Calvin Kelvin Products</h1>",
+                "fixed_line": "<h1>Calvin Kelvin Products</h1>"
+            },
+            {
+                "offending_line": "<marquee> element was found in the code",
+                "fixed_line": "<marquee> element should not be used for accessibility reasons. Use CSS animations or other modern techniques instead."
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p> element with CSS animation or JavaScript should be used instead."
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='alert'>Do not use <marquee> element for scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style='animation: marquee 20s linear infinite;'>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<p style='color:red;text-align:center;'>Attention: This website no longer uses the &lt;marquee&gt; element for scrolling text.</p>"
+            },
+            {
+                "offending_line": "<marquee direction='left'>Follow us: Facebook | Twitter | Instagram</marquee>",
+                "fixed_line": "<p>Follow us: Facebook | Twitter | Instagram</p>"
+            },
+            {
+                "offending_line": "<marquee> element is used, which should not be used for accessibility reasons.",
+                "fixed_line": "<p><em>Marquee element is used, which should not be used for accessibility reasons.</em></p>"
+            },
+            {
+                "offending_line": "<marquee>",
+                "fixed_line": "<div style=\"overflow: hidden;\">"
+            },
+            {
+                "offending_line": "<marquee></marquee>",
+                "fixed_line": ""
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<span style='display:block; overflow: hidden'>"
+            },
+            {
+                "offending_line": "<marquee> element",
+                "fixed_line": "<div style=\"overflow: hidden;\">"
+            },
+            {
+                "offending_line": "<marquee> element should not be used.",
+                "fixed_line": "<p class='warning'>Use of <marquee> element is not recommended according to accessibility guidelines.</p>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.2",
+        "success_criteria": "title element is empty",
+        "error_fixes": [
+            {
+                "offending_line": "<title>Calvin Kelvin Products</title>",
+                "fixed_line": "<title>Calvin Kelvin Products - Quality Products for You</title>"
+            },
+            {
+                "offending_line": "<title></title>",
+                "fixed_line": "<title>Calvin Kelvin Products</title>"
+            },
+            {
+                "offending_line": "<title>Calvin Kelvin Products</title>",
+                "fixed_line": "<title>Calvin Kelvin Products - Your go-to destination for quality products</title>"
+            },
+            {
+                "offending_line": "<title>Calvin Kelvin Products</title>",
+                "fixed_line": "<title>Calvin Kelvin Products - Home</title>"
+            }
+        ]
+    },
+    {
+        "guideline": "2.4.4",
+        "success_criteria": "anchor element contains no text",
+        "error_fixes": [
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home Page</a>"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#\"><span hidden>Home</span></a></li>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home<span class=\"sr-only\">Navigate to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\"><span aria-hidden=\"true\">Home</span><span class=\"sr-only\">Navigate to Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\"><span>Home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\"></a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home</a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home <span class=\"sr-only\">link to home</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home<span class=\"sr-only\"> - go to Home page</span></a>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\">Home <span class=\"sr-only\">(current)</span></a>"
+            },
+            {
+                "offending_line": "<li><a href=\"#\">Home</a></li>",
+                "fixed_line": "<li><a href=\"#\"><span>Home</span></a></li>"
+            },
+            {
+                "offending_line": "<a href=\"#\">Home</a>",
+                "fixed_line": "<a href=\"#\"><span aria-hidden=\"true\">Home</span></a>"
+            }
+        ]
+    },
+    {
+        "guideline": "3.1.1",
+        "success_criteria": "document language not identified or incorrect",
+        "error_fixes": [
+            {
+                "offending_line": "<html lang=\"en\">",
+                "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+            }
+        ]
+    },
+    {
+        "guideline": "3.3.2",
+        "success_criteria": "input element has more than one associated label",
+        "error_fixes": [
+            {
+                "offending_line": "<label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email:</label>"
+            },
+            {
+                "offending_line": "<label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email:</label> <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
+            },
+            {
+                "offending_line": "<label for=\"email\">Email:</label>\n                <label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email:</label>"
+            },
+            {
+                "offending_line": "                <label for=\"email\">Email:</label>",
+                "fixed_line": "                <label for=\"email\">Email:</label>"
+            }
+        ]
+    },
+    {
+        "guideline": "4.1.1",
+        "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+        "error_fixes": [
+            {
+                "offending_line": "<div id=\"video-container\">",
+                "fixed_line": "<div id=\"video-container\"></div>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\"></section>",
+                "fixed_line": "<div id=\"video-container\"></div>"
+            },
+            {
+                "offending_line": "<div id=\"video-container\">",
+                "fixed_line": "<div id=\"video\">"
+            },
+            {
+                "offending_line": "<label for=\"email\">Email:</label>",
+                "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
+            }
+        ]
+    }
+]

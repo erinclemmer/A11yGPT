@@ -1,0 +1,27 @@
+[
+    {
+        "problem_type": "Alt attribute missing for image",
+        "offending_line": "background-image: url('background.jpg');",
+        "fixed_line": "<img src='background.jpg' alt='Background Image'>"
+    },
+    {
+        "problem_type": "missing-label-text",
+        "offending_line": "<label for=\"password\"></label><br>",
+        "fixed_line": "<label for=\"password\">Password:</label><br>"
+    },
+    {
+        "problem_type": "Mouse events without keyboard functionality",
+        "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+        "fixed_line": "<a onmouseover=\"sample()\" onkeydown=\"sample();\" href=\"#\">Home</a>"
+    },
+    {
+        "problem_type": "Mouseover event without keyboard event alternative",
+        "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+        "fixed_line": "<a onmouseover=\"sample()\" onfocus=\"sample()\" href=\"#\">Home</a>"
+    },
+    {
+        "problem_type": "mouseover event on non-interactive element",
+        "offending_line": "<a onmouseover=\"sample()\" href=\"#\">Home</a>",
+        "fixed_line": "<button onmouseover=\"sample()\">Home</button>"
+    }
+]
