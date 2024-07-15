@@ -1,0 +1,54 @@
+[
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "examples": [
+                {
+                    "problem": "<html>",
+                    "solution": "<html lang=\"en\">"
+                },
+                {
+                    "problem": "<html lang=\"tx\">",
+                    "solution": "<html lang=\"en\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 135,
+            "problem": "<label for=\"message\"></label>"
+        },
+        "closest_fix": {
+            "offending_line": "<html lang=\"en\">",
+            "fixed_line": "<html lang=\"en\" xml:lang=\"en\">",
+            "CoT": "To identify if the document language is identified or incorrect, we need to check the `<html>` tag for the `lang` attribute. This attribute specifies the language of the document. If the `lang` attribute is missing or set to a language that is incorrect or not the primary language of the content, then it would violate the accessibility guideline related to defining the document language. \n\nLet's check the `<html>` tag in the provided HTML code for the `lang` attribute."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "examples": [
+                {
+                    "problem": "<img src=\"foo.png\">",
+                    "solution": "<img src=\"foo.png\" alt=\"Bar\">"
+                },
+                {
+                    "problem": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                    "solution": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"Foo Bar\"></iframe>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 118,
+            "problem": "<img src=\"product1.jpg\">"
+        },
+        "closest_fix": {
+            "offending_line": "<img src=\"product1.jpg\">",
+            "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1\">",
+            "CoT": "Step 1: Identify all `<img>` tags in the HTML code.\nStep 2: Check if each `<img>` tag has an `alt` attribute.\nStep 3: If any `<img>` tag does not have an `alt` attribute, then that is the accessibility issue related to missing `alt` attribute in the `<img>` tag."
+        }
+    }
+]

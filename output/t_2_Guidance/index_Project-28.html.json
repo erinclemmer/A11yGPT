@@ -1,0 +1,135 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 40,
+            "problem": "<select id=\"sort\">"
+        },
+        "closest_fix": {
+            "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+            "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.3.2",
+            "success_criteria": "input element has more than one associated label",
+            "examples": [
+                {
+                    "problem": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                    "solution": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.3.2",
+            "line": 37,
+            "problem": "<label for=\"search\">Search:</label>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"search\">Search:</label>",
+            "fixed_line": "<label for=\"search\">Search:</label><br>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "examples": [
+                {
+                    "problem": "<html>",
+                    "solution": "<html lang=\"en\">"
+                },
+                {
+                    "problem": "<html lang=\"tx\">",
+                    "solution": "<html lang=\"en\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html lang=\"eg\">"
+        },
+        "closest_fix": {
+            "offending_line": "<html lang=\"eg\">",
+            "fixed_line": "<html lang=\"en\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "examples": [
+                {
+                    "problem": "<font size=\"5\">Description of the book...</font>",
+                    "solution": "<p>Description of the book...</p>"
+                },
+                {
+                    "problem": "<b>Important</b>",
+                    "solution": "<strong>Important</strong>"
+                },
+                {
+                    "problem": "<i>Italic</i>",
+                    "solution": "<em>Italic</em>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 26,
+            "problem": "<font size=\"5\"> Delicious food just for you!</font>"
+        },
+        "closest_fix": {
+            "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+            "fixed_line": "<p style=\"font-size: 1.2em;\">Delicious food just for you!</p>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "examples": [
+                {
+                    "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                    "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+                },
+                {
+                    "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                    "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 48,
+            "problem": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">"
+        },
+        "closest_fix": {
+            "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+            "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"ExternalFunction()\">"
+        }
+    }
+]

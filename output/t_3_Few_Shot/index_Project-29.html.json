@@ -1,0 +1,151 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 34,
+            "problem": "<label for=\"sort\"></label>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"sort\"></label>",
+            "fixed_line": "<label for=\"sort\">Sort by</label>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "examples": [
+                {
+                    "problem": "<font size=\"5\">Description of the book...</font>",
+                    "solution": "<p>Description of the book...</p>"
+                },
+                {
+                    "problem": "<b>Important</b>",
+                    "solution": "<strong>Important</strong>"
+                },
+                {
+                    "problem": "<i>Italic</i>",
+                    "solution": "<em>Italic</em>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 46,
+            "problem": "<p><i>Price: $10</i></p>"
+        },
+        "closest_fix": {
+            "offending_line": "<i>Price: $10</i>",
+            "fixed_line": "<em>Price: $10</em>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "examples": [
+                {
+                    "problem": "<marquee>Scrolling text...</marquee>",
+                    "solution": "<p>Scrolling text...</p>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 23,
+            "problem": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>"
+        },
+        "closest_fix": {
+            "offending_line": "<marquee>Welcome to our Indian Cuisine Restaurant</marquee>",
+            "fixed_line": "<p>Welcome to our Indian Cuisine Restaurant</p>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 91,
+            "problem": "<label for=\"myfile\"></label>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"email\"></label>",
+            "fixed_line": "<label for=\"email\">Email</label><br>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 85,
+            "problem": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"email\"></label>",
+            "fixed_line": "<label for=\"email\">Email</label><br>"
+        }
+    }
+]

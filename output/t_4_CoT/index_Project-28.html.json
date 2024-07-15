@@ -1,0 +1,140 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 40,
+            "problem": "<select id=\"sort\">"
+        },
+        "closest_fix": {
+            "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+            "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">",
+            "CoT": "1. Identify all the input elements and buttons on the webpage.\n2. Check if each input element or button has an associated label.\n3. Verify if the label is empty or missing.\n4. Look for input elements or buttons with alt attributes instead of associated labels."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.3.2",
+            "success_criteria": "input element has more than one associated label",
+            "examples": [
+                {
+                    "problem": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                    "solution": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.3.2",
+            "line": 37,
+            "problem": "<label for=\"search\">Search:</label>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"search\">Search:</label>",
+            "fixed_line": "<label for=\"search\">Search:</label><br>",
+            "CoT": "To find the accessability issue of an input element having more than one associated label, we need to:\n\n1. Identify all the input elements in the HTML document.\n2. Check if each input element has one or more associated label elements.\n3. If an input element has more than one associated label, then that is the accessability issue we need to fix. \n\nLet's start by identifying all input elements in the provided HTML code."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "examples": [
+                {
+                    "problem": "<html>",
+                    "solution": "<html lang=\"en\">"
+                },
+                {
+                    "problem": "<html lang=\"tx\">",
+                    "solution": "<html lang=\"en\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html lang=\"eg\">"
+        },
+        "closest_fix": {
+            "offending_line": "<html lang=\"eg\">",
+            "fixed_line": "<html lang=\"en\">",
+            "CoT": "Step 1: Look for the <html> tag in the html code to check if the lang attribute is correctly set to identify the document language.\nStep 2: Verify if the value assigned to the lang attribute is correct according to the ISO language code standards."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "examples": [
+                {
+                    "problem": "<font size=\"5\">Description of the book...</font>",
+                    "solution": "<p>Description of the book...</p>"
+                },
+                {
+                    "problem": "<b>Important</b>",
+                    "solution": "<strong>Important</strong>"
+                },
+                {
+                    "problem": "<i>Italic</i>",
+                    "solution": "<em>Italic</em>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 26,
+            "problem": "<font size=\"5\"> Delicious food just for you!</font>"
+        },
+        "closest_fix": {
+            "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
+            "fixed_line": "<p style=\"font-size: 1.2em;\">Delicious food just for you!</p>",
+            "CoT": "Step 1: Identify any <b>, <i>, or <font> tags used in the HTML code provided.\nStep 2: Check if any of these tags are used to style text or add emphasis.\nStep 3: Determine if any of these tags are used for formatting or presentation purposes rather than semantic structuring.\nStep 4: If any of the identified tags are used for formatting or presentation purposes, flag them as potential accessibility issues."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "examples": [
+                {
+                    "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                    "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+                },
+                {
+                    "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                    "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 48,
+            "problem": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">"
+        },
+        "closest_fix": {
+            "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
+            "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onfocus=\"ExternalFunction()\">",
+            "CoT": "First, let's identify any event attributes that are related to user interaction. In this case, we have an `onmouseover` event attribute on the `div` element with the class `menu-item`.\n\nNext, let's check if there are corresponding keyboard events for each mouse event to ensure keyboard accessibility. The `onmouseover` event is triggered when the mouse pointer is moved onto the `<div>` element. To make it keyboard accessible, we should consider adding an `onfocus` event as an alternative for keyboard users.\n\nLet's add an `onfocus` event attribute to the `div` element with the class `menu-item`.\n\nHere's the updated HTML:\n\n```html\n<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onfocus=\"ExternalFunction()\">\n```\n\nBy including the `onfocus` event attribute along with the existing `onmouseover` event attribute, we ensure that both mouse and keyboard users can interact with the menu item, making the content more accessible."
+        }
+    }
+]

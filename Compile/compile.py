@@ -5,7 +5,6 @@ from typing import List
 from gpt import GptEmbeddings
 from lib import get_cosine_similarity, WCGAError, GptFix, get_wcga_errors
 
-WCGA_ERROR_FILE = 'wcga_errors.json'
 VIOLATIONS_FILE = 'violations.json'
 
 NO_CTX_FOLDER = '1_no_ctx'
@@ -30,8 +29,8 @@ class Promblem:
         if self.wcga_error is None:
             raise Exception(f"Could not find guidline {guideline} for line {self.line}")
 
-def get_violations(html: str, html_file: str, violations_file: str, wcga_errors: List[WCGAError]) -> List[Promblem]:
-    with open(violations_file, 'r', encoding='utf-8') as f:
+def get_violations(html: str, html_file: str, wcga_errors: List[WCGAError]) -> List[Promblem]:
+    with open(VIOLATIONS_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)
     problems = []
     if not html_file in data:
@@ -43,7 +42,7 @@ def get_violations(html: str, html_file: str, violations_file: str, wcga_errors:
 def get_fixes_from_objects(embed: GptEmbeddings, fixes_objects: List[dict]):
     fixes = []
     for item in fixes_objects:
-        fixes.append(GptFix(item, embed.get_embedding(item['offending_line'])))
+        fixes.append(GptFix(item, embed.get_embedding(item['offending_line'] + '\n\n' + item['fixed_line'])))
     return fixes
 
 def get_fixes_for_guideline(embed: GptEmbeddings, fixes_file: str, guideline: str):
@@ -67,14 +66,14 @@ def get_closest_fix_for_problem(embed: GptEmbeddings, problem: Promblem, fixes: 
             closest = (sim, fix)
     return closest[1]
 
-def get_no_context_fixes_for_problems(embed: GptEmbeddings, html: str, html_file: str, violations_file: str, fixes_file: str):
-    wcga_errors = get_wcga_errors(WCGA_ERROR_FILE)
-    problems = get_violations(html, html_file, violations_file, wcga_errors)
+def get_no_context_fixes_for_problems(embed: GptEmbeddings, html: str, html_file: str, fixes_file: str):
+    wcga_errors = get_wcga_errors()
+    problems = get_violations(html, html_file, wcga_errors)
     if problems is None:
         return []
     output = []
     for problem in problems:
-        fixes = get_fixes(fixes_file)
+        fixes = get_fixes(embed, fixes_file)
         closest_fix = get_closest_fix_for_problem(embed, problem, fixes)
         output.append({
             "guideline": problem.wcga_error.o,
@@ -84,9 +83,9 @@ def get_no_context_fixes_for_problems(embed: GptEmbeddings, html: str, html_file
 
     return output
 
-def get_guidance_fixes_for_problems(embed: GptEmbeddings, html: str, html_file: str, violations_file: str, fixes_file: str):
-    wcga_errors = get_wcga_errors(WCGA_ERROR_FILE)
-    problems = get_violations(html, html_file, violations_file, wcga_errors)
+def get_guidance_fixes_for_problems(embed: GptEmbeddings, html: str, html_file: str, fixes_file: str):
+    wcga_errors = get_wcga_errors()
+    problems = get_violations(html, html_file, wcga_errors)
     if problems is None:
         return []
     output = []
@@ -114,10 +113,13 @@ def compile(api_key: str, folders: List[str]):
         with open(f'html/{html_file}', 'r', encoding='utf-8') as f:
             html = f.read()
 
-        no_ctx_fixes_file = f'fixes/1_No_Context/{html_file}.json'
-        no_ctx_output_file = f'output/{NO_CTX_FOLDER}/{html_file}.json'
+        no_ctx_fixes_file = f'fixes/t_1_No_Context/{html_file}.json'
+        no_ctx_output_file = f'output/t_1_No_Context/{html_file}.json'
+        if not os.path.exists(f'output/t_1_No_Context'):
+                os.mkdir(f'output/t_1_No_Context')
+
         if os.path.exists(no_ctx_fixes_file) and not os.path.exists(no_ctx_output_file):
-            output_no_ctx = get_no_context_fixes_for_problems(embed, html, html_file, VIOLATIONS_FILE, no_ctx_fixes_file)
+            output_no_ctx = get_no_context_fixes_for_problems(embed, html, html_file, no_ctx_fixes_file)
             with open(no_ctx_output_file, 'w', encoding='utf-8') as f:
                 json.dump(output_no_ctx, f, indent=4)
         
@@ -128,6 +130,6 @@ def compile(api_key: str, folders: List[str]):
                 os.mkdir(f'output/{folder}')
             
             if os.path.exists(fixes_file) and not os.path.exists(output_file):
-                output = get_guidance_fixes_for_problems(embed, html, html_file, VIOLATIONS_FILE, fixes_file)
+                output = get_guidance_fixes_for_problems(embed, html, html_file, fixes_file)
                 with open(output_file, 'w', encoding='utf-8') as f:
                     json.dump(output, f, indent=4)

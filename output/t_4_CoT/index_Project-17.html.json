@@ -1,0 +1,156 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 113,
+            "problem": "<select id=\"experience\">"
+        },
+        "closest_fix": {
+            "offending_line": "<select id=\"experience\">",
+            "fixed_line": "<label for=\"experience\">Experience Level:</label><select id=\"experience\">",
+            "CoT": "First, let's identify all the input elements and buttons on the page. Then, we will check if each one has an associated label or if the label is empty. We will also check if any of them have alt attributes. Let's go through each one:\n1. Name input field:\n   - It has a label \"Name:\", so it is associated correctly.\n2. Email input field:\n   - It has a label \"Email:\", so it is associated correctly.\n3. Experience select element:\n   - It doesn't have an associated label. This is a problem as select elements should have a label to provide context. \n4. Generate Resume button:\n   - It doesn't have an associated label. Buttons should have labels to provide context for screen readers.\n5. Username input field:\n   - It has a label \"Username:\", so it is associated correctly.\n6. Password input field:\n   - It doesn't have a label. This is a problem as passwords should have labels to inform users.\n7. Radio buttons for fav_number:\n   - Each radio button has a label associated with it, so they are correct.\n8. Checkboxes for vehicles:\n   - Each checkbox has a label associated with it, so they are correct.\n9. File input field:\n   - It doesn't have a label. This is a problem as file inputs should have labels to inform users.\n10. Submit button:\n    - It doesn't have an associated label. Buttons should have labels for screen readers.\n\nBased on our assessment, the \"Experience\" select element, \"Generate Resume\" button, \"Password\" input field, \"File\" input field, and the \"Submit\" button are missing associated labels. These should be fixed for better accessibility."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "examples": [
+                {
+                    "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                    "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+                },
+                {
+                    "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                    "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 100,
+            "problem": "<a onmouseover=\"sample()\" href=\"#\">Home</a>"
+        },
+        "closest_fix": {
+            "offending_line": "<button onclick=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+            "fixed_line": "<button onclick=\"generateResume()\" onkeydown=\"generateResume()\" style=\"color: rgb(255, 255, 255); background-color: rgb(76, 175, 80);\">Generate Resume</button>",
+            "CoT": "To find the issue related to the \"onmousedown event missing onkeydown event or script is not keyboard accessible\", we need to go through the HTML code and check for any elements or functionalities that rely solely on mouse interaction without providing an alternative keyboard-accessible method. Specifically, we are looking for any event handlers that are triggered by mouse actions but do not have corresponding keyboard accessibility.\n\n1. Look for any elements that have `onmousedown` event handlers in the HTML code.\n2. Check if these elements also have corresponding `onkeydown` event handlers or any keyboard-accessible alternative.\n3. If there are elements that lack keyboard accessibility, we need to provide an alternative method for keyboard users to interact with those elements.\n\nLet's start by searching for elements with `onmousedown` event handlers in the given HTML code."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "examples": [
+                {
+                    "problem": "<html>",
+                    "solution": "<html lang=\"en\">"
+                },
+                {
+                    "problem": "<html lang=\"tx\">",
+                    "solution": "<html lang=\"en\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html lang=\"ex\">"
+        },
+        "closest_fix": {
+            "offending_line": "<html lang=\"ex\">",
+            "fixed_line": "<html lang=\"en\">",
+            "CoT": "To identify and fix the problem of the document language not being identified or being incorrect, we need to follow these steps:\n\n1. Locate the `<html>` tag in the HTML document.\n2. Check if the `lang` attribute is specified within the `<html>` tag.\n3. Verify if the value of the `lang` attribute corresponds to the correct language code defined by ISO standards.\n4. If the `lang` attribute is not present or contains an incorrect language code, update it to the appropriate language code.\n5. Save the HTML file with the corrected language attribute.\n\nI will now check the provided HTML code to determine if the document language is correctly identified."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 126,
+            "problem": "<label for=\"password\"></label><br>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"password\"></label><br>",
+            "fixed_line": "<label for=\"password\">Password:</label><br>",
+            "CoT": "1. Look for input elements and buttons in the HTML code.\n2. Check if each input element or button has a corresponding label associated with it using the \"for\" attribute.\n3. Make sure that each label has a meaningful content to describe the input element or button.\n4. Check if any input element has an alt attribute which should not be present for input elements.\n5. Verify that no label is empty and all labels have proper text content."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 143,
+            "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "closest_fix": {
+            "offending_line": "<select id=\"experience\">",
+            "fixed_line": "<label for=\"experience\">Experience Level:</label><select id=\"experience\">",
+            "CoT": "First, let's identify all the input elements and buttons on the page. Then, we will check if each one has an associated label or if the label is empty. We will also check if any of them have alt attributes. Let's go through each one:\n1. Name input field:\n   - It has a label \"Name:\", so it is associated correctly.\n2. Email input field:\n   - It has a label \"Email:\", so it is associated correctly.\n3. Experience select element:\n   - It doesn't have an associated label. This is a problem as select elements should have a label to provide context. \n4. Generate Resume button:\n   - It doesn't have an associated label. Buttons should have labels to provide context for screen readers.\n5. Username input field:\n   - It has a label \"Username:\", so it is associated correctly.\n6. Password input field:\n   - It doesn't have a label. This is a problem as passwords should have labels to inform users.\n7. Radio buttons for fav_number:\n   - Each radio button has a label associated with it, so they are correct.\n8. Checkboxes for vehicles:\n   - Each checkbox has a label associated with it, so they are correct.\n9. File input field:\n   - It doesn't have a label. This is a problem as file inputs should have labels to inform users.\n10. Submit button:\n    - It doesn't have an associated label. Buttons should have labels for screen readers.\n\nBased on our assessment, the \"Experience\" select element, \"Generate Resume\" button, \"Password\" input field, \"File\" input field, and the \"Submit\" button are missing associated labels. These should be fixed for better accessibility."
+        }
+    }
+]

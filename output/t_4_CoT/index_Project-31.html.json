@@ -1,0 +1,80 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "examples": [
+                {
+                    "problem": "<marquee>Scrolling text...</marquee>",
+                    "solution": "<p>Scrolling text...</p>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 81,
+            "problem": "<marquee>Ticket Booking System</marquee>"
+        },
+        "closest_fix": {
+            "offending_line": "<marquee>Ticket Booking System</marquee>",
+            "fixed_line": "<header>Ticket Booking System</header>",
+            "CoT": "Step 1: Identify the <marquee> element in the HTML code provided.\nStep 2: Understand that the <marquee> element is used to create a scrolling text effect which is not accessible and should be avoided.\nStep 3: Determine the alternative ways to create the desired effect without using the <marquee> element.\nStep 4: Suggest a replacement method or technique to achieve the scrolling text effect in a more accessible way."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "examples": [
+                {
+                    "problem": "<title></title>",
+                    "solution": "<title>Beauty Products Store</title>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 3,
+            "problem": "<head>"
+        },
+        "closest_fix": {
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Ticket Booking System</title>",
+            "CoT": "To address the issue of the title element being empty, we need to make sure that the title of the webpage is meaningful and descriptive to assist users, especially those using screen readers, in understanding the content of the page.\n\nStep 1: Locate the `<title>` tag within the `<head>` section of the HTML document.\nStep 2: Check if the `<title>` tag has any content within it.\nStep 3: If the `<title>` tag is empty or missing, add a descriptive and concise title that represents the content of the webpage.\nStep 4: Update the content within the `<title>` tag to provide a meaningful title for the webpage.\n\nLet's go through the HTML code provided to locate and address the empty `<title>` element issue."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 104,
+            "problem": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+        },
+        "closest_fix": {
+            "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+            "fixed_line": "<label for=\"quantity\">Number of Tickets:</label><input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
+            "CoT": "Step 1: Identify input elements and buttons on the page.\nStep 2: Check if each input element or button has an associated label using the \"for\" attribute.\nStep 3: Verify that the label is not empty.\nStep 4: Ensure that if an input element uses the \"alt\" attribute, it is not used as a replacement for a label."
+        }
+    }
+]

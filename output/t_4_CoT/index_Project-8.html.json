@@ -1,0 +1,94 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.4.2",
+            "success_criteria": "Audio or video element should avoid automatically playing audio ",
+            "examples": [
+                {
+                    "problem": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />",
+                    "solution": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
+                },
+                {
+                    "problem": "<audio src=\"bookstore-audio.mp3\" type=\"audio/mp3\" autoplay></audio>",
+                    "solution": "<audio controls>\n<source src=\"bookstore-audio.mp3\" type=\"audio/mp3\">\nYour browser does not support the audio tag.\n</audio>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.2",
+            "line": 33,
+            "problem": "<video autoplay>"
+        },
+        "closest_fix": {
+            "offending_line": "<video autoplay>",
+            "fixed_line": "<video>",
+            "CoT": "Step 1: Identify any audio or video elements on the page. \n\nLooking at the HTML provided, there is a video element in the Video Section:\n```html\n<video autoplay>\n    <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>\n```\n\nStep 2: Check if the video element has the attribute autoplay.\n\nIn this case, the video element does have the attribute autoplay.\n\nStep 3: Determine if the autoplay behavior is appropriate.\n\nAs per the accessibility rule, autoplaying audio or video is discouraged as it can be disruptive for users, especially those who use screen readers or have cognitive disabilities.\n\nStep 4: Provide a solution to ensure accessibility compliance.\n\nTo fix this issue, you can remove the `autoplay` attribute from the video element. By removing this attribute, you prevent the video from automatically playing audio when the page loads.\n\nModified Video Element:\n```html\n<video>\n    <source src=\"video/sample-video.mp4\" type=\"video/mp4\">\n    Your browser does not support the video tag.\n</video>\n```"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "examples": [
+                {
+                    "problem": "<title></title>",
+                    "solution": "<title>Beauty Products Store</title>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 6,
+            "problem": "<title></title>"
+        },
+        "closest_fix": {
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>DELL Laptops</title>",
+            "CoT": "1. Identify the `<title>` element in the HTML.\n2. Check the content of the `<title>` element to ensure it is not empty.\n3. If the `<title>` element is empty, that would be the accessibility-related issue to address."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.4",
+            "success_criteria": "anchor element contains no text",
+            "examples": [
+                {
+                    "problem": "<a href=\"#\"></a>",
+                    "solution": "<a href=\"#\">Home</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.4",
+            "line": 14,
+            "problem": "<li><a href=\"#home\"></a></li>"
+        },
+        "closest_fix": {
+            "offending_line": "<li><a href=\"#home\"></a></li>",
+            "fixed_line": "<li><a href=\"#home\">Home</a></li>",
+            "CoT": "To find the problem of \"anchor element contains no text\", we need to look for any anchor `<a>` elements that do not contain any text between the opening and closing tags. \n\nIn the provided HTML code, the first anchor element within the navigation bar does not contain any text between the opening and closing tags:\n```html\n<li><a href=\"#home\"></a></li>\n```\n\nThis can be considered an accessibility issue because screen readers rely on text within anchor elements to provide meaningful information and context to users who may have visual impairments. An empty anchor element like this may confuse users and make it difficult for them to understand the purpose of the link. It is recommended to always provide descriptive text within anchor elements to ensure accessibility for all users. \n\nIn this case, adding descriptive text within the anchor element like \"Home\" would make it more accessible:\n```html\n<li><a href=\"#home\">Home</a></li>\n``` \n\nBy providing descriptive text within all anchor elements, we can improve the accessibility and usability of the website for all users."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "examples": [
+                {
+                    "problem": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">",
+                    "solution": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 46,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": "",
+            "CoT": "Step 1: Identify the issue:\n\nThe issue to look for is the use of meta refresh with a time-out, as it can be problematic for accessibility.\n\nStep 2: Locate the meta refresh tag:\n\nIn the provided HTML code, we can see a meta refresh tag at the end of the body section:\n```html\n<meta http-equiv=\"refresh\" content=\"0\">\n```\n\nStep 3: Determine if it's an accessibility issue:\n\nThe use of meta refresh can be problematic for accessibility as it can interfere with users' control over the content. It can cause issues for users who rely on screen readers or keyboard navigation as it automatically refreshes the page without warning. This can be disorienting and confusing for some users.\n\nStep 4: Suggest a fix:\n\nInstead of using meta refresh, it's better to use standard HTML and CSS techniques to implement any desired behavior, such as using JavaScript for dynamic content updates or redirects. Removing the meta refresh tag would be a good step towards improving accessibility for all users.\n\nIn this case, the meta refresh tag with a time-out should be removed to address the accessibility issue related to automatically refreshing the page without user control."
+        }
+    }
+]

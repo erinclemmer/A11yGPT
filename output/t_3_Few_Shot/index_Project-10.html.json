@@ -1,0 +1,94 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "examples": [
+                {
+                    "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                    "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+                },
+                {
+                    "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                    "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 56,
+            "problem": "<button onmousedown=\"playVideo()\">Play Video</button>"
+        },
+        "closest_fix": {
+            "offending_line": "<button onmousedown=\"playVideo()\">Play Video</button>",
+            "fixed_line": "<button onmousedown=\"playVideo()\" onkeydown=\"playVideo()\">Play Video</button>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.4",
+            "success_criteria": "anchor element contains no text",
+            "examples": [
+                {
+                    "problem": "<a href=\"#\"></a>",
+                    "solution": "<a href=\"#\">Home</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.4",
+            "line": 47,
+            "problem": "<li><a href=\"#services\"></a></li>"
+        },
+        "closest_fix": {
+            "offending_line": "<li><a href=\"#services\"></a></li>",
+            "fixed_line": "<li><a href=\"#services\">Services</a></li>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "examples": [
+                {
+                    "problem": "<html>",
+                    "solution": "<html lang=\"en\">"
+                },
+                {
+                    "problem": "<html lang=\"tx\">",
+                    "solution": "<html lang=\"en\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 2,
+            "problem": "<html>"
+        },
+        "closest_fix": {
+            "offending_line": "<html>",
+            "fixed_line": "<html lang=\"en\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.2.1",
+            "success_criteria": "meta refresh with a time-out is used.",
+            "examples": [
+                {
+                    "problem": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">",
+                    "solution": "<meta http-equiv=\"refresh\" content=\"5;url=https://www.example.com/\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.2.1",
+            "line": 86,
+            "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
+        },
+        "closest_fix": {
+            "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
+            "fixed_line": ""
+        }
+    }
+]

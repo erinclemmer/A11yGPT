@@ -1,0 +1,100 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 36,
+            "problem": "<button class=\"play-btn\"></button>"
+        },
+        "closest_fix": {
+            "offending_line": "<button class=\"play-btn\"></button>",
+            "fixed_line": "<button class=\"play-btn\" aria-label=\"Play\"></button>",
+            "CoT": "Step 1: Identify all the input elements and buttons in the HTML code.\nStep 2: Check if each input element and button has an associated label.\nStep 3: Verify if the label is empty or does not provide meaningful information.\nStep 4: Check if any input element or button has an `alt` attribute."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 56,
+            "problem": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>"
+        },
+        "closest_fix": {
+            "offending_line": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+            "fixed_line": "<label for=\"playlist-name\">Playlist Name:</label><br><input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>",
+            "CoT": "1. Look for any input elements or buttons on the page.\n2. Check if each input element or button has an associated label.\n3. Verify that the associated label is not empty and correctly describes the input element or button.\n4. Ensure that the input element or button does not have an alt attribute as it is not relevant in this context."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "examples": [
+                {
+                    "problem": "<font size=\"5\">Description of the book...</font>",
+                    "solution": "<p>Description of the book...</p>"
+                },
+                {
+                    "problem": "<b>Important</b>",
+                    "solution": "<strong>Important</strong>"
+                },
+                {
+                    "problem": "<i>Italic</i>",
+                    "solution": "<em>Italic</em>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 35,
+            "problem": "<p><b>Artist Name</b></p>"
+        },
+        "closest_fix": {
+            "offending_line": "<p><b>Artist Name</b></p>",
+            "fixed_line": "<p><strong>Artist Name</strong></p>",
+            "CoT": "1. Look through the HTML code for any instances of the `<b>`, `<i>`, or `<font>` tags.\n2. Check if any of these tags are being used to style text or elements on the page.\n3. Verify if the styling applied using these tags can be achieved using CSS instead.\n4. Identify and remove any `<b>`, `<i>`, or `<font>` tags found in the HTML code.\n5. Replace the styling applied by these tags with appropriate CSS properties in the external stylesheet (`styles.css`) to ensure separation of content and presentation."
+        }
+    }
+]

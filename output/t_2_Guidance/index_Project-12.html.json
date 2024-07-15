@@ -1,0 +1,52 @@
+[
+    {
+        "guideline": {
+            "guideline": "3.1.1",
+            "success_criteria": "document language not identified or incorrect",
+            "examples": [
+                {
+                    "problem": "<html>",
+                    "solution": "<html lang=\"en\">"
+                },
+                {
+                    "problem": "<html lang=\"tx\">",
+                    "solution": "<html lang=\"en\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.1.1",
+            "line": 135,
+            "problem": "<label for=\"message\"></label>"
+        },
+        "closest_fix": {
+            "offending_line": "<html lang=\"en\">",
+            "fixed_line": "<html lang=\"en\" xmlns=\"http://www.w3.org/1999/xhtml\">"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "examples": [
+                {
+                    "problem": "<img src=\"foo.png\">",
+                    "solution": "<img src=\"foo.png\" alt=\"Bar\">"
+                },
+                {
+                    "problem": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                    "solution": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"Foo Bar\"></iframe>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 118,
+            "problem": "<img src=\"product1.jpg\">"
+        },
+        "closest_fix": {
+            "offending_line": "<img src=\"product1.jpg\">",
+            "fixed_line": "<img src=\"product1.jpg\" alt=\"Product 1\">"
+        }
+    }
+]

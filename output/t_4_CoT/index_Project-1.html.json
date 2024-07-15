@@ -1,0 +1,170 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "examples": [
+                {
+                    "problem": "<img src=\"foo.png\">",
+                    "solution": "<img src=\"foo.png\" alt=\"Bar\">"
+                },
+                {
+                    "problem": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                    "solution": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"Foo Bar\"></iframe>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 98,
+            "problem": "<img src=\"logo.png\">"
+        },
+        "closest_fix": {
+            "offending_line": "<img src=\"logo.png\">",
+            "fixed_line": "<img src=\"logo.png\" alt=\"Logo\">",
+            "CoT": "Sure! To find the problem with the missing `alt` attribute in the `iframe` or `img` tags, we will need to:\n\n1. Check all `img` tags in the HTML to ensure they have the `alt` attribute.\n2. Check the `iframe` tag in the HTML to ensure it has the `alt` attribute."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "4.1.1",
+            "success_criteria": "element does not have complete start and end tags or id attribute is not unique",
+            "examples": [
+                {
+                    "problem": "<li><a href=\"#\">Services</li>",
+                    "solution": "<li><a href=\"#\">Services</a></li>"
+                },
+                {
+                    "problem": "<div id=\"header\">",
+                    "solution": "<div id=\"header\"></div>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "4.1.1",
+            "line": 122,
+            "problem": "<input type=\"text\" id=\"username\" name=\"username\"><br>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"vehicle1\"></label><br>",
+            "fixed_line": "<label for=\"vehicle1\">Label for vehicle1</label><br>",
+            "CoT": "Step 1: Analyze the HTML structure provided.\n\nStep 2: Look for elements that might not have complete start and end tags or those missing the id attribute.\n\nStep 3: Check for elements without proper closing tags or missing attributes.\n\nStep 4: Identify if any elements are not properly structured.\n\nStep 5: Make the necessary corrections to ensure the HTML code follows proper accessibility guidelines."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "examples": [
+                {
+                    "problem": "<title></title>",
+                    "solution": "<title>Beauty Products Store</title>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 6,
+            "problem": "<title></title>"
+        },
+        "closest_fix": {
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Beauty Products Store</title>",
+            "CoT": "To find and fix the issue related to the empty `title` element, you need to follow these steps:\n\n1. Locate the `<title>` element within the `<head>` section of the HTML document.\n2. Check if the content within the `<title>` element is empty or missing.\n3. If the `<title>` element is empty, you need to provide a meaningful and descriptive title that accurately represents the content of the webpage.\n4. Update the `<title>` element with relevant text to improve accessibility and help users understand the purpose of the webpage.\n\nLet's follow these steps to identify and resolve the issue."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 140,
+            "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+        },
+        "closest_fix": {
+            "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_line": "<label for=\"myfile\">Choose a file:</label><br><input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "CoT": "Sure, to find the issue with missing labels for input elements or buttons, I will need to:\n\n1. Identify all input elements and buttons on the page.\n2. Check if each input element or button has an associated label.\n3. If an input element or button does not have an associated label, check if it has an alt attribute or if its label is empty.\n\nLet's start by identifying all the input elements and buttons on the page."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 134,
+            "problem": "<label for=\"vehicle1\"></label><br>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"vehicle1\"></label><br>",
+            "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>",
+            "CoT": "Sure! To find the issue of input element or button missing an associated label, containing an alt attribute, or having an empty label, we need to:\n\n1. Look through all the input elements and buttons in the form.\n2. Check if each input element has a corresponding `<label>` element using the `for` attribute.\n3. Ensure that each label is not empty.\n4. Check if any input element has an `alt` attribute (if it's an image input).\n5. Pay attention to the radio buttons, checkboxes and file input element as they require labels.\n6. Identify any input element or button that is missing a label, contains an `alt` attribute or has an empty label.\n\nI will now review the HTML code to identify any input elements or buttons that violate the accessibility rule specified. Let's find and correct the issue."
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.1.1",
+            "success_criteria": "alt attribute is missing in iframe or img tag",
+            "examples": [
+                {
+                    "problem": "<img src=\"foo.png\">",
+                    "solution": "<img src=\"foo.png\" alt=\"Bar\">"
+                },
+                {
+                    "problem": "<iframe src=\"https://www.youtube.com/embed/1234\"></iframe>",
+                    "solution": "<iframe src=\"https://www.youtube.com/embed/1234\" alt=\"Foo Bar\"></iframe>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.1.1",
+            "line": 117,
+            "problem": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>"
+        },
+        "closest_fix": {
+            "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>",
+            "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen alt=\"Video\"></iframe>",
+            "CoT": "To find the accessibility issue related to missing `alt` attributes in `iframe` or `img` tags, we need to check all the `iframe` and `img` tags in the HTML code provided and ensure that each of these tags has an appropriate `alt` attribute.\n\n1. Locate all `iframe` tags in the HTML code:\n```html\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>\n```\n\n2. Check if the `iframe` tag has an `alt` attribute. In this case, the `iframe` tag does not have an `alt` attribute, which is a problem for accessibility.\n\n3. Next, locate all `img` tags in the HTML code:\n```html\n<img src=\"logo.png\">\n```\n\n4. Check if the `img` tag has an `alt` attribute. In this case, the `img` tag also does not have an `alt` attribute, which is another accessibility issue.\n\nSo, the accessibility problems in this code are:\n- Missing `alt` attribute in the `iframe` tag.\n- Missing `alt` attribute in the `img` tag.\n\nThese missing `alt` attributes can be problematic for users who rely on screen readers or in cases where the visual content fails to load. Adding descriptive `alt` attributes to these tags would improve the accessibility of the website."
+        }
+    }
+]

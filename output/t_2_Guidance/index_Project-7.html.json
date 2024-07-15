@@ -1,0 +1,114 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 114,
+            "problem": "<input type=\"text\" id=\"name\" name=\"name\" required><br>"
+        },
+        "closest_fix": {
+            "offending_line": "<input type=\"text\" id=\"name\" name=\"name\" required><br>",
+            "fixed_line": "<label for=\"name\">Name:</label><br><input type=\"text\" id=\"name\" name=\"name\" required><br>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 122,
+            "problem": ""
+        },
+        "closest_fix": {
+            "offending_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\"></button>",
+            "fixed_line": "<button type='submit'><label for='submit'>Submit</label></button>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "3.3.2",
+            "success_criteria": "input element has more than one associated label",
+            "examples": [
+                {
+                    "problem": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">\n<label for=\"name\">First Name</label>",
+                    "solution": "<label for=\"name\">Name</label>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "3.3.2",
+            "line": 116,
+            "problem": "<label for=\"email\">Email:</label>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"email\">Email:</label>\n\t\t\t<label for=\"email\">Email:</label>",
+            "fixed_line": "<label for=\"email\">Email:</label>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "examples": [
+                {
+                    "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                    "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+                },
+                {
+                    "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                    "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 109,
+            "problem": "<h2 onmouseout=\"PauseVideo()\">Exercise Videos</h2>"
+        },
+        "closest_fix": {
+            "offending_line": "<h2 onmouseout=\"PauseVideo()\">Exercise Videos</h2>",
+            "fixed_line": "<h2>Exercise Videos</h2>"
+        }
+    }
+]

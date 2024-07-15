@@ -1,0 +1,77 @@
+[
+    {
+        "guideline": {
+            "guideline": "2.2.2",
+            "success_criteria": "<marquee> element should not be used.",
+            "examples": [
+                {
+                    "problem": "<marquee>Scrolling text...</marquee>",
+                    "solution": "<p>Scrolling text...</p>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.2.2",
+            "line": 81,
+            "problem": "<marquee>Ticket Booking System</marquee>"
+        },
+        "closest_fix": {
+            "offending_line": "<marquee>Ticket Booking System</marquee>",
+            "fixed_line": "<h1>Ticket Booking System</h1>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "examples": [
+                {
+                    "problem": "<title></title>",
+                    "solution": "<title>Beauty Products Store</title>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 3,
+            "problem": "<head>"
+        },
+        "closest_fix": {
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Page Title</title>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 104,
+            "problem": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"email\"></label>",
+            "fixed_line": "<label for=\"email\">Email</label><br>"
+        }
+    }
+]

@@ -1,0 +1,139 @@
+[
+    {
+        "guideline": {
+            "guideline": "1.3.1",
+            "success_criteria": "input element or button is missing an associated label, it contains an alt attribute, or its label is empty",
+            "examples": [
+                {
+                    "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+                    "solution": "<label for=\"myfile\">File</label><br>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
+                },
+                {
+                    "problem": "<button type=\"submit\">Submit</button>",
+                    "solution": "<label for=\"submit\">Submit</label><br>\n<button type=\"submit\" id=\"submit\">Submit</button>"
+                },
+                {
+                    "problem": "<input type=\"text\" id=\"name\" name=\"name\" alt=\"Name\">",
+                    "solution": "<label for=\"name\">Name</label><br>\n<input type=\"text\" id=\"name\" name=\"name\">"
+                },
+                {
+                    "problem": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
+                    "solution": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.3.1",
+            "line": 137,
+            "problem": "<input type=\"text\" id=\"phone\" name=\"phone\" required>"
+        },
+        "closest_fix": {
+            "offending_line": "<label for=\"address\">Address:</label>\n            <input type=\"text\" alt=\"address\" id=\"address\" name=\"address\" required>",
+            "fixed_line": "<label for=\"address\">Address:</label><br>\n<input type=\"text\" id=\"address\" name=\"address\" required>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.4.2",
+            "success_criteria": "title element is empty",
+            "examples": [
+                {
+                    "problem": "<title></title>",
+                    "solution": "<title>Beauty Products Store</title>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.4.2",
+            "line": 3,
+            "problem": "<head>"
+        },
+        "closest_fix": {
+            "offending_line": "<title></title>",
+            "fixed_line": "<title>Food Delivery App</title>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "examples": [
+                {
+                    "problem": "<font size=\"5\">Description of the book...</font>",
+                    "solution": "<p>Description of the book...</p>"
+                },
+                {
+                    "problem": "<b>Important</b>",
+                    "solution": "<strong>Important</strong>"
+                },
+                {
+                    "problem": "<i>Italic</i>",
+                    "solution": "<em>Italic</em>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 122,
+            "problem": "<p><b>Delicious food descriptions go here...</b></p>"
+        },
+        "closest_fix": {
+            "offending_line": "<b>Delicious food descriptions go here...</b>",
+            "fixed_line": "<strong>Delicious food descriptions go here...</strong>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "1.4.4",
+            "success_criteria": "<b> <i> or <font> tag should not be used",
+            "examples": [
+                {
+                    "problem": "<font size=\"5\">Description of the book...</font>",
+                    "solution": "<p>Description of the book...</p>"
+                },
+                {
+                    "problem": "<b>Important</b>",
+                    "solution": "<strong>Important</strong>"
+                },
+                {
+                    "problem": "<i>Italic</i>",
+                    "solution": "<em>Italic</em>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "1.4.4",
+            "line": 123,
+            "problem": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>"
+        },
+        "closest_fix": {
+            "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+            "fixed_line": "<a href=\"#\" class=\"button\"><span style=\"font-size: 1.25em;\"> View Menu</span></a>"
+        }
+    },
+    {
+        "guideline": {
+            "guideline": "2.1.1",
+            "success_criteria": "onmousedown event missing onkeydown event or script is not keyboard accessible",
+            "examples": [
+                {
+                    "problem": "<button onclick=\"alert('Hello World!')\">Click me</button>",
+                    "solution": "<button onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</button>"
+                },
+                {
+                    "problem": "<a href=\"#\" onclick=\"alert('Hello World!')\">Click me</a>",
+                    "solution": "<a href=\"#\" onclick=\"alert('Hello World!')\" onkeydown=\"alert('Hello World!')\">Click me</a>"
+                }
+            ]
+        },
+        "problem": {
+            "guideline": "2.1.1",
+            "line": 127,
+            "problem": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>"
+        },
+        "closest_fix": {
+            "offending_line": "<h2 onmouseover=\"ToolTip()\">Place Your Order</h2>",
+            "fixed_line": "<h2 onmouseover=\"ToolTip()\" onkeydown=\"ToolTip()\">Place Your Order</h2>"
+        }
+    }
+]

@@ -51,11 +51,15 @@ class GptChat:
     conversations: List[Conversation]
 
     def __init__(self, system_prompt_file: str, api_key: str) -> None:
-        if not os.path.exists(system_prompt_file):
+        if system_prompt_file is not None and not os.path.exists(system_prompt_file):
             raise Exception(f"Could not find sys prompt file at {system_prompt_file}")
-        with open(system_prompt_file, 'r', encoding='utf-8') as f:
-            self.system_prompt = f.read()
         
+        if system_prompt_file is None:
+            self.system_prompt = 'You are a helpful assistant'
+        else:
+            with open(system_prompt_file, 'r', encoding='utf-8') as f:
+                self.system_prompt = f.read()
+        self.api_key = api_key
         self.openai_client = OpenAI(api_key=api_key)
         self.encoding = tiktoken.encoding_for_model("gpt-3.5-turbo")
         self.system_prompt_tokens = len(self.encoding.encode(self.system_prompt))

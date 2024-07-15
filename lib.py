@@ -70,14 +70,16 @@ class GptFix:
 
 	def __init__(self, o: dict, embedding: List[float]):
 		keys = [
-			'problem_type',
 			'offending_line',
 			'fixed_line'
 		]
 		for key in keys:
 			if not key in o:
 				raise Exception(f'Could not find key in object')
-		self.problem_type = o['problem_type']
+		if 'problem_type' in o:
+			self.problem_type = o['problem_type']
+		else:
+			self.problem_type = None
 		self.offending_line = o['offending_line']
 		self.fixed_line = o['fixed_line']
 		self.embedding = embedding
