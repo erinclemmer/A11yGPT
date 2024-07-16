@@ -20,8 +20,8 @@
             "problem": "<label for=\"message\"></label>"
         },
         "closest_fix": {
-            "offending_line": "<html lang=\"en\">",
-            "fixed_line": ""
+            "offending_line": "<html lang=\"tx\">",
+            "fixed_line": "<html lang=\"en\">"
         }
     },
     {

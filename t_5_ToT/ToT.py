@@ -32,14 +32,14 @@ def get_ToT_sample(chat: GptChat, html: str, wcga_error: WCGAError):
 
 class ToT:
     task: str
-    get_sample: Callable[[], str]
+    get_sample: Callable[[], any]
     get_sample_string: Callable[[any], str]
     num_samples: int
 
     def __init__(
             self, 
             api_key: str, 
-            get_sample: Callable[[], str], 
+            get_sample: Callable[[], any], 
             get_sample_string: Callable[[any], str],
             num_samples: int, 
             num_votes: int, 

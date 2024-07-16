@@ -80,9 +80,9 @@
             "problem": "<p><b>Delicious food descriptions go here...</b></p>"
         },
         "closest_fix": {
-            "problem_type": "Accessibility",
-            "offending_line": "<font size=\"5\"> View Menu</font>",
-            "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>"
+            "problem_type": "link_color_contrast",
+            "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+            "fixed_line": "<a href=\"#\" class=\"button\" style=\"color: white;\"> View Menu</a>"
         }
     },
     {
@@ -110,9 +110,9 @@
             "problem": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>"
         },
         "closest_fix": {
-            "problem_type": "Accessibility",
-            "offending_line": "<font size=\"5\"> View Menu</font>",
-            "fixed_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>"
+            "problem_type": "link_color_contrast",
+            "offending_line": "<a href=\"#\" class=\"button\"><font size=\"5\"> View Menu</font></a>",
+            "fixed_line": "<a href=\"#\" class=\"button\" style=\"color: white;\"> View Menu</a>"
         }
     },
     {

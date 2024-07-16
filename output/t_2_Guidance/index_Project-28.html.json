@@ -28,8 +28,8 @@
             "problem": "<select id=\"sort\">"
         },
         "closest_fix": {
-            "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\">",
-            "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">"
+            "offending_line": "<label for=\"search\">Search:</label>",
+            "fixed_line": "<label for=\"search\">Search:</label>\n<input type=\"text\" id=\"search\" aria-label=\"Search\" placeholder=\"Search...\">"
         }
     },
     {
@@ -50,7 +50,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"search\">Search:</label>",
-            "fixed_line": "<label for=\"search\">Search:</label><br>"
+            "fixed_line": "<label for=\"search\">Search:</label>\n<label for=\"search\">Search:</label>"
         }
     },
     {
@@ -129,7 +129,7 @@
         },
         "closest_fix": {
             "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
-            "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"ExternalFunction()\">"
+            "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"if(event.key === 'Enter'){ExternalFunction()}\" tabindex=\"0\">"
         }
     }
 ]

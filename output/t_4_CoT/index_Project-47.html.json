@@ -29,8 +29,8 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"carType\"></label>",
-            "fixed_line": "<label for=\"carType\">Car Type</label>",
-            "CoT": "1. Look for input elements or buttons in the form section.\n2. Check if each input element has a corresponding label using the \"for\" attribute that matches the input's \"id\" attribute.\n3. Check if each input element has a visible label next to it.\n4. Check if any input element or button has an empty label attribute.\n5. Check if any input element or button has an alt attribute instead of a label or an empty label."
+            "fixed_line": "<label for=\"carType\">Select Car Type:</label>",
+            "CoT": "Step 1: Identify all the input elements and buttons in the form. \nStep 2: Check if each input element and button has an associated label using the \"for\" attribute in the label tag that matches the input's ID.\nStep 3: Check if any input element has an empty label or missing label text.\nStep 4: Check if any input element has an alt attribute instead of a proper label."
         }
     },
     {
@@ -130,9 +130,9 @@
             "problem": "<label for=\"vehicle2\"></label><br>"
         },
         "closest_fix": {
-            "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
-            "fixed_line": "<label for=\"vehicle2\">Car</label><input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
-            "CoT": "Step 1: Identify all the input elements and buttons in the form.\nStep 2: Check if each input element and button has an associated label using the \"for\" attribute in the label tag.\nStep 3: Ensure that the label in each case is not empty or missing.\nStep 4: If any input element or button is missing an associated label, contains an alt attribute, or has an empty label, then that is the accessibility issue to be fixed."
+            "offending_line": "<label for=\"carType\"></label>",
+            "fixed_line": "<label for=\"carType\">Select Car Type:</label>",
+            "CoT": "Step 1: Identify all the input elements and buttons in the form. \nStep 2: Check if each input element and button has an associated label using the \"for\" attribute in the label tag that matches the input's ID.\nStep 3: Check if any input element has an empty label or missing label text.\nStep 4: Check if any input element has an alt attribute instead of a proper label."
         }
     }
 ]

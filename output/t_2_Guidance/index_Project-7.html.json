@@ -108,7 +108,7 @@
         },
         "closest_fix": {
             "offending_line": "<h2 onmouseout=\"PauseVideo()\">Exercise Videos</h2>",
-            "fixed_line": "<h2>Exercise Videos</h2>"
+            "fixed_line": "<h2 onkeydown=\"PauseVideo()\" onmousedown=\"PauseVideo()\">Exercise Videos</h2>"
         }
     }
 ]

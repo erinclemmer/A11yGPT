@@ -16,9 +16,9 @@
             "problem": "<marquee>Ticket Booking System</marquee>"
         },
         "closest_fix": {
-            "problem_type": "alt_text_missing",
-            "offending_line": "<input type=\"number\" alt=\"quantity\" id=\"quantity\" name=\"quantity\" min=\"1\" required>",
-            "fixed_line": "<input type=\"number\" id=\"quantity\" name=\"quantity\" min=\"1\" required aria-label=\"Number of Tickets\">"
+            "problem_type": "missing alt attribute for image",
+            "offending_line": "<select id=\"event\" name=\"event\">",
+            "fixed_line": "<select id=\"event\" name=\"event\" aria-label=\"Select Event\">"
         }
     },
     {

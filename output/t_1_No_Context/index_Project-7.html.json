@@ -64,7 +64,7 @@
         "closest_fix": {
             "problem_type": "Accessibility",
             "offending_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\"></button>",
-            "fixed_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\" aria-label=\"Submit\"></button>"
+            "fixed_line": "<button type=\"submit\" style=\"color: rgb(0, 0, 0); background-color: rgb(76, 175, 80);\">Submit</button>"
         }
     },
     {

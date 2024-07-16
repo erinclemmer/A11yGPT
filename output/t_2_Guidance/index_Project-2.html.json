@@ -46,7 +46,7 @@
         },
         "closest_fix": {
             "offending_line": "<video autoplay>",
-            "fixed_line": "<video controls>"
+            "fixed_line": "<video>"
         }
     },
     {

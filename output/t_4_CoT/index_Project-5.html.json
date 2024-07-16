@@ -102,9 +102,9 @@
             "problem": "<label for=\"email\">Email:</label>"
         },
         "closest_fix": {
-            "offending_line": "<label for=\"email\">Email:</label>\n<label for=\"email\">Email:</label>",
-            "fixed_line": "<label for=\"email\">Email:</label>",
-            "CoT": "To find and fix the problem of an input element having more than one associated label, we will follow these steps:\n\n1. Identify all input elements in the HTML.\n2. Check the labels associated with each input element.\n3. Make sure each input element has only one associated label.\n4. If any input element has more than one associated label, remove the duplicate label(s).\n\nLet's go through the HTML and check each input element for this issue."
+            "offending_line": "<label for=\"email\">Email:</label>",
+            "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">",
+            "CoT": "To find the issue of an input element having more than one associated label, I will:\n\n1. Look for input elements within the form in the HTML.\n2. Check each input element to see if it is associated with more than one label.\n3. If an input element has multiple associated labels, then this will be the accessibility issue that needs to be addressed."
         }
     },
     {

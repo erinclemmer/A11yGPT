@@ -28,9 +28,9 @@
             "problem": "<select id=\"sort\">"
         },
         "closest_fix": {
-            "offending_line": "<input type=\"text\" id=\"search\" placeholder=\"Search...\">",
-            "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">",
-            "CoT": "1. Identify all the input elements and buttons on the webpage.\n2. Check if each input element or button has an associated label.\n3. Verify if the label is empty or missing.\n4. Look for input elements or buttons with alt attributes instead of associated labels."
+            "offending_line": "<label for=\"search\">Search:</label>",
+            "fixed_line": "<label for=\"search\">Enter search term:</label>",
+            "CoT": "First, let's identify all the input elements and buttons on the page that should have associated labels. \nIn this case, we have an input element with id=\"search\" and a button with text \"Add to Cart\" that should have associated labels. \n\nNext, let's check if the input element and button have labels associated with them. The labels should use the \"for\" attribute to specify the id of the input element or button they are labeling.\n\nIn this case, the input element with id=\"search\" has two labels associated with it, but both of them have the same \"for\" attribute value (\"search\"). This is incorrect as each label should be unique and should correctly associate with the input element.\n\nAdditionally, the button with text \"Add to Cart\" does not have an associated label. Buttons that trigger a specific action should have an associated label to provide context for screen readers and assistive technologies.\n\nTherefore, the issue on the page is that the input element with id=\"search\" has two labels with the same \"for\" attribute value, and the button \"Add to Cart\" is missing an associated label."
         }
     },
     {
@@ -51,8 +51,8 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"search\">Search:</label>",
-            "fixed_line": "<label for=\"search\">Search:</label><br>",
-            "CoT": "To find the accessability issue of an input element having more than one associated label, we need to:\n\n1. Identify all the input elements in the HTML document.\n2. Check if each input element has one or more associated label elements.\n3. If an input element has more than one associated label, then that is the accessability issue we need to fix. \n\nLet's start by identifying all input elements in the provided HTML code."
+            "fixed_line": "<label for=\"search\">Search:</label>\n<label for=\"sort\">Sort by:</label>",
+            "CoT": "Sure, here is the step-by-step process to find the problem of having more than one associated label for an input element:\n\n1. Identify all the input elements on the webpage.\n2. Determine if each input element has an associated label using the \"for\" attribute in the label tag.\n3. Check if any input element has more than one associated label.\n4. If an input element has more than one associated label, it can create confusion for screen reader users as they may not know which label is relevant to the input field.\n\nLet's go through the HTML code to see if there are any input elements with more than one associated label."
         }
     },
     {
@@ -107,8 +107,8 @@
         },
         "closest_fix": {
             "offending_line": "<font size=\"5\"> Delicious food just for you!</font>",
-            "fixed_line": "<p style=\"font-size: 1.2em;\">Delicious food just for you!</p>",
-            "CoT": "Step 1: Identify any <b>, <i>, or <font> tags used in the HTML code provided.\nStep 2: Check if any of these tags are used to style text or add emphasis.\nStep 3: Determine if any of these tags are used for formatting or presentation purposes rather than semantic structuring.\nStep 4: If any of the identified tags are used for formatting or presentation purposes, flag them as potential accessibility issues."
+            "fixed_line": "<h2 style=\"font-size: 1.875rem;\">Delicious food just for you!</h2>",
+            "CoT": "1. Look for any <b>, <i>, or <font> tags in the html code.\n2. Check if any of these tags are used for styling purposes.\n3. Identify if any of these tags are used to format text or provide emphasis.\n4. Determine if any of these tags are used for accessibility reasons.\n5. Lastly, check if any of these tags can be replaced with more semantic and accessible HTML elements."
         }
     },
     {
@@ -133,8 +133,8 @@
         },
         "closest_fix": {
             "offending_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\">",
-            "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onfocus=\"ExternalFunction()\">",
-            "CoT": "First, let's identify any event attributes that are related to user interaction. In this case, we have an `onmouseover` event attribute on the `div` element with the class `menu-item`.\n\nNext, let's check if there are corresponding keyboard events for each mouse event to ensure keyboard accessibility. The `onmouseover` event is triggered when the mouse pointer is moved onto the `<div>` element. To make it keyboard accessible, we should consider adding an `onfocus` event as an alternative for keyboard users.\n\nLet's add an `onfocus` event attribute to the `div` element with the class `menu-item`.\n\nHere's the updated HTML:\n\n```html\n<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onfocus=\"ExternalFunction()\">\n```\n\nBy including the `onfocus` event attribute along with the existing `onmouseover` event attribute, we ensure that both mouse and keyboard users can interact with the menu item, making the content more accessible."
+            "fixed_line": "<div class=\"menu-item\" onmouseover=\"ExternalFunction()\" onkeydown=\"ExternalFunction()\">",
+            "CoT": "For this specific accessibility issue regarding the onmousedown event missing an onkeydown event or script not being keyboard accessible, I would focus on the interactive elements on the page that are triggered by mouse actions.\n\n1. Identify any elements that have onmousedown events or JavaScript functions triggered by mouse clicks.\n2. Check whether these elements have corresponding keyboard accessibility options, such as onkeydown events or keyboard shortcuts.\n3. Verify that users can interact with these elements using keyboard only, without relying on mouse actions.\n4. Test these interactive elements using keyboard navigation to ensure full accessibility for keyboard-only users.\n5. If any elements lack keyboard accessibility, recommend adding onkeydown events or alternative keyboard interactions to ensure all users can effectively engage with the content. \n\nLet's go through the HTML code and identify any elements that may have this accessibility issue."
         }
     }
 ]

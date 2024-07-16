@@ -20,9 +20,9 @@
             "problem": "<img src=\"logo.png\">"
         },
         "closest_fix": {
-            "problem_type": "missing_alt_attribute",
+            "problem_type": "alt_text_missing",
             "offending_line": "<img src=\"logo.png\">",
-            "fixed_line": "<img src=\"logo.png\" alt=\"Website Logo\">"
+            "fixed_line": "<img src=\"logo.png\" alt=\"Company Logo\">"
         }
     },
     {

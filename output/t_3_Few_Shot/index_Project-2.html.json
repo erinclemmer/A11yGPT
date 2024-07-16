@@ -45,8 +45,8 @@
             "problem": "<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />"
         },
         "closest_fix": {
-            "offending_line": "<video autoplay>",
-            "fixed_line": "<video controls>\n        <source src=\"bookstore-video.mp4\" type=\"video/mp4\">\n        Your browser does not support the video tag.\n      </video>"
+            "offending_line": "<video autoplay>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\" />\nYour browser does not support the video tag.\n</video>",
+            "fixed_line": "<video controls>\n<source src=\"bookstore-video.mp4\" type=\"video/mp4\">\nYour browser does not support the video tag.\n</video>"
         }
     },
     {
@@ -79,7 +79,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"email\"></label>",
-            "fixed_line": "<label for=\"email\">Email</label>"
+            "fixed_line": "<label for=\"email\">Email</label><br>"
         }
     },
     {

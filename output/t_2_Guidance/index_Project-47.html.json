@@ -29,7 +29,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"carType\"></label>",
-            "fixed_line": "<label for=\"carType\">Car Type</label>"
+            "fixed_line": "<label for=\"carType\">Select Car Type:</label>"
         }
     },
     {
@@ -127,8 +127,8 @@
             "problem": "<label for=\"vehicle2\"></label><br>"
         },
         "closest_fix": {
-            "offending_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\">",
-            "fixed_line": "<input type=\"checkbox\" id=\"vehicle2\" name=\"vehicle2\" value=\"Car\"><label for=\"vehicle2\">Car</label><br>"
+            "offending_line": "<label for=\"carType\"></label>",
+            "fixed_line": "<label for=\"carType\">Car Type</label>"
         }
     }
 ]

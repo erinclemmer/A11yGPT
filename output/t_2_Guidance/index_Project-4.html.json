@@ -79,7 +79,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"vehicle1\"></label><br>",
-            "fixed_line": "<label for=\"vehicle1\">Vehicle 1</label><br>"
+            "fixed_line": "<label for=\"vehicle1\">I have a bike</label><br>"
         }
     },
     {

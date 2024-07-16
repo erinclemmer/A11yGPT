@@ -102,9 +102,9 @@
             "problem": "<label for=\"email\">Email:</label>"
         },
         "closest_fix": {
-            "problem_type": "missing-label",
+            "problem_type": "Incorrect label usage",
             "offending_line": "<label for=\"email\">Email:</label>",
-            "fixed_line": "<label for=\"email\">Email:</label><br>"
+            "fixed_line": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
         }
     },
     {

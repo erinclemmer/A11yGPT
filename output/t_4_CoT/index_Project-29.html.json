@@ -114,9 +114,9 @@
             "problem": "<label for=\"myfile\"></label>"
         },
         "closest_fix": {
-            "offending_line": " <input type=\"file\" id=\"myfile\" name=\"myfile\">",
-            "fixed_line": "<label for=\"myfile\">File Upload</label>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">",
-            "CoT": "Step 1: Identify all input elements and buttons in the HTML code.\nStep 2: Check each input element and button for the following:\n  - Whether it has an associated label using the \"for\" attribute or by wrapping the input element within a <label> tag.\n  - Whether the label is empty or missing.\n  - Whether the input element or button has an \"alt\" attribute, which is not applicable for these elements.\nStep 3: If any of the input elements or buttons fail to meet the above criteria, then that would be the accessibility-related problem."
+            "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "fixed_line": "<label for=\"myfile\">Choose a file to upload:</label><input type=\"file\" id=\"myfile\" name=\"myfile\">",
+            "CoT": "Step 1: Identify all the input elements and buttons on the webpage.\nStep 2: Check if each input element and button has an associated label.\nStep 3: Verify that the label associated with each input element or button is not empty.\nStep 4: Check if any input element or button has an alt attribute instead of a label."
         }
     },
     {

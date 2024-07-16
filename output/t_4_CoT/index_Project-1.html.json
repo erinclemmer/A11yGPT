@@ -21,8 +21,8 @@
         },
         "closest_fix": {
             "offending_line": "<img src=\"logo.png\">",
-            "fixed_line": "<img src=\"logo.png\" alt=\"Logo\">",
-            "CoT": "Sure! To find the problem with the missing `alt` attribute in the `iframe` or `img` tags, we will need to:\n\n1. Check all `img` tags in the HTML to ensure they have the `alt` attribute.\n2. Check the `iframe` tag in the HTML to ensure it has the `alt` attribute."
+            "fixed_line": "<img src=\"logo.png\" alt=\"Logo of the Beauty Products Store\">",
+            "CoT": "To find the issue where the `alt` attribute is missing in the `iframe` or `img` tag, we need to review each `iframe` and `img` tag in the HTML code and ensure that they have the `alt` attribute filled with meaningful text.\n\nLet's check the `iframe` and `img` tags in the provided HTML code:\n\n1. The `img` tag for the logo:\n```html\n<img src=\"logo.png\">\n```\nHere, the `alt` attribute is missing. We should add an `alt` attribute with a descriptive text, such as:\n```html\n<img src=\"logo.png\" alt=\"Logo of the Beauty Products Store\">\n```\n\n2. The `iframe` tag for the video:\n```html\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>\n```\nIn this case, the `alt` attribute is missing from the `iframe` tag. This is a common issue with `iframe` tags as they do not directly take an `alt` attribute like `img` tags. One way to address this is by providing a visually hidden text describing the content of the video:\n```html\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" title=\"Promotional video for Beauty Products Store\" frameborder=\"0\" allowfullscreen></iframe>\n```\n\nBy adding the `alt` attribute to the `img` tag and a meaningful `title` attribute to the `iframe` tag, we can improve the accessibility of the website for users who rely on assistive technologies like screen readers."
         }
     },
     {
@@ -163,8 +163,8 @@
         },
         "closest_fix": {
             "offending_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>",
-            "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen alt=\"Video\"></iframe>",
-            "CoT": "To find the accessibility issue related to missing `alt` attributes in `iframe` or `img` tags, we need to check all the `iframe` and `img` tags in the HTML code provided and ensure that each of these tags has an appropriate `alt` attribute.\n\n1. Locate all `iframe` tags in the HTML code:\n```html\n<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen></iframe>\n```\n\n2. Check if the `iframe` tag has an `alt` attribute. In this case, the `iframe` tag does not have an `alt` attribute, which is a problem for accessibility.\n\n3. Next, locate all `img` tags in the HTML code:\n```html\n<img src=\"logo.png\">\n```\n\n4. Check if the `img` tag has an `alt` attribute. In this case, the `img` tag also does not have an `alt` attribute, which is another accessibility issue.\n\nSo, the accessibility problems in this code are:\n- Missing `alt` attribute in the `iframe` tag.\n- Missing `alt` attribute in the `img` tag.\n\nThese missing `alt` attributes can be problematic for users who rely on screen readers or in cases where the visual content fails to load. Adding descriptive `alt` attributes to these tags would improve the accessibility of the website."
+            "fixed_line": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/VIDEO_ID\" frameborder=\"0\" allowfullscreen alt=\"Website video\"></iframe>",
+            "CoT": "1. Look for `<img>` tags in the HTML.\n2. Check if each `<img>` tag has the `alt` attribute with a descriptive text.\n3. Look for `<iframe>` tags in the HTML.\n4. Check if each `<iframe>` tag has the `alt` attribute. \n\nLet's apply these steps to the given HTML."
         }
     }
 ]

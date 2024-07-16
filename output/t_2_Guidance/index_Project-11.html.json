@@ -54,7 +54,7 @@
         },
         "closest_fix": {
             "offending_line": "<section id=\"anime-list\">",
-            "fixed_line": "<section id=\"anime-list\"></section>"
+            "fixed_line": "<section id=\"anime-list-all\">"
         }
     },
     {
@@ -87,7 +87,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"myfile\"></label>",
-            "fixed_line": "<label for=\"myfile\">Select a file:</label>"
+            "fixed_line": "<label for=\"myfile\">Choose a file to upload:</label>"
         }
     },
     {

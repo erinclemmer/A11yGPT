@@ -72,9 +72,9 @@
             "problem": "<meta http-equiv=\"refresh\" content=\"0\">"
         },
         "closest_fix": {
-            "problem_type": "Accessibility",
-            "offending_line": "<marquee>Hospital Management System</marquee>",
-            "fixed_line": "<h1>Hospital Management System</h1>"
+            "problem_type": "Alt Text Missing",
+            "offending_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\">",
+            "fixed_line": "<source src=\"hospital_video.mp4\" type=\"video/mp4\" alt=\"Hospital Video\">"
         }
     }
 ]

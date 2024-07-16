@@ -62,9 +62,9 @@
             "problem": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
         },
         "closest_fix": {
-            "problem_type": "Accessibility Issue",
-            "offending_line": "<label for=\"2\">2</label><br>",
-            "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>"
+            "problem_type": "missing_label",
+            "offending_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">",
+            "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label>"
         }
     },
     {
@@ -130,9 +130,9 @@
             "problem": "<label for=\"vehicle2\"></label><br>"
         },
         "closest_fix": {
-            "problem_type": "missing-label",
+            "problem_type": "Accessibility Issue",
             "offending_line": "<label for=\"2\">2</label><br>",
-            "fixed_line": "<label for=\"2\">2</label><br>"
+            "fixed_line": "<input type=\"radio\" id=\"2\" name=\"fav_number\" value=\"2\">\n<label for=\"2\">2</label><br>"
         }
     }
 ]

@@ -136,8 +136,8 @@
             "problem": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
         },
         "closest_fix": {
-            "offending_line": "<label for=\"email\"></label>",
-            "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            "offending_line": "<label for=\"password\"></label><br>",
+            "fixed_line": "<label for=\"password\">Password</label><br>"
         }
     }
 ]

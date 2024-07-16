@@ -59,8 +59,8 @@
         },
         "closest_fix": {
             "offending_line": "<p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</i></p>",
-            "fixed_line": "<p style=\"font-style: italic;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>",
-            "CoT": "To find the problem related to using `<b>`, `<i>`, or `<font>` tags, we need to search through the HTML code provided and look for instances of these tags being used to style text. These tags are considered obsolete for styling purposes in modern web development, and using CSS styles is the recommended practice for styling web content. Let's start by examining the HTML code for any occurrences of these tags."
+            "fixed_line": "<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</em></p>",
+            "CoT": "1. Look through the HTML code and identify any instances of the `<b>`, `<i>`, or `<font>` tags being used.\n\n2. Check to see if any of these tags are used for styling purposes, such as making text bold, italic, or changing the font size or color.\n\n3. If any of these tags are found being used for styling purposes, you should identify them as accessibility issues because these tags are considered outdated and not recommended for styling in modern web development.\n\n4. Provide a recommendation on how to fix the issue, for example, suggesting the use of CSS for styling instead of deprecated HTML tags."
         }
     },
     {

@@ -71,7 +71,7 @@
         },
         "closest_fix": {
             "offending_line": "<meta http-equiv=\"refresh\" content=\"0\">",
-            "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=index.html\">"
+            "fixed_line": "<meta http-equiv=\"refresh\" content=\"0;url=https://bhargavichandu1.github.io/\">"
         }
     }
 ]

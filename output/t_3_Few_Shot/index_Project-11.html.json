@@ -119,8 +119,8 @@
             "problem": "<input type=\"checkbox\" id=\"vehicle1\" name=\"vehicle1\" value=\"Bike\">"
         },
         "closest_fix": {
-            "offending_line": "<label for=\"username\">Username:</label><br>",
-            "fixed_line": "<label for=\"username\">Username:</label><br>\n<input type=\"text\" id=\"username\" name=\"username\">"
+            "offending_line": "<label for=\"email\"></label>",
+            "fixed_line": "<label for=\"email\">Email</label><br>"
         }
     }
 ]

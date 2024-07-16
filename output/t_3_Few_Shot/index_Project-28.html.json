@@ -50,7 +50,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"search\">Search:</label>",
-            "fixed_line": "<label for=\"search\">Search:</label>"
+            "fixed_line": "<label for=\"search\">Search:</label><input type=\"text\" id=\"search\" placeholder=\"Search...\">"
         }
     },
     {

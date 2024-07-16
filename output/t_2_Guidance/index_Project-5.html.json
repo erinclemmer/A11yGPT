@@ -100,7 +100,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"email\">Email:</label>",
-            "fixed_line": "<label for=\"email\">Email:</label>"
+            "fixed_line": "<label for=\"email\">Email:</label> <input type=\"email\" id=\"email\" name=\"email\" placeholder=\"Your email\">"
         }
     },
     {

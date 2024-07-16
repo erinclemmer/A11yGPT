@@ -17,7 +17,7 @@
         },
         "closest_fix": {
             "offending_line": "<a href=\"#\"></a>",
-            "fixed_line": "<a href=\"#\">Link</a>"
+            "fixed_line": "<a href=\"#\">Link Text</a>"
         }
     },
     {

@@ -42,7 +42,7 @@ def get_violations(html: str, html_file: str, wcga_errors: List[WCGAError]) -> L
 def get_fixes_from_objects(embed: GptEmbeddings, fixes_objects: List[dict]):
     fixes = []
     for item in fixes_objects:
-        fixes.append(GptFix(item, embed.get_embedding(item['offending_line'] + '\n\n' + item['fixed_line'])))
+        fixes.append(GptFix(item, embed.get_embedding(item['offending_line'])))
     return fixes
 
 def get_fixes_for_guideline(embed: GptEmbeddings, fixes_file: str, guideline: str):
@@ -59,8 +59,8 @@ def get_fixes(embed: GptEmbeddings, file_name: str):
 
 def get_closest_fix_for_problem(embed: GptEmbeddings, problem: Promblem, fixes: List[GptFix]):
     closest = (0, None)
+    problem_embedding = embed.get_embedding(problem.problem)
     for fix in fixes:
-        problem_embedding = embed.get_embedding(problem.problem)
         sim = get_cosine_similarity(problem_embedding, fix.embedding)
         if sim > closest[0]:
             closest = (sim, fix)
@@ -72,8 +72,8 @@ def get_no_context_fixes_for_problems(embed: GptEmbeddings, html: str, html_file
     if problems is None:
         return []
     output = []
+    fixes = get_fixes(embed, fixes_file)
     for problem in problems:
-        fixes = get_fixes(embed, fixes_file)
         closest_fix = get_closest_fix_for_problem(embed, problem, fixes)
         output.append({
             "guideline": problem.wcga_error.o,

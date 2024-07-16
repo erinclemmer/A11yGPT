@@ -45,8 +45,8 @@
             "problem": "<input type=\"text\" id=\"username\" name=\"username\"><br>"
         },
         "closest_fix": {
-            "offending_line": "        <input type=\"file\" id=\"myfile\" name=\"myfile\">",
-            "fixed_line": "        <input type=\"file\" id=\"myfile\" name=\"myfile\"> </input>"
+            "offending_line": "<label for=\"vehicle1\"></label><br>",
+            "fixed_line": "<label for=\"vehicle1\"></label></br>"
         }
     },
     {
@@ -99,8 +99,8 @@
             "problem": "<input type=\"file\" id=\"myfile\" name=\"myfile\">"
         },
         "closest_fix": {
-            "offending_line": "<label for=\"email\"></label>",
-            "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
+            "offending_line": "<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">",
+            "fixed_line": "<label for=\"1\">1</label><br>\n<input type=\"radio\" id=\"1\" name=\"fav_number\" value=\"1\">"
         }
     },
     {

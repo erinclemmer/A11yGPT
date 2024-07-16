@@ -62,9 +62,9 @@
             "problem": "<input type=\"text\" id=\"playlist-name\" name=\"playlist-name\" required>"
         },
         "closest_fix": {
-            "problem_type": "missing_alt_attribute",
-            "offending_line": "<img src=\"song1.jpg\" alt=\"Song 1\">",
-            "fixed_line": "<img src=\"song1.jpg\" alt=\"Song 1 - Artist Name\">"
+            "problem_type": "Color Contrast",
+            "offending_line": "<p><b>Artist Name</b></p>",
+            "fixed_line": "<p><b style='color: #000'>Artist Name</b></p>"
         }
     },
     {

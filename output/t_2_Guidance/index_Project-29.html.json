@@ -112,7 +112,7 @@
         },
         "closest_fix": {
             "offending_line": "<input type=\"file\" id=\"myfile\" name=\"myfile\">",
-            "fixed_line": "<label for=\"myfile\">Choose a file:</label><input type=\"file\" id=\"myfile\" name=\"myfile\">"
+            "fixed_line": "<label for=\"myfile\">Upload a file:</label>\n<input type=\"file\" id=\"myfile\" name=\"myfile\">"
         }
     },
     {

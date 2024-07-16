@@ -38,7 +38,7 @@
         },
         "closest_fix": {
             "offending_line": "<title></title>",
-            "fixed_line": "<title>Page Title</title>"
+            "fixed_line": "<title>Ticket Booking System</title>"
         }
     },
     {

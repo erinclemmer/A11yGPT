@@ -29,7 +29,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"1\"></label><br>",
-            "fixed_line": "<label for=\"1\">Favorite Number:</label><br>"
+            "fixed_line": "<label for=\"1\">Enter 1</label><br>"
         }
     },
     {
@@ -115,7 +115,7 @@
             "problem": "<input type=\"password\" id=\"pwd\" name=\"pwd\">"
         },
         "closest_fix": {
-            "offending_line": "<label for=\"email\"></label>",
+            "offending_line": "<label for=\"email\"></label>\n<input type=\"text\" id=\"email\" name=\"email\">",
             "fixed_line": "<label for=\"email\">Email</label><br>\n<input type=\"text\" id=\"email\" name=\"email\">"
         }
     },
@@ -149,7 +149,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"1\"></label><br>",
-            "fixed_line": "<label for=\"1\">1</label><br>"
+            "fixed_line": "<label for=\"1\">Favorite Number:</label><br>"
         }
     }
 ]

@@ -17,7 +17,7 @@
         },
         "closest_fix": {
             "offending_line": "<marquee>Ticket Booking System</marquee>",
-            "fixed_line": "<h1>Ticket Booking System</h1>"
+            "fixed_line": "<header>Ticket Booking System</header>"
         }
     },
     {

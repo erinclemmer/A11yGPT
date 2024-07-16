@@ -28,7 +28,7 @@
             "problem": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>"
         },
         "closest_fix": {
-            "offending_line": "            <button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>",
+            "offending_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\"></button>",
             "fixed_line": "<button onclick=\"playVideo()\" style=\"background-color: #2E7D32; color: #FFFFFF;\">Play Video</button>"
         }
     },
@@ -58,7 +58,7 @@
         },
         "closest_fix": {
             "offending_line": "<p><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</i></p>",
-            "fixed_line": "<p style=\"font-style: italic;\">Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</p>"
+            "fixed_line": "<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit. ...</em></p>"
         }
     },
     {
@@ -149,7 +149,7 @@
         },
         "closest_fix": {
             "offending_line": "<label for=\"1\"></label><br>",
-            "fixed_line": "<label for=\"1\">1</label><br>"
+            "fixed_line": "<label for=\"1\">Option 1</label><br>"
         }
     }
 ]
