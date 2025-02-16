@@ -3,6 +3,8 @@
 ### Overview 
 This project attempts to use ChatGPT to fix a variety of websites with accessability related issues. Various prompting algorithms are used to empirically test which method performs the best. Each prompting algorithm builds off of the last one. Guidance adds context to No Context, Few Shot adds examples to the context, Chain of Thought adds time to think on top of the examples, and Tree of Thought determines the best output using all of the approaches combined.
 
+**NOTE:** This project was made as an extension to [this paper](https://wajdialjedaani.com/publication/papers/paper54.pdf) but was ultimately scrapped. Hopefully someone can make use of the code for inspiration on prompt programming.
+
 ### Setup
 To run the tests, you need to provide an API key for OpenAI. To do this create a `config.json` file in the base project directory. 
 Inside this file there should be a property called `openai_api_key` with your api key in it. This file will not be committed to the repository.
